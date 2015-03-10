@@ -1,3 +1,41 @@
+Cowiki -> Markup transforms:
+https://help.github.com/articles/github-flavored-markdown/
+https://help.github.com/articles/markdown-basics/
+
+
+====================
+(old example)
+(new example)
+
++ HEADING
+# HEADING
+
++++ THIRD LEVEL HEADING
+### THIRD LEVEL HEADING
+
+*BOLD*
+**BOLD**
+
+<code>...</code>
+```...```
+
+((http://example.com))
+http://example.com
+
+((http://example.com)(Example link))
+[Example link](http://example.com)
+
+* list item
+* list item
+
+* nested list item
+  * nested list item
+* nested liste item
+  * nested list item  
+
+====================
+
+
 New tentative structure:
 
 * Features
