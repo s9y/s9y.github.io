@@ -1,0 +1,194 @@
+New tentative structure:
+
+* Features
+http://www.s9y.org/3.html
+http://www.s9y.org/6.html
+
++ Mission statement
++ Mid- to long-term goals
++ Formulare goals according to https://titanpad.com/iXikywnagT and blogposting
+````
+   * Fokus: Blog-System. kein CMS. Gewisse CMS-Kernfunktionen zwar "nice to have" aber kein Zentrum.
+   * Einfach anpassbar, sowohl für Benutzer via Themes/Plugins/Optionen als auch für Entwickler über API
+   * Niedrige Einstiegshürde, kurze Supportwege, „es funktioniert einfach“, offen für Impulse durch Nutzer und Entwickler.
+   * Lang existierendes, gereiftes System mit Wert auf fortgeführte Nutzung und "Rücksicht" auf Benutzer
+   * "Ein stabiles, sicheres, erweiterbares|flexibles|verlässliches Blog-System"
+     * "Eine verlässliche, sichere und erweiterbare Blog-Software"
+   * (Slogan)
+   * Not mainstream since 2001
+   * Ziele:
+     * "Benutzerfreundlicher" (Bedienung so einfach wie möglich, Anpassung so einfach wie möglich, die Dinge abdecken können die beim Blogging relevant sind) ohne unnötige Komplexität.
+     * Komponenten auf zukunftssichere Technologien anpassen, Kompatibilität und Sicherheit und bestehende Features bewahren
+     * Klare, separierte und anpassbare Codeflows / Architektur
+     * Nachvollziehbarkeit des Codes mit guter Verständlichkeit, für neue Entwickler ohne große Einarbeitungszeit "lesbar".
+     * Funktionen so klar haben, dass keine Labels nötig sind
+
+````
+
+* Downloads
+http://www.s9y.org/12.html
+
+* FAQ
+http://www.s9y.org/11.html
+http://www.s9y.org/148.html
+http://www.s9y.org/150.html
+http://www.s9y.org/159.html
+http://www.s9y.org/197.html
+http://www.s9y.org/163.html
+http://www.s9y.org/165.html
+http://www.s9y.org/172.html
+http://www.s9y.org/215.html
+http://www.s9y.org/214.html
+http://www.s9y.org/216.html
+http://www.s9y.org/166.html
+http://www.s9y.org/170.html
+http://www.s9y.org/164.html
+http://www.s9y.org/169.html
+http://www.s9y.org/203.html
+http://www.s9y.org/198.html
+http://www.s9y.org/161.html
+http://www.s9y.org/209.html
+http://www.s9y.org/210.html
+http://www.s9y.org/162.html
+http://www.s9y.org/forums/viewtopic.php?t=6110
+http://www.s9y.org/208.html
+http://www.s9y.org/204.html
+http://www.s9y.org/152.html
+http://www.s9y.org/158.html
+http://www.s9y.org/157.html
+
+* Hosting providers
+http://www.s9y.org/61.html
+
+* Contributing
+````
+Quoted from camp agenda, needs translation and proper work
+* Umgang mit Feature Requests und Bugs:
+   * Primär erfolgen Support-Themen im Forum. Ein Foren-Account hat für einen Anwender höhere Priorität/Notwendigkeit als ein Github-Account
+   * EIN BUG PRO ISSUE :-)
+   * Github nur englisch, im Forum auch deutsche Meldungen möglich!
+   * Konkrete Bugs (mit Fehlermeldung) können optimalerweise im GitHub-Issuetracker gemeldet werden. Sie können auch im Forum gemeldet werden und ein Entwickler fixt den Bug entweder so direkt, oder stellt es als Issue für den meldenden Nutzer ein
+   * Neue Features werden nur von Entwicklern eingetragen in GitHub als Issue, wenn sie auch konkret umgesetzt werden können. Zu diskutierende features werden im Forum diskutiert, und erst wenn Konsens herrscht von einem Entwickler (oder vom Nutzer mit Github-Account) dann eingestellt werden. 
+   * In Github gemeldete Features die als Diskussion im Forum geführt werden sollen werden sofort geschlossen und auf das Forum verwiesen
+   * Im Forum gemeldete Bugs die als GitHub-Issue eröffent und geschlossen wurden sollten final einen kleinen "wurde gefixt"-Hinweis im Forum zurück erhalten.
+   * Entwickler-Kollegen, die Bugs über Github melden, sollen ohne Forumsverweis willkommen geheißen werden
+ * wie anfangen
+   * Ins Github Wiki von Homepage linken
+   * Inhalt grob: "Du willst uns was helfen, guck dir folgendes an, wir brauchen in den Bereichen hilfe, Dir bringt es etwas weil XYZ (Erfahrung, Selbstverwirklichung)"
+   * Kreuzverlinkung auch vom Forum
+ * wo brauchen wir Hilfe?
+   * Support (im Board)
+   * Docs
+     * Übersetzung (mind. Deutsch/Englisch)
+   * Übersetzung, z.b. auch von Blog-Postings oder als "deutsche Koordinierungsstelle" für Leute, die gar kein Englisch können?
+   * Vorschlag: Indexseite, Startanleitung auf deutsch, samt Verweis auf das deutsche Forum
+   * Themes (Template-Chooser/Phantom.js)
+   * Plugins ("Plugin-Aktualisierungsblog")
+   * Coding
+ * Einstieg ins Coding:
+   * grobe Übersicht über zentrale Module, Programmablauf, pp.
+   * index.php mit functions.etc beschreiben
+   * serendipity_admin beschreiben mit code-einbindung
+   * verzeichnispfade beschreiben, plugins
+   * plugin API - vielleicht angelehnt an die Pluginanleitung? https://www.onli-blogging.de/876/Rohform-eines-Serendipity-Plugins.html https://www.onli-blogging.de/879/Einfuehrung-Serendipity-Plugins-schreiben.html
+   * fallback von templates, was wann anpassen
+
+````
+  + http://www.s9y.org/20.html
+  + Users
+    - Where to get help, support, news, updates etc.
+    - How to properly report/ask things
+    - Where to discuss features and bugs
+    - Which documents to read
+    - How to help:
+      * Translations
+      * Themes
+      * User-to-User Support
+  + Developers
+    - What we use for what
+    - How to commit, where to fetch, etc.
+    - Links to important Topics (plugin API, Code flow)
+    - List of things we currently need help with:
+      * Translations
+      * Themes
+      * User-Support
+      * Writing blog entries
+      * Optimizing code, i.e. routing
+      * Plugins
+  
+* Topics
+
+  GETTING STARTED
+  + Fresh installation: http://www.s9y.org/36.html
+  + Upgrading: http://www.s9y.org/37.html
+  + Shared installation: http://www.s9y.org/41.html
+  + Migrating: http://www.s9y.org/53.html
+  + Embedding: http://www.s9y.org/55.html
+
+  USING SERENDIPITY
+  + Posting http://www.s9y.org/39.html
+  + Plugins http://www.s9y.org/45.html
+  + User mangement http://www.s9y.org/47.html
+  + Trackbacks etc. http://www.s9y.org/48.html
+  + RSS http://www.s9y.org/49.html
+  + Markup plugiuns http://www.s9y.org/50.html
+  + configuration http://www.s9y.org/66.html
+  + Admin interface http://www.s9y.org/67.html
+  + Approving comments http://www.s9y.org/68.html
+  + Managing categories http://www.s9y.org/69.html
+  + Statistics http://www.s9y.org/70.html
+  + Themes http://www.s9y.org/75.html
+  + Import/Export http://www.s9y.org/103.html
+  + Spam http://www.s9y.org/155.html
+  + (TODO: SEO)
+  + (TODO: MAINTENANCE)
+  + (TODO: Check topics from the book, what is missing as general instructions)
+  
+  DEVELOPING
+  + Conditional GET http://www.s9y.org/42.html
+  + Themes http://www.s9y.org/44.html
+  + Internationalization http://www.s9y.org/46.html
+  + Smarty http://www.s9y.org/78.html
+  + CSS http://www.s9y.org/102.html [Deprecatable?]
+  + Plugin API http://www.s9y.org/116.html
+  + Lighttpd http://www.s9y.org/119.html
+  + entries.tpl http://www.s9y.org/121.html
+  + theme options http://www.s9y.org/137.html
+  + IIS http://www.s9y.org/194.html
+  + Best practice http://www.s9y.org/217.html
+  + (TODO: Getting started)
+  + (TODO: Basic code flow)
+  + (TODO: Check topics from the book, what is missing)
+
+  LOCALIZED TRANSLATIONS
+  + (Might be out of date? Cannot check)
+  + French http://www.s9y.org/82.html
+  + Spanish http://www.s9y.org/96.html
+  + Czech http://www.s9y.org/219.html
+  - German: Link to the book
+  
+
+Deprecated documents, remove completely:
+- http://www.s9y.org/32.html
+- http://www.s9y.org/64.html
+- http://www.s9y.org/80.html
+- http://www.s9y.org/81.html
+- http://www.s9y.org/97.html
+- http://www.s9y.org/120.html
+- http://www.s9y.org/213.html
+- http://www.s9y.org/140.html
+- http://www.s9y.org/238.html
+- http://www.s9y.org/174.html
+- http://www.s9y.org/178.html
+- http://www.s9y.org/182.html
+- http://www.s9y.org/183.html
+- http://www.s9y.org/193.html
+- http://www.s9y.org/176.html
+- http://www.s9y.org/191.html
+- http://www.s9y.org/179.html
+- http://www.s9y.org/190.html
+- http://www.s9y.org/180.html
+- http://www.s9y.org/181.html
+
+
+TODO: UPDATE files in repository with new links in docs/INSTALL
