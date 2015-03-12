@@ -1,5 +1,6 @@
-# Serendipity -  a PHP Weblog/Blog software
-
+---
+title: # Serendipity -  a PHP Weblog/Blog software
+---
 Serendipity is a PHP-powered weblog application which gives the user an easy way to maintain an online diary, weblog or even a complete homepage.  While the default package is designed for the casual blogger, Serendipity offers a flexible, expandable and easy-to-use framework with the power for professional applications.
 
 Casual users appreciate the way Serendipity's sophisticated **plugin architecture** allows you to easily modify both the appearance of your blog and its features. You can install more than 120 plugins with just one click, instantly enhancing your blog's functionality. **No need to edit code!**
