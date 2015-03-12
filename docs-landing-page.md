@@ -1,5 +1,5 @@
 ---
-title: Serendipity Docs
+title: Serendipity -  a PHP Weblog/Blog software
 ---
 # Serendipity -  a PHP Weblog/Blog software
 
