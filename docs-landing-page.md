@@ -18,33 +18,19 @@ Users of other blogging/CMS applications are already switching to Serendipity, t
 Serendipity's basic features include something for everybody, from the personal blogger to the professional corporate web designer:
 
 * WYSIWYG and HTML editing
-
 * Built-in, powerful media database
-
 * Multiple authors, configurable permission/usergroup system
-
 * Threaded comments, nested categories, post to multiple categories
-
 * Multiple languages (internationalization)
-
 * Online plugin and template repository for easy plug-and-play installation
-
 * Cool plugins: category-based sub-blogs, podcasting, RSS planet/aggregator, static pages
-
 * Robust spam blocking
-
 * One-click upgrading from any version
-
 * Can be embedded into your existing web pages
-
 * Standards-compliant templating through Smarty, remote blogging via XML-RPC
-
 * BSD-style licensing
-
 * Multiple Database support (SQLite, PostgreSQL, MySQL, MySQLi)
-
 * Shared installations can power multiple blogs from just one codebase
-
 * Native import from earlier blog applications (WordPress, Textpattern, Moveable Type, bblog, ...)
 
 Of course, Serendipity has far too many other features to list!
