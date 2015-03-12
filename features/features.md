@@ -32,24 +32,16 @@ Serendipity is aimed to make everything possible you ever wish for. It is techni
 
 ### Wordpress
 
-**Easy plugin integration**. No hacks, no problems during upgrades, good compatibility and a **central plugin repository**. Enhance flexibility without the need to touch any core files.
-
-**BSD-licensed**, Wordpress is only GPL. That means, you can use Serendipity to power your commercial applications or sites without any issues. Of course, the Serendipity team still likes to get credited where credit is due. ;-)
-
-Supports a **well-known and flexible templating system**, the Smarty Framework. No PHP knowledge is required, and its a good established standard for templating.
-
-**Cool plugins** that behave well with the Core, like **Multilingual Entries**, an **aggregator** plugin and a **flickr-like tagging** infrastructure.
-
-**Multiple DB support** speaks for itself.
-
-Good **PHP code style**. Open and responsible release management, covering fast security updates.
+* **Easy plugin integration**. No hacks, no problems during upgrades, good compatibility and a **central plugin repository**. Enhance flexibility without the need to touch any core files.
+* **BSD-licensed**, Wordpress is only GPL. That means, you can use Serendipity to power your commercial applications or sites without any issues. Of course, the Serendipity team still likes to get credited where credit is due. ;-)
+* Supports a **well-known and flexible templating system**, the Smarty Framework. No PHP knowledge is required, and its a good established standard for templating.
+* **Cool plugins** that behave well with the Core, like **Multilingual Entries**, an **aggregator** plugin and a **flickr-like tagging** infrastructure.
+* **Multiple DB support** speaks for itself.
+* Good **PHP code style**. Open and responsible release management, covering fast security updates.
 
 ### Moveable Type
 
-A great plus for Serendipity: **BSD-Licensing**. **PHP** instead of PERL, which often is harder to get on shared servers. Also, PHP tends to be better suitable for the web than Perl.
-
-**Easy and extensible plugin API**.
-
-**Online Plugin repository**.
-
-Responsive and caring Open Source community instead of the interests of a large company.
+* A great plus for Serendipity: **BSD-Licensing**. **PHP** instead of PERL, which often is harder to get on shared servers. Also, PHP tends to be better suitable for the web than Perl.
+* **Easy and extensible plugin API**.
+* **Online Plugin repository**.
+* Responsive and caring Open Source community instead of the interests of a large company.
