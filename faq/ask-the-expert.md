@@ -4,7 +4,7 @@ If this virtual Expert is unable to answer your question, fear not!  You can get
 
 Now, let's see what we can do for you.  Show us where it hurts.
 
-[My blog looks wrong.](http://www.s9y.org/150.html)
+[My blog looks wrong.](display-problems.html)
 
 [I want to use some other tool with my blog](http://www.s9y.org/159.html), such as:
 
