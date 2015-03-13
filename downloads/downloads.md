@@ -11,9 +11,9 @@ There are several ways to download Serendipity. The FULL release contains everyt
     (MD5: e9b9d9de43c4374acee105d81312d17f)  
 
 * **Download latest LITE release 2.0 (January 23rd, 2015)**
-  * [Serendipity 2.0.1 LITE tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.1-lite.tar.gz?download)
+  * [Serendipity 2.0.1 LITE tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.1-lite.tar.gz?download)  
     (MD5: faf2cbd95057bb2614cb26dd14f1fb66)  
-  * [Serendipity 2.0.1 LITE ZIP](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.1-lite.zip?download)
+  * [Serendipity 2.0.1 LITE ZIP](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.1-lite.zip?download)  
     (MD5: faf2cbd95057bb2614cb26dd14f1fb66)  
 
 * **Fetch a snapshot (2.0 development)**
