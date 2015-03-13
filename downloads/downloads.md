@@ -1,3 +1,6 @@
+---
+title: Serendipity -  a PHP Weblog/Blog software
+---
 # Serendipity - Downloads
 
 There are several ways to download Serendipity. The FULL release contains everything you need, wheras the LITE release only provides the default template and does not have the dummy stub files you need to setup a shared installation (which is for advanced users only). Thus, the LITE release is more lightweight for bandwidth-conservative people. You can easily upgrade a LITE release to a FULL release by simply uploading the FULL release. The core files in both versions are fully identical.
