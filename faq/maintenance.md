@@ -4,6 +4,6 @@ It's not all just blogging, you know.  From time to time, you'll want to maintai
 
 What would you like to do?
 
-[Upgrade to a newer version!](http://www.s9y.org/203.html)
+[Upgrade to a newer version!](upgrade.html)
 
-[Move my blog to a new directory.](http://www.s9y.org/198.html)
+[Move my blog to a new directory.](moving-to-new-directory.html)

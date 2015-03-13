@@ -139,7 +139,7 @@ Then call that simple script via http://yourblog/serendipity/fixperm.php and the
 
 ## How can I move an existing Serendipity installation to a different place (server or path)?
 
-[This shows how to move Serendipity to a new directory, with pictures.](http://www.s9y.org/198.html)
+[This shows how to move Serendipity to a new directory, with pictures.](moving-to-new-directory.html)
 
 First, you copy over all files from your old server to the new server. Especially pay attention that you copy the .htaccess and serendipity_config_local.inc.php files as well. If those files are not readable by your FTP user, you can use the little fixperm.php script from the "My upgrade failed!" section above to fix the permissions so that you can read the files.
 

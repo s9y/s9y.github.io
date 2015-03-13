@@ -6,4 +6,4 @@ What do you want your blog to do?
 
 [I want to hide entries from the front page.](???)
 
-[I want to make some entries sticky, so they always show up on top of the list.](http://www.s9y.org/169.html)
+[I want to make some entries sticky, so they always show up on top of the list.](sticky-entries.html)

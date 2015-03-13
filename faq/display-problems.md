@@ -2,8 +2,8 @@
 
 Stuff looking wrong, eh?  Which most accurately represents your problem:
 
-[The blog screen, or part of the screen, is blank.](http://www.s9y.org/152.html)
+[The blog screen, or part of the screen, is blank.](blog-is-blank.html)
 
-[Some images are missing.](http://www.s9y.org/158.html)
+[Some images are missing.](missing-images.html)
 
-[Some elements are too close, too far, overlapping, or displaying text differently than you expected.](http://www.s9y.org/157.html)
+[Some elements are too close, too far, overlapping, or displaying text differently than you expected.](incorrect-formatting.html)

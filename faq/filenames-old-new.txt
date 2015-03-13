@@ -1,12 +1,12 @@
-http://www.s9y.org/11.html --> serendipity-faq.md
-http://www.s9y.org/148.html --> ask-the-expert.md
-http://www.s9y.org/150.html --> display-problems.md
-http://www.s9y.org/159.html --> external-tools.md
-http://www.s9y.org/197.html --> maintenance.md
-http://www.s9y.org/163.html --> plugins.md
-http://www.s9y.org/165.html --> plugin-problems.md
-http://www.s9y.org/172.html --> user-modifications.md
-http://www.s9y.org/215.html --> glossary.md
+http://www.s9y.org/11.html --> serendipity-faq.md --> Some links outside faq.
+http://www.s9y.org/148.html --> ask-the-expert.md --> OK
+http://www.s9y.org/150.html --> display-problems.md --> OK
+http://www.s9y.org/159.html --> external-tools.md --> OK
+http://www.s9y.org/197.html --> maintenance.md --> OK
+http://www.s9y.org/163.html --> plugins.md --> Broken link inside! (Document not exist in original)
+http://www.s9y.org/165.html --> plugin-problems.md --> OK
+http://www.s9y.org/172.html --> user-modifications.md --> OK
+http://www.s9y.org/215.html --> glossary.md 
 http://www.s9y.org/214.html --> removing-trackback-links.md
 http://www.s9y.org/216.html --> spam-protector.md
 http://www.s9y.org/166.html --> mysql-stopwords.md
@@ -20,8 +20,16 @@ http://www.s9y.org/209.html --> performancing-setup.md
 http://www.s9y.org/210.html --> windows-live-writer-setup.md
 http://www.s9y.org/162.html --> flickr-setup.md
 http://www.s9y.org/forums/viewtopic.php?t=6110 --> plogger-setup.md
-http://www.s9y.org/208.html
-http://www.s9y.org/204.html
-http://www.s9y.org/152.html
-http://www.s9y.org/158.html
-http://www.s9y.org/157.html
+http://www.s9y.org/208.html --> popfetcher-posting-entries-by-email.md
+http://www.s9y.org/204.html --> showing-entries-elsewhere.md --> Broken links inside!
+http://www.s9y.org/152.html --> blog-is-blank.md --> OK
+http://www.s9y.org/158.html --> missing-images.md --> OK
+http://www.s9y.org/157.html --> incorrect-formatting.md --> 
+
+Additional files found by links:
+http://www.s9y.org/153.html --> incorrect-spacing.md --> Broken link inside! (Document not exist in original)
+http://www.s9y.org/154.html --> nl2br.md --> OK
+http://www.s9y.org/156.html --> entries-display-html.md --> OK
+http://www.s9y.org/205.html --> printing-latest-entries-with-javascript.md --> OK
+http://www.s9y.org/206.html --> printing-latest-entries-with-php.md --> OK
+http://www.s9y.org/207.html --> moving-external-page-into-serendipity.md --> OK
