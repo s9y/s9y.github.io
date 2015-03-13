@@ -4,13 +4,13 @@ http://www.s9y.org/150.html --> display-problems.md
 http://www.s9y.org/159.html --> external-tools.md
 http://www.s9y.org/197.html --> maintenance.md
 http://www.s9y.org/163.html --> plugins.md
-http://www.s9y.org/165.html
-http://www.s9y.org/172.html
-http://www.s9y.org/215.html
-http://www.s9y.org/214.html
-http://www.s9y.org/216.html
-http://www.s9y.org/166.html
-http://www.s9y.org/170.html
+http://www.s9y.org/165.html --> plugin-problems.md
+http://www.s9y.org/172.html --> user-modifications.md
+http://www.s9y.org/215.html --> glossary.md
+http://www.s9y.org/214.html --> removing-trackback-links.md
+http://www.s9y.org/216.html --> spam-protector.md
+http://www.s9y.org/166.html --> mysql-stopwords.md
+http://www.s9y.org/170.html --> form-truncation.md
 http://www.s9y.org/164.html
 http://www.s9y.org/169.html
 http://www.s9y.org/203.html
