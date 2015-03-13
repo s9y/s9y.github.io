@@ -11,15 +11,15 @@ http://www.s9y.org/214.html --> removing-trackback-links.md
 http://www.s9y.org/216.html --> spam-protector.md
 http://www.s9y.org/166.html --> mysql-stopwords.md
 http://www.s9y.org/170.html --> form-truncation.md
-http://www.s9y.org/164.html
-http://www.s9y.org/169.html
-http://www.s9y.org/203.html
-http://www.s9y.org/198.html
-http://www.s9y.org/161.html
-http://www.s9y.org/209.html
-http://www.s9y.org/210.html
-http://www.s9y.org/162.html
-http://www.s9y.org/forums/viewtopic.php?t=6110
+http://www.s9y.org/164.html --> saving-spamblock-configuration.md
+http://www.s9y.org/169.html --> sticky-entries.md
+http://www.s9y.org/203.html --> upgrade.md
+http://www.s9y.org/198.html --> moving-to-new-directory.md
+http://www.s9y.org/161.html --> wbloggar-setup.md
+http://www.s9y.org/209.html --> performancing-setup.md
+http://www.s9y.org/210.html --> windows-live-writer-setup.md
+http://www.s9y.org/162.html --> flickr-setup.md
+http://www.s9y.org/forums/viewtopic.php?t=6110 --> plogger-setup.md
 http://www.s9y.org/208.html
 http://www.s9y.org/204.html
 http://www.s9y.org/152.html
