@@ -2,7 +2,7 @@
 
 There are several ways to download Serendipity. The FULL release contains everything you need, wheras the LITE release only provides the default template and does not have the dummy stub files you need to setup a shared installation (which is for advanced users only). Thus, the LITE release is more lightweight for bandwidth-conservative people. You can easily upgrade a LITE release to a FULL release by simply uploading the FULL release. The core files in both versions are fully identical.
 
-* **Download latest 2.0.1 (January 23rd, 2015)**
+* **Download latest 2.0.1 (March 12, 2015)**
   * [Serendipity 2.0.1 tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.1.tar.gz?download)  
     (MD5: d2e0aec742545b260892bc462806c54e)  
   * [Serendipity 2.0.1 tar.bz2](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.1.tar.bz2?download)  
@@ -10,7 +10,7 @@ There are several ways to download Serendipity. The FULL release contains everyt
   * [Serendipity 2.0.1 ZIP](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.1.zip?download)  
     (MD5: e9b9d9de43c4374acee105d81312d17f)  
 
-* **Download latest LITE release 2.0 (January 23rd, 2015)**
+* **Download latest LITE release 2.0 (March 12, 2015)**
   * [Serendipity 2.0.1 LITE tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.1-lite.tar.gz?download)  
     (MD5: faf2cbd95057bb2614cb26dd14f1fb66)  
   * [Serendipity 2.0.1 LITE ZIP](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.1-lite.zip?download)  
