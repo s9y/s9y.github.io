@@ -1,0 +1,6 @@
+GETTING STARTED
+http://www.s9y.org/36.html --> fresh-installation.md --> Broken Links (Docs not in Original), Pics need refresh.
+http://www.s9y.org/37.html --> upgrading.md --> links outside "getting started" must be fixed
+http://www.s9y.org/41.html --> shared-installation.md --> OK
+http://www.s9y.org/53.html --> migration.md links outside "getting started" must be fixed
+http://www.s9y.org/55.html --> embedding.md --> OK
