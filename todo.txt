@@ -66,34 +66,42 @@ http://www.s9y.org/6.html
 * Downloads
 http://www.s9y.org/12.html
 
-* FAQ
-http://www.s9y.org/11.html
-http://www.s9y.org/148.html
-http://www.s9y.org/150.html
-http://www.s9y.org/159.html
-http://www.s9y.org/197.html
-http://www.s9y.org/163.html
-http://www.s9y.org/165.html
-http://www.s9y.org/172.html
-http://www.s9y.org/215.html
-http://www.s9y.org/214.html
-http://www.s9y.org/216.html
-http://www.s9y.org/166.html
-http://www.s9y.org/170.html
-http://www.s9y.org/164.html
-http://www.s9y.org/169.html
-http://www.s9y.org/203.html
-http://www.s9y.org/198.html
-http://www.s9y.org/161.html
-http://www.s9y.org/209.html
-http://www.s9y.org/210.html
-http://www.s9y.org/162.html
-http://www.s9y.org/forums/viewtopic.php?t=6110
-http://www.s9y.org/208.html
-http://www.s9y.org/204.html
-http://www.s9y.org/152.html
-http://www.s9y.org/158.html
-http://www.s9y.org/157.html
+* FAQ (-->Done)
+http://www.s9y.org/11.html --> serendipity-faq.md --> Some links outside faq.
+http://www.s9y.org/148.html --> ask-the-expert.md --> OK
+http://www.s9y.org/150.html --> display-problems.md --> OK
+http://www.s9y.org/159.html --> external-tools.md --> OK
+http://www.s9y.org/197.html --> maintenance.md --> OK
+http://www.s9y.org/163.html --> plugins.md --> Broken link inside! (Document not exist in original)
+http://www.s9y.org/165.html --> plugin-problems.md --> OK
+http://www.s9y.org/172.html --> user-modifications.md --> OK
+http://www.s9y.org/215.html --> glossary.md --> OK
+http://www.s9y.org/214.html --> removing-trackback-links.md --> Some links outside faq.
+http://www.s9y.org/216.html --> spam-protector.md --> OK
+http://www.s9y.org/166.html --> mysql-stopwords.md --> Broken links inside!
+http://www.s9y.org/170.html --> form-truncation.md --> OK
+http://www.s9y.org/164.html --> saving-spamblock-configuration.md --> OK
+http://www.s9y.org/169.html --> sticky-entries.md --> OK
+http://www.s9y.org/203.html --> upgrade.md --> OK
+http://www.s9y.org/198.html --> moving-to-new-directory.md --> OK
+http://www.s9y.org/161.html --> wbloggar-setup.md --> OK
+http://www.s9y.org/209.html --> performancing-setup.md --> OK
+http://www.s9y.org/210.html --> windows-live-writer-setup.md --> OK
+http://www.s9y.org/162.html --> flickr-setup.md --> OK
+http://www.s9y.org/forums/viewtopic.php?t=6110 --> plogger-setup.md --> OK
+http://www.s9y.org/208.html --> popfetcher-posting-entries-by-email.md --> OK
+http://www.s9y.org/204.html --> showing-entries-elsewhere.md --> Broken links inside!
+http://www.s9y.org/152.html --> blog-is-blank.md --> OK
+http://www.s9y.org/158.html --> missing-images.md --> OK
+http://www.s9y.org/157.html --> incorrect-formatting.md --> OK
+
+Additional files found by links:
+http://www.s9y.org/153.html --> incorrect-spacing.md --> Broken link inside! (Document not exist in original)
+http://www.s9y.org/154.html --> nl2br.md --> OK
+http://www.s9y.org/156.html --> entries-display-html.md --> OK
+http://www.s9y.org/205.html --> printing-latest-entries-with-javascript.md --> OK
+http://www.s9y.org/206.html --> printing-latest-entries-with-php.md --> OK
+http://www.s9y.org/207.html --> moving-external-page-into-serendipity.md --> OK
 
 * Hosting providers
 http://www.s9y.org/61.html
@@ -156,14 +164,14 @@ Quoted from camp agenda, needs translation and proper work
   
 * Topics
 
-  GETTING STARTED
-  + Fresh installation: http://www.s9y.org/36.html
-  + Upgrading: http://www.s9y.org/37.html
-  + Shared installation: http://www.s9y.org/41.html
-  + Migrating: http://www.s9y.org/53.html
-  + Embedding: http://www.s9y.org/55.html
+  GETTING STARTED (-->Done)
+  + http://www.s9y.org/36.html --> fresh-installation.md --> Broken Links (Docs not in Original), Pics need refresh.
+  + http://www.s9y.org/37.html --> upgrading.md --> links outside "getting started" must be fixed
+  + http://www.s9y.org/41.html --> shared-installation.md --> OK
+  + http://www.s9y.org/53.html --> migration.md links outside "getting started" must be fixed
+  + http://www.s9y.org/55.html --> embedding.md --> OK
 
-  USING SERENDIPITY
+  USING SERENDIPITY (--> in Progress by @mariohommel)
   + Posting http://www.s9y.org/39.html
   + Plugins http://www.s9y.org/45.html
   + User mangement http://www.s9y.org/47.html
