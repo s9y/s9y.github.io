@@ -38,9 +38,12 @@ http://example.com
 
 New tentative structure:
 
+Documents Landing Page
+http://www.s9y.org/1.html (and 2.html) --> docs-landing-page.md --> OK
+
 * Features
-http://www.s9y.org/3.html
-http://www.s9y.org/6.html
+http://www.s9y.org/3.html --> /features/features.md --> OK
+http://www.s9y.org/6.html --> in progress by don chambers
 
 + Mission statement
 + Mid- to long-term goals
@@ -64,7 +67,7 @@ http://www.s9y.org/6.html
 ````
 
 * Downloads
-http://www.s9y.org/12.html
+http://www.s9y.org/12.html --> /downloads/downloads.md --> OK
 
 * FAQ (-->Done)
 http://www.s9y.org/11.html --> serendipity-faq.md --> Some links outside faq.
@@ -104,7 +107,7 @@ http://www.s9y.org/206.html --> printing-latest-entries-with-php.md --> OK
 http://www.s9y.org/207.html --> moving-external-page-into-serendipity.md --> OK
 
 * Hosting providers
-http://www.s9y.org/61.html
+http://www.s9y.org/61.html --> /hosting-providers/hosting-providers.md --> need to provide link to Garvin and Jannis at page bottom once developer page complete
 
 * Contributing
 ````
