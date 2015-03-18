@@ -43,7 +43,7 @@ http://www.s9y.org/1.html (and 2.html) --> docs-landing-page.md --> OK
 
 * Features
 http://www.s9y.org/3.html --> /features/features.md --> OK
-http://www.s9y.org/6.html --> in progress by don chambers
+http://www.s9y.org/6.html --> /features/developer-team.md --> Numerous questions noted in file
 
 + Mission statement
 + Mid- to long-term goals
