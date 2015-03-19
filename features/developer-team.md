@@ -12,7 +12,7 @@ Here are the folks maintaining and having contributed to Serendipity. A full dev
  * [Jannis Hermanns](): Project founder, Server Hosting.  `SHOW AS LINK TO BLOG OR DOC PAGE?`
  * [Onli](http://www.onli-blogging.de): Developer
  * Timbalu
- * [Matthias Gutjahr](http://www.numblog.de/): Developer
+ * [Matthias Gutjahr](http://matthias-gutjahr.de/): Developer
  * [Martin Jacobsen](http://www.martinjacobsen.no/): Serendipity Logo
  * [Matthias Mees](http://yellowled.de/): Theme Contributor, bulletproof theme author, 2k11 theme author.
  * [Don Chambers](http://www.optional-necessity.com/) Theme Contributor, bulletproof theme author.
