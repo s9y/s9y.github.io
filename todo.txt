@@ -1,39 +1,38 @@
 Cowiki -> Markup transforms:
-https://help.github.com/articles/github-flavored-markdown/
-https://help.github.com/articles/markdown-basics/
+  https://help.github.com/articles/github-flavored-markdown/
+  https://help.github.com/articles/markdown-basics/
 
+  ====================
+  (old example)
+  (new example)
 
-====================
-(old example)
-(new example)
+  + HEADING
+  # HEADING
 
-+ HEADING
-# HEADING
+  +++ THIRD LEVEL HEADING
+  ### THIRD LEVEL HEADING
 
-+++ THIRD LEVEL HEADING
-### THIRD LEVEL HEADING
+  *BOLD*
+  **BOLD**
 
-*BOLD*
-**BOLD**
+  <code>...</code>
+  ```...```
 
-<code>...</code>
-```...```
+  ((http://example.com))
+  http://example.com
 
-((http://example.com))
-http://example.com
+  ((http://example.com)(Example link))
+  [Example link](http://example.com)
 
-((http://example.com)(Example link))
-[Example link](http://example.com)
+  * list item
+  * list item
 
-* list item
-* list item
-
-* nested list item
   * nested list item
-* nested liste item
-  * nested list item  
+    * nested list item
+  * nested liste item
+    * nested list item  
 
-====================
+  ====================
 
 
 New tentative structure:
@@ -44,27 +43,6 @@ http://www.s9y.org/1.html (and 2.html) --> docs-landing-page.md --> OK
 * Features
 http://www.s9y.org/3.html --> /features/features.md --> OK
 http://www.s9y.org/6.html --> /features/developer-team.md --> Numerous questions noted in file
-
-+ Mission statement
-+ Mid- to long-term goals
-+ Formulare goals according to https://titanpad.com/iXikywnagT and blogposting
-````
-   * Fokus: Blog-System. kein CMS. Gewisse CMS-Kernfunktionen zwar "nice to have" aber kein Zentrum.
-   * Einfach anpassbar, sowohl für Benutzer via Themes/Plugins/Optionen als auch für Entwickler über API
-   * Niedrige Einstiegshürde, kurze Supportwege, „es funktioniert einfach“, offen für Impulse durch Nutzer und Entwickler.
-   * Lang existierendes, gereiftes System mit Wert auf fortgeführte Nutzung und "Rücksicht" auf Benutzer
-   * "Ein stabiles, sicheres, erweiterbares|flexibles|verlässliches Blog-System"
-     * "Eine verlässliche, sichere und erweiterbare Blog-Software"
-   * (Slogan)
-   * Not mainstream since 2001
-   * Ziele:
-     * "Benutzerfreundlicher" (Bedienung so einfach wie möglich, Anpassung so einfach wie möglich, die Dinge abdecken können die beim Blogging relevant sind) ohne unnötige Komplexität.
-     * Komponenten auf zukunftssichere Technologien anpassen, Kompatibilität und Sicherheit und bestehende Features bewahren
-     * Klare, separierte und anpassbare Codeflows / Architektur
-     * Nachvollziehbarkeit des Codes mit guter Verständlichkeit, für neue Entwickler ohne große Einarbeitungszeit "lesbar".
-     * Funktionen so klar haben, dass keine Labels nötig sind
-
-````
 
 * Downloads
 http://www.s9y.org/12.html --> /downloads/downloads.md --> OK
@@ -110,61 +88,9 @@ http://www.s9y.org/207.html --> moving-external-page-into-serendipity.md --> OK
 http://www.s9y.org/61.html --> /hosting-providers/hosting-providers.md --> need to provide link to Garvin and Jannis at page bottom once developer page complete
 
 * Contributing
-````
-Quoted from camp agenda, needs translation and proper work
-* Umgang mit Feature Requests und Bugs:
-   * Primär erfolgen Support-Themen im Forum. Ein Foren-Account hat für einen Anwender höhere Priorität/Notwendigkeit als ein Github-Account
-   * EIN BUG PRO ISSUE :-)
-   * Github nur englisch, im Forum auch deutsche Meldungen möglich!
-   * Konkrete Bugs (mit Fehlermeldung) können optimalerweise im GitHub-Issuetracker gemeldet werden. Sie können auch im Forum gemeldet werden und ein Entwickler fixt den Bug entweder so direkt, oder stellt es als Issue für den meldenden Nutzer ein
-   * Neue Features werden nur von Entwicklern eingetragen in GitHub als Issue, wenn sie auch konkret umgesetzt werden können. Zu diskutierende features werden im Forum diskutiert, und erst wenn Konsens herrscht von einem Entwickler (oder vom Nutzer mit Github-Account) dann eingestellt werden. 
-   * In Github gemeldete Features die als Diskussion im Forum geführt werden sollen werden sofort geschlossen und auf das Forum verwiesen
-   * Im Forum gemeldete Bugs die als GitHub-Issue eröffent und geschlossen wurden sollten final einen kleinen "wurde gefixt"-Hinweis im Forum zurück erhalten.
-   * Entwickler-Kollegen, die Bugs über Github melden, sollen ohne Forumsverweis willkommen geheißen werden
- * wie anfangen
-   * Ins Github Wiki von Homepage linken
-   * Inhalt grob: "Du willst uns was helfen, guck dir folgendes an, wir brauchen in den Bereichen hilfe, Dir bringt es etwas weil XYZ (Erfahrung, Selbstverwirklichung)"
-   * Kreuzverlinkung auch vom Forum
- * wo brauchen wir Hilfe?
-   * Support (im Board)
-   * Docs
-     * Übersetzung (mind. Deutsch/Englisch)
-   * Übersetzung, z.b. auch von Blog-Postings oder als "deutsche Koordinierungsstelle" für Leute, die gar kein Englisch können?
-   * Vorschlag: Indexseite, Startanleitung auf deutsch, samt Verweis auf das deutsche Forum
-   * Themes (Template-Chooser/Phantom.js)
-   * Plugins ("Plugin-Aktualisierungsblog")
-   * Coding
- * Einstieg ins Coding:
-   * grobe Übersicht über zentrale Module, Programmablauf, pp.
-   * index.php mit functions.etc beschreiben
-   * serendipity_admin beschreiben mit code-einbindung
-   * verzeichnispfade beschreiben, plugins
-   * plugin API - vielleicht angelehnt an die Pluginanleitung? https://www.onli-blogging.de/876/Rohform-eines-Serendipity-Plugins.html https://www.onli-blogging.de/879/Einfuehrung-Serendipity-Plugins-schreiben.html
-   * fallback von templates, was wann anpassen
+  + http://www.s9y.org/20.html --> contributing/index.md --> some TODOs left
+  + http://www.s9y.org/99.html  --> contributing/index.md
 
-````
-  + http://www.s9y.org/20.html
-  + Users
-    - Where to get help, support, news, updates etc.
-    - How to properly report/ask things
-    - Where to discuss features and bugs
-    - Which documents to read
-    - How to help:
-      * Translations
-      * Themes
-      * User-to-User Support
-  + Developers
-    - What we use for what
-    - How to commit, where to fetch, etc.
-    - Links to important Topics (plugin API, Code flow)
-    - List of things we currently need help with:
-      * Translations
-      * Themes
-      * User-Support
-      * Writing blog entries
-      * Optimizing code, i.e. routing
-      * Plugins
-  
 * Topics
 
   GETTING STARTED (-->Done)
@@ -241,3 +167,5 @@ Deprecated documents, remove completely:
 
 
 TODO: UPDATE files in repository with new links in docs/INSTALL
+
+TODO: Check if we use the term "style" or "template" anywhere, where we SHOULD use "theme".
