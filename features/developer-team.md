@@ -13,8 +13,7 @@ Thanks so much to all of them!
 * Current Developers:
  * [Garvin Hicking](http://garv.in): Lead developer since 2003, Maintainer
  * [Onli](http://www.onli-blogging.de): Developer
- * Timbalu/Aristophian/Ophian/Ian
- **TODO: @ophian tell us which name you want here :)*
+ * Ian
  * [Matthias Gutjahr](http://matthias-gutjahr.de/): Developer
  * [Matthias Mees](http://yellowled.de/): Theme Contributor, bulletproof theme author, 2k11 theme author.
  * [Don Chambers](http://www.optional-necessity.com/) Theme Contributor, bulletproof theme author.

@@ -83,6 +83,7 @@ This file is usally called through the URL RewriteRules, and dynamically assembl
 ### deployment directory
 
 Serendipity supports the concept of a "shared installation". This keeps Serendipity as a kind of library in a central directory outside the DocumentRoot. Each blog will then only use stub-files which actually include that library file. The deployment-Directory contains exactly those stubs that point back to the library (through simply "include" calls). Note that the file names are exactly those that the core actually uses.
+For more information, see "Setting up a shared installation" **TODO: Link**
 
 ### Composer / Bundled-Libs
 
@@ -216,38 +217,142 @@ Those layers implement these central functions:
 
 Core variables are:
 
-* S9Y_DATA_PATH
-* S9Y_INCLUDE_PATH
-* S9Y_PEAR_PATH
-* IS_installed
-* IN_serendipity
-* IS_up2date
-* PATH_SMARTY_COMPILE
-* USERLEVEL_ADMIN (255), USERLEVEL_CHIEF (1), USERLEVEL_EDITOR (0)
-* $serendipity['rewrite']
-* $serendipity['serendipityPath']
-* $serendipity['serendipityHTTPPath']
-* $serendipity['baseURL']
-* $serendipity['serendipityAuthedUser']
-* $serendipity['user']
-* $serendipity['email']
-* $serendipity['smarty']
-* $serendipity['logger']
-* **TODO: Describe variables**
+* S9Y_DATA_PATH: If a shared installation is used, points to the directory where Serendipity keeps its per-user files
+* S9Y_INCLUDE_PATH: Path to the core installation of Serendipity
+* S9Y_PEAR_PATH: Path to the bundled PEAR libraries of Serendipity
+* IS_installed: Boolean variable to indicate if Serendipity is properly installed
+* IN_serendipity: Boolean variable to indicate if the Serendipity Framework is loaded
+* IS_up2date: Boolean variable to indicate if the current Serendipity version matches the local files
+* PATH_SMARTY_COMPILE: Path to the folder where temporary Smarty files are kept
+* USERLEVEL_ADMIN (255), USERLEVEL_CHIEF (1), USERLEVEL_EDITOR (0): Constants for user permission levels
+* $serendipity['rewrite']: Indicates which URL rewriting method is used (none, apache errorhandling, mod_rewrite, ...)
+* $serendipity['serendipityPath']: Contains the path to the current Serendipity installation
+* $serendipity['serendipityHTTPPath']: Contains the URL path to the current Serendipity installation
+* $serendipity['baseURL']: Contains the absolute URL to the current Serendipity installation
+* $serendipity['serendipityAuthedUser']: Boolean variable which indicates if a user is logged in
+* $serendipity['user']: The ID of the currently logged-in user
+* $serendipity['email']: The email address of the currently logged-in user
+* $serendipity['smarty']: The central Smarty object
+* $serendipity['logger']: The central logger object (only exists if logging is enabled)
+* $serendipity['uriArguments']: Contains the currently parsed URI arguments to a page call
+* $serendipity['lang']: Which language is currently loaded
+* $serendipity['charset']: Which charset is currently loaded
 
-Some important URL variables:
+Some important URL variables (note that if those specific variables are submitted via POST they get automatically merged into the GET array and acts like a $_REQUEST superglobal):
 
-* $serendipity['GET']['action']
-* $serendipity['GET']['adminAction']
-* $serendipity['GET']['searchTerm']
-* **TODO: Describe variables, check for more**
+* $serendipity['GET']['action']: Indicates which action on the frontend shall be executed (i.e. "read", "search", "comments", "archives", ...) and is evaluated by include/genpage.inc.php.
+* $serendipity['GET']['adminModule']: Indicates which module of the backend shall be executed (i.e. "maintenance", "comments", "entries", ...) and is evaluated by serendipity_admin.php, which includes the specific module from include/admin/.
+* $serendipity['GET']['adminAction']: Indicates which action of a requested module on the frontend shall be executed; the performed action is evaluated by the specific module that it is a part of.
+* $serendipity['GET']['id']: If supplied, applies to a specific entry ID (both backend and frontend)
+* $serendipity['GET']['page']: Indicates the page number (for listing entries) for the frontend
+* $serendipity['GET']['lang_selected']: Allows to change the frontend/backend language (ie "en", "de" language keys)
+* $serendipity['GET']['token']: Some modules require token hashes to prevent XSS attacks
+* $serendipity['GET']['category']: Affects displaying entries, showing entries only belonging to this category ID (multiple categories separated by ";").
+* $serendipity['GET']['hide_category']: Affects displaying entries, hide entries belonging to this category ID (multiple categories separated by ";").
+* $serendipity['GET']['viewAuthor']: Affects displaying entries, only showing entries by this specific author ID (multiple authors separated by ";")..
+* $serendipity['GET']['range']: Affects displaying entries, only showing entries by this date range 
+* $serendipity['GET']['subpage']: Can execute frontend plugins (if not using their own rewrite-URL or external_plugin URL)
+* $serendipity['GET']['searchTerm']: If search is executed, holds the search term
+* $serendipity['GET']['fullFeed']: Boolean to indicate whether the full RSS feed is displayed (for rss.php)
+* $serendipity['GET']['noBanner']: Boolean to indicate if the backend should show the banner
+* $serendipity['GET']['noSidebar']: Boolean to indicate if the backend should show the menu sidebar
+* $serendipity['GET']['noFooter']: Boolean to indicate if the backend should show the footer
 
-On top of that, some global and user-specific configuration is passed through options saved in the database table serendipity_config. Those variables are:
+Note that a parameter like index.php?serendipity[subpage]=XXX gets converted to $serendipity['GET']['subpage']=XXX. But index.php?subpage=YYY will not exist in $serendipity['GET'] due to it's missing prefix.
 
-* $serendipity['embed']
-* $serendipity['useServerOffset']
-* **TODO: List all parameters of include/tpl/config_local|personal.inc.php**
-* **TODO: Describe variables, check for more**
+On top of that, some global and user-specific configuration is passed through options saved in the database table serendipity_config. Those variables are defined in include/tpl/config_local.inc.php and include/tpl/config_personal.inc.php:
+
+#### Local configuration
+
+* $serendipity['dbNames']: Boolean whether to use "SET NAMES" charset directive in database layer
+* $serendipity['uploadPath']: Path to "uploads" directory
+* $serendipity['templatePath']: Path to "templates" directory"
+* $serendipity['uploadHTTPPath']: URL-path to "uploads" directory
+* $serendipity['autodetect_baseURL']: Boolean whether to enable autodetection of HTPP host name
+* $serendipity['defaultBaseURL']: When HTTP-Hostname autodetection is turned off, contains the default URL to Serendipity
+* $serendipity['indexFile']: Name to index.php (used for "Embedded Installation", see **TODO**)
+* $serendipity['permalinkStructure']: Permalink for archives/ patterns
+* $serendipity['permalinkAuthorStructure']: Permalink for authors/ patterns
+* $serendipity['permalinkCategoryStructure']: Permalink for categories/ patterns
+* $serendipity['permalinkFeedAuthorStructure']: Permalink for feeds/authors/ patterns
+* $serendipity['permalinkFeedCategoryStructure']: Permalink for feeds/categories/ patterns
+* $serendipity['permalinkArchivesPath']: URL path for "archives view" detection
+* $serendipity['permalinkArchivePath']: URL path for "single entry" detection
+* $serendipity['permalinkCategoriesPath']: URL path for "category view" detection
+* $serendipity['permalinkFeedsPath']: URL path for "RSS feed" detection
+* $serendipity['permalinkPluginPath']: URL path for "external plugin" detection
+* $serendipity['permalinkSearchPath']: URL path for "search" detection
+* $serendipity['permalinkAdminPath']: URL path for "administration" detection
+* $serendipity['permalinkAuthorsPath']: URL path for "author view" detection
+* $serendipity['permalinkCommentsPath']: URL path for "comments" detection
+* $serendipity['permalinkUnsubscribePath']: URL path for "unsubscribe comment" detection
+* $serendipity['permalinkDeletePath']: URL path for "delete comment" detection
+* $serendipity['permalinkApprovePath']: URL path for "approve comment" detection
+
+* $serendipity['blogTitle']: Title of blog
+* $serendipity['blogDescription']: Subtitle of blog
+* $serendipity['blogMail']: E-Mail address of blog (sending/receiving)
+* $serendipity['allowSubscriptions']: Boolean whether to allow users to subscribe to comments via email
+* $serendipity['allowSubscriptionsOptIn']: Boolean whether comment subscription requires opt-in confirmation
+* $serendipity['useCommentTokens']: Boolean whether to allow approving/deleting comments to the author of entries via email
+* $serendipity['calendar']: Which calendar to use
+* $serendipity['lang_content_negotiation']: Boolean whether user's browser-language is used
+* $serendipity['enablePluginACL']: Boolean whether configuration of plugins applies permission checks
+* $serendipity['updateCheck']: Boolean whether performing update checks is allowed
+* $serendipity['archiveSortStable']: Boolean whether pagination URLs start with the pages enumberated from first or last page
+* $serendipity['searchsort']: Default sort order for sorting search results
+* $serendipity['enforce_RFC2616']: Boolean whether for RSS feeds Conditional Get may be used (see **TODO**)
+* $serendipity['useGzip']: Boolean whether gzip'ing pages is enabled
+* $serendipity['enablePopup']: Boolean whether Popups are used in the frontend (depends on the theme)
+* $serendipity['embed']: Boolean whether embedded mode is enabled (see **TODO**)
+* $serendipity['top_as_links']: Boolean whether links outputted by exit/referrer tracking are clickable (anti-spam)
+* $serendipity['trackReferer']: Boolean whether referrer tracking is enabled
+* $serendipity['blogReferer']: List of referrer URL patters that shall be blocked
+* $serendipity['useServerOffset']: Boolean whether the timezone of the server and the authors differs
+* $serendipity['serverOffsetHours']: How many hours timezone difference are between server and authors
+* $serendipity['showFuturEentries']: Whether to show entries from the future
+* $serendipity['enableACL']: Boolean whether access-control checks are performed for entries, categorie and media database items
+* $serendipity['feedFull']: Affects how entries are displayed in RSS feeds
+* $serendipity['feedBannerURL']: SYNDICATION_PLUGIN_BANNERURL
+* $serendipity['feedBannerWidth']: Width of banner image
+* $serendipity['feedBannerHeight']: Height of banner image
+* $serendipity['feedShowMail']: Whether to reveal authors email adress in feeds
+* $serendipity['feedManagingEditor']: Specify the managing editor of the feeds
+* $serendipity['feedWebmaster']: Specify the webmaster of the feeds
+* $serendipity['feedTtl']: Specify the "time to live" on how often content gets updated
+* $serendipity['feedPubDate']: Whether to embed the publication date of a feed
+* $serendipity['feedCustom']: URL of a location to redirect feedreaders to
+* $serendipity['feedForceCustom']: Whether to force visitors to the redirected feed location even if they call the internal rss.php file
+* $serendipity['magick']: Boolean whether to use imagemagick for converting images
+* $serendipity['convert']: Path to imagemagick binary
+* $serendipity['thumbSuffix']: Suffix to append to converted image thumbnails
+* $serendipity['thumbSize']: Maximum Thumbnail dimension
+* $serendipity['thumbConstraint']: What to apply the maximum thumbnail dimension to
+* $serendipity['maxFileSize']: Maximum file size of uploaded files
+* $serendipity['maxImgWidth']: Maximum width for uploaded images
+* $serendipity['maxImgHeight']: Maximum height for uploaded images
+* $serendipity['uploadResize']: Boolean whether to resize images to maximum size before uploading
+* $serendipity['onTheFlySynch']: Boolean whether every call to the media database checks for updated files
+* $serendipity['dynamicResize']: Whether to allow frontend visitors to resize thumbnails on demand
+* $serendipity['mediaExif']: Whether to parse EXIF information of uploaded files
+* $serendipity['mediaProperties']: Which meta information shall be available in the media database
+* $serendipity['mediaKeywords']: Specifies a list of available keywords to tag media files with
+
+#### Personal Configuration
+
+* $serendipity['wysiwyg']: Whether to use WYSIWYG editor
+* $serendipity['wysiwygToolbar']: Defines the toolbar palette of the WYSIWYG editor
+* $serendipity['mail_comments']: Boolean whether a user receives comments to his entries via mail
+* $serendipity['mail_trackbacks']: Boolean whether a user receives trackbacks to his entries via mail
+* $serendipity['no_create']: If set, the author has no write permissions to anything in the backend
+* $serendipity['right_publish']: Boolean to indicate if an author may publish entries (or only drafts)
+* $serendipity['simpleFilters']: Boolean whether simplified media and entry filter toolbars are shown
+* $serendipity['enableBackendPopup']: Boolean whether popups in the backend are shown inline or as "real" popups
+* $serendipity['moderateCommentsDefault']: Boolean to indicate if new entries are moderated by default
+* $serendipity['allowCommentsDefault']: Boolean to indicate if new entries are able to be commented by default
+* $serendipity['publishDefault']: Indicates if new entries are saved as drafts or publish
+* $serendipity['showMediaToolbar']: Boolean whether to show toolbars for media library even in "picker" mode
+* $serendipity['use_autosave']: Boolean to indicate if browser's autosave feature is used for entries
 
 ### Important API functions
 
@@ -303,23 +408,100 @@ We have created seperate bundles for specific API functions, and a snippet of mo
   * serendipity_loadThemeOptions: Load available/configured options for a specific theme (through config.inc.php of a template directory) into an array.
   * serendipity_loadGlobalThemeOptions: Load global available/configured options for a specific theme into an array.
   * serendipity_hash: Return the SHA1 (with pre-hash) of a value (for storing passwords)
-
-**TODO:**
-* include/functions_entries.inc.php
-* include/functions_entries_admin.inc.php
-* include/functions_images.inc.php
-* include/functions_installer.inc.php
-* include/functions_permalinks.inc.php
-* include/functions_plugins_admin.inc.php
-* include/functions_rss.inc.php
-* include/functions_smarty.inc.php: Serendipity Smarty functions, see below
-* include/functions_trackbacks.inc.php
-* include/functions_upgrader.inc.php
-* include/plugin_api.inc.php: Plugin API framework, see below
-* include/plugin_api_extension.inc.php: Extended Plugin API framework, see below
+* *include/functions_entries.inc.php*: Central functions for entry-related actions
+  * serendipity_fetchCategoryInfo: Return the category properties of a specific category
+  * serendipity_fetchEntryCategories: Fetch a list of all category properties to a specific entry ID
+  * serendipity_fetchEntries: Fetch a list of entries
+  * serendipity_fetchEntry: Fetch a single entry by a specific condition
+  * serendipity_fetchEntryData: Fetch special entry data and attach it to a superarray of entries.
+  * serendipity_fetchEntryProperties: Fetches additional entry properties for a specific entry ID
+  * serendipity_fetchCategories: Fetch a list of available categories for an author
+  * serendipity_printEntries: Passes the list of fetched entries from serendipity_fetchEntries() on to the Smarty layer
+  * serendipity_updertEntry: Inserts a new entry into the database or updates an existing entry
+  * serendipity_deleteEntry:  Delete an entry and everything that belongs to it (comments)
+* *include/functions_entries_admin.inc.php*: Central functions for operating on entries in the backend
+  * serendipity_printEntryForm: Prints the form for editing/creating new blog entries
+  * serendipity_emit_htmlarea_code: Emits the WYSIWYG code for plugins and entries in the backend
+* *include/functions_images.inc.php*: Central functions for media/image handling
+  * serendipity_fetchImagesFromDatabase: Gets a list of media items from our media database
+  * serendipity_fetchImageFromDatabase: Fetch a specific media item from the mediadatabase
+  * serendipity_updateImageInDatabase: Update a media item
+  * serendipity_deleteImage: Delete a media item
+  * serendipity_fetchImages: Open a directory and fetch all existing media items
+  * serendipity_insertImageInDatabase: Insert a media item in the database
+  * serendipity_makeThumbnail: Create a thumbnail for an image
+  * serendipity_generateThumbs: Creates thumbnails for all images in the upload dir
+  * serendipity_syncThumbs: Check all existing thumbnails if they are the right size, insert missing thumbnails
+  * serendipity_functions_gd: Wrapper for GDLib functions
+  * serendipity_calculate_aspect_size: Calculate new size for an image, considering aspect ratio and constraint
+  * serendipity_displayImageList: Display the list of images in our database
+  * serendipity_killPath: Recursively delete a directory tree
+  * serendipity_traversePath: Recursively walk a directory tree
+  * serendipity_getImageData: Given a relative path to an image, construct an array containing all relevant information about that image in the file structure.
+  * serendipity_showMedia: Prints a media item
+* *include/functions_installer.inc.php*: Central functions for installer/configuration
+  * serendipity_updateLocalConfig, serendipity_installFiles: Writes .htaccess and serendipity_config_local.inc.php
+  * serendipity_query_default: Check a default value of a config item from the configuration template files
+  * serendipity_parseTemplate: Parse a configuration template file
+  * serendipity_printConfigTemplate: Parses the configuration array and displays the configuration screen
+* *include/functions_permalinks.inc.php*: Central functions for handling URL patterns
+  * serendipity_makeFilename: Converts a string into a filename that can be used safely in HTTP URLs
+  * serendipity_searchPermalink: Search the reference to a specific permalink
+  * serendipity_rewriteURL: Uses logic to figure out how the URI should look, based on current rewrite rule
+  * serendipity_makePermalink:  Format a permalink according to the configured format
+  * serendipity_archiveURL, serendipity_authorURL, serendipity_categoryURL, serendipity_feedCategoryUrl, serendipity_feedAuthorURL: Create a permalink for specific permalink type
+  * serendipity_currentURL: Returns the URL to the current page that is being viewed
+  * serendipity_getUriArguments: Get the URI Arguments for the current HTTP Request
+* *include/functions_plugins_admin.inc.php*: Central functions for handling the plugins management backend
+  * serendipity_plugin_config: Show the plugin configuration, parses all available configuration types
+* *include/functions_rss.inc.php*: Central function for feed handling
+  * serendipity_printEntries_rss: Parses entries to display them for RSS/Atom feeds to be passed on to generic Smarty templates
 * include/serendipity_smarty_class.inc.php: Serendipity Smarty Framework, see below
-* include/template_api.inc.php: Template API, see below
-* include/genpage.inc.php: Smarty workflow intermediate, see below
+* *include/functions_smarty.inc.php*: Serendipity Smarty functions, see below
+  * serendipity_smarty_init: Central function to initialize Smarty framework and pass along parameters
+  * serendipity_smarty_fetchPrintEntries: Fetch and print a single or multiple entries
+  * serendipity_smarty_showPlugin: Be able to include the output of a sidebar plugin within a smarty template
+  * serendipity_smarty_hookPlugin: Be able to execute the hook of an event plugin and return its output
+  * serendipity_smarty_show: Render a smarty-template
+* *include/functions_trackbacks.inc.php*: Central functions for trackback handling
+  * add_trackback: Receive a trackback
+  * serendipity_handle_references: Search through link body, and automagically send a trackback ping.
+* *include/functions_upgrader.inc.php*: Central functions for upgrader, holds list of deprecated files and functions and other conversion functions when migrating from older versions
+  * serendipity_removeDeadFiles_SPL: Empty a given directory recursively using the Standard PHP Library (SPL) iterator
+* *include/plugin_api.inc.php*: Plugin API framework, see below
+  * serendipity_plugin_api_core_event_hook: Central function with which the Serendipity core can act as a plugin on it's own and "listen" on specific events.
+  * *serendipity_plugin_api*: Central class for operating the plugin API
+    * serendipity_plugin_api::create_plugin_instance: Create an instance of a plugin.
+    * serendipity_plugin_api::enum_plugins: Searches for installed plugins based on specific conditions
+    * serendipity_plugin_api::probePlugin: Auto-detect a plugin and see if the file information is given, and if not, detect it.
+    * serendipity_plugin_api::load_plugin: Instantiates a plugin class
+    * serendipity_plugin_api::getPluginInfo: Gets cached properties/information about a specific plugin, auto-loads a cache of all plugins
+    * serendipity_plugin_api::generate_plugins: Get a list of Sidebar plugins and pass them to Smarty
+    * serendipity_plugin_api::hook_event: Executes a specific Eventhook by checking all plugins that listen on the specified event
+  * *serendipity_property_bag*: Central class for making key/value stores available to plugins
+    * serendipity_property_bag::get: Getter
+    * serendipity_property_bag::set: Setter
+  * *serendpity_plugin*: Central core class for plugins
+    * serendipity_plugin::performConfig: Perform configuration routines. Called by Serendipity when the plugin is being configured.
+    * serendipity_plugin::install: Perform install routines
+    * serendipity_plugin::uninstall: Perform uninstall routines
+    * serendipity_plugin::cleanup: Garbage Collection, called by serendipity after insertion of a config item
+    * serendipity_plugin::introspect: The introspection function of a plugin, to setup properties
+    * serendipity_plugin::introspect_config_item: Introspection of a plugin configuration item
+    * serendipity_plugin::validate: Validate plugin configuration options.
+    * serendipity_plugin::generate_content: Output plugin's contents (Sidebar plugins)
+    * serendipity_plugin::get_config: Get a config value of the plugin
+    * serendipity_plugin::set_config: Sets a configuration value for a plugin
+    * serendipity_plugin::register_dependencies: Auto-Register dependencies of a plugin
+    * serendipity_plugin::parseTemplate: Parses a smarty template file
+  * *serendipity_event*: Class for event plugins
+    * serendipity_event::event_hook: Main logic for making a plugin "listen" to an event
+* *include/plugin_api_extension.inc.php*: Extended Plugin API framework
+  * prepareReorder: Prepare a given one dimension array for reordering
+  * doReorder: Update table for re-ordering records
+  * isEmail: Check if a string is a valid email
+* *include/template_api.inc.php*: Template API, see below
+* *include/genpage.inc.php*: Smarty workflow intermediate, see below
 
 
 ### Error-Handling
@@ -341,19 +523,100 @@ All of our frontend routing is performed through the "index.php" file. Its code 
 4. Call include/genpage.inc.php to setup the output for the required Smarty templates
 5. Initialize Smarty Framework, output template file
 
-**TODO: A few examples for entry-detail and entry-overview and 404?**
+Some examples:
+
+### Archive view
+
+The blog's url http://www.example.com/archives/2019/10/28.html is called by the visitor.
+
+Through the .htaccess file, index.php get assigned to this page call. The index.php file instantiates the Serendipity framework by including the serendipity_config.inc.php file. It sets a view headers and sets up a few variables.
+
+Now the central URL that was called is stored in $uri, and additional parameters (like the date: 2019-10-28) get evaluated and stored in $serendipity['uriArguments'].
+
+Now, multiple regular expressions check the $uri for each possible scenario that could happen. This means, the central PAT_ARCHIVES rule will evaluate true, and execute its workflow.
+
+Inside this if-statement, the $serendipity['uriArguments'] are parsed and operated on, so that possible categories, authors, week formats, pagination numbers or others are recognized. Those variables are stored in parameters like $seredipity['GET']['page'] (pagination) for example.
+
+In our case, the list only contains "2019", "10" and "28". Those are stored in the variables $year, $month and $day. According to the selected calendar (gregorian or persian) these variables are evaluated and passed along to $ts and $te. Those hold timestamps of the passed date minumum and maximum (here: 2019-10-28 00:00 to 2019-10-28 23:59).
+
+Once all variables are setup, include/genpage.inc.php is called to create the usual frontend view. This file checks based on $serendipity['view'] which output and smarty template files it needs to call, executes possible event plugins that listen on events, and after that, assign all data to the requested smarty template.
+
+This output is then emitted as $data from index.php to the browser.
+
+### External plugin
+
+The routing for executing a plugin like http://www.example.com/pages/a-pagetitle.html to match a staticpage plugin's output is very similar to the example above.
+
+The difference is that in this case the usual routing in index.php finds no specific pattern, and then goes to the "404" routing view. Once include/genpage.inc.php operates on that page, the plugin API event hook "genpage" is executed. The staticpage plugin has registered this event hook, and performs routines on its database tables to see if there is an entry that matches the currentl url. If that is the case, it adjusts the serendipity output and passes over its content.
 
 ## Backend (serendipity_admin.php)
 
-**TODO: Core backend**
+For the Serendipity backend, all HTTP calls are routed through serendipity_admin.php. This file instantiates the Serendipity framework, sets up a couple of variables and then performs a central lookup on the URL GET (or POST) variable ?serendipity[adminModule]=XXX. Before each module is included from the file in include/admin/XXX.inc.php, Serendipity performs permission checks to see if the user is authorized to access the given module.
 
-### Modules: X, Y, ...
+Each of the modules (see below) performs their specific actions and evaluate the URL variable ?serendipity[adminAction] to see, which action is performed (like creating an entry, updating an entry, viewing entries, etc.).
 
-**TODO: list include/admin/**
+Each module passes its output and rendering data to a backend smarty template file, which gets saved in $main_content through output-buffering and finally assigns this output to Smarty and displays the admin/index.tpl template file.
+
+### Backend Modules
+
+The list of modules that are routable are:
+
+* *catgegory.inc.php*: Category management
+* *comments.inc.php*: Comment management
+* *configuration.inc.php: Blog configuration
+* *entries.inc.php*: Single Entry management
+* *entries_ovewview.inc.php*: Entry overview
+* *groups.inc.php*: Group / Access mangement
+* *images.inc.php*: Media database
+* *import.inc.php*: Import/Export
+* *maintenance.inc.php*: Maintenance of the blog
+* *overview.inc.php*: The central dashboard
+* *personal.inc.php*: Personal preferences
+* *plugins.inc.php*: Plugin management
+* *templates.inc.php*: Theme management
+* *upgrader.inc.php*: Upgrader functionality
+* *users.inc.php*: User management
 
 ### Importers / Exporters
 
-**TODO: list include/admin/importers/**
+Serendipity supports importing from a lot of different systems. Each system is handled through a unified process put into their own files in the include/admin/importers/ directory.
+
+Each of those files is named like the system they stem from:
+
+* *b2evolution.inc.php*
+* *bblog.inc.php*
+* *blogger.inc.php*
+* *bmachine.inc.php*
+* *geeklog.inc.php*
+* *lifetype.inc.php*
+* *livejournal.inc.php*
+* *moveabletype.inc.php*
+* *nucleus.inc.php*
+* *nuke.inc.php*
+* *old_blogger.inc.php*
+* *phpbb.inc.php*
+* *pivot.inc.php*
+* *pmachine.inc.php*
+* *serendipity.inc.php*
+* *smf.inc.php*
+* *sunlog.inc.php*
+* *textpattern.inc.php*
+* *voodoopad.inc.php*
+* *wordpress-pg.inc.php*
+* *wordpress.inc.php*
+* *generic.inc.php*: Import through a generic RSS feed
+
+All files simple implement their own Class that extends from Serendipity_Import and uses those methods. A good example is the serendipity.inc.php file for a Serendipity importer.
+
+* getImportNotes: Displays specific information about what the importer does
+* Serendipity_Import_Serendipity (Constructor): Defines input GET/POST data as $this->data and popuplates $this->inputFields with a list of configuration options that the importer offers
+* validateData: Checks if all fields are popuplated
+* getInputFields: Wrapper function to return $this->inputFields (or custom variables)
+* import: Central function that is called, can access input data through $this->data.
+
+A class can now implement as many helper functions as it needs; the Serendipity importer uses one method for each kind of metadata it imports: import_cat, import_groups, import_authors and so on. All data is popuplated through another helper function import_table that performs the SQL queries for copying over data.
+
+Please see **TODO:Link** for the database structure if you need to know how to read/write to the Serendipity core tables.
 
 ## Plugins
 
@@ -361,11 +624,141 @@ All of our frontend routing is performed through the "index.php" file. Its code 
 **TODO: Plugin-API
 	https://www.onli-blogging.de/876/Rohform-eines-Serendipity-Plugins.html 
 	https://www.onli-blogging.de/879/Einfuehrung-Serendipity-Plugins-schreiben.html**
+** TODO: serendipity_plugin_api_core_event_hook
 
-Important event hooks:
+** TODO: Example on how to create a plugin that hooks in the admin menu via: backend_sidebar_entries_event_display_XXX**
+** TODO: Example on how to do "smoething" when an entry is saved**
+** TODO: Example on how to create a plugin that does something on Frontend_display
 
-* frontend_configure
-**TODO: Search for hook_event(...) in all Code files**
+### Important event hooks:
+
+The easiest way to see how to implement any given event hook is to search in the .php files for:
+
+```
+hook_event('XXX')
+```
+
+where you replace 'XXX' with the name of the even thook you want to look up. There you can also easily see which $eventData is passed to the hook.
+
+* css: Frontend CSS generation
+* css_backend: Backend CSS generation
+* js: Additional javascript frontend
+* js_backend: Additional javascript backend
+* frontend_configure: Performed when frontend is initialized
+* backend_configure: Performed when backend is initialized
+* backend_publish: Performed when an entry is published
+* backend_save: Performed when an entry is saved (also for drafts!)
+* entry_display: Performed when multiple entries are displayed in the frontend
+* external_plugin: Execution of external plugins that take over complete page flow
+* frontend_display: Performed when a single entry is displayed in the frontend
+* genpage: Performed when smarty framework was initilizaed
+* frontend_display:rss-2.0:namespace: RSS feed namespace
+* frontend_display:atom-1.0:namespace: RSS feed namespace
+* frontend_display:rss-2.0:per_entry: Single entry display in RSS feed
+* frontend_display:atom-1.0:per_entry: Single entry display in Atom feed
+
+### Other event hooks:
+
+Most of these event hooks have self-explanatory names. You can easily look them up in the codebase by searching for those names, they usually only occur once at a specific place in code.
+
+* backend_approvecomment
+* backend_auth
+* backend_cache_entries
+* backend_cache_purge
+* backend_category_addNew
+* backend_category_delete
+* backend_category_showForm
+* backend_category_update
+* backend_comments_top
+* backend_delete_entry
+* backend_deletecomment
+* backend_directory_create
+* backend_directory_delete
+* backend_entry_iframe
+* backend_entry_presave
+* backend_entry_toolbar_body
+* backend_entry_updertEntry
+* backend_entryform
+* backend_entryform_smarty
+* backend_entryproperties
+* backend_frontpage_display
+* backend_http_request
+* backend_image_add
+* backend_image_addHotlink
+* backend_import_entry
+* backend_login
+* backend_loginfail
+* backend_media_check
+* backend_media_delete
+* backend_media_makethumb
+* backend_media_path_exclude_directories
+* backend_media_rename
+* backend_pluginlisting_header
+* backend_pluginlisting_header_upgrade
+* backend_plugins_event_header
+* backend_plugins_fetchlist
+* backend_plugins_fetchplugin
+* backend_plugins_install
+* backend_plugins_new_instance
+* backend_plugins_sidebar_header
+* backend_plugins_update
+* backend_preview
+* backend_sendcomment
+* backend_sendmail
+* backend_sidebar_entries_event_display_XXX: Custom menu items for plugins to hook into.
+* backend_sidebar_entries_event_display_profiles
+* backend_staticpages_insert
+* backend_staticpages_showform
+* backend_staticpages_update
+* backend_templates_configuration_bottom
+* backend_templates_configuration_none
+* backend_templates_configuration_top
+* backend_templates_fetchlist
+* backend_templates_fetchtemplate
+* backend_templates_globalthemeoptions
+* backend_templates_install
+* backend_thumbnail_filename_select
+* backend_trackback_check
+* backend_trackbacks
+* backend_updatecomment
+* backend_users_add
+* backend_users_delete
+* backend_users_edit
+* backend_view_comment
+* backend_wysiwyg
+* backend_wysiwyg_nuggets
+* cronjob
+* cronjob_XXX: Executed on cronjob interval, i.e. cronjob_5min, cronjob_30min, ...
+* entry_groupdata
+* fetch_images_sql
+* fetchcomments
+* frontend_calendar
+* frontend_display:html_layout
+* frontend_display:rss-1.0:once
+* frontend_display:html:per_entry
+* frontend_display_cache
+* frontend_entries_rss
+* frontend_entryproperties
+* frontend_entryproperties_query
+* frontend_fetchentries
+* frontend_fetchentry
+* frontend_generate_plugins
+* frontend_media_showitem
+* frontend_media_showitem_init
+* frontend_rss
+* frontend_saveComment
+* frontend_saveComment_finish
+* frontend_sidebar_plugins
+* frontend_xmlrpc
+* media_getproperties
+* media_getproperties_cached
+* media_showproperties
+* plugin_dashboard_updater
+* quicksearch_plugin
+
+### Creating new event hooks
+
+If there is an event hook missing in the current Serendipity code, a single line is sufficient to add new events. Please let our developers know when you think a specific event is missing (**TODO: Link to "Contributing"**).
 
 ## Themes
 
@@ -383,6 +776,7 @@ Our themes are built upon single Smarty template files. Each file is responsible
 
 ### config.inc.php
 **TODO**
+**TODO: Plugin hooks serendipity_plugin_api_XXX(...)**
 
 ### Smarty methods
 **TODO: functions_smarty.inc.php, serendipity_smarty_class.inc.php**
@@ -397,7 +791,267 @@ Our themes are built upon single Smarty template files. Each file is responsible
 
 **TODO**
 
+### Smarty variables
+
+**TODO: Check all *.php files for "->assign" to get a list
 **TODO**
+
+# Database structure / Entity-Relationship Model
+
+The database structure of Serendipity tries to be self-explanatory. Those are the core tables created by serendipity:
+
+## serendipity_authors
+
+Holds the users/authors. Columns are:
+
+* authorid: Primary ID
+* realname: The full author name
+* username: The loginname
+* password: Hashed password
+* email: E-Mail
+* userlevel: User level (0,1,255) of the user
+* right_publish: Whether author is allowed to publish
+* hashtype: Used password hash (0: old md5, 1: sha1)
+* mail_comments: Configuration option "receive mail notifications for comments"
+* mail_trackbacks: Configuration option "receive mail notifications for trackbacks"
+
+## serendipity_groups
+
+Holds the user groups
+
+* id: Primary ID
+* Name: Name of the group
+
+## serendipity_groupconfig
+
+Holds ACL configuration data of usergroups
+
+* id: Foreign key of serendipity_groups.id
+* property: Property name
+* value: Property value
+
+## serendipity_authorgroups
+
+Holds n:m associations for users to groups
+
+* groupid: Foreign key of serendipity_groups.id
+* authorid: Foreign key of serendipity_authors.authorid
+
+## serendipity_access
+
+Holds access control lists for any kind of stored data (entries, categories, entries) to indicate which author is allowed to access what. Access is granted on a usergroup level.
+
+* groupid: Foreign key of serendipity_groups
+* artifact_id: Foreign key of the item that gets controlled
+* artifact_type: Type of the item (entry, category, ...)
+* artifact_mode: Read or write
+* artifact_index: Possible additional data for an item
+
+## serendipity_comments
+
+Holds the comments to entries
+
+* id: Primary ID
+* entry_id: Foreign key of serendipity_entries.id
+* parent_id: For threaded comments holds the foreign key of serendipity_comments.id
+* timestamp: Time of the comment
+* title: Title of a comment (trackbacks)
+* author: Author of a comment
+* email: E-Mail of the comment's author
+* url: URL of the comment
+* ip: IP of the comment's author
+* body: The comment body
+* type: Comment type (trackback, comment, pingback)
+* subscribed: Whether the comment's author wants subscription notifications of more comments
+* status: Whether the comment is approved/pending
+* referer: URL of the referrer
+
+## serendipity_entries
+
+Holds the blog entries
+
+* id: Primary ID
+* title: Entry title
+* timestamp: Entry timestamp
+* body: Entry body
+* comments: Number of comments for this entry
+* trackbacks: Number of trackbacks for this entry
+* extended: Extended entry body
+* exflag: Boolean to indicate if entry has extended body
+* author: Name of the entry's author
+* authorid: Foreign key to serendipity_authors.id
+* isdraft: Boolean to indicate if entry is a draft
+* allow_comments: Boolean to indicate if comments are allowed
+* last_modified: Timestamp of last modification
+* moderate_comments: Boolean to indicate if comments are moderated
+
+## serendipity_references
+
+Holds parsed references within a blog entry
+
+* id: Primary ID
+* entry_id: Foreign key to serendipity_entries.id
+* link: The link that is references
+* name: Link title
+* type: Link type
+
+## serendipity_exits
+
+Holds external URLs that are captured through exit tracking
+
+* entry_id: Foreign key to serendipity_entries.id where the URL was linked from
+* day: Timestamp of when a link was clicked
+* count: Number of clicks
+* scheme: URL scheme
+* host: URL host
+* port: URL port
+* path: URL path
+* query: URL query part
+
+## serendipity_referrers
+
+Holds external URLs that reference to blog entries
+
+* entry_id: Foreign key to serendipity_entries.id where the URL was linked to
+* day: Timestamp of when a link was incoming
+* count: Number of clicks
+* scheme: URL scheme
+* host: URL host
+* port: URL port
+* path: URL path
+* query: URL query part
+
+## serendipity_config
+
+Holds the central serendipity configuration options
+
+* name: Name of the config option
+* value: Value of the config option
+* authorid: 0 if global, or reference to the authorid that the configuration option is valid for
+
+## serendipity_options
+
+Holds template options.
+
+* name: Name of the config option
+* value: Value of the config option
+* okey: Key/ID of the template the config option belongs to
+
+## serendipity_suppress
+
+Holds URLs that are blocked from exit-tracking
+
+* ip: Incoming IP
+* scheme: URL scheme
+* host: URL host
+* port: URL port
+* path: URL path
+* query: URL query part
+* last: Last access
+
+## serendipity_plugins
+
+Holds the list of enabled plugins
+
+* name: Name of the plugin
+* placement: Type of plugin (event, sidebar, hidden, ...)
+* sort_order: Sort order ID of the plugin
+* authorid: Owner of the plugin
+* path: Path to plugin directory
+
+## serendipity_category
+
+Holds the categories of a blog.
+
+* categoryid: Primary ID
+* category_name: Category name
+* category_icon: A category icon
+* category_description: Description of Category
+* authorid: Owner of category
+* category_left: Nested Set ID of next category for hierarchy
+* category_right: Nested Set ID of previous category for hierarchy
+* parentid: Parent category for hierarchy
+* sort_order: Sort order of a category within parent hierarchy
+* hide_sub: Boolean whether subcategories are hidden
+
+## serendipity_images
+
+Holds media items of the database
+
+* id: Primary ID
+* name: Name of media file
+* extension: Extension of media file
+* mime: Mime-Type of media file
+* size: Filesize
+* dimensions_width: Image dimensions (width)
+* dimensions_height: Image dimensions (height)
+* date: Upload date
+* thumbnaul_name: Thumbnail extension name
+* authorid: Owner of media file
+* path: Storage directory of media file
+* hotlink: Whether media file is hotlinked (comes from foreign server)
+* realname: Full media file
+
+## serendipity_entrycat
+
+Holds n:m associations of entries to categories
+
+* entryid: Foreign key to serendipity_entries.id
+* categoryid: Foreign key to serendipity_category.categoryid
+
+## serendipity_entryproperties
+
+Holds additional entry properties
+
+* entryid: Foreign key to serendipity_entries.id
+* property: Property name
+* value: Property value
+
+## serendipity_mediaproperties
+
+Holds additional properties of media files
+
+* mediaid: Foreign key to serendipity_images.id
+* property: Property name
+* property_group: Property main group
+* property_subgroup: Property sub group
+* value: Property value
+
+## serendipity_permalinks
+
+Holds the created permalinks for articles, authors and categories for lookup purposes.
+
+* permalink: The URL
+* entry_id: The ID of an item
+* type: The typ eof an item (entry, author, category, ...)
+* data: Additional data
+
+## serendipity_plugincategories
+
+Holds categorization information for available plugins
+
+* class_name: Plugin class name
+* category: Name of category the plugin belongs to
+
+## serendipity_pluginlist
+
+Holds information about all available plugins
+
+* plugin_file: Plugin filename
+* class_name: Plugin class name with identifier
+* plugin_class: Normal plugin class name
+* pluginPath: Directory for plugin file
+* name: Name of plugin
+* description: Description of plugin
+* version: Version of plugin
+* upgrade_version: Repository version of plugin
+* plugintype: Type of plugin (event/sidebar)
+* pluginlocation: storage location of plugin
+* stackable: Whether plugin is installable multiple times
+* author: Author of plugin
+* requirements: Installation requirements
+* website: Author of plugin
+* last_modified: Time of last plugin update
 
 # Coding Gudelines
 
