@@ -128,14 +128,14 @@ http://www.s9y.org/61.html --> /hosting-providers/hosting-providers.md --> need 
   DEVELOPING (--> in progress by @mariohommel )
   + http://www.s9y.org/217.html -> integrated into contributing/developers/index.md
   + Themes http://www.s9y.org/44.html -> integrated into contributing/developers/index.md
-
+  + theme options http://www.s9y.org/137.html -> integrated into documentation/developing/themes.md
+  
   + Conditional GET http://www.s9y.org/42.html
   + Internationalization http://www.s9y.org/46.html
   + Smarty http://www.s9y.org/78.html
   + CSS http://www.s9y.org/102.html [Deprecatable?]
   + Lighttpd http://www.s9y.org/119.html
   + entries.tpl http://www.s9y.org/121.html
-  + theme options http://www.s9y.org/137.html
   + IIS http://www.s9y.org/194.html
   + (TODO: Getting started)
   + (TODO: Basic code flow)
