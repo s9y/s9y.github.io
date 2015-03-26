@@ -126,17 +126,17 @@ http://www.s9y.org/61.html --> /hosting-providers/hosting-providers.md --> need 
   + (TODO: Check topics from the book, what is missing as general instructions)
   
   DEVELOPING (--> in progress by @mariohommel )
+  + http://www.s9y.org/217.html -> integrated into contributing/developers/index.md
+  + Themes http://www.s9y.org/44.html -> integrated into contributing/developers/index.md
+
   + Conditional GET http://www.s9y.org/42.html
-  + Themes http://www.s9y.org/44.html
   + Internationalization http://www.s9y.org/46.html
   + Smarty http://www.s9y.org/78.html
   + CSS http://www.s9y.org/102.html [Deprecatable?]
-  + Plugin API http://www.s9y.org/116.html
   + Lighttpd http://www.s9y.org/119.html
   + entries.tpl http://www.s9y.org/121.html
   + theme options http://www.s9y.org/137.html
   + IIS http://www.s9y.org/194.html
-  + Best practice http://www.s9y.org/217.html
   + (TODO: Getting started)
   + (TODO: Basic code flow)
   + (TODO: Check topics from the book, what is missing)
@@ -170,7 +170,8 @@ Deprecated documents, remove completely:
 - http://www.s9y.org/190.html
 - http://www.s9y.org/180.html
 - http://www.s9y.org/181.html
-
+- http://www.s9y.org/116.html
+    
 
 TODO: UPDATE files in repository with new links in docs/INSTALL
 
