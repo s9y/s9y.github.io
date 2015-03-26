@@ -2,8 +2,32 @@
 title: Code primer
 ---
 
-**TODO: See how to best split this up into multiple files**
-**TODO: How to build a table of contents?**
+# TOC
+
+* Code Primer
+  * The "core"
+    * Initializing the Framework: serendipity_config(_local).inc.php
+    * .htaccess
+    * serendipity.css.php
+    * deployment directory
+    * Composer / Bundled-Libs
+    * Internationalization
+    * Other files and directories
+    * Database layers and structure
+    * Important variables and constants
+      * Local configuration
+      * Personal Configuration
+    * Important API functions
+    * Error-Handling
+  * Frontend-Routing:  ndex.php
+    * Archive view
+    * External plugin
+  * Backend-Routing: serendipity_admin.php
+    * Backend Modules
+    * Importers / Exporters
+  * Plugins
+  * Themes
+  * Coding Gudelines
 
 # Code Primer
 
@@ -17,7 +41,7 @@ All our core PHP functions (serendipity_XXX) have phpDoc style comments which ex
 
 ## The "core"
 
-### Initializing the Framework: serendipity_config(_local).inc.php
+### Initializing the Framework: serendipity_config.inc.php and serendipity_config_local.inc.php
 
 The user configuration for the most basic settings required to start the framework lies in **serendipity_config_local.inc.php**. It sets up the basic array **$serendipity**, and configure database credentials and the used Serendipity version.
 
@@ -167,7 +191,7 @@ The subdirectories contain:
 * **templates_c/**: Compile directory for cached templates (and other temporary data)
 * **tests/**: Draft ideas for unit tests
 
-### Database structure and layers
+### Database layers
 
 The database layer offers a central framework trough *include/db/db.inc.php*. Serendipity uses plain SQL statements for its queries. We try to use database-agnostic standard SQL wherever possible, so that it runs on most servers.
 
@@ -212,6 +236,8 @@ Those layers implement these central functions:
 * serendipity_db_end_transaction: Tells the DB Layer to end a DB transaction.
 * serendipity_db_in_sql: Assemble and return SQL condition for a "IN (...)" clause
 * serendipity_db_concat: Returns the SQL code used for concatenating strings
+
+The database structure of Serendipity tries to be self-explanatory. For a list of all Serendipity database tables check out our [Database structure documentation](documentation/developing/database.md).
 
 ### Important variables and constants
 
@@ -356,153 +382,9 @@ On top of that, some global and user-specific configuration is passed through op
 
 ### Important API functions
 
-We have created seperate bundles for specific API functions, and a snippet of most relevant functions defined in those files:
+We have created seperate bundles for specific API functions. An overview of most relevant functions and where they are defined can be found here:
 
-* *include/functions.inc.php*: Most basic functions, includes bundles below.
-  * serendipity_strftime: Date output function, uses local timezone offset (if configured)
-  * serendipity_fetchTemplateInfo: Get information about a specific theme
-  * serendipity_walkRecursive: Recursively walks an 1-dimensional array to map parent IDs and depths, depending on the nested array set.
-  * serendipity_fetchUsers: Fetch the list of Serendipity Authors
-  * serendipity_fetchAuthor: Fetch user data for a specific Serendipity author
-  * serendipity_sendMail: Sends a Mail with Serendipity formatting
-  * serendipity_utf8_encode: Encode a string to UTF-8, if not already in UTF-8 format.
-* *include/compat.inc.php*: Evaluates PHP runtime environment, operate on core variables (i.e. POST/GET short vars, magic quotes), define the error handler.
-  * serendipity_die: Outputs a fatal error
-  * errorToExceptionHandler: Handles PHP errors
-  * serendipity_specialchars: Drop-in replacement of htmlspecialchars() to deal with different charsets
-  * serendipity_entities: Drop-in replacement of htmlentities()
-  * serendipity_entity_decode: Drop-in replacement of html_entity_decode()
-* *include/functions_calenders.inc.php*: Calendar / time calculation
-* *include/functions_comments*: Comment functionality
-  * serendipity_displayCommentForm: Display the Comment form for entries
-  * serendipity_fetchComments: Fetch an array of comments to a specific entry id
-  * serendipity_generateCommentList: Create a HTML SELECT dropdown field which represents all hierarchical comments
-  * serendipity_printComments: Print a list of comments to an entry
-  * serendipity_insertComment, serendipity_saveComment: Store the comment made by a visitor in the database
-  * serendipity_sendComment: Send a comment notice to the admin/author of an entry
-* *include/functions_config.inc.php*: Central functions for user-specific actions and internal routing / authentication
-  * serendipity_set_config_var: Sets a configuration value for the Serendipity Configuration
-  * serendipity_get_config_var: Retrieve a global configuration value for a specific item of the current Serendipity Configuration
-  * serendipity_get_user_config_var: Retrieve an author-specific configuration value for an item of the Serendipity Configuration stored in the DB
-  * serendipity_get_user_var: Retrieves an author-specific account value
-  * serendipity_set_user_var: Updates data from the author-specific account
-  * serendipity_getTemplateFile: Gets the full filename and path of a template file
-  * serendipity_load_configuration: Loads all configuration values and imports them to the $serendipity array
-  * serendipity_logout: Perform logout functions (destroys session data)
-  * serendipity_login: Perform login to Serendipity
-  * serendipity_authenticate_author: Perform user authentication routine
-  * serendipity_userLoggedIn: Check if a user is logged in
-  * serendipity_setCookie: Set a Cookie via HTTP calls, and update $_COOKIE plus $serendipity['COOKIE'] array.
-  * serendipity_getPermissions: Retrieves an array of applying permissions to an author
-  * serendipity_getPermissionNames: Returns the list of available internal Serendipity permission field names
-  * serendipity_checkPermission: Checks if a permission is granted to a specific author
-  * serendipity_getAllGroups: Returns all authorgroups that are available
-  * serendipity_fetchGroup: Fetch the permissions of a certain group
-  * serendipity_getGroups: Gets all groups a user is a member of
-  * serendipity_getGroupUsers: Gets all author IDs of a specific group
-  * serendipity_ACLGrant:  Allow access to a specific item (category or entry) for a specific usergroup
-  * serendipity_ACLGet: Checks if a specific item (category or entry) can be accessed by a specific usergroup
-  * serendipity_ACLCheck: Checks if a specific item (category or entry) can be accessed by a specific Author
-  * serendipity_checkFormToken: Prevent XSRF attacks by checking for a form token
-  * serendipity_setFormToken: Prevent XSRF attacks by setting a form token within HTTP Forms
-  * serendipity_loadThemeOptions: Load available/configured options for a specific theme (through config.inc.php of a template directory) into an array.
-  * serendipity_loadGlobalThemeOptions: Load global available/configured options for a specific theme into an array.
-  * serendipity_hash: Return the SHA1 (with pre-hash) of a value (for storing passwords)
-* *include/functions_entries.inc.php*: Central functions for entry-related actions
-  * serendipity_fetchCategoryInfo: Return the category properties of a specific category
-  * serendipity_fetchEntryCategories: Fetch a list of all category properties to a specific entry ID
-  * serendipity_fetchEntries: Fetch a list of entries
-  * serendipity_fetchEntry: Fetch a single entry by a specific condition
-  * serendipity_fetchEntryData: Fetch special entry data and attach it to a superarray of entries.
-  * serendipity_fetchEntryProperties: Fetches additional entry properties for a specific entry ID
-  * serendipity_fetchCategories: Fetch a list of available categories for an author
-  * serendipity_printEntries: Passes the list of fetched entries from serendipity_fetchEntries() on to the Smarty layer
-  * serendipity_updertEntry: Inserts a new entry into the database or updates an existing entry
-  * serendipity_deleteEntry:  Delete an entry and everything that belongs to it (comments)
-* *include/functions_entries_admin.inc.php*: Central functions for operating on entries in the backend
-  * serendipity_printEntryForm: Prints the form for editing/creating new blog entries
-  * serendipity_emit_htmlarea_code: Emits the WYSIWYG code for plugins and entries in the backend
-* *include/functions_images.inc.php*: Central functions for media/image handling
-  * serendipity_fetchImagesFromDatabase: Gets a list of media items from our media database
-  * serendipity_fetchImageFromDatabase: Fetch a specific media item from the mediadatabase
-  * serendipity_updateImageInDatabase: Update a media item
-  * serendipity_deleteImage: Delete a media item
-  * serendipity_fetchImages: Open a directory and fetch all existing media items
-  * serendipity_insertImageInDatabase: Insert a media item in the database
-  * serendipity_makeThumbnail: Create a thumbnail for an image
-  * serendipity_generateThumbs: Creates thumbnails for all images in the upload dir
-  * serendipity_syncThumbs: Check all existing thumbnails if they are the right size, insert missing thumbnails
-  * serendipity_functions_gd: Wrapper for GDLib functions
-  * serendipity_calculate_aspect_size: Calculate new size for an image, considering aspect ratio and constraint
-  * serendipity_displayImageList: Display the list of images in our database
-  * serendipity_killPath: Recursively delete a directory tree
-  * serendipity_traversePath: Recursively walk a directory tree
-  * serendipity_getImageData: Given a relative path to an image, construct an array containing all relevant information about that image in the file structure.
-  * serendipity_showMedia: Prints a media item
-* *include/functions_installer.inc.php*: Central functions for installer/configuration
-  * serendipity_updateLocalConfig, serendipity_installFiles: Writes .htaccess and serendipity_config_local.inc.php
-  * serendipity_query_default: Check a default value of a config item from the configuration template files
-  * serendipity_parseTemplate: Parse a configuration template file
-  * serendipity_printConfigTemplate: Parses the configuration array and displays the configuration screen
-* *include/functions_permalinks.inc.php*: Central functions for handling URL patterns
-  * serendipity_makeFilename: Converts a string into a filename that can be used safely in HTTP URLs
-  * serendipity_searchPermalink: Search the reference to a specific permalink
-  * serendipity_rewriteURL: Uses logic to figure out how the URI should look, based on current rewrite rule
-  * serendipity_makePermalink:  Format a permalink according to the configured format
-  * serendipity_archiveURL, serendipity_authorURL, serendipity_categoryURL, serendipity_feedCategoryUrl, serendipity_feedAuthorURL: Create a permalink for specific permalink type
-  * serendipity_currentURL: Returns the URL to the current page that is being viewed
-  * serendipity_getUriArguments: Get the URI Arguments for the current HTTP Request
-* *include/functions_plugins_admin.inc.php*: Central functions for handling the plugins management backend
-  * serendipity_plugin_config: Show the plugin configuration, parses all available configuration types
-* *include/functions_rss.inc.php*: Central function for feed handling
-  * serendipity_printEntries_rss: Parses entries to display them for RSS/Atom feeds to be passed on to generic Smarty templates
-* include/serendipity_smarty_class.inc.php: Serendipity Smarty Framework, see below
-* *include/functions_smarty.inc.php*: Serendipity Smarty functions, see below
-  * serendipity_smarty_init: Central function to initialize Smarty framework and pass along parameters
-  * serendipity_smarty_fetchPrintEntries: Fetch and print a single or multiple entries
-  * serendipity_smarty_showPlugin: Be able to include the output of a sidebar plugin within a smarty template
-  * serendipity_smarty_hookPlugin: Be able to execute the hook of an event plugin and return its output
-  * serendipity_smarty_show: Render a smarty-template
-* *include/functions_trackbacks.inc.php*: Central functions for trackback handling
-  * add_trackback: Receive a trackback
-  * serendipity_handle_references: Search through link body, and automagically send a trackback ping.
-* *include/functions_upgrader.inc.php*: Central functions for upgrader, holds list of deprecated files and functions and other conversion functions when migrating from older versions
-  * serendipity_removeDeadFiles_SPL: Empty a given directory recursively using the Standard PHP Library (SPL) iterator
-* *include/plugin_api.inc.php*: Plugin API framework, see below
-  * serendipity_plugin_api_core_event_hook: Central function with which the Serendipity core can act as a plugin on it's own and "listen" on specific events.
-  * *serendipity_plugin_api*: Central class for operating the plugin API
-    * serendipity_plugin_api::create_plugin_instance: Create an instance of a plugin.
-    * serendipity_plugin_api::enum_plugins: Searches for installed plugins based on specific conditions
-    * serendipity_plugin_api::probePlugin: Auto-detect a plugin and see if the file information is given, and if not, detect it.
-    * serendipity_plugin_api::load_plugin: Instantiates a plugin class
-    * serendipity_plugin_api::getPluginInfo: Gets cached properties/information about a specific plugin, auto-loads a cache of all plugins
-    * serendipity_plugin_api::generate_plugins: Get a list of Sidebar plugins and pass them to Smarty
-    * serendipity_plugin_api::hook_event: Executes a specific Eventhook by checking all plugins that listen on the specified event
-  * *serendipity_property_bag*: Central class for making key/value stores available to plugins
-    * serendipity_property_bag::get: Getter
-    * serendipity_property_bag::set: Setter
-  * *serendpity_plugin*: Central core class for plugins
-    * serendipity_plugin::performConfig: Perform configuration routines. Called by Serendipity when the plugin is being configured.
-    * serendipity_plugin::install: Perform install routines
-    * serendipity_plugin::uninstall: Perform uninstall routines
-    * serendipity_plugin::cleanup: Garbage Collection, called by serendipity after insertion of a config item
-    * serendipity_plugin::introspect: The introspection function of a plugin, to setup properties
-    * serendipity_plugin::introspect_config_item: Introspection of a plugin configuration item
-    * serendipity_plugin::validate: Validate plugin configuration options.
-    * serendipity_plugin::generate_content: Output plugin's contents (Sidebar plugins)
-    * serendipity_plugin::get_config: Get a config value of the plugin
-    * serendipity_plugin::set_config: Sets a configuration value for a plugin
-    * serendipity_plugin::register_dependencies: Auto-Register dependencies of a plugin
-    * serendipity_plugin::parseTemplate: Parses a smarty template file
-  * *serendipity_event*: Class for event plugins
-    * serendipity_event::event_hook: Main logic for making a plugin "listen" to an event
-* *include/plugin_api_extension.inc.php*: Extended Plugin API framework
-  * prepareReorder: Prepare a given one dimension array for reordering
-  * doReorder: Update table for re-ordering records
-  * isEmail: Check if a string is a valid email
-* *include/template_api.inc.php*: Template API, see below
-* *include/genpage.inc.php*: Smarty workflow intermediate, see below
-
+[List of Important API functions](documentation/developing/functions.md)
 
 ### Error-Handling
 
@@ -512,8 +394,7 @@ Serendipity uses a default errorhandler (configured as $serendipity['errorhandle
 
 You can overwrite such an errorhandler in your serendipity_config_local.inc.php file by implementing your own function.
 
-
-## Frontend-Routing (index.php)
+## Frontend-Routing: index.php
 
 All of our frontend routing is performed through the "index.php" file. Its code flow is like this:
 
@@ -549,7 +430,7 @@ The routing for executing a plugin like http://www.example.com/pages/a-pagetitle
 
 The difference is that in this case the usual routing in index.php finds no specific pattern, and then goes to the "404" routing view. Once include/genpage.inc.php operates on that page, the plugin API event hook "genpage" is executed. The staticpage plugin has registered this event hook, and performs routines on its database tables to see if there is an entry that matches the currentl url. If that is the case, it adjusts the serendipity output and passes over its content.
 
-## Backend (serendipity_admin.php)
+## Backend-Routing: serendipity_admin.php
 
 For the Serendipity backend, all HTTP calls are routed through serendipity_admin.php. This file instantiates the Serendipity framework, sets up a couple of variables and then performs a central lookup on the URL GET (or POST) variable ?serendipity[adminModule]=XXX. Before each module is included from the file in include/admin/XXX.inc.php, Serendipity performs permission checks to see if the user is authorized to access the given module.
 
@@ -620,145 +501,19 @@ Please see **TODO:Link** for the database structure if you need to know how to r
 
 ## Plugins
 
-**TODO: Describe additional_plugins symlinks!**
-**TODO: Plugin-API
-	https://www.onli-blogging.de/876/Rohform-eines-Serendipity-Plugins.html 
-	https://www.onli-blogging.de/879/Einfuehrung-Serendipity-Plugins-schreiben.html**
-** TODO: serendipity_plugin_api_core_event_hook
-** TODO: Example on how to create a plugin that hooks in the admin menu via: backend_sidebar_entries_event_display_XXX**
-** TODO: Example on how to do "smoething" when an entry is saved**
-** TODO: Example on how to create a plugin that does something on Frontend_display
-** TODO: Example for external_plugin **
+Serendipity can easily be enhanced by plugins. We have coined two different terms for two kinds of plugins.
 
-### Important event hooks:
+**Event-Plugins** are plugins that perform functionality based on events which are "fired" from the core on specific places, like when an entry is displayed, when an entry is saved and so on.
 
-The easiest way to see how to implement any given event hook is to search in the .php files for:
+**Sidebar-Plugins** are simple output plugins that are displayed on the frontend of your blog within a sidebar or footer, or header.
 
-```
-hook_event('XXX')
-```
+Both kinds of plugins can be enabled through the Admin interface, and they can be put into a custom order. For sidebar plugins the order simply visually arranges the output of plugins. For event plugins, the order indicates which plugin gets executed first, which can in turn influence the "pipeline" of plugins coming after that. This is mostly important for Markup plugins that affect the rendering of blog entries: If one event plugin takes care of translating glossary terms to full links, and another plugin is used to mark internal and external links graphically, it would be important the the glossary plugin gets executed first, so that the link-marking plugin can also take care of glossary links. There is no "proper" order of plugins, it all depends on the specific combination of these.
 
-where you replace 'XXX' with the name of the even thook you want to look up. There you can also easily see which $eventData is passed to the hook.
+A plugin is defined by the files in the plugins/ subdirectory. Each plugin has its own distinct directory name which must conform to a prefix "serendipity_plugin_XXX" for sidebar plugins and "serendipity_event_XXX" for event plugins. The same name must then be repeated as the filename of the .php file within that directory.
 
-* css: Frontend CSS generation
-* css_backend: Backend CSS generation
-* js: Additional javascript frontend
-* js_backend: Additional javascript backend
-* frontend_configure: Performed when frontend is initialized
-* backend_configure: Performed when backend is initialized
-* backend_publish: Performed when an entry is published
-* backend_save: Performed when an entry is saved (also for drafts!)
-* entry_display: Performed when multiple entries are displayed in the frontend
-* external_plugin: Execution of external plugins that take over complete page flow
-* frontend_display: Performed when a single entry is displayed in the frontend
-* genpage: Performed when smarty framework was initilizaed
-* frontend_display:rss-2.0:namespace: RSS feed namespace
-* frontend_display:atom-1.0:namespace: RSS feed namespace
-* frontend_display:rss-2.0:per_entry: Single entry display in RSS feed
-* frontend_display:atom-1.0:per_entry: Single entry display in Atom feed
+Plugin files within those directories are then only loaded, if you have activated/installed that plugin through the Admin interface.
 
-### Other event hooks:
-
-Most of these event hooks have self-explanatory names. You can easily look them up in the codebase by searching for those names, they usually only occur once at a specific place in code.
-
-* backend_approvecomment
-* backend_auth
-* backend_cache_entries
-* backend_cache_purge
-* backend_category_addNew
-* backend_category_delete
-* backend_category_showForm
-* backend_category_update
-* backend_comments_top
-* backend_delete_entry
-* backend_deletecomment
-* backend_directory_create
-* backend_directory_delete
-* backend_entry_iframe
-* backend_entry_presave
-* backend_entry_toolbar_body
-* backend_entry_updertEntry
-* backend_entryform
-* backend_entryform_smarty
-* backend_entryproperties
-* backend_frontpage_display
-* backend_http_request
-* backend_image_add
-* backend_image_addHotlink
-* backend_import_entry
-* backend_login
-* backend_loginfail
-* backend_media_check
-* backend_media_delete
-* backend_media_makethumb
-* backend_media_path_exclude_directories
-* backend_media_rename
-* backend_pluginlisting_header
-* backend_pluginlisting_header_upgrade
-* backend_plugins_event_header
-* backend_plugins_fetchlist
-* backend_plugins_fetchplugin
-* backend_plugins_install
-* backend_plugins_new_instance
-* backend_plugins_sidebar_header
-* backend_plugins_update
-* backend_preview
-* backend_sendcomment
-* backend_sendmail
-* backend_sidebar_entries_event_display_XXX: Custom menu items for plugins to hook into.
-* backend_sidebar_entries_event_display_profiles
-* backend_staticpages_insert
-* backend_staticpages_showform
-* backend_staticpages_update
-* backend_templates_configuration_bottom
-* backend_templates_configuration_none
-* backend_templates_configuration_top
-* backend_templates_fetchlist
-* backend_templates_fetchtemplate
-* backend_templates_globalthemeoptions
-* backend_templates_install
-* backend_thumbnail_filename_select
-* backend_trackback_check
-* backend_trackbacks
-* backend_updatecomment
-* backend_users_add
-* backend_users_delete
-* backend_users_edit
-* backend_view_comment
-* backend_wysiwyg
-* backend_wysiwyg_nuggets
-* cronjob
-* cronjob_XXX: Executed on cronjob interval, i.e. cronjob_5min, cronjob_30min, ...
-* entry_groupdata
-* fetch_images_sql
-* fetchcomments
-* frontend_calendar
-* frontend_display:html_layout
-* frontend_display:rss-1.0:once
-* frontend_display:html:per_entry
-* frontend_display_cache
-* frontend_entries_rss
-* frontend_entryproperties
-* frontend_entryproperties_query
-* frontend_fetchentries
-* frontend_fetchentry
-* frontend_generate_plugins
-* frontend_media_showitem
-* frontend_media_showitem_init
-* frontend_rss
-* frontend_saveComment
-* frontend_saveComment_finish
-* frontend_sidebar_plugins
-* frontend_xmlrpc
-* media_getproperties
-* media_getproperties_cached
-* media_showproperties
-* plugin_dashboard_updater
-* quicksearch_plugin
-
-### Creating new event hooks
-
-If there is an event hook missing in the current Serendipity code, a single line is sufficient to add new events. Please let our developers know when you think a specific event is missing (**TODO: Link to "Contributing"**).
+To see how the plugin files must be coded, please refer to our [Plugin API Documentation](documentation/developing/plugin-api.md).
 
 ## Themes
 
@@ -768,301 +523,9 @@ So whenever we say "Theme", we mean that what an end-user selects to affect outp
 
 Our themes are built upon single Smarty template files. Each file is responsible for a specific aspect of frontend or backend display. Serendipity implements both frontend and backend themes, so that you can basically build your own backend. The drawback to building a custom backend of course is, that anytime we add new functionality, we only add this to our internal default theme. We suggest to only make visual changes on the CSS side of things, unless you know what you are doing.
 
-**TODO: Template API (xml, php alternatives)
+A description for how themes are built, which variables they refer to please check the [Theme Documentation](documentation/developing/themes.md).
 
-### Supported filenames
-
-**TODO**
-
-### config.inc.php
-**TODO**
-**TODO: Plugin hooks serendipity_plugin_api_XXX(...)**
-
-### Smarty methods
-**TODO: functions_smarty.inc.php, serendipity_smarty_class.inc.php**
-
-### "Fallback"-Chaining, Default-Templates
-
-**TODO**
-
-### user.css (frontend and backend)
-
-### jQuery
-
-**TODO**
-
-### Smarty variables
-
-**TODO: Check all *.php files for "->assign" to get a list
-**TODO**
-
-### Best practice for themes
-
-* Make sure that you only change template files you absolutely must. Serendipity can fallback to use default template files, so if you do not need to change the 'index.tpl' file for example, please simply do not provide that file.
-* If your templates needs a config.inc.php file or custom language files, please try to make those files as small as possible. Performance counts, and PHP code should only be used if the code in there is fit to be executed on each page visit. You can disable smarty security through $serendipity['smarty']->security = false - but only do this, if you absolutely must due to custom use of unregistered PHP functions or modifiers or {php} calls.
-* Please try to properly indent all of your HTML and CSS rules by using 4 spaces (not tabs).
-* Please try to use HTML5 or proper XHTML. HTML 4.0 should really no longer be used.
-* Please try to make sure your template can be viewed in all modern browsers.
-* If you provide foreign language files, also deliver the language files inside the "UTF-8" subdirectory of your template, and save them in UTF-8 encoding. Save all files using UNIX Linebreaks (\n) if possible.
-
-# Database structure / Entity-Relationship Model
-
-The database structure of Serendipity tries to be self-explanatory. Those are the core tables created by serendipity:
-
-## serendipity_authors
-
-Holds the users/authors. Columns are:
-
-* authorid: Primary ID
-* realname: The full author name
-* username: The loginname
-* password: Hashed password
-* email: E-Mail
-* userlevel: User level (0,1,255) of the user
-* right_publish: Whether author is allowed to publish
-* hashtype: Used password hash (0: old md5, 1: sha1)
-* mail_comments: Configuration option "receive mail notifications for comments"
-* mail_trackbacks: Configuration option "receive mail notifications for trackbacks"
-
-## serendipity_groups
-
-Holds the user groups
-
-* id: Primary ID
-* Name: Name of the group
-
-## serendipity_groupconfig
-
-Holds ACL configuration data of usergroups
-
-* id: Foreign key of serendipity_groups.id
-* property: Property name
-* value: Property value
-
-## serendipity_authorgroups
-
-Holds n:m associations for users to groups
-
-* groupid: Foreign key of serendipity_groups.id
-* authorid: Foreign key of serendipity_authors.authorid
-
-## serendipity_access
-
-Holds access control lists for any kind of stored data (entries, categories, entries) to indicate which author is allowed to access what. Access is granted on a usergroup level.
-
-* groupid: Foreign key of serendipity_groups
-* artifact_id: Foreign key of the item that gets controlled
-* artifact_type: Type of the item (entry, category, ...)
-* artifact_mode: Read or write
-* artifact_index: Possible additional data for an item
-
-## serendipity_comments
-
-Holds the comments to entries
-
-* id: Primary ID
-* entry_id: Foreign key of serendipity_entries.id
-* parent_id: For threaded comments holds the foreign key of serendipity_comments.id
-* timestamp: Time of the comment
-* title: Title of a comment (trackbacks)
-* author: Author of a comment
-* email: E-Mail of the comment's author
-* url: URL of the comment
-* ip: IP of the comment's author
-* body: The comment body
-* type: Comment type (trackback, comment, pingback)
-* subscribed: Whether the comment's author wants subscription notifications of more comments
-* status: Whether the comment is approved/pending
-* referer: URL of the referrer
-
-## serendipity_entries
-
-Holds the blog entries
-
-* id: Primary ID
-* title: Entry title
-* timestamp: Entry timestamp
-* body: Entry body
-* comments: Number of comments for this entry
-* trackbacks: Number of trackbacks for this entry
-* extended: Extended entry body
-* exflag: Boolean to indicate if entry has extended body
-* author: Name of the entry's author
-* authorid: Foreign key to serendipity_authors.id
-* isdraft: Boolean to indicate if entry is a draft
-* allow_comments: Boolean to indicate if comments are allowed
-* last_modified: Timestamp of last modification
-* moderate_comments: Boolean to indicate if comments are moderated
-
-## serendipity_references
-
-Holds parsed references within a blog entry
-
-* id: Primary ID
-* entry_id: Foreign key to serendipity_entries.id
-* link: The link that is references
-* name: Link title
-* type: Link type
-
-## serendipity_exits
-
-Holds external URLs that are captured through exit tracking
-
-* entry_id: Foreign key to serendipity_entries.id where the URL was linked from
-* day: Timestamp of when a link was clicked
-* count: Number of clicks
-* scheme: URL scheme
-* host: URL host
-* port: URL port
-* path: URL path
-* query: URL query part
-
-## serendipity_referrers
-
-Holds external URLs that reference to blog entries
-
-* entry_id: Foreign key to serendipity_entries.id where the URL was linked to
-* day: Timestamp of when a link was incoming
-* count: Number of clicks
-* scheme: URL scheme
-* host: URL host
-* port: URL port
-* path: URL path
-* query: URL query part
-
-## serendipity_config
-
-Holds the central serendipity configuration options
-
-* name: Name of the config option
-* value: Value of the config option
-* authorid: 0 if global, or reference to the authorid that the configuration option is valid for
-
-## serendipity_options
-
-Holds template options.
-
-* name: Name of the config option
-* value: Value of the config option
-* okey: Key/ID of the template the config option belongs to
-
-## serendipity_suppress
-
-Holds URLs that are blocked from exit-tracking
-
-* ip: Incoming IP
-* scheme: URL scheme
-* host: URL host
-* port: URL port
-* path: URL path
-* query: URL query part
-* last: Last access
-
-## serendipity_plugins
-
-Holds the list of enabled plugins
-
-* name: Name of the plugin
-* placement: Type of plugin (event, sidebar, hidden, ...)
-* sort_order: Sort order ID of the plugin
-* authorid: Owner of the plugin
-* path: Path to plugin directory
-
-## serendipity_category
-
-Holds the categories of a blog.
-
-* categoryid: Primary ID
-* category_name: Category name
-* category_icon: A category icon
-* category_description: Description of Category
-* authorid: Owner of category
-* category_left: Nested Set ID of next category for hierarchy
-* category_right: Nested Set ID of previous category for hierarchy
-* parentid: Parent category for hierarchy
-* sort_order: Sort order of a category within parent hierarchy
-* hide_sub: Boolean whether subcategories are hidden
-
-## serendipity_images
-
-Holds media items of the database
-
-* id: Primary ID
-* name: Name of media file
-* extension: Extension of media file
-* mime: Mime-Type of media file
-* size: Filesize
-* dimensions_width: Image dimensions (width)
-* dimensions_height: Image dimensions (height)
-* date: Upload date
-* thumbnaul_name: Thumbnail extension name
-* authorid: Owner of media file
-* path: Storage directory of media file
-* hotlink: Whether media file is hotlinked (comes from foreign server)
-* realname: Full media file
-
-## serendipity_entrycat
-
-Holds n:m associations of entries to categories
-
-* entryid: Foreign key to serendipity_entries.id
-* categoryid: Foreign key to serendipity_category.categoryid
-
-## serendipity_entryproperties
-
-Holds additional entry properties
-
-* entryid: Foreign key to serendipity_entries.id
-* property: Property name
-* value: Property value
-
-## serendipity_mediaproperties
-
-Holds additional properties of media files
-
-* mediaid: Foreign key to serendipity_images.id
-* property: Property name
-* property_group: Property main group
-* property_subgroup: Property sub group
-* value: Property value
-
-## serendipity_permalinks
-
-Holds the created permalinks for articles, authors and categories for lookup purposes.
-
-* permalink: The URL
-* entry_id: The ID of an item
-* type: The typ eof an item (entry, author, category, ...)
-* data: Additional data
-
-## serendipity_plugincategories
-
-Holds categorization information for available plugins
-
-* class_name: Plugin class name
-* category: Name of category the plugin belongs to
-
-## serendipity_pluginlist
-
-Holds information about all available plugins
-
-* plugin_file: Plugin filename
-* class_name: Plugin class name with identifier
-* plugin_class: Normal plugin class name
-* pluginPath: Directory for plugin file
-* name: Name of plugin
-* description: Description of plugin
-* version: Version of plugin
-* upgrade_version: Repository version of plugin
-* plugintype: Type of plugin (event/sidebar)
-* pluginlocation: storage location of plugin
-* stackable: Whether plugin is installable multiple times
-* author: Author of plugin
-* requirements: Installation requirements
-* website: Author of plugin
-* last_modified: Time of last plugin update
-
-# Coding Gudelines
+## Coding Gudelines
 
 Serendipity has been around since 2002, and code has been gradually built upon the same core. This has advantages (stability, adaptibility, compatibility), and also disadvantages ("old flair", mixed code patterns).
 
