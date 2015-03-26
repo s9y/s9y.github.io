@@ -81,8 +81,8 @@ On top of that, certain variables that are not included in the Serendipity Confi
 * $serendipity['fetchLimit']: How many entries to display (default 15)
 * $serendipity['RSSfetchLimit']: How many entries to display within RSS feed (default 15)
 * $serendipity['use_PEAR']: By default, Serendipity will use externally provided PEAR files (if existing). To force using the PEAR libraries bundled with Serendipity, set this variable to FALSE.
-* $serendipity['useHTTP-Auth']: If enabled (on by default, requires mod_php), users can log in to the blog by specifying user/password in the URL like http://user:password@example.com/serendipity_admin.php (default true)
-* $serendipity['cacheControl'] (default true)
+* $serendipity['useHTTP-Auth']: If enabled (on by default, requires mod_php), users can log in to the blog by specifying user/password in the URL like ```http://user:password@example.com/serendipity_admin.php``` (default true)
+* $serendipity['cacheControl']: (default true)
 * $serendipity['expose_s9y']: Whether to expose Serendipity version number (default true)
 * $serendipity['forceBase64']: When enabled, mails are encoded with base64 instead of imap_8bit (default false)
 * $serendipity['use_iframe']: When enabled, uses an iframe to save entries in the backend to prevent timeouts (default true)
