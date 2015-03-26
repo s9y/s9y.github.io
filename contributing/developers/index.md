@@ -270,7 +270,7 @@ On top of that, some global and user-specific configuration is passed through op
 * $serendipity['uploadHTTPPath']: URL-path to "uploads" directory
 * $serendipity['autodetect_baseURL']: Boolean whether to enable autodetection of HTPP host name
 * $serendipity['defaultBaseURL']: When HTTP-Hostname autodetection is turned off, contains the default URL to Serendipity
-* $serendipity['indexFile']: Name to index.php (used for "Embedded Installation", see **TODO**)
+* $serendipity['indexFile']: Name to index.php (used for "Embedded Installation", see **TODO: Link**)
 * $serendipity['permalinkStructure']: Permalink for archives/ patterns
 * $serendipity['permalinkAuthorStructure']: Permalink for authors/ patterns
 * $serendipity['permalinkCategoryStructure']: Permalink for categories/ patterns
@@ -301,10 +301,10 @@ On top of that, some global and user-specific configuration is passed through op
 * $serendipity['updateCheck']: Boolean whether performing update checks is allowed
 * $serendipity['archiveSortStable']: Boolean whether pagination URLs start with the pages enumberated from first or last page
 * $serendipity['searchsort']: Default sort order for sorting search results
-* $serendipity['enforce_RFC2616']: Boolean whether for RSS feeds Conditional Get may be used (see **TODO**)
+* $serendipity['enforce_RFC2616']: Boolean whether for RSS feeds Conditional Get may be used (see **TODO: Link**)
 * $serendipity['useGzip']: Boolean whether gzip'ing pages is enabled
 * $serendipity['enablePopup']: Boolean whether Popups are used in the frontend (depends on the theme)
-* $serendipity['embed']: Boolean whether embedded mode is enabled (see **TODO**)
+* $serendipity['embed']: Boolean whether embedded mode is enabled (see **TODO: Link**)
 * $serendipity['top_as_links']: Boolean whether links outputted by exit/referrer tracking are clickable (anti-spam)
 * $serendipity['trackReferer']: Boolean whether referrer tracking is enabled
 * $serendipity['blogReferer']: List of referrer URL patters that shall be blocked
@@ -625,10 +625,10 @@ Please see **TODO:Link** for the database structure if you need to know how to r
 	https://www.onli-blogging.de/876/Rohform-eines-Serendipity-Plugins.html 
 	https://www.onli-blogging.de/879/Einfuehrung-Serendipity-Plugins-schreiben.html**
 ** TODO: serendipity_plugin_api_core_event_hook
-
 ** TODO: Example on how to create a plugin that hooks in the admin menu via: backend_sidebar_entries_event_display_XXX**
 ** TODO: Example on how to do "smoething" when an entry is saved**
 ** TODO: Example on how to create a plugin that does something on Frontend_display
+** TODO: Example for external_plugin **
 
 ### Important event hooks:
 
@@ -795,6 +795,15 @@ Our themes are built upon single Smarty template files. Each file is responsible
 
 **TODO: Check all *.php files for "->assign" to get a list
 **TODO**
+
+### Best practice for themes
+
+* Make sure that you only change template files you absolutely must. Serendipity can fallback to use default template files, so if you do not need to change the 'index.tpl' file for example, please simply do not provide that file.
+* If your templates needs a config.inc.php file or custom language files, please try to make those files as small as possible. Performance counts, and PHP code should only be used if the code in there is fit to be executed on each page visit. You can disable smarty security through $serendipity['smarty']->security = false - but only do this, if you absolutely must due to custom use of unregistered PHP functions or modifiers or {php} calls.
+* Please try to properly indent all of your HTML and CSS rules by using 4 spaces (not tabs).
+* Please try to use HTML5 or proper XHTML. HTML 4.0 should really no longer be used.
+* Please try to make sure your template can be viewed in all modern browsers.
+* If you provide foreign language files, also deliver the language files inside the "UTF-8" subdirectory of your template, and save them in UTF-8 encoding. Save all files using UNIX Linebreaks (\n) if possible.
 
 # Database structure / Entity-Relationship Model
 
@@ -1080,6 +1089,12 @@ function serendipity_function($var1, $var2, $var3) {
 * Prefix framework function names with serendipity_ and after that, use camelCase naming
 * Try to use camelCase naming for new variables (currently, there is a mixture of function/variable names with underscore characters and camelCasing)
 * Always escape HTML output of unsafe user input with serendipity_specialchars()
+* If your code/plugin uses administrative tasks in the backend, make sure you use the serendipityFormToken() functions to protect against XSRF.
 * Always escape database input of unsafe user input with either implicit typecasting (int)$_REQUEST['var'] or serendipity_db_escape_string()
 * Write database-agnostic standard SQL wherever possible; if you require database-specific SQL, add codeforks with a switch($serendipity['dbType']) statement.
-**TODO: Check for more coding guidelines**
+* Try to cache results that come from foreign URLs. If your plugins displays an RSS feed, it shouldn't be fetched each execution cycle of the plugin, but rather only every X minutes. Provide a configuration option to let the user configure his own caching period.
+* Always abstract any output messages with language constants. Always include an english language file of your plugin.
+* If you enhance functionality of a plugin, please add a file called "ChangeLog" documenting changes. If you fix core code or add new functionality in the core, document this in docs/NEWS.
+* If you bundle foreign code, make sure you indicate the right licensing of your plugins. By default, a s9y plugin is BSD licensed.
+* If your plugin has foreign code dependencies, either include those in the plugin or make sure, your plugin does not bail out with a fatal error otherwise. It should always alarm the user what's missing.
+* Closing Words: Take a look at existing plugins. What has worked in the past, might work out for you as a draft for your own plugin.
