@@ -122,13 +122,13 @@ We currently bundle:
   * **PEAR::Text** for basic Text/Wiki operations
   * **PEAR::XML** for XML operations
 * **Onyx** for RSS parsing
-* **simplepie* for advanced Atom and RSS parsing
+* **simplepie** for advanced Atom and RSS parsing
 * **Smarty** for our templating infrastructure
 * **composer** for library maintenance
 * **katzgrau/klogger**, **psr** as a central low-level logging facility
 * **zendframework/zend-db/** as an (optional) database layer intermediate
 * **create_release.sh** is the script we use to bundle releases
-* **serendipity_generateFTPChecksums.php* is the code used by the create_release.sh to create the **checksums.inc.php* file
+* **serendipity_generateFTPChecksums.php** is the code used by the create_release.sh to create the **checksums.inc.php* file
 
 ### Internationalization
 
@@ -314,7 +314,6 @@ On top of that, some global and user-specific configuration is passed through op
 * $serendipity['permalinkUnsubscribePath']: URL path for "unsubscribe comment" detection
 * $serendipity['permalinkDeletePath']: URL path for "delete comment" detection
 * $serendipity['permalinkApprovePath']: URL path for "approve comment" detection
-
 * $serendipity['blogTitle']: Title of blog
 * $serendipity['blogDescription']: Subtitle of blog
 * $serendipity['blogMail']: E-Mail address of blog (sending/receiving)
@@ -416,7 +415,7 @@ Now the central URL that was called is stored in $uri, and additional parameters
 
 Now, multiple regular expressions check the $uri for each possible scenario that could happen. This means, the central PAT_ARCHIVES rule will evaluate true, and execute its workflow.
 
-Inside this if-statement, the $serendipity['uriArguments'] are parsed and operated on, so that possible categories, authors, week formats, pagination numbers or others are recognized. Those variables are stored in parameters like $seredipity['GET']['page'] (pagination) for example.
+Inside this if-statement, the $serendipity['uriArguments'] are parsed and operated on, so that possible categories, authors, week formats, pagination numbers or others are recognized. Those variables are stored in parameters like ```$serendipity['GET']['page']``` (pagination) for example.
 
 In our case, the list only contains "2019", "10" and "28". Those are stored in the variables $year, $month and $day. According to the selected calendar (gregorian or persian) these variables are evaluated and passed along to $ts and $te. Those hold timestamps of the passed date minumum and maximum (here: 2019-10-28 00:00 to 2019-10-28 23:59).
 
@@ -442,21 +441,21 @@ Each module passes its output and rendering data to a backend smarty template fi
 
 The list of modules that are routable are:
 
-* *catgegory.inc.php*: Category management
-* *comments.inc.php*: Comment management
-* *configuration.inc.php: Blog configuration
-* *entries.inc.php*: Single Entry management
-* *entries_ovewview.inc.php*: Entry overview
-* *groups.inc.php*: Group / Access mangement
-* *images.inc.php*: Media database
-* *import.inc.php*: Import/Export
-* *maintenance.inc.php*: Maintenance of the blog
-* *overview.inc.php*: The central dashboard
-* *personal.inc.php*: Personal preferences
-* *plugins.inc.php*: Plugin management
-* *templates.inc.php*: Theme management
-* *upgrader.inc.php*: Upgrader functionality
-* *users.inc.php*: User management
+* **catgegory.inc.php**: Category management
+* **comments.inc.php**: Comment management
+* **configuration.inc.php**: Blog configuration
+* **entries.inc.php**: Single Entry management
+* **entries_ovewview.inc.php**: Entry overview
+* **groups.inc.php**: Group / Access mangement
+* **images.inc.php**: Media database
+* **import.inc.php**: Import/Export
+* **maintenance.inc.php**: Maintenance of the blog
+* **overview.inc.php**: The central dashboard
+* **personal.inc.php**: Personal preferences
+* **plugins.inc.php**: Plugin management
+* **templates.inc.php**: Theme management
+* **upgrader.inc.php**: Upgrader functionality
+* **users.inc.php**: User management
 
 ### Importers / Exporters
 
@@ -464,28 +463,28 @@ Serendipity supports importing from a lot of different systems. Each system is h
 
 Each of those files is named like the system they stem from:
 
-* *b2evolution.inc.php*
-* *bblog.inc.php*
-* *blogger.inc.php*
-* *bmachine.inc.php*
-* *geeklog.inc.php*
-* *lifetype.inc.php*
-* *livejournal.inc.php*
-* *moveabletype.inc.php*
-* *nucleus.inc.php*
-* *nuke.inc.php*
-* *old_blogger.inc.php*
-* *phpbb.inc.php*
-* *pivot.inc.php*
-* *pmachine.inc.php*
-* *serendipity.inc.php*
-* *smf.inc.php*
-* *sunlog.inc.php*
-* *textpattern.inc.php*
-* *voodoopad.inc.php*
-* *wordpress-pg.inc.php*
-* *wordpress.inc.php*
-* *generic.inc.php*: Import through a generic RSS feed
+* **b2evolution.inc.php**
+* **bblog.inc.php**
+* **blogger.inc.php**
+* **bmachine.inc.php**
+* **geeklog.inc.php**
+* **lifetype.inc.php**
+* **livejournal.inc.php**
+* **moveabletype.inc.php**
+* **nucleus.inc.php**
+* **nuke.inc.php**
+* **old_blogger.inc.php**
+* **phpbb.inc.php**
+* **pivot.inc.php**
+* **pmachine.inc.php**
+* **serendipity.inc.php**
+* **smf.inc.php**
+* **sunlog.inc.php**
+* **textpattern.inc.php**
+* **voodoopad.inc.php**
+* **wordpress-pg.inc.php**
+* **wordpress.inc.php**
+* **generic.inc.php**: Import through a generic RSS feed
 
 All files simple implement their own Class that extends from Serendipity_Import and uses those methods. A good example is the serendipity.inc.php file for a Serendipity importer.
 
