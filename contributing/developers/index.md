@@ -19,7 +19,7 @@ title: Code primer
       * Personal Configuration
     * Important API functions
     * Error-Handling
-  * Frontend-Routing:  ndex.php
+  * Frontend-Routing: index.php
     * Archive view
     * External plugin
   * Backend-Routing: serendipity_admin.php

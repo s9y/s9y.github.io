@@ -370,6 +370,8 @@ $template_config = array(
 
 ```
 
+#### Configuration keys
+
 This example defines four different configuration options. Each configuration option has a specific variable name, a title displayed for the user, an indicator of what type it is, and its available options. Those are defined by these array keys:
 
 * **var**: Defines what variable name is later used so that you can check for it in the Smarty template files. ```'var' => 'layouttype'``` would later be accessible as ```{$template_option.layouttype}``` in the index.tpl file for example.
