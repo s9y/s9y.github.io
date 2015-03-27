@@ -24,6 +24,9 @@ This page provides more in depth description of the inner workings.
 ** TODO: Example on how to create a plugin that does something on Frontend_display
 ** TODO: Example for external_plugin **
 
+** TODO: How to use in Smarty**
+{$eventData|serendipity_refhookPlugin}
+
 ## Important event hooks:
 
 The easiest way to see how to implement any given event hook is to search in the .php files for:
