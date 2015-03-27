@@ -133,7 +133,6 @@ http://www.s9y.org/61.html --> /hosting-providers/hosting-providers.md --> need 
   
   + Conditional GET http://www.s9y.org/42.html
   + Internationalization http://www.s9y.org/46.html
-  + CSS http://www.s9y.org/102.html [Deprecatable?]
   + Lighttpd http://www.s9y.org/119.html
   + entries.tpl http://www.s9y.org/121.html
   + IIS http://www.s9y.org/194.html
@@ -147,9 +146,10 @@ http://www.s9y.org/61.html --> /hosting-providers/hosting-providers.md --> need 
   + Spanish http://www.s9y.org/96.html
   + Czech http://www.s9y.org/219.html
   - German: Link to the book
-  
+
 
 Deprecated documents, remove completely:
+- http://www.s9y.org/102.html
 - http://www.s9y.org/32.html
 - http://www.s9y.org/64.html
 - http://www.s9y.org/80.html
