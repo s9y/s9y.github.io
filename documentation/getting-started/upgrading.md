@@ -1,5 +1,8 @@
-Upgrading Serendipity
-=====================
+---
+title: Upgrading Serendipity
+---
+
+# Upgrading Serendipity
 
 * [Shortcut to Updating](#A2)
 * [Updating](#A3)

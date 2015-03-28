@@ -1,3 +1,7 @@
+---
+title: Approve Comments
+---
+
 # Approve Comments
 
 You may wish to moderate comments visitors make to your entries so they are not seen by others until they have been approved. To enable this feature, check the box labeled "Comments & trackbacks to this entry requires moderation" when first creating or editing an entry. You can also make this the default setting on a user by user basis from Admin Suite -\> Personal Settings.

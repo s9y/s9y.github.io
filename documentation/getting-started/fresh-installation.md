@@ -1,3 +1,7 @@
+---
+title: Fresh Installation
+---
+
 # Fresh Installation
 
 * [Preface](#A2)

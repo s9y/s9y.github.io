@@ -1,3 +1,7 @@
+---
+title: Embed Configuration
+---
+
 # The 'embed' Configuration Directive
 
 * ['indexFile' option.](#A2)

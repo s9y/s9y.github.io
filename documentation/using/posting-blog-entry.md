@@ -1,3 +1,7 @@
+---
+title: Posting a Blog Entry
+---
+
 # Posting a Blog Entry
 
 * [Posting to S9y using S9y](/39.html#A2)

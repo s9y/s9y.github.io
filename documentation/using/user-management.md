@@ -1,3 +1,7 @@
+---
+title: User management
+---
+
 # User management
 
 * [The way it was a long time ago (\< 0.6.1-CVS)](#A2)

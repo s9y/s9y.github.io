@@ -1,3 +1,7 @@
+---
+title: Installation Docs
+---
+
 # Intallation Docs
 
 * [Fresh Installation](fresh-installation.html)
