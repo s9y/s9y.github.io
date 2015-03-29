@@ -1,3 +1,7 @@
+---
+title: Moving an External Page Into Serendipity
+---
+
 # Moving an External Page Into Serendipity
 
 Serendipity is controlled by two pages: index.php and index.tpl.  You can "move" and external page into Serendipity simply by including its code in the appropriate file.

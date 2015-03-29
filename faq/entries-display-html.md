@@ -1,3 +1,7 @@
+---
+title: Entries Display HTML
+---
+
 # Entries Display HTML
 
 This is sometimes caused by the Wiki Markup plugin.  If it's installed, remove it and see if the problem is corrected.

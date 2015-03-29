@@ -1,3 +1,7 @@
+---
+title: POPfetcher
+---
+
 # POPfetcher: Posting New Entries by Email
 
 Serendipity's [POPfetcher plugin](http://spartacus.s9y.org/cvs/additional_plugins/serendipity_event_popfetcher.zip) allows you to post new entries just by emailing them to your blog!

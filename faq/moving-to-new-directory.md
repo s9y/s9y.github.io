@@ -1,3 +1,7 @@
+---
+title: Moving Serendipity to a New Directory
+---
+
 # Moving Serendipity to a New Directory
 
 This information comes courtesy of **Azel**, of the Serendipity Forums, who graciously allowed us to add it here. Thanks, Azel!

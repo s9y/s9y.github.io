@@ -1,3 +1,7 @@
+---
+title: Spam Protector
+---
+
 # Spam Protector
 
 Serendipity's Spam Protector plugin is a quite powerful tool to protect your blog from spam. It can provide CAPTCHAs and block trackback or comment spam based on domains or keywords.

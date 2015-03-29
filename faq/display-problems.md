@@ -1,3 +1,7 @@
+---
+title: Display Problems
+---
+
 # What kind of display problem?
 
 Stuff looking wrong, eh?  Which most accurately represents your problem:
