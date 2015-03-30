@@ -1,3 +1,7 @@
+---
+title: User Documentation
+---
+
 # User Documentation
 
 * [Posting](posting-blog-entry.html)

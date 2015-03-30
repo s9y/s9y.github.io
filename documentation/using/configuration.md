@@ -1,4 +1,8 @@
-# configuration
+---
+title: Configuration
+---
+
+# Configuration
 
 -   [Database settings](#A2)
 -   [Paths](#A3)

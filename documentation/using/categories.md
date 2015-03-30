@@ -1,3 +1,7 @@
+---
+title: Manage Categories
+---
+
 # Manage Categories
 
 Under the "Entries" menu in the Authoring Suite you will find the link "Categories". You can use this option to create, edit or delete new entry categories. There is no limit to the number of categories you can create. Each category has the following options:

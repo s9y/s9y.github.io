@@ -1,3 +1,7 @@
+---
+title: Markup Plugins
+---
+
 # Markup Plugins
 
 *  [Standard S9y Markup Plugins](#A2)

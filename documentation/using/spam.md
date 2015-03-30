@@ -1,3 +1,7 @@
+---
+title: Blocking Spam
+---
+
 # Blocking Spam with the "Spam Protector" plugin
 
 *  [What is this plugin](#A2)

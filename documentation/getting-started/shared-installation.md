@@ -1,3 +1,7 @@
+---
+title: Shared Installation
+---
+
 # Shared installation
 
 (WARNING: THIS FEATURE IS EXPERIMENTAL!)

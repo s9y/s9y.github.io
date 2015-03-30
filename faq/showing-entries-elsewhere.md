@@ -1,3 +1,7 @@
+---
+title: Showing Entries Elsewhere
+---
+
 # Showing Entries Elsewhere
 
 Users commonly request the ability to print the latest entries on a different page. Serendipity is so flexible it actually supports multiple ways to do it.

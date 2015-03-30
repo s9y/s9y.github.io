@@ -1,3 +1,7 @@
+---
+title: FAQ
+---
+
 # Serendipity - Frequently Asked Questions
 
 *  [General information](#A2)

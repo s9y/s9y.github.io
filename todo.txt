@@ -95,7 +95,7 @@ http://www.s9y.org/61.html --> /hosting-providers/hosting-providers.md --> need 
 
 * Documentation (Topics)
 
- +  http://www.s9y.org/33.html --> index.html --> OK (needs an index.md/html in all subdirectories of 'documentation')
+ +  http://www.s9y.org/33.html --> index.md --> OK (needs an index.md/html in all subdirectories of 'documentation')
 
   GETTING STARTED (-->Migration of old Documents done)
   + http://www.s9y.org/35.html --> index.md --> OK
@@ -125,17 +125,17 @@ http://www.s9y.org/61.html --> /hosting-providers/hosting-providers.md --> need 
   + (TODO: MAINTENANCE)
   + (TODO: Check topics from the book, what is missing as general instructions)
   
-  DEVELOPING (--> in progress by @mariohommel )
+  DEVELOPING (--> in progress by @garvinhicking and @mariohommel )
   + http://www.s9y.org/217.html -> integrated into contributing/developers/index.md
   + Themes http://www.s9y.org/44.html -> integrated into contributing/developers/index.md
   + theme options http://www.s9y.org/137.html -> integrated into documentation/developing/themes.md
   + Smarty http://www.s9y.org/78.html -> integrated into documentation/developing/themes.md
   
-  + Conditional GET http://www.s9y.org/42.html
-  + Internationalization http://www.s9y.org/46.html
-  + Lighttpd http://www.s9y.org/119.html
-  + entries.tpl http://www.s9y.org/121.html
-  + IIS http://www.s9y.org/194.html
+  + Conditional GET http://www.s9y.org/42.html --> conditional-get.md --> OK
+  + Internationalization http://www.s9y.org/46.html --> internationalization.md --> OK
+  + Lighttpd http://www.s9y.org/119.html --> lighttpd.md --> OK
+  + entries.tpl http://www.s9y.org/121.html --> entries_tpl.md --> OK
+  + IIS http://www.s9y.org/194.html --> iis-setup.md --> OK
   + (TODO: Getting started)
   + (TODO: Basic code flow)
   + (TODO: Check topics from the book, what is missing)

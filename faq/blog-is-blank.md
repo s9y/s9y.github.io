@@ -1,3 +1,7 @@
+---
+title: Blog is Blank
+---
+
 # Blog Is Blank
 
 Blank blog pages almost always mean the server has encountered an error. Luckily, web servers almost always keep track of errors in a log file. Ask your provider for the error logs for your web page; they'll tell you what the problem is.

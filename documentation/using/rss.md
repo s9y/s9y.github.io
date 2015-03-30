@@ -1,3 +1,7 @@
+---
+title: RSS
+---
+
 # RSS / Syndication
 
 *  [What is RSS?](#A2)

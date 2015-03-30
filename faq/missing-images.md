@@ -1,3 +1,7 @@
+---
+title: Missing Images
+---
+
 # Missing Images
 
 This is usually caused by an incomplete or corrupted installation. Usually the images are simply not in the template directory, where they're expected to be.

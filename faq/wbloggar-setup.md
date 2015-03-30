@@ -1,3 +1,7 @@
+---
+title: w.bloggar Setup
+---
+
 # w.bloggar Setup
 
 Serendipity supports w.bloggar through our [XML-RPC plugin](http://spartacus.s9y.org/cvs/additional_plugins/serendipity_event_xmlrpc.zip).

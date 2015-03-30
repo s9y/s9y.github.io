@@ -1,4 +1,8 @@
-# Commonly Requestet Extras
+---
+title: Commonly Requested Extras
+---
+
+# Commonly Requested Extras
 
 Serendipity's plugin system lets you add special capabilities to your blog with just a few mouse clicks.  If the capability you're looking for isn't on this page, check out [the SPARTACUS plugin repository](http://spartacus.s9y.org) for a complete list of plugins.
 

@@ -1,3 +1,7 @@
+---
+title: Manage Styles
+---
+
 # Manage Styles
 
 Styles, also known as themes or templates, are just one of the ways that you can personalise your new Serendipity blog. Styles are available to install directly from your administration screen, or you could download a zipfile of the style from the Serendipity repository, or even from the designer's own blog.

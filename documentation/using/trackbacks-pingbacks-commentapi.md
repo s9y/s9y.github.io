@@ -1,3 +1,7 @@
+---
+title: Trackbacks-Pingbacks-CommentAPI
+---
+
 # Trackbacks / Pingbacks / CommentAPI
 
 *  [What are trackbacks?](#A2)

@@ -1,3 +1,7 @@
+---
+title: Upgrade
+---
+
 # Upgrade
 
 Upgrading Serendipity couldn't be easier. (At least, not without compromising security.)

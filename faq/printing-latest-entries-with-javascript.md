@@ -1,3 +1,7 @@
+---
+title: Printing Latest Entries with JavaScript
+---
+
 # Printing the Latest Entries with JavaScript
 
 With a quick plugin, Serendipity can be accessed from external webpages using <noop>JavaScript</noop>.  

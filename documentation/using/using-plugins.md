@@ -1,3 +1,7 @@
+---
+title: Using Plugins
+---
+
 # Using Plugins
 
 * [General Usage](#A2)

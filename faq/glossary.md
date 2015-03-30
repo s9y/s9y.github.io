@@ -1,3 +1,7 @@
+---
+title: Glossary
+---
+
 # Glossary
 
 * [Trackback](#A2)

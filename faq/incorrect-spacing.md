@@ -1,3 +1,7 @@
+---
+title: Incorrect Spacing
+---
+
 # Incorrect Spacing
 
 Now we're getting somewhere.  Could be a CSS problem, could be a plugin.  Let's narrow down our choices a bit:

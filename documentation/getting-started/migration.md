@@ -1,3 +1,7 @@
+---
+title: Migration
+---
+
 # Migration from other blogs / RSS Import
 
 Serendipity support importing [RSS feeds](/38.html) into your articlebase. This way you can migrate your entries from your old blog to Serendipity, as long as your old blog supports RSS export.
