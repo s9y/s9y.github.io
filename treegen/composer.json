@@ -1,0 +1,26 @@
+{
+  "name": "mattsches/treegen",
+  "require": {
+    "symfony/console": "~2.6",
+    "symfony/finder": "~2.6",
+    "symfony/dom-crawler": "~2.6",
+    "symfony/filesystem": "~2.6",
+    "knplabs/knp-menu": "~2.0"
+  },
+  "require-dev": {
+    "codeception/codeception": "~2.0",
+    "codeception/verify": "0.2.*",
+    "codeception/specify": "0.4.*",
+    "mikey179/vfsStream": "1.5.*@dev"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Matthias Gutjahr",
+      "email": "mattsches@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {"Mattsches\\": "src/Mattsches/"}
+  }
+}
