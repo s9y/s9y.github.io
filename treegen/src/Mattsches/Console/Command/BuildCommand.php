@@ -5,6 +5,7 @@ use Knp\Menu\Matcher\Matcher;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Finder\Finder;
 use Knp\Menu\MenuFactory;
@@ -44,6 +45,12 @@ class BuildCommand extends Command
                 InputArgument::OPTIONAL,
                 'Path to root directory',
                 '_site' // Default directory
+            )
+            ->addOption(
+                'debug',
+                null,
+                InputOption::VALUE_NONE,
+                'If set, will output result to command line.'
             );
     }
 
@@ -64,7 +71,7 @@ class BuildCommand extends Command
         $this->addDirectoryNodes();
         $this->addFileNodes();
 
-        $this->writeSiteMap();
+        $this->writeSiteMap($input, $output);
     }
 
     /**
@@ -182,9 +189,14 @@ EOT;
                         }
                         $menuH1Node = $fileNode->addChild($h1node->text());
 
+                        $break = false;
                         // Level 2 headings
-                        $h1node->siblings()->filter('h2')->each(
-                            function (Crawler $h2node) use ($menuH1Node) {
+                        $h1node->nextAll()->filter('h2')->each(
+                            function (Crawler $h2node) use ($menuH1Node, $break) {
+                                $previousH1NodeText = $h2node->previousAll()->filter('h1')->first()->text();
+                                if ($previousH1NodeText !== $menuH1Node->getName()) {
+                                    return;
+                                }
                                 $menuH1Node->addChild($h2node->text());
                             }
                         );
@@ -197,15 +209,20 @@ EOT;
     /**
      * Write site map
      *
-     * @return void
+     * @param InputInterface $input
+     * @param OutputInterface $output
      */
-    private function writeSiteMap()
+    private function writeSiteMap(InputInterface $input, OutputInterface $output)
     {
         $renderer = new ListRenderer(new Matcher());
         $tree = $renderer->render($this->siteMap);
-        $fs = new Filesystem();
         try {
-            $fs->dumpFile($this->rootPath . '/sitemap.html', $this->wrapTreeInHtml($tree));
+            if ($input->getOption('debug')) {
+                $output->write($this->wrapTreeInHtml($tree));
+            } else {
+                $fs = new Filesystem();
+                $fs->dumpFile($this->rootPath . '/sitemap.html', $this->wrapTreeInHtml($tree));
+            }
         } catch (IOExceptionInterface $e) {
             echo "An error occurred while writing a file at " . $e->getPath();
         }
