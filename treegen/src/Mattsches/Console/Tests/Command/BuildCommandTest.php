@@ -30,6 +30,8 @@ class BuildCommandTest extends \PHPUnit_Framework_TestCase
         $this->assertContains($this->getExpectedFirst(), $display);
         $this->assertContains($this->getExpectedSecond(), $display);
         $this->assertContains($this->getExpectedFourth(), $display);
+        $this->assertContains('menu_level_4', $display);
+        $this->assertContains($this->getExpectedLevel4(), $display);
     }
 
     /**
@@ -90,6 +92,23 @@ EOT;
               </li>
             </ul>
           </li>
+EOT;
+    }
+
+    /**
+     * @return string
+     */
+    private function getExpectedLevel4()
+    {
+        return <<<EOT
+            <li>
+                <span>RSS in s9y</span>
+                <ul class="menu_level_4">
+                  <li class="first last">
+                    <span>The rss.php file</span>
+                  </li>
+                </ul>
+              </li>
 EOT;
     }
 }

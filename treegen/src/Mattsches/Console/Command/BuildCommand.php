@@ -189,15 +189,25 @@ EOT;
                         }
                         $menuH1Node = $fileNode->addChild($h1node->text());
 
-                        $break = false;
                         // Level 2 headings
                         $h1node->nextAll()->filter('h2')->each(
-                            function (Crawler $h2node) use ($menuH1Node, $break) {
+                            function (Crawler $h2node) use ($menuH1Node) {
                                 $previousH1NodeText = $h2node->previousAll()->filter('h1')->first()->text();
                                 if ($previousH1NodeText !== $menuH1Node->getName()) {
                                     return;
                                 }
-                                $menuH1Node->addChild($h2node->text());
+
+                                $menuH2Node = $menuH1Node->addChild($h2node->text());
+                                // Level 3 headings
+                                $h2node->nextAll()->filter('h3')->each(
+                                    function (Crawler $h3node) use ($menuH2Node) {
+                                        $previousH1NodeText = $h3node->previousAll()->filter('h2')->first()->text();
+                                        if ($previousH1NodeText !== $menuH2Node->getName()) {
+                                            return;
+                                        }
+                                        $menuH2Node->addChild($h3node->text());
+                                    }
+                                );
                             }
                         );
                     }
