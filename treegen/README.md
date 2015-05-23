@@ -4,7 +4,7 @@ This is the documentation for [Serendipity](http://s9y.org).
 
 ## About this fork
 
-Use this fork to create a basic sitemap structure of the documentation.
+Use this tool to create a basic sitemap structure of the documentation.
 
 ## Requirements
 
@@ -16,7 +16,6 @@ Use this fork to create a basic sitemap structure of the documentation.
 ### Install the dependencies
 
 ```bash
-$ cd treegen
 $ composer install
 ```
 
