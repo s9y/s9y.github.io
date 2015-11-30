@@ -1,0 +1,18 @@
+# Exclude stuff
+exclude: [Gemfile, Gemfile.lock, README.md]
+
+# Site settings
+title: Serendipity Blog System
+description: TODO
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"

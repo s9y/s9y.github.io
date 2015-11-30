@@ -1,0 +1,146 @@
+// SITE NAV
+// --------------------------------------------------------------------
+#nav-global {
+    background-color: $s9y-blue-dark;
+    padding: .625rem 0 .25rem;
+    position: relative;
+
+    // LOGO: BOTH ELEMENTS
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        height: 28px;
+        position: absolute;
+        top: 10px;
+    }
+
+    // LOGO: SERENDIPITY
+    &:before {
+        background: url('/img/logos/serendipity.png') 0 0 no-repeat;
+        background-size: contain;
+        left: 3rem;
+        width: 151px;
+    }
+
+    // LOGO: FLOWER
+    &:after {
+        background: url('/img/logos/flower.png') 0 0 no-repeat;
+        background-size: contain;
+        right: .5rem;
+        width: 56px;
+    }
+
+    a {
+        text-decoration: none;
+
+        &,
+        &:visited {
+            background-color: transparent;
+            color: $off-white;
+            transition: all .25s linear;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: $s9y-orange;
+            color: $off-black;
+            transition: all .25s linear;
+        }
+    }
+
+    @media screen and (min-width: $sm) {
+        padding: 0;
+        position: static;
+
+        &:before,
+        &:after {
+            background: transparent;
+        }
+
+        .layout-container {
+            position: relative;
+
+            &:before {
+                background: url('/img/logos/s9y.png') 0 0 no-repeat;
+                background-size: contain;
+                content: '';
+                display: block;
+                height: 106px;
+                left: .5rem;
+                position: absolute;
+                top: -1.25rem;
+                width: 150px;
+            }
+        }
+    }
+
+    @media screen and (min-width: $lg) {
+        .layout-container {
+            &:before {
+                height: 141px;
+                top: -1.5rem;
+                width: 200px;
+            }
+        }
+    }
+
+    @media screen and (min-width: $xx) {
+        .layout-container {
+            &:before {
+                height: 194px;
+                width: 275px;
+            }
+        }
+    }
+}
+
+#open-nav {
+    @include ir;
+
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjA0OCIgaGVpZ2h0PSIyMDQ4IiB2aWV3Qm94PSIwIDAgMjA0OCAyMDQ4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xNzkyIDE0NzJ2MTI4cTAgMjYtMTkgNDV0LTQ1IDE5aC0xNDA4cS0yNiAwLTQ1LTE5dC0xOS00NXYtMTI4cTAtMjYgMTktNDV0NDUtMTloMTQwOHEyNiAwIDQ1IDE5dDE5IDQ1em0wLTUxMnYxMjhxMCAyNi0xOSA0NXQtNDUgMTloLTE0MDhxLTI2IDAtNDUtMTl0LTE5LTQ1di0xMjhxMC0yNiAxOS00NXQ0NS0xOWgxNDA4cTI2IDAgNDUgMTl0MTkgNDV6bTAtNTEydjEyOHEwIDI2LTE5IDQ1dC00NSAxOWgtMTQwOHEtMjYgMC00NS0xOXQtMTktNDV2LTEyOHEwLTI2IDE5LTQ1dDQ1LTE5aDE0MDhxMjYgMCA0NSAxOXQxOSA0NXoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=') 0 0 no-repeat;
+    background-size: contain;
+    display: inline-block;
+    height: 28px;
+    margin-left: .5rem;
+    width: 28px;
+
+    .no-svg & {
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAATklEQVRYhe3UsRHAIAxDUZz9VwpFMphSw7mgkeFy/w1gyY1aAzCR1OVzz3mRFJDzwYgYMi9n2IqswGvMe4y38RfsQDV2AOdhB6qxA8B2H5KILgWNAjWdAAAAAElFTkSuQmCC');
+    }
+}
+
+#site-nav {
+    @include grid-box(12, .5rem);
+
+    a {
+        display: block;
+        padding: 0 0 .5rem;
+    }
+
+    @media screen and (min-width: $sm) {
+        @include grid-box(9, 1rem);
+        @include grid-prefix(3);
+
+        li {
+            display: table-cell;
+            text-align: center;
+            width: 1%;
+        }
+
+        a {
+            padding: .5rem .75rem;
+        }
+
+        #current-page a {
+            background-color: $s9y-orange;
+            color: $black;
+        }
+    }
+
+    @media screen and (min-width: $lg) {
+        a {
+            padding: .5rem 1.25rem;
+        }
+    }
+}

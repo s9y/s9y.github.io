@@ -1,0 +1,49 @@
+// SIDEBAR
+// --------------------------------------------------------------------
+#sidebar {
+    @include grid-box(12, .5rem);
+
+    > h2 {
+        @include visuallyhidden;
+    }
+
+    @media screen and (min-width: $sm) {
+        @include grid-nest;
+    }
+
+    @media screen and (min-width: $lg) {
+        @include grid-box(3, 1rem);
+        @include grid-pull(9);
+    }
+}
+
+.widget {
+    @media screen and (min-width: $sm) {
+        @include grid-box(6, 1rem);
+    }
+
+    @media screen and (min-width: $lg) {
+        float: none;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+    }
+}
+
+// HOME: SUPPORT
+#support {
+    ul {
+        @extend %plain-list;
+    }
+}
+
+// DOCS: SITEMAP
+#sitemap {
+    > ul {
+        margin: 1rem 0;
+    }
+
+    li > ul {
+        padding-left: 1.25rem;
+    }
+}
