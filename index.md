@@ -1,4 +1,5 @@
 ---
+layout: home
 title: Serendipity -  a PHP Weblog/Blog software
 ---
 ### Serendipity -  a PHP Weblog/Blog software
