@@ -2,7 +2,7 @@
 title: User Modifications
 ---
 
-# User Modifications
+### User Modifications
 
 Yes, you can add **any** HTML or Javascript to your Serendipity blog! And there's more than one way to do it.
 

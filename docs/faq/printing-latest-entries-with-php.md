@@ -2,9 +2,9 @@
 title: Printing Latest Entries with PHP
 ---
 
-# Printing the Latest Entries with PHP
+### Printing the Latest Entries with PHP
 
-For this method of printing the latest entries in an external webpage, we'll add a some PHP to it.  That code will retrieve the latest entries from Serendipity, all on the same server. 
+For this method of printing the latest entries in an external webpage, we'll add a some PHP to it.  That code will retrieve the latest entries from Serendipity, all on the same server.
 
 Since we'll be running PHP code in the external page, PHP will have to parse it.  It should either be named so that your server recognizes it as a PHP script (usually names ending in .php), or you should tell your server to parse it.  These lines in your .htaccess tell Apache to parse plain HTML files:
 
@@ -37,7 +37,7 @@ $tpl = serendipity_getTemplateFile('entries.tpl',
 $serendipity['smarty']->display($tpl);
 // 8: Go back to where you came from
 chdir('..');
-?> 
+?>
 ```
 
 Just copy this into the file wherever you want the entries to be printed.  Of course, replace "path/to/serendipity" with the path to **your** Serendipity directory, and replace ".." with the path to get back to your original directory.

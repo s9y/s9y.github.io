@@ -2,7 +2,7 @@
 title: Moving Serendipity to a New Directory
 ---
 
-# Moving Serendipity to a New Directory
+### Moving Serendipity to a New Directory
 
 This information comes courtesy of **Azel**, of the Serendipity Forums, who graciously allowed us to add it here. Thanks, Azel!
 
@@ -20,7 +20,7 @@ It's really a simple three-step process:
 
 The easiest thing you can do is this: (with pictures!)
 
-## <a name="A2"></a>Make a backup!
+#### <a name="A2"></a>Make a backup!
 
 (You can skip this step if you don't have a whole lot of entries and don't mind recreating them.) Make a backup of your database through phpMyAdmin. This is where you can gain access to your database tables (where s9y stores its information). On the index page of phpMyAdmin, you should see something like this:
 
@@ -34,7 +34,7 @@ Select which database you would like to export.
 
 Click the "Go" button on the bottom right to download a copy of your database file.
 
-## <a name="A3"></a>Change the configured path to Serendipity
+#### <a name="A3"></a>Change the configured path to Serendipity
 
 
 While you're in phpMyAdmin, click to open serendipity\_config in your database.
@@ -57,15 +57,15 @@ serendipityPath | *path/to/blog*
 serendipityHTTPPath | *blog*
 baseURL | *http://yoursite.com/blog/*
 
-## <a name="A4"></a>Rename the folder
+#### <a name="A4"></a>Rename the folder
 
 Change your folder name in your FTP client (or whatever tool your server admin gives you) from serendipity to blog.
 
 I hope that sounds easy enough and not too intimidating.
 
-## <a name="A5"></a>Special Notes
+#### <a name="A5"></a>Special Notes
 
-### <a name="A6"></a>SQLite users
+##### <a name="A6"></a>SQLite users
 
 A similar tool for SQLite is [SQLiteManager](http://www.sqlitemanager.org/).
 

@@ -2,7 +2,7 @@
 title: Sticky Entries
 ---
 
-# Sticky Entries
+### Sticky Entries
 
 The Extended Properties for Entries plugin includes exactly this capability! Just install it from your admin screen like any other event plugin.
 

@@ -2,7 +2,7 @@
 title: Conditional Get for RSS Feeds
 ---
 
-# Conditional Get for RSS Feeds
+### Conditional Get for RSS Feeds
 
 Serendipity supports an HTTP-cache compatible way of only showing items in an RSS feed which where modified since the last request from a client.
 

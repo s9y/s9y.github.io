@@ -2,7 +2,7 @@
 title: Ask The Expert
 ---
 
-# Ask The Expert
+### Ask The Expert
 
 If this virtual Expert is unable to answer your question, fear not!  You can get help from a real, live person (often the developers, no less!) on the [Serendipity Forums: http://board.s9y.org.](http://board.s9y.org)  Please use the forum Search feature to see if your question has already been answered before opening a new thread.
 
@@ -20,7 +20,7 @@ Now, let's see what we can do for you.  Show us where it hurts.
 [I need to make changes to my blog](maintenance.html), like:
 
 * upgrading
-* moving it to a new directory 
+* moving it to a new directory
 * importing and exporting data
 
 [I want my blog to work differently, or do something special.](plugins.html)

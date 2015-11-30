@@ -2,7 +2,7 @@
 title: Documentation overview
 ---
 
-## Documentation overview
+### Documentation overview
 
 We offer several technical documentation files that can be enhanced on our Wiki.
 

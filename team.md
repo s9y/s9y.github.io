@@ -1,8 +1,8 @@
 ---
-title: Serendipity - Developer Team
+title: Developer Team
 ---
 
-# Developer Team
+### Developer Team
 
 Here are the folks maintaining and having continuously contributed to Serendipity, in no specific order. Also check out our [GitHub memberlist](https://github.com/orgs/s9y/people) for recent commits.
 
@@ -27,7 +27,7 @@ Thanks so much to all of them!
  * [Judebert](http://judebert.com/): Support, Documentation
  * Grischa Brockhaus
  * Tom Sommer: Developer
- * Joseph Tate: Developer, PostgreSQL support 
+ * Joseph Tate: Developer, PostgreSQL support
  * Sterling Hughes: Co-Founder, Developer
  * Christian Mühlhaeuser: Developer
  * Joyce Park: Developer

@@ -2,7 +2,7 @@
 title: Technical Documentation
 ---
 
-# Technical Documentation
+### Technical Documentation
 
 *  [Database](database.html)
 *  [Important API Functions](functions.html)

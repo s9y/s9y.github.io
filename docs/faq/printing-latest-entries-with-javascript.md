@@ -2,9 +2,9 @@
 title: Printing Latest Entries with JavaScript
 ---
 
-# Printing the Latest Entries with JavaScript
+### Printing the Latest Entries with JavaScript
 
-With a quick plugin, Serendipity can be accessed from external webpages using <noop>JavaScript</noop>.  
+With a quick plugin, Serendipity can be accessed from external webpages using <noop>JavaScript</noop>.
 
 First, [Download the "Show entries via JavaScript"](http://spartacus.s9y.org/cvs/additional_plugins/serendipity_event_backend.zip) plugin, also known as serendipity_event_backend and install it.  This can also be done through the SPARTACUS plugin, if you have it installed.
 

@@ -2,13 +2,13 @@
 title: Plugin API
 ---
 
-# TOC
+### TOC
 
 * Plugin API
   * Important event hooks
   * Creating new event hooks
 
-# Plugin API
+### Plugin API
 
 The general meaning of Plugins for Serendipity is described in the section [Plugins](/contributing/developers/index.md#Plugins) of our "Getting started" documentation.
 
@@ -24,7 +24,7 @@ Sidebar plugins operate a bit simpler, because basically there only is one singl
 
 This might sound more complicated than it is, so let's create the most simple form of a plugin there is:
 
-## Creating a simple sidebar plugin
+#### Creating a simple sidebar plugin
 
 1. Create a new directory like "serendipity_plugin_myfirstplugin" in the "plugins" subdirectory of Serendipity. Note that sidebar plugins always need to be prefixed with "serendipity_plugin_"!
 2. Create a new file "serendipity_plugin_myfirstplugin.php" in the directory you created earlier. Note that the plugin filename needs to exactly match the directory name.
@@ -79,7 +79,7 @@ Now let's disect the plugin code above:
 
 You can use this simply example to extend your plugin to perform any PHP action you like. Of course you can also create as many helper methods inside the class that you will need. You can also include other libraries at this point, and use the full range of Serendipity API methods.
 
-## Creating a simple event plugin
+#### Creating a simple event plugin
 
 An event plugin shares many similarities with the setup of a sidebar plugin. To create an event plugin follow these steps:
 
@@ -125,7 +125,7 @@ class serendipity_event_myfirstplugin extends serendipity_plugin {
 	      echo '<!-- Hello world! -->';
 	      return true;
 	      break;
-        
+
         default:
 	      return false;
 	    }
@@ -169,7 +169,7 @@ If you want you can of course create seperate methods for each hook you want to 
   function frontend_header(&$eventData, $addData) {
     // Do something
   }
-  
+
   function frontend_footer(&$eventData, $addData) {
     // Do something
   }
@@ -180,7 +180,7 @@ Note that $eventData is a referenced array which you can write to and modify. Th
 
 Also note that if you want to access the $serendipity array, you will need to import that from the global scope.
 
-## Creating bundled plugins
+#### Creating bundled plugins
 
 As you may have noted due to the naming scheme, you can only put one single plugin into one single directory. So you cannot bundle multiple event plugins in one directory. Also note that Serendipity recursively iterates your plugin directories - so never create a "backup" directory within a plugin with the same directory/filenames like your plugin, because Serendipity will try to load these files.
 
@@ -190,11 +190,11 @@ With a setup like this you can bundle event and sidebar plugins, because often a
 
 When creating bundled plugins you can even link them together with a dependencies-property (see below)
 
-## Structure of serendipity_plugin in detail
+#### Structure of serendipity_plugin in detail
 
 Now that the basic groundwork of a plugin is clear, let's build on that and show you what more is available.
 
-### The introspect($propbag) method
+##### The introspect($propbag) method
 
 The introspect() method exists so that a plugin can advertise its metadata to the core framework. It gets passed a central serendipity_property_bag() object which is a simple getter/setter object for any kind of storage.
 
@@ -245,11 +245,11 @@ Here is an example of a completely filled property bag:
 
 ```
 
-### The generate_content(&$title) method
+##### The generate_content(&$title) method
 
 For sidebar plugins, generate_content() is the central "main" method that returns the output. Note that $title is passed as a referenced variable where you set a plugin's title and can overwrite that variable (or display it).
 
-### Adding configuration options to your plugin: introspect_config_item(), get_config(), set_config(), validate()
+##### Adding configuration options to your plugin: introspect_config_item(), get_config(), set_config(), validate()
 
 To permanently store configuration inside your plugin, you first need to setup an array of available configuration keys in the introspect() property bag:
 ```php
@@ -319,39 +319,39 @@ Those internal configuration values do NOT need to be advertised in the 'configu
 
 The values are stored in the serendipity_config database table and prefixed with the name of the plugin that it belongs to. If you need to store large amounts of data, it is better to create your own database tables for a plugin (by using serendipity_db_schema_import("CREATE TABLE...")).
 
-### More methods for plugins
+##### More methods for plugins
 
 There are a couple of more methods of the serendipity_plugin class that are called:
 
-#### performConfig(&$bag)
+###### performConfig(&$bag)
 
 This method is executed when the Serendipity configuration screen of a plugin is displayed. In this you can execute PHP code that should only be executed when configuring the plugin, and not every time the plugin is loaded.
 
-### install()
+##### install()
 
 THis method is called when the plugin is installed.
 
-### uninstall()
+##### uninstall()
 
 This method is called when a plugin is uninstalled. You can use it to clean up variables or perform specific tasks.
 
-### cleanup()
+##### cleanup()
 
 This is called whenever the user saves the configuration and configuration values were updated/saved. You can use that for possible garbage collection.
 
-### parseTemplate($filename)
+##### parseTemplate($filename)
 
 This helper method can be called to render a smarty template file inside the plugin directory path.
 
-### register_dependencies($remove, $authorid)
+##### register_dependencies($remove, $authorid)
 
 This is performed when a plugin has dependencies and those related plugins are uninstalled or installed. Usually you should not need to modify this piece of code, but if you have specific dependency management, you can.
 
-### validate($config_item, &$bag, &$value)
+##### validate($config_item, &$bag, &$value)
 
 This is the default validation class. It is provided by the Serendipity API and should work for most validation scenarios, but if it doesn't, you can overwrite it.
 
-### Class member variables
+##### Class member variables
 
 The serendipity_plugin class offers several member variables:
 
@@ -367,7 +367,7 @@ The serendipity_plugin class offers several member variables:
 * $serendipity_owner: The intial owner of the plugin (who installed it)
 * $dependencies: A possible array of dependencies. Each array keys represents a plugin class name, and the value can either be "remove" or "keep", which influences what happens to the bundled plugin when it's siblings are removed.
 
-## Structure of serendipity_event in detail
+#### Structure of serendipity_event in detail
 
 The serendipity_event class inherits all methods and class member variables like serendipity_plugin (see above).
 
@@ -380,21 +380,25 @@ And this property bag attribute:
 * event_hooks: Array of event hooks that a plugin wants to listen on (see example)
 * cachable_events: Array of cachable event hooks (usually only for markup text plugins)
 
-## More examples
+#### More examples
 
-### How to make an event plugin create its own backend menu entries
+##### How to make an event plugin create its own backend menu entries
+
 ** TODO: Example on how to create a plugin that hooks in the admin menu via: backend_sidebar_entries_event_display_XXX**
 
-### How to create an event plugin that performs an action when an entry is saved
+##### How to create an event plugin that performs an action when an entry is saved
+
 ** TODO: Example on how to do "smoething" when an entry is saved**
 
-### How to create an event plugin that transforms entry markup
+##### How to create an event plugin that transforms entry markup
+
 ** TODO: Example on how to create a plugin that does something on Frontend_display
 
-### How to create an event plugin that shows remote data or its distinct output 
+##### How to create an event plugin that shows remote data or its distinct output
+
 ** TODO: Example for external_plugin **
 
-## Important event hooks:
+#### Important event hooks:
 
 The easiest way to see how to implement any given event hook is to search in the .php files for:
 `hook_event('XXX')`
@@ -418,7 +422,7 @@ where you replace 'XXX' with the name of the even thook you want to look up. The
 * frontend_display:rss-2.0:per_entry: Single entry display in RSS feed
 * frontend_display:atom-1.0:per_entry: Single entry display in Atom feed
 
-### Other event hooks:
+##### Other event hooks:
 
 Most of these event hooks have self-explanatory names. You can easily look them up in the codebase by searching for those names, they usually only occur once at a specific place in code.
 
@@ -517,7 +521,7 @@ Most of these event hooks have self-explanatory names. You can easily look them 
 * plugin_dashboard_updater
 * quicksearch_plugin
 
-## How to use events in Smarty
+#### How to use events in Smarty
 
 You can execute events (also custom ones you created only for your own plugin and theme) easily in Smarty in two ways.
 
@@ -535,10 +539,10 @@ The second way is to call an event hook that modifies a distinct variable:
 
 This would then pass along your $entry.title as a parameter for the my_markup_transformation event hook.
 
-## Creating new event hooks
+#### Creating new event hooks
 
 If there is an event hook missing in the current Serendipity code, a single line is sufficient to add new events. Please let our developers know when you think a specific event is missing (**TODO: Link to "Contributing"**).
 
-# Linking spartacus
+### Linking spartacus
 
 You can easily combine the whole spartacus theme and plugin checkouts on your machine. To do that you can for example checkout these repositories to a subdirectory like `templates/spartacus/` and `plugins/spartacus/`. The reason this works is because both the theme and plugin framework of Serendipity can iterate through every subdirectory of the templates/ or plugins/ structure to search for matching plugin/theme files.

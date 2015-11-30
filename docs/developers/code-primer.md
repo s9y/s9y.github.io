@@ -2,7 +2,9 @@
 title: Code primer
 ---
 
-# TOC
+### Code Primer
+
+#### TOC
 
 * Code Primer
   * The "core"
@@ -29,8 +31,6 @@ title: Code primer
   * Themes
   * Coding Gudelines
 
-# Code Primer
-
 To get started with developing Serendipity, here's a few things to get you kickstarted.
 
 The first thing you need is an installation of Serendipity, and FTP/SSH/file access to that installation. It's easy to setup a local Apache server with PHP and MySQL on all Linux, MacOS or Windows systems. Of course the best thing would be if you use github to check out our core code, so you can easily contribute patches or update your installation to the latest code version.
@@ -39,9 +39,9 @@ Now here are the most basic concepts you need to know. Those assume you have som
 
 All our core PHP functions (serendipity_XXX) have phpDoc style comments which explain the parameters and functionality of each function, so be sure to read those. We currently have no automatted Code documentation, but you should be able to use any phpDoc compiler on our code yourself.
 
-## The "core"
+#### The "core"
 
-### Initializing the Framework: serendipity_config.inc.php and serendipity_config_local.inc.php
+##### Initializing the Framework: serendipity_config.inc.php and serendipity_config_local.inc.php
 
 The user configuration for the most basic settings required to start the framework lies in **serendipity_config_local.inc.php**. It sets up the basic array **$serendipity**, and configure database credentials and the used Serendipity version.
 
@@ -96,20 +96,20 @@ On top of that, certain variables that are not included in the Serendipity Confi
 * $serendipity['imagemagick_thumb_parameters']: Otpional parameters passed to imagemagick when creating thumbnails (default empty)
 * $serendipity['logLevel']: If set, enables using the Katzgrau KLogger (writes to templates_c/). If set to "debug", be extra verbose (default: 'Off')
 
-### .htaccess
+##### .htaccess
 
 This file holds simple, central mod_rewrite RewriteRules (when URL-Rewriting is enabled) to match all permalink patters back to index.php (see the "Routing"-Part below).
 
-### serendipity.css.php
+##### serendipity.css.php
 
 This file is usally called through the URL RewriteRules, and dynamically assembles the CSS statements for a selected theme as well as all plugins that have distinct CSS output.
 
-### deployment directory
+##### deployment directory
 
 Serendipity supports the concept of a "shared installation". This keeps Serendipity as a kind of library in a central directory outside the DocumentRoot. Each blog will then only use stub-files which actually include that library file. The deployment-Directory contains exactly those stubs that point back to the library (through simply "include" calls). Note that the file names are exactly those that the core actually uses.
 For more information, see "Setting up a shared installation" **TODO: Link**
 
-### Composer / Bundled-Libs
+##### Composer / Bundled-Libs
 
 The directory **bundled-libs** holds all of our internally used libraries that ship together with Serendipity. Using composer, we are able to update those libraries (in part). However, note that composer is NOT required to develop with Serendipity, since the libraries are all contained in our source code repository.
 
@@ -130,7 +130,7 @@ We currently bundle:
 * **create_release.sh** is the script we use to bundle releases
 * **serendipity_generateFTPChecksums.php** is the code used by the create_release.sh to create the **checksums.inc.php* file
 
-### Internationalization
+##### Internationalization
 
 Serendipity's translations are handled through easy .php include files inside the **lang/** subdirectory. Each language has its own file according to its countrycode.
 
@@ -142,7 +142,7 @@ Some special constants / variables inside the language files are these:
 
 * $i18n_filename_from: Holds an array of character replacements, which will replaced with ASCII characters when they occur within a URL. This can be used to translate umlauts etc. to "readable" variants of those, like a german "Ü" gets translated to "Ue".
 * $i18n_filename_to: This holds the actual character replacement values.
-* LANG_CHARSET: Central constant that indicates the used charset of a language. Many plugins etc. use this to deduce which 
+* LANG_CHARSET: Central constant that indicates the used charset of a language. Many plugins etc. use this to deduce which
 * SQL_CHARSET: Default charset for database connection
 * DATE_LOCALES: Used locales for a language
 * DATE_FORMAT_ENTRY: The dateformat used in the language
@@ -155,7 +155,7 @@ Certain language constants can use placeholders like "%s" (standard PHP Sprintf(
 
 The proper language in the codeflow is loaded through "include/lang.inc.php". This file is called twice; once for the central routine to only detect the proper language, and then a second time to actually load all language constants for the currently-logged in user.
 
-### Other files and directories
+##### Other files and directories
 
 There are a couple of other files in the Serendipity root that are basic stubs which all reference the core framework:
 
@@ -191,7 +191,7 @@ The subdirectories contain:
 * **templates_c/**: Compile directory for cached templates (and other temporary data)
 * **tests/**: Draft ideas for unit tests
 
-### Database layers
+##### Database layers
 
 The database layer offers a central framework trough *include/db/db.inc.php*. Serendipity uses plain SQL statements for its queries. We try to use database-agnostic standard SQL wherever possible, so that it runs on most servers.
 
@@ -239,7 +239,7 @@ Those layers implement these central functions:
 
 The database structure of Serendipity tries to be self-explanatory. For a list of all Serendipity database tables check out our [Database structure documentation](documentation/developing/database.md).
 
-### Important variables and constants
+##### Important variables and constants
 
 Core variables are:
 
@@ -276,7 +276,7 @@ Some important URL variables (note that if those specific variables are submitte
 * $serendipity['GET']['category']: Affects displaying entries, showing entries only belonging to this category ID (multiple categories separated by ";").
 * $serendipity['GET']['hide_category']: Affects displaying entries, hide entries belonging to this category ID (multiple categories separated by ";").
 * $serendipity['GET']['viewAuthor']: Affects displaying entries, only showing entries by this specific author ID (multiple authors separated by ";")..
-* $serendipity['GET']['range']: Affects displaying entries, only showing entries by this date range 
+* $serendipity['GET']['range']: Affects displaying entries, only showing entries by this date range
 * $serendipity['GET']['subpage']: Can execute frontend plugins (if not using their own rewrite-URL or external_plugin URL)
 * $serendipity['GET']['searchTerm']: If search is executed, holds the search term
 * $serendipity['GET']['fullFeed']: Boolean to indicate whether the full RSS feed is displayed (for rss.php)
@@ -288,7 +288,7 @@ Note that a parameter like index.php?serendipity[subpage]=XXX gets converted to 
 
 On top of that, some global and user-specific configuration is passed through options saved in the database table serendipity_config. Those variables are defined in include/tpl/config_local.inc.php and include/tpl/config_personal.inc.php:
 
-#### Local configuration
+###### Local configuration
 
 * $serendipity['dbNames']: Boolean whether to use "SET NAMES" charset directive in database layer
 * $serendipity['uploadPath']: Path to "uploads" directory
@@ -363,7 +363,7 @@ On top of that, some global and user-specific configuration is passed through op
 * $serendipity['mediaProperties']: Which meta information shall be available in the media database
 * $serendipity['mediaKeywords']: Specifies a list of available keywords to tag media files with
 
-#### Personal Configuration
+###### Personal Configuration
 
 * $serendipity['wysiwyg']: Whether to use WYSIWYG editor
 * $serendipity['wysiwygToolbar']: Defines the toolbar palette of the WYSIWYG editor
@@ -379,13 +379,13 @@ On top of that, some global and user-specific configuration is passed through op
 * $serendipity['showMediaToolbar']: Boolean whether to show toolbars for media library even in "picker" mode
 * $serendipity['use_autosave']: Boolean to indicate if browser's autosave feature is used for entries
 
-### Important API functions
+##### Important API functions
 
 We have created seperate bundles for specific API functions. An overview of most relevant functions and where they are defined can be found here:
 
 [List of Important API functions](documentation/developing/functions.md)
 
-### Error-Handling
+##### Error-Handling
 
 By default, Serendipity sets the PHP error_reporting() to E_ALL without E_NOTICE and E_STRICT to prevent unnecessary PHP error output. When $serendipity['production'] is set to "Debug", E_STRICT errors will be shown.
 
@@ -393,7 +393,7 @@ Serendipity uses a default errorhandler (configured as $serendipity['errorhandle
 
 You can overwrite such an errorhandler in your serendipity_config_local.inc.php file by implementing your own function.
 
-## Frontend-Routing: index.php
+#### Frontend-Routing: index.php
 
 All of our frontend routing is performed through the "index.php" file. Its code flow is like this:
 
@@ -405,7 +405,7 @@ All of our frontend routing is performed through the "index.php" file. Its code 
 
 Some examples:
 
-### Archive view
+##### Archive view
 
 The blog's url http://www.example.com/archives/2019/10/28.html is called by the visitor.
 
@@ -423,13 +423,13 @@ Once all variables are setup, include/genpage.inc.php is called to create the us
 
 This output is then emitted as $data from index.php to the browser.
 
-### External plugin
+##### External plugin
 
 The routing for executing a plugin like http://www.example.com/pages/a-pagetitle.html to match a staticpage plugin's output is very similar to the example above.
 
 The difference is that in this case the usual routing in index.php finds no specific pattern, and then goes to the "404" routing view. Once include/genpage.inc.php operates on that page, the plugin API event hook "genpage" is executed. The staticpage plugin has registered this event hook, and performs routines on its database tables to see if there is an entry that matches the currentl url. If that is the case, it adjusts the serendipity output and passes over its content.
 
-## Backend-Routing: serendipity_admin.php
+#### Backend-Routing: serendipity_admin.php
 
 For the Serendipity backend, all HTTP calls are routed through serendipity_admin.php. This file instantiates the Serendipity framework, sets up a couple of variables and then performs a central lookup on the URL GET (or POST) variable ?serendipity[adminModule]=XXX. Before each module is included from the file in include/admin/XXX.inc.php, Serendipity performs permission checks to see if the user is authorized to access the given module.
 
@@ -437,7 +437,7 @@ Each of the modules (see below) performs their specific actions and evaluate the
 
 Each module passes its output and rendering data to a backend smarty template file, which gets saved in $main_content through output-buffering and finally assigns this output to Smarty and displays the admin/index.tpl template file.
 
-### Backend Modules
+##### Backend Modules
 
 The list of modules that are routable are:
 
@@ -457,7 +457,7 @@ The list of modules that are routable are:
 * **upgrader.inc.php**: Upgrader functionality
 * **users.inc.php**: User management
 
-### Importers / Exporters
+##### Importers / Exporters
 
 Serendipity supports importing from a lot of different systems. Each system is handled through a unified process put into their own files in the include/admin/importers/ directory.
 
@@ -498,7 +498,7 @@ A class can now implement as many helper functions as it needs; the Serendipity 
 
 Please see **TODO:Link** for the database structure if you need to know how to read/write to the Serendipity core tables.
 
-## Plugins
+#### Plugins
 
 Serendipity can easily be enhanced by plugins. We have coined two different terms for two kinds of plugins.
 
@@ -514,7 +514,7 @@ Plugin files within those directories are then only loaded, if you have activate
 
 To see how the plugin files must be coded, please refer to our [Plugin API Documentation](documentation/developing/plugin-api.md).
 
-## Themes
+#### Themes
 
 Historically, Serendipity used the term "Theme", "Template" or "Style" to express the same term. We have tried to completely remove the term "Style", and now use "Theme" to describe a collection of single smarty template files.
 
@@ -524,7 +524,7 @@ Our themes are built upon single Smarty template files. Each file is responsible
 
 A description for how themes are built, which variables they refer to please check the [Theme Documentation](documentation/developing/themes.md).
 
-## Coding Gudelines
+#### Coding Gudelines
 
 Serendipity has been around since 2002, and code has been gradually built upon the same core. This has advantages (stability, adaptibility, compatibility), and also disadvantages ("old flair", mixed code patterns).
 
@@ -541,7 +541,7 @@ if (condition) {
 
 function serendipity_function($var1, $var2, $var3) {
     // code
-}    
+}
 ```
 * Add spaces after commas, add spaces before and after string concatenation ($var = $var1 . $var2)
 * Use easy-to-read IF-statements, try to only use ternary IFs where it's well readable

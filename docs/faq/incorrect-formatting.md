@@ -2,7 +2,7 @@
 title: Incorrect Formatting
 ---
 
-# Incorrect Formatting
+### Incorrect Formatting
 
 Hmmm-hmmm. This still covers a lot of problems; let's narrow it down a bit more.
 

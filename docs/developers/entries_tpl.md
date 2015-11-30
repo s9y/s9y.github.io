@@ -2,17 +2,17 @@
 title: Editing entries.tpl
 ---
 
-# Tutorial: Editing entries.tpl template
+### Tutorial: Editing entries.tpl template
 
 This verbose tutorial is an excerpt of a thread on the forums [http://board.s9y.org/viewtopic.php?t=4013](http://board.s9y.org/viewtopic.php?t=4013).
 
 The initial question was this:
 
-## The question
+#### The question
 
 I'm helping another user to customise my carl blue theme, we've changed the entries.tpl back to the default method, rather than my custom version, so now of course the entries that were posted on the same day all appear grouped. This is fine, but we were wondering if its possible to add a dividing line between these entries only, ie not between dates, just between entries of the same date.
 
-## The answer (by Judebert)
+#### The answer (by Judebert)
 
 I'd like to take a shot at explaining, in plain English, if that's even possible. Feel free to read it sometime when you don't have a headache. I could start off on explaining all of Smarty, but we'll stick to the topic at hand for now. And I'll keep it pretty basic, since other people with no experience might be reading.
 
@@ -149,6 +149,6 @@ Smaller code is better, because it's faster (minutely, in this case, but hey... 
 
 We could, of course, use other HTML than \<hr\>. We could add a complete div, a span, an image, whatever. And if you understand CSS, you could just add an extra class to the appropriate div, then give it extra border, bigger margin, a different color, or what-have-you. But this is already long enough for now.
 
-## Closing words
+#### Closing words
 
 You can find some more sidenotes on the thread noted above. Many thanks to judebert for this explanation and for being able to put it into this documantation.
