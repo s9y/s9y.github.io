@@ -1,10 +1,10 @@
 ---
 layout: docs
-title: Serendipity -  Hosting Providers
+title: Hosting Providers
 ---
-# Serendipity - Hosting Providers
+### Hosting Providers
 
-## Commercial Support
+#### Commercial Support
 
 Serendipity's Core Developer Garvin Hicking works at the german web-design/multimedia agency Faktor E (Bonn). His company offers commercial support for all needs touching Serendipity's featureset.
 
@@ -19,13 +19,13 @@ Poppelsdorfer Allee 104
 D-53115 Bonn (Germany)
 [Internet: www.faktor-e.de](http://www.faktor-e.de/)
 
-## Packages
+#### Packages
 
 * Debian: [Serendipity Debian Package](http://packages.debian.org/sid/serendipity)
 * Softaculous: [Softaculous Automatted Installer cPanel/DirectAdmin](http://www.softaculous.com/softwares/blogs/Serendipity)
 * Aefer: [Aefer from Softaculous](http://www.aefer.com/scripts/php/blogs)
 
-## Hosting
+#### Hosting
 
 Below is a list of companies that supply easy (and sometimes free) access to Serendipity by allowing its customers to automatically deploy and install Serendipity onto a customers site.
 
@@ -67,4 +67,4 @@ While Serendipity has no unique or difficult requirements to its environment, it
  * [manitu](http://www.manitu.de/webhosting/pakete-domains/vergleich/)
  * [onSite](http://www.onsite.org/)
 
-If you know of any providers that belong on these lists, please don't hesitate to contact  ((Developer Team|Garvin Hicking)) or ((Developer Team|Jannis Hermanns)) from the development team
+If you know of any providers that belong on these lists, please don't hesitate to contact  ((Developer Team|Garvin Hicking)) or ((Developer Team|Jannis Hermanns)) from the development team.

@@ -3,7 +3,7 @@ layout: docs
 title: Installation Docs
 ---
 
-# Intallation Docs
+### Installation Docs
 
 * [Fresh Installation](fresh-installation.html)
 * [Upgrading Serendipity](upgrading.html)
