@@ -15,9 +15,7 @@ Now you can write a mail to the account. In our example, just send it to blog-th
 
 When you want Serendipity to check the mail, log in to your Admin screen and click the "Fetch Mails" link. POPfetcher will connect to the mail account, fetch all its mails, and insert them as Serendipity entries. Alternatively, just set your browser's "Go" or address bar to the special URL:
 
-```
-http://{yourblog}/index.php?/plugin/popfetcher_poll
-```
+    http://{yourblog}/index.php?/plugin/popfetcher_poll
 
 You could even bookmark it and visit the bookmark whenever you feel like checking blog mails.
 

@@ -13,23 +13,17 @@ Configure the plugin through your Admin page.  Take special note of the name: yo
 
 Now, you edit the external webpage.  Where you want the latest entries to appear, you add:
 
-```
-<script src="<noop>http://{yourblog}/plugin/{name}</noop>></script>
-```
+    <script src="<noop>http://{yourblog}/plugin/{name}</noop>></script>
 
 where {yourblog} is the complete path to your blog, including any directory, and {name} is the name you configured earlier in the plugin.
 
 You can also specify options.  For instance,
 
-```
-<script src="<noop>http://{yourblog}/plugin/{name}?details=0</noop>></script>
-```
+    <script src="<noop>http://{yourblog}/plugin/{name}?details=0</noop>></script>
 
 will show only the headlines, with no entry body.
 
-```
-<script src="<noop>http://{yourblog}/plugin/{name}?category=news&num=10"</noop>></script>
-```
+    <script src="<noop>http://{yourblog}/plugin/{name}?category=news&num=10"</noop>></script>
 
 will show the latest 10 entries from the "news" category.
 

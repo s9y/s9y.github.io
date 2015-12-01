@@ -50,13 +50,11 @@ The file **serendipity_config.inc.php** is the heart of our framework. It sets d
 
 Whenever you want to do "something" with the Serendipity framework, all you need to do is include that file **serendipity_config.inc.php** in your code, and you can immediately access most of the Serendipity function calls, like this:
 
-```
-<?php
-include 'serendipity_config.inc.php';
-$entries = serendipity_fetchEntries();
-print_r($entries);
-?>
-```
+    <?php
+    include 'serendipity_config.inc.php';
+    $entries = serendipity_fetchEntries();
+    print_r($entries);
+    ?>
 
 The defined variables in this file by default are:
 
@@ -82,7 +80,7 @@ On top of that, certain variables that are not included in the Serendipity Confi
 * $serendipity['fetchLimit']: How many entries to display (default 15)
 * $serendipity['RSSfetchLimit']: How many entries to display within RSS feed (default 15)
 * $serendipity['use_PEAR']: By default, Serendipity will use externally provided PEAR files (if existing). To force using the PEAR libraries bundled with Serendipity, set this variable to FALSE.
-* $serendipity['useHTTP-Auth']: If enabled (on by default, requires mod_php), users can log in to the blog by specifying user/password in the URL like ```http://user:password@example.com/serendipity_admin.php``` (default true)
+* $serendipity['useHTTP-Auth']: If enabled (on by default, requires mod_php), users can log in to the blog by specifying user/password in the URL like `http://user:password@example.com/serendipity_admin.php` (default true)
 * $serendipity['cacheControl']: (default true)
 * $serendipity['expose_s9y']: Whether to expose Serendipity version number (default true)
 * $serendipity['forceBase64']: When enabled, mails are encoded with base64 instead of imap_8bit (default false)
@@ -416,7 +414,7 @@ Now the central URL that was called is stored in $uri, and additional parameters
 
 Now, multiple regular expressions check the $uri for each possible scenario that could happen. This means, the central PAT_ARCHIVES rule will evaluate true, and execute its workflow.
 
-Inside this if-statement, the $serendipity['uriArguments'] are parsed and operated on, so that possible categories, authors, week formats, pagination numbers or others are recognized. Those variables are stored in parameters like ```$serendipity['GET']['page']``` (pagination) for example.
+Inside this if-statement, the $serendipity['uriArguments'] are parsed and operated on, so that possible categories, authors, week formats, pagination numbers or others are recognized. Those variables are stored in parameters like `$serendipity['GET']['page']` (pagination) for example.
 
 In our case, the list only contains "2019", "10" and "28". Those are stored in the variables $year, $month and $day. According to the selected calendar (gregorian or persian) these variables are evaluated and passed along to $ts and $te. Those hold timestamps of the passed date minumum and maximum (here: 2019-10-28 00:00 to 2019-10-28 23:59).
 
@@ -535,15 +533,15 @@ This also means, we only have a few strict rules:
 
 * Use 4 spaces to indent code
 * Put opening braces on the same line like the preceding logic, put closing braces on a new line:
-```
-if (condition) {
-    // code
-}
 
-function serendipity_function($var1, $var2, $var3) {
-    // code
-}
-```
+    if (condition) {
+        // code
+    }
+
+    function serendipity_function($var1, $var2, $var3) {
+        // code
+    }
+
 * Add spaces after commas, add spaces before and after string concatenation ($var = $var1 . $var2)
 * Use easy-to-read IF-statements, try to only use ternary IFs where it's well readable
 * Use single-quotes for array keys and strings

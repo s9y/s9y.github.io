@@ -27,40 +27,37 @@ This cryptically named markup plugin simply takes any newline and turns it into 
 
 This will turn some of the more common smilies/emoticons into images, which images it turns them into depends on which template you have selected. The emoticons it uses are:
 
-
-**Similey** | **Image file**
------------ | -------------
-:'( | cry\_smile.gif
-:-) | regular\_smile.gif
-:-O | embaressed\_smile.gif
-:O' | embaressed\_smile.gif
-:-( | sad\_smile.gif
-:( | sad\_smile.gif
-:) | regular\_smile.gif
-8-) | shades\_smile.gif
-:-D | teeth\_smile.gif
-:D | teeth\_smile.gif
-8) | shades\_smile.gif
-:-P | tounge\_smile.gif
-;-) | wink\_smile.gif
-;) | wink\_smile.gif
-:P | tounge\_smile.gif
+    **Similey** | **Image file**
+    ----------- | -------------
+    :'( | cry\_smile.gif
+    :-) | regular\_smile.gif
+    :-O | embaressed\_smile.gif
+    :O' | embaressed\_smile.gif
+    :-( | sad\_smile.gif
+    :( | sad\_smile.gif
+    :) | regular\_smile.gif
+    8-) | shades\_smile.gif
+    :-D | teeth\_smile.gif
+    :D | teeth\_smile.gif
+    8) | shades\_smile.gif
+    :-P | tounge\_smile.gif
+    ;-) | wink\_smile.gif
+    ;) | wink\_smile.gif
+    :P | tounge\_smile.gif
 
 ## <a name="A5"></a>S9y Markup
 
-```
-**bolded text**
+    **bolded text**
 
-_underlined text_
+    _underlined text_
 
-^superscript text^
+    ^superscript text^
 
-@subscript text@
+    @subscript text@
 
-|xxxxxx|Font color change, where xxxxxx is a hex code|
+    |xxxxxx|Font color change, where xxxxxx is a hex code|
 
-#yyy# embeds #yyy# as an html entity, (#gt#, #lt# and #amp# for instance)
-```
+    #yyy# embeds #yyy# as an html entity, (#gt#, #lt# and #amp# for instance)
 
 
 ## <a name="A6"></a>Textile
@@ -79,15 +76,13 @@ For instance, if you use a lot of embedded Flash video, you might want an easy w
 
 Here's an example. It replaces the \<flv\> tag with everything you need for a Flash video, including dimensions and automatic start. Note that \$1, \$2 and so on are the text matched by the first and second set of parenthesis; you can modify these lines to use as many variables as you want.
 
-```
-$regexpArray = array(
-    'SearchArray'=>array(
-      '/<flv href="([^"]+)" width="([^"]+)" height="([^"]+)" autostart="([^"]+)">/U'
-    ),
-    'ReplaceArray'=>array(
-      '<object type="application/x-shockwave-flash" width="$2" height="$3" data="http://yourdomain/flv.swf?file=$1&autostart=$4"><param name="movie" value="http://yourdomain/flv.swf?file=$1&autostart=$4" /></object>'
-    )
-);
-```
+    $regexpArray = array(
+        'SearchArray'=>array(
+          '/<flv href="([^"]+)" width="([^"]+)" height="([^"]+)" autostart="([^"]+)">/U'
+        ),
+        'ReplaceArray'=>array(
+          '<object type="application/x-shockwave-flash" width="$2" height="$3" data="http://yourdomain/flv.swf?file=$1&autostart=$4"><param name="movie" value="http://yourdomain/flv.swf?file=$1&autostart=$4" /></object>'
+        )
+    );
 
 Now, you can use \<flv href="my\_flv\_file.flv" width="its\_width" height="its\_height" autostart="true\_or\_false"\> to insert the entire Flash video anywhere in your entry.

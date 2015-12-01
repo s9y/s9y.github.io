@@ -13,14 +13,12 @@ Rather than making you remember all this, Serendipity provides the nl2br plugin.
 
 When you enter plain HTML, you often add lots of newlines that you **don't** want displayed.  For instance, when most people add tables, they use a new line for every tag:
 
-```
-<TABLE>
-<TR>
-<TD>First Cell</TD>
-<TD>Second Cell</TD>
-</TR>
-</TABLE>
-```
+    <TABLE>
+    <TR>
+    <TD>First Cell</TD>
+    <TD>Second Cell</TD>
+    </TR>
+    </TABLE>
 
 The nl2br plugin will add <BR /> tags after every line in the example.  Most browsers render that as the original table, with lots of space above them.
 
@@ -29,8 +27,6 @@ There are three ways to modify this behavior:
 * To disable the nl2br plugin, go to your Admin screen, Configure Plugins, and click on the nl2br plugin.  Tick its box and click the button marked "Delete".  This will affect all your entries.
 * If you want to keep the nl2br plugin, you can remove the extra newlines from your entries.  For instance, the example table above would become:
 
-```
-<TABLE><TR><TD>First Cell</TD><TD>Second Cell</TD></TR></TABLE>
-```
+    <TABLE><TR><TD>First Cell</TD><TD>Second Cell</TD></TR></TABLE>
 
 * You can disable the nl2br plugin for individual entries if you install the "Extended Properties of Entries" plugin, which is included with Serendipity.

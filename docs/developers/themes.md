@@ -19,14 +19,14 @@ The general idea is easy: Templates should only contain display logic, and not p
 
 This means, Smarty themes are actually mostly HTML files where you can put in special commands or placeholders. Those are quite easy to learn and use:
 
-* Variables are placed through curly brackets and the dollar sign: ```{$variable}```
-* Arrays can be accessed similar to JavaScript: ```{$array.subkey}```
-* ... but also simliar to PHP: ```{$array['subkey']}```
-* Function calls can be executed with curly brackets: ```{myFunction param1="something" param2="something else"}```
-* IF-queries can be performed: ```{if $variable == true}...{/if}```
-* Loops can be performed: ```{foreach from=$array item="myvalue" key="mykey"}...{/foreach}```
-* So called "modifiers" can be stacked to operate on a single variable with the "pipe" sign: ```{$variable|escape|lower}```
-* Modifers can have parameters: ```{$variable|format_date:"%d.%m.%Y"}``
+* Variables are placed through curly brackets and the dollar sign: `{$variable}`
+* Arrays can be accessed similar to JavaScript: `{$array.subkey}`
+* ... but also simliar to PHP: `{$array['subkey']}`
+* Function calls can be executed with curly brackets: `{myFunction param1="something" param2="something else"}`
+* IF-queries can be performed: `{if $variable == true}...{/if}`
+* Loops can be performed: `{foreach from=$array item="myvalue" key="mykey"}...{/foreach}`
+* So called "modifiers" can be stacked to operate on a single variable with the "pipe" sign: `{$variable|escape|lower}`
+* Modifers can have parameters: `{$variable|format_date:"%d.%m.%Y"}`
 
 #### Fallback templates
 
@@ -38,9 +38,9 @@ Let's take the file "entries.tpl" for example. This template file is used in the
 
 When your frontend is called and the entries.tpl file should be rendered, Serendipity checks for this file like this:
 
-* First, check if the currently set theme (for example "my_custom_theme") has the file "entries.tpl". If yes: Use that file ```templates/my_custom_theme/entries.tpl```.
-* Now check the theme's "info.txt" file and see if the theme defined an "Engine: XXX" which specifies the default fallback directory to use. By default, this directory is set to "2k11" - so this file ```templates/2k11/entries.tpl```will be returned. If "Engine: bulletproof" would be contained in the file, then ```templates/bulletproof/entries.tpl``` would be returned.
-* If such a file would still not exist, the last fallback is to use ```templates/default/entries.tpl```
+* First, check if the currently set theme (for example "my_custom_theme") has the file "entries.tpl". If yes: Use that file `templates/my_custom_theme/entries.tpl`.
+* Now check the theme's "info.txt" file and see if the theme defined an "Engine: XXX" which specifies the default fallback directory to use. By default, this directory is set to "2k11" - so this file `templates/2k11/entries.tpl`will be returned. If "Engine: bulletproof" would be contained in the file, then `templates/bulletproof/entries.tpl` would be returned.
+* If such a file would still not exist, the last fallback is to use `templates/default/entries.tpl`
 
 So make sure that you only copy over those files to your theme directory which you are really going to customize!
 
@@ -54,21 +54,18 @@ The most important files of a theme are these:
 
 This file is the only required file of a theme directory. It specifies the metadata of a theme. The format of this file is simple and consists of a few "Key: Value" pairs (only one line per key!)
 
-
-```
-Name: This is the name of your theme
-Author: This is what is displayed as "author" in the backend
-Date: The creation date of your theme (any format you like, i.e. YYYY-MM-DD)
-Require Serendipity: [VERSION]
-Backend: [BACKEND]
-Engine: [ENGINE]
-```
+    Name: This is the name of your theme
+    Author: This is what is displayed as "author" in the backend
+    Date: The creation date of your theme (any format you like, i.e. YYYY-MM-DD)
+    Require Serendipity: [VERSION]
+    Backend: [BACKEND]
+    Engine: [ENGINE]
 
 Every line except "Name:" is optional.
 
-* ```[VERSION]``` can be replaced with the minimum version of Serendipity that is required to power your theme. Simply set the version number of your current installation where you developed a theme with.
-* ```[BACKEND]``` can hold the string "Yes" if your theme also provides a backend theme. Leave out this line, if no backend is provided
-* ```[ENGINE]``` can hold the string of any theme directory (i.e. "bulletproof", "2k11", "default") to specify, which fallback to use. If not provided, falls back to $serendipity['defaultTemplate'] (2k11).
+* `[VERSION]` can be replaced with the minimum version of Serendipity that is required to power your theme. Simply set the version number of your current installation where you developed a theme with.
+* `[BACKEND]` can hold the string "Yes" if your theme also provides a backend theme. Leave out this line, if no backend is provided
+* `[ENGINE]` can hold the string of any theme directory (i.e. "bulletproof", "2k11", "default") to specify, which fallback to use. If not provided, falls back to $serendipity['defaultTemplate'] (2k11).
 
 ##### preview.png, preview_fullsize.jpg
 
@@ -82,58 +79,50 @@ Also, this file is responsible for setting up theme options.
 
 Please make sure that this file always contains those lines at the top:
 
-```
-<?php
-if (IN_serendipity !== true) {
-  die ("Don't hack!");
-}
-```
+    <?php
+    if (IN_serendipity !== true) {
+      die ("Don't hack!");
+    }
 
 This ensures that the file can only be called from within the Serendipity framework, and not by outside HTTP calls.
 
 ###### Defining custom Smarty functions/modifiers / Executing custom PHP
 
-Since config.inc.php is called after the Smarty framework is initialized, you can easily access ```$serendipity['smarty']``` to register custom functions:
+Since config.inc.php is called after the Smarty framework is initialized, you can easily access `$serendipity['smarty']` to register custom functions:
 
-```
-<?php
-if (IN_serendipity !== true) {
-    die ("Don't hack!");
-}
+    <?php
+    if (IN_serendipity !== true) {
+        die ("Don't hack!");
+    }
 
-// A smarty modifier is a PHP function that operates on the first parameter and returns content.
-function serendipity_smarty_mymodifier($string) {
-    return strtolower($string);
-    // Simply returns the lowercased version of a string.
-}
+    // A smarty modifier is a PHP function that operates on the first parameter and returns content.
+    function serendipity_smarty_mymodifier($string) {
+        return strtolower($string);
+        // Simply returns the lowercased version of a string.
+    }
 
-// A smarty function can be called with parameters, and returns content.
-function serendipity_smarty_myfunction($params, &$smarty) {
-	return 'This function has been called with those parameteres: <pre>' . print_r($params, true) . '</pre>';
-	// Simply returns a HTML statement with passed parameteres
-}
+    // A smarty function can be called with parameters, and returns content.
+    function serendipity_smarty_myfunction($params, &$smarty) {
+    	return 'This function has been called with those parameteres: <pre>' . print_r($params, true) . '</pre>';
+    	// Simply returns a HTML statement with passed parameteres
+    }
 
-$serendipity['smarty']->registerPlugin('modifier', 'mymodifier', 'serendipity_smarty_mymodifier'
-$serendipity['smarty']->registerPlugin('function', 'myfunction', 'serendipity_smarty_myfunction'
-```
+    $serendipity['smarty']->registerPlugin('modifier', 'mymodifier', 'serendipity_smarty_mymodifier'
+    $serendipity['smarty']->registerPlugin('function', 'myfunction', 'serendipity_smarty_myfunction'
 
-Note that you first need to actually define your functions in the PHP scope, and then you need to use the ```$serendipity['smarty']->registerPlugin()``` call to make it available to Smarty templates.
+Note that you first need to actually define your functions in the PHP scope, and then you need to use the `$serendipity['smarty']->registerPlugin()` call to make it available to Smarty templates.
 
-* The first parameter to ```registerPlugin()``` defines whether to make a modifier or a function known.
-* The second parameter defines how the function is called in a Smarty template: ```{$variable|mymodifier}``` or ```{myfunction param1="value"}```.
+* The first parameter to `registerPlugin()` defines whether to make a modifier or a function known.
+* The second parameter defines how the function is called in a Smarty template: `{$variable|mymodifier}` or `{myfunction param1="value"}`.
 * The third parameter is the actual name of the PHP function that will be called.
 
 Of course you can also use the other Smarty API functions to assign special variables you might need for your theme:
 
-```
-$serendipity['smarty']->assign('my_ip', $_SERVER['REMOTE_ADDR']);
-```
+    $serendipity['smarty']->assign('my_ip', $_SERVER['REMOTE_ADDR']);
 
 You can also influence whether the Smarty security should be disabled so that you can use {php} / {include_php} code tags or call any PHP modifiers:
 
-```
-$serendipity['smarty']->security = false;
-```
+    $serendipity['smarty']->security = false;
 
 If you want to include foreign PHP scripts to show them on your own page, consider using the "External PHP" or "Wrap URL" event plugins available via Spartacus - or of course, creating your own simple PHP Serendipity Plugin. Head over to the Plugin API Docs for more information about this. **TODO:LINK**
 
@@ -151,50 +140,46 @@ A themes's config.inc.php file can also hook into the Serendipity code flow. Usu
 
 You can read more about plugin hooks here: **TODO: Link**
 
-To make a theme hook into the "js" hook to add some javascript to the frontend, a function needs to be defined. This is done by a central function called ```serendipity_plugin_api_event_hook```:
+To make a theme hook into the "js" hook to add some javascript to the frontend, a function needs to be defined. This is done by a central function called `serendipity_plugin_api_event_hook`:
 
-```
-if (IN_serendipity !== true) {
-    die ("Don't hack!");
-}
-
-// The parameter order and default values should always look the same:
-function serendipity_plugin_api_event_hook($event, &$bag, $eventData, $addData = null) {
-    global $serendipity;
-
-    switch($event) {
-        case 'js':
-            echo '$(document).ready(function() { console.log("Theme loaded!"); }';
-		    return true;
-            break;
+    if (IN_serendipity !== true) {
+        die ("Don't hack!");
     }
-}
-```
+
+    // The parameter order and default values should always look the same:
+    function serendipity_plugin_api_event_hook($event, &$bag, $eventData, $addData = null) {
+        global $serendipity;
+
+        switch($event) {
+            case 'js':
+                echo '$(document).ready(function() { console.log("Theme loaded!"); }';
+    		    return true;
+                break;
+        }
+    }
 
 For each additional event hook the theme wants to "listen on", you can add multiple cases for those:
 
-```
-if (IN_serendipity !== true) {
-    die ("Don't hack!");
-}
-
-// The parameter order and default values should always look the same:
-function serendipity_plugin_api_event_hook($event, &$bag, $eventData, $addData = null) {
-    global $serendipity;
-
-    switch($event) {
-        case 'js':
-            echo '$(document).ready(function() { console.log("Frontend-Theme loaded!"); }';
-		    return true;
-            break;
-
-        case 'js_backend':
-            echo '$(document).ready(function() { console.log("Backend-Theme loaded!"); }';
-		    return true;
-            break;
+    if (IN_serendipity !== true) {
+        die ("Don't hack!");
     }
-}
-```
+
+    // The parameter order and default values should always look the same:
+    function serendipity_plugin_api_event_hook($event, &$bag, $eventData, $addData = null) {
+        global $serendipity;
+
+        switch($event) {
+            case 'js':
+                echo '$(document).ready(function() { console.log("Frontend-Theme loaded!"); }';
+    		    return true;
+                break;
+
+            case 'js_backend':
+                echo '$(document).ready(function() { console.log("Backend-Theme loaded!"); }';
+    		    return true;
+                break;
+        }
+    }
 
 The examples above are trivial, but the usage nearly unlimited. Themes can provide any kind of plugin as internal functionality, even with complete plugin output that hooks into saving entries, offering new frontend functionality and anything else you can think of.
 
@@ -206,10 +191,8 @@ Serendipity allows you to define custom fields within your entry, which you can 
 
 That means, you can create two custom fields called Listening and Playing (don't use whitespace or special characters for fieldnames). Create an entry, and fill in values for those two fields. Now edit your entries.tpl template and place the Smarty Codes
 
-```
-Now listening to: {$entry.properties.ep_Listening}
-Now playing: {$entry.properties.ep_Playing}
-```
+    Now listening to: {$entry.properties.ep_Listening}
+    Now playing: {$entry.properties.ep_Playing}
 
 anywhere you like inside the entry loop. Remember to prefix your property keyname with ep_. Then you'll see those fields at the place you configured. You can also add the usual Smarty markup to check if a variable is empty, and add some DIV or other tags to surround your output.
 
@@ -223,95 +206,92 @@ Also, a theme can define a set of custom entryproperties on its own, using the c
 
 To do that, you place this code in the config.inc.php file. The code consists of three parts: A helper function to get custom options, a helper function to set custom options, and the helper function to hook into plugin output to display the input form in the backend.
 
-The code below integrates the custom entry property fields "entry_subtitle" and "entry_specific_header_image", which are later available in the Smarty file as ```{$entry.properties.entry_subtitle}``` and ```{$entry.properties.entry_specific_header_image}```.
+The code below integrates the custom entry property fields "entry_subtitle" and "entry_specific_header_image", which are later available in the Smarty file as `{$entry.properties.entry_subtitle}` and `{$entry.properties.entry_specific_header_image}`.
 
+    <?php
+    // Save custom field variables within the serendipity "Edit/Create Entry" backend.
+    //                Any custom variables can later be queried inside the .tpl files through
+    //                  {if $entry.properties.key_value == 'true'}...{/if}
 
-```
-<?php
-// Save custom field variables within the serendipity "Edit/Create Entry" backend.
-//                Any custom variables can later be queried inside the .tpl files through
-//                  {if $entry.properties.key_value == 'true'}...{/if}
+    // Function to get the content of a non-boolean entry variable
+    function entry_option_get_value($property_key, &$eventData) {
+        global $serendipity;
+        if (isset($eventData['properties'][$property_key])) return $eventData['properties'][$property_key];
+        if (isset($serendipity['POST']['properties'][$property_key])) return $serendipity['POST']['properties'][$property_key];
+         return false;
+    }
 
-// Function to get the content of a non-boolean entry variable
-function entry_option_get_value($property_key, &$eventData) {
-    global $serendipity;
-    if (isset($eventData['properties'][$property_key])) return $eventData['properties'][$property_key];
-    if (isset($serendipity['POST']['properties'][$property_key])) return $serendipity['POST']['properties'][$property_key];
-     return false;
-}
+    // Function to store form values into the serendipity database, so that they will be retrieved later.
+    function entry_option_store($property_key, $property_val, &$eventData) {
+        global $serendipity;
 
-// Function to store form values into the serendipity database, so that they will be retrieved later.
-function entry_option_store($property_key, $property_val, &$eventData) {
-    global $serendipity;
-
-    $q = "DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = " . (int)$eventData['id'] . " AND property = '" . serendipity_db_escape_string($property_key) . "'";
-    serendipity_db_query($q);
-
-    if (!empty($property_val)) {
-        $q = "INSERT INTO {$serendipity['dbPrefix']}entryproperties (entryid, property, value) VALUES (" . (int)$eventData['id'] . ", '" . serendipity_db_escape_string($property_key) . "', '" . serendipity_db_escape_string($property_val) . "')";
+        $q = "DELETE FROM {$serendipity['dbPrefix']}entryproperties WHERE entryid = " . (int)$eventData['id'] . " AND property = '" . serendipity_db_escape_string($property_key) . "'";
         serendipity_db_query($q);
+
+        if (!empty($property_val)) {
+            $q = "INSERT INTO {$serendipity['dbPrefix']}entryproperties (entryid, property, value) VALUES (" . (int)$eventData['id'] . ", '" . serendipity_db_escape_string($property_key) . "', '" . serendipity_db_escape_string($property_val) . "')";
+            serendipity_db_query($q);
+        }
     }
-}
 
-function serendipity_plugin_api_event_hook($event, &$bag, &$eventData, $addData = null) {
-    global $serendipity;
+    function serendipity_plugin_api_event_hook($event, &$bag, &$eventData, $addData = null) {
+        global $serendipity;
 
-    // Check what Event is coming in, only react to those we want.
-    switch($event) {
+        // Check what Event is coming in, only react to those we want.
+        switch($event) {
 
-        // Displaying the backend entry section
-        case 'backend_display':
-            // INFO: The whole 'entryproperties' injection is easiest to store any data you want. The entryproperties plugin
-            // should actually not even be required to do this, as serendipity loads all properties regardless of the installed plugin
+            // Displaying the backend entry section
+            case 'backend_display':
+                // INFO: The whole 'entryproperties' injection is easiest to store any data you want. The entryproperties plugin
+                // should actually not even be required to do this, as serendipity loads all properties regardless of the installed plugin
 
-            // The name of the variable you want to support
-            $entry_subtitle_key = 'entry_subtitle';
-            $entry_specific_header_image_key = 'entry_specific_header_image';
+                // The name of the variable you want to support
+                $entry_subtitle_key = 'entry_subtitle';
+                $entry_specific_header_image_key = 'entry_specific_header_image';
 
-            // Check what our special key is set to (checks both POST data as well as the actual data)
-            $is_entry_subtitle = (function_exists('serendipity_specialchars') ? serendipity_specialchars(entry_option_get_value($entry_subtitle_key, $eventData)) : htmlspecialchars(entry_option_get_value($entry_subtitle_key, $eventData), ENT_COMPAT, LANG_CHARSET));
-            $is_entry_specific_header_image = entry_option_get_value ($entry_specific_header_image_key, $eventData);
+                // Check what our special key is set to (checks both POST data as well as the actual data)
+                $is_entry_subtitle = (function_exists('serendipity_specialchars') ? serendipity_specialchars(entry_option_get_value($entry_subtitle_key, $eventData)) : htmlspecialchars(entry_option_get_value($entry_subtitle_key, $eventData), ENT_COMPAT, LANG_CHARSET));
+                $is_entry_specific_header_image = entry_option_get_value ($entry_specific_header_image_key, $eventData);
 
-            // This is the actual HTML output on the backend screen.
-            echo '<div class="entryproperties">';
-            echo '  <input type="hidden" value="true" name="serendipity[propertyform]">';
-            echo '  <h3>' . THEME_ENTRY_PROPERTIES_HEADING . '</h3>';
-            echo '      <div class="entryproperties_customfields adv_opts_box">';
-            echo '          <h4>' . THEME_CUSTOM_FIELD_HEADING . '</h4>';
-            echo '          <span>' . THEME_CUSTOM_FIELD_DEFINITION . '</span>';
-            echo '          <div class="serendipity_customfields clearfix">';
-            echo '              <div class="clearfix form_area media_choose" id="ep_column_' . $entry_subtitle_key . '">';
-            echo '                  <label for="'. $entry_subtitle_key. '">' . THEME_ENTRY_SUBTITLE . '</label>';
-            echo '                  <input id="entrySubTitle" type="text" value="' . $is_entry_subtitle . '" name="serendipity[properties][' . $entry_subtitle_key . ']" style="width: 100%;">';
-            echo '              </div>';
-            echo '          </div>';
-            echo '          <div class="serendipity_customfields clearfix">';
-            echo '              <div class="clearfix form_area media_choose" id="ep_column_' . $entry_specific_header_image_key . '">';
-            echo '                  <label for="' . $entry_specific_header_image_key . '">' . THEME_ENTRY_HEADER_IMAGE. '</label>';
-            echo '                  <textarea data-configitem="' . $entry_specific_header_image_key . '" name="serendipity[properties][' . $entry_specific_header_image_key . ']" class="change_preview" id="prop' . $entry_specific_header_image_key . '">' . $is_entry_specific_header_image . '</textarea>';
-            echo '                  <button title="' . MEDIA . '" name="insImage" type="button" class="customfieldMedia"><span class="icon-picture"></span><span class="visuallyhidden">' . MEDIA . '</span></button>';
-            echo '                  <figure id="' . $entry_specific_header_image_key . '_preview">';
-            echo '                      <figcaption>' . PREVIEW . '</figcaption>';
-            echo '                      <img alt="" src="' . $is_entry_specific_header_image . '">';
-            echo '                  </figure>';
-            echo '              </div>';
-            echo '          </div>';
-            echo '      </div>';
-            echo ' </div>';
+                // This is the actual HTML output on the backend screen.
+                echo '<div class="entryproperties">';
+                echo '  <input type="hidden" value="true" name="serendipity[propertyform]">';
+                echo '  <h3>' . THEME_ENTRY_PROPERTIES_HEADING . '</h3>';
+                echo '      <div class="entryproperties_customfields adv_opts_box">';
+                echo '          <h4>' . THEME_CUSTOM_FIELD_HEADING . '</h4>';
+                echo '          <span>' . THEME_CUSTOM_FIELD_DEFINITION . '</span>';
+                echo '          <div class="serendipity_customfields clearfix">';
+                echo '              <div class="clearfix form_area media_choose" id="ep_column_' . $entry_subtitle_key . '">';
+                echo '                  <label for="'. $entry_subtitle_key. '">' . THEME_ENTRY_SUBTITLE . '</label>';
+                echo '                  <input id="entrySubTitle" type="text" value="' . $is_entry_subtitle . '" name="serendipity[properties][' . $entry_subtitle_key . ']" style="width: 100%;">';
+                echo '              </div>';
+                echo '          </div>';
+                echo '          <div class="serendipity_customfields clearfix">';
+                echo '              <div class="clearfix form_area media_choose" id="ep_column_' . $entry_specific_header_image_key . '">';
+                echo '                  <label for="' . $entry_specific_header_image_key . '">' . THEME_ENTRY_HEADER_IMAGE. '</label>';
+                echo '                  <textarea data-configitem="' . $entry_specific_header_image_key . '" name="serendipity[properties][' . $entry_specific_header_image_key . ']" class="change_preview" id="prop' . $entry_specific_header_image_key . '">' . $is_entry_specific_header_image . '</textarea>';
+                echo '                  <button title="' . MEDIA . '" name="insImage" type="button" class="customfieldMedia"><span class="icon-picture"></span><span class="visuallyhidden">' . MEDIA . '</span></button>';
+                echo '                  <figure id="' . $entry_specific_header_image_key . '_preview">';
+                echo '                      <figcaption>' . PREVIEW . '</figcaption>';
+                echo '                      <img alt="" src="' . $is_entry_specific_header_image . '">';
+                echo '                  </figure>';
+                echo '              </div>';
+                echo '          </div>';
+                echo '      </div>';
+                echo ' </div>';
 
-            break;
+                break;
 
-        // To store the value of our entryproperties
-        case 'backend_publish':
-        case 'backend_save':
-            // Call the helper function with all custom variables here.
-            entry_option_store('entry_subtitle', $serendipity['POST']['properties']['entry_subtitle'], $eventData);
-            entry_option_store('entry_specific_header_image', $serendipity['POST']['properties']['entry_specific_header_image'], $eventData);
-            break;
+            // To store the value of our entryproperties
+            case 'backend_publish':
+            case 'backend_save':
+                // Call the helper function with all custom variables here.
+                entry_option_store('entry_subtitle', $serendipity['POST']['properties']['entry_subtitle'], $eventData);
+                entry_option_store('entry_specific_header_image', $serendipity['POST']['properties']['entry_specific_header_image'], $eventData);
+                break;
+        }
     }
-}
-?>
-```
+    ?>
 
 ###### Theme Options
 
@@ -319,63 +299,60 @@ A theme can offer complex configuration for any kind of options. Those can be ev
 
 The theme configuration is actually a lot like the configuration offered by plugins, from both a developer as well a user standpoint.
 
-Theme options are defined in the config.inc.php file of a theme, and are listed in an array ```$template_config```. Each array key represents one configuration option, and each configuration option has a subset of specific keys that describe how it is configured.
+Theme options are defined in the config.inc.php file of a theme, and are listed in an array `$template_config`. Each array key represents one configuration option, and each configuration option has a subset of specific keys that describe how it is configured.
 
-The "var" type of each array indicates the name that you can later use to access a template option like this: ```{$template_option.layouttype}```.
+The "var" type of each array indicates the name that you can later use to access a template option like this: `{$template_option.layouttype}`.
 
 An example (copied from the bulletproof theme):
 
-```
-$template_config = array(
-   array(
-		'var'           => 'infobp',
-		'name'          => 'infobp',
-		'type'          => 'custom',
-		'custom'        => USER_STYLESHEET,
-    ),
-    array(
-        'var'           => 'layouttype',
-        'name'          => LAYOUT_TYPE,
-        'type'          => 'select',
-        'default'       => '3sbs',
-        'select_values' => array('3sbs' => LAYOUT_SBS,
-                                 '3bss' => LAYOUT_BSS,
-                                 '3ssb' => LAYOUT_SSB,
-                                 '2sb'  => LAYOUT_SB,
-                                 '2bs'  => LAYOUT_BS,
-                                 '1col' => LAYOUT_SC,
-                                 '2sbf' => LAYOUT_SBF,
-                                 '2bsf' => LAYOUT_BSF)
-    ),
-    array(
-        'var'           => 'jscolumns',
-        'name'          => JAVASCRIPT_COLUMNS,
-        'type'          => 'boolean',
-        'default'       => 'false',
-    ),
-    array(
-        'var'           => 'addthisaccount',
-        'name'          => ADDTHIS_ACCOUNT,
-        'type'          => 'string',
-        'default'       => '',
-    ),
-    array(
-    	'var'			=> 'example_radio',
-    	'name'          => 'An example radio button',
-    	'type'          => 'radio',
-    	'value'         => array('first', 'second', 'third'),
-    	'desc'          => array('The first option', 'The second Option', 'The Third Option');
-    	'per_row'       => 1
-    )
-);
-
-```
+    $template_config = array(
+       array(
+    		'var'           => 'infobp',
+    		'name'          => 'infobp',
+    		'type'          => 'custom',
+    		'custom'        => USER_STYLESHEET,
+        ),
+        array(
+            'var'           => 'layouttype',
+            'name'          => LAYOUT_TYPE,
+            'type'          => 'select',
+            'default'       => '3sbs',
+            'select_values' => array('3sbs' => LAYOUT_SBS,
+                                     '3bss' => LAYOUT_BSS,
+                                     '3ssb' => LAYOUT_SSB,
+                                     '2sb'  => LAYOUT_SB,
+                                     '2bs'  => LAYOUT_BS,
+                                     '1col' => LAYOUT_SC,
+                                     '2sbf' => LAYOUT_SBF,
+                                     '2bsf' => LAYOUT_BSF)
+        ),
+        array(
+            'var'           => 'jscolumns',
+            'name'          => JAVASCRIPT_COLUMNS,
+            'type'          => 'boolean',
+            'default'       => 'false',
+        ),
+        array(
+            'var'           => 'addthisaccount',
+            'name'          => ADDTHIS_ACCOUNT,
+            'type'          => 'string',
+            'default'       => '',
+        ),
+        array(
+        	'var'			=> 'example_radio',
+        	'name'          => 'An example radio button',
+        	'type'          => 'radio',
+        	'value'         => array('first', 'second', 'third'),
+        	'desc'          => array('The first option', 'The second Option', 'The Third Option');
+        	'per_row'       => 1
+        )
+    );
 
 ###### Configuration keys
 
 This example defines four different configuration options. Each configuration option has a specific variable name, a title displayed for the user, an indicator of what type it is, and its available options. Those are defined by these array keys:
 
-* **var**: Defines what variable name is later used so that you can check for it in the Smarty template files. ```'var' => 'layouttype'``` would later be accessible as ```{$template_option.layouttype}``` in the index.tpl file for example.
+* **var**: Defines what variable name is later used so that you can check for it in the Smarty template files. `'var' => 'layouttype'` would later be accessible as `{$template_option.layouttype}` in the index.tpl file for example.
 * **name**: This is the string that gets displayed to the user when configuring the theme option. Usually it holds a CONSTANT that is defined in a language file (see below)
 * **default**: Defines the default value when the user has not yet entered his own
 * **type**: Specifies, how your option shall be shown to the user. There are several types available, each of those can offer additional required array keys to the base configuration array:
@@ -394,44 +371,40 @@ This example defines four different configuration options. Each configuration op
   * **custom**: Can be used to emit any kind of HTML on the configuration backend. The HTML is stored in the **default** array key. This is used to store custom values.
   * **hidden**: Can be used to store a hidden HTML input field. The value is fetched from the **value** array key.
   * **media**: Can be used to retrieve a media file location. Array keys **preview_width** and **preview_height** indicate image size.
-  * **sequence**: Can be used for a re-orderable widget with multiple values. For an exmample, check out the ```serendipity_event_entryproperties``` plugin which uses this configuration item.
+  * **sequence**: Can be used for a re-orderable widget with multiple values. For an exmample, check out the `serendipity_event_entryproperties` plugin which uses this configuration item.
     **checkable**: If set to true, each ordered widget can be enabled/disabled. When set, retrieving the option later will only list those widgets that were checked. If not set, all available values will always be returned (in the order the user indicated)
     **values**: Defines an array that uses a unique key for its configuration and as the value it holds a sub-array with the key 'display' to provide the HTML output for each re-orderable widget.
 
 (when selected) Values can be: select, tristate, boolean, radio, string, html, hidden.
   * When using the "select"
 
-The configuration array is processed through ```ìnclude/functions_plugins_admin.inc.php```, ```serendipity_plugin_config()``` if you want to see how these arrays are checked. The output of the configuration items is done by the ```admin/plugin_config.tpl``` file (which also calls ```admin/plugin_config_item.tpl``` for each item).
+The configuration array is processed through `ìnclude/functions_plugins_admin.inc.php`, `serendipity_plugin_config()` if you want to see how these arrays are checked. The output of the configuration items is done by the `admin/plugin_config.tpl` file (which also calls `admin/plugin_config_item.tpl` for each item).
 
 ##### Advanced theme options: Theme option groups
 
-Theme options can also be put into specific groups. To do this, define an array like this in your ```config.inc.php``` file of the theme:
+Theme options can also be put into specific groups. To do this, define an array like this in your `config.inc.php` file of the theme:
 
-```
-$template_config_groups = array(
-    THEME_COLORSET  => array('colorset', 'layouttype', 'jscolumns'),
-    THEME_HEADER    => array('custheader', 'headerimage', 'headertype')
-);
-```
+    $template_config_groups = array(
+        THEME_COLORSET  => array('colorset', 'layouttype', 'jscolumns'),
+        THEME_HEADER    => array('custheader', 'headerimage', 'headertype')
+    );
 
-The array key definesthe theme option group name which gets displayed for the user. The array value defines an array of defined theme options you want to have in that group. Those array values corellate with the name of the theme options that are defined in ```$template_config```.
+The array key definesthe theme option group name which gets displayed for the user. The array value defines an array of defined theme options you want to have in that group. Those array values corellate with the name of the theme options that are defined in `$template_config`.
 
 ##### Advanced theme options: Central navigation
 
 Serendipity offers an "add-in" for each template config, if you want to offer menu items. To enable this, you need to make Serendipity recognize your custom theme options and merge them with global theme options.
 
-This sounds more complicated that it is; simply add those lines after you have defined ```$template_config```:
+This sounds more complicated that it is; simply add those lines after you have defined `$template_config`:
 
-```
-// Setup an array to indicate which global theme options should be merged.
-$template_global_config = array('navigation' => true);
+    // Setup an array to indicate which global theme options should be merged.
+    $template_global_config = array('navigation' => true);
 
-// Load the current configuration of the defined theme options and parse them into a helper array
-$template_loaded_config = serendipity_loadThemeOptions($template_config, $serendipity['smarty_vars']['template_option']);
+    // Load the current configuration of the defined theme options and parse them into a helper array
+    $template_loaded_config = serendipity_loadThemeOptions($template_config, $serendipity['smarty_vars']['template_option']);
 
-// Now merge the loaded configuration with the additional global configuration:
-serendipity_loadGlobalThemeOptions($template_config, $template_loaded_config, $template_global_config);
-```
+    // Now merge the loaded configuration with the additional global configuration:
+    serendipity_loadGlobalThemeOptions($template_config, $template_loaded_config, $template_global_config);
 
 Currently only the **navigation** global option is supported, but there might be more in the future. Plus, plugins might provide more global theme options through the use of an event hook we placed for future compatibility.
 
@@ -439,46 +412,37 @@ Internally, serendipity_loadGlobalThemeOptions() simply appends a predefined set
 
 ###### Internationalization
 
-Just like plugins, you can make a theme available in multiple languages. For that, you need to define custom translation constants. Create a file like ```lang_en.inc.php``` in the theme's directory and put in the usual PHP deifnitions:
+Just like plugins, you can make a theme available in multiple languages. For that, you need to define custom translation constants. Create a file like `lang_en.inc.php` in the theme's directory and put in the usual PHP deifnitions:
 
-```
-<?php
-@define('MY_THEME_OPTION', 'This is my theme option');
-?>
-````
+    <?php
+    @define('MY_THEME_OPTION', 'This is my theme option');
+    ?>
 
-Now you need to load this language file in your theme's ```config.inc.php``` file:
+Now you need to load this language file in your theme's `config.inc.php` file:
 
-```
-$probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
+    $probelang = dirname(__FILE__) . '/' . $serendipity['charset'] . 'lang_' . $serendipity['lang'] . '.inc.php';
 
-if (file_exists($probelang)) {
-    include $probelang;
-}
+    if (file_exists($probelang)) {
+        include $probelang;
+    }
 
-include dirname(__FILE__) . '/lang_en.inc.php';
-```
+    include dirname(__FILE__) . '/lang_en.inc.php';
 
 Those lines ensure that a language file of the current user language is loaded (if it exists!), and also the english file is ALWAYS loaded as a fallback.
 
-If you now provide a translation for german, you would add a file ```lang_de.inc.php``` with this content:
+If you now provide a translation for german, you would add a file `lang_de.inc.php` with this content:
 
-```
-<?php
-@define('MY_THEME_OPTION', 'Dies ist meine Theme-Option');
-?>
-```
+    <?php
+    @define('MY_THEME_OPTION', 'Dies ist meine Theme-Option');
+    ?>
 
 and save that file also in the UTF-8 subdirectory (the base file should be encoded in ISO-8859-1). Serendipity will automatically now pick up that file.
 
-
 ###### Theme Sidebars
 
-The variable ```$sidebars``` inside a ```config.inc.php``` defines an array of which sidebars a theme offers. By default Serendipity provides "left", "right" and "hidden". Themes can use this to define specific "footer" and "header" sidebars for example:
+The variable `$sidebars` inside a `config.inc.php` defines an array of which sidebars a theme offers. By default Serendipity provides "left", "right" and "hidden". Themes can use this to define specific "footer" and "header" sidebars for example:
 
-```
-$serendipity['sidebars'] = array('left','right','hidden','footer','header');
-```
+    $serendipity['sidebars'] = array('left','right','hidden','footer','header');
 
 The plugin manager interface will show one column for each of the configured sidebars, so that people can move around plugins from one to the other location.
 
@@ -486,14 +450,12 @@ Note that no spaces are allowed in sidebar names, and no sidebar name may be lon
 
 If you want that users are able to define their own sidebars dynamically, you can simply add a string-type theme option to your list:
 
-```
-$template_config['sidebars'] = array(
-    'var'           => 'sidebars',
-    'name'          => 'Which sidebars to use?',
-    'type'          => 'string',
-    'default'       => 'left,right,hidden',
-)
-```
+    $template_config['sidebars'] = array(
+        'var'           => 'sidebars',
+        'name'          => 'Which sidebars to use?',
+        'type'          => 'string',
+        'default'       => 'left,right,hidden',
+    )
 
 ##### Specific FRONTEND theme files and their meaning
 
@@ -585,16 +547,14 @@ The Serendipity Emoticate plugin allows to transform usual emoticon texts to gra
 
 To customize smilies with individual images from a theme, you can create the file 'emoticons.inc.php' inside this theme directory and use an array like this:
 
-```
-<?php
-   $serendipity['custom_emoticons'] = array(
-     ":'("  => serendipity_getTemplateFile('img/cry_smile.gif'),
-     ':-)'  => serendipity_getTemplateFile('img/regular_smile.gif'),
-     ':-O'  => serendipity_getTemplateFile('img/embaressed_smile.gif'),
-     ':O'   => serendipity_getTemplateFile('img/embaressed_smile.gif')
-    );
-?>
-```
+    <?php
+       $serendipity['custom_emoticons'] = array(
+         ":'("  => serendipity_getTemplateFile('img/cry_smile.gif'),
+         ':-)'  => serendipity_getTemplateFile('img/regular_smile.gif'),
+         ':-O'  => serendipity_getTemplateFile('img/embaressed_smile.gif'),
+         ':O'   => serendipity_getTemplateFile('img/embaressed_smile.gif')
+        );
+    ?>
 
 This will override the default list of emoticons set inside the file plugins/serendipity_event_emoticate/serendipity_event_emoticate.php and use the ones you created for your template.
 
@@ -610,30 +570,30 @@ Serendipity offers a list of custom Smarty methods and functions that can be use
 
 ###### Smarty modifiers
 
-The name in brackets is the PHP function that is called and defined in include/functions_smarty.inc.php, the bold name is how you actually call the modifier in Smarty with ```{$variable|@makeFilename}``` for example.
+The name in brackets is the PHP function that is called and defined in include/functions_smarty.inc.php, the bold name is how you actually call the modifier in Smarty with `{$variable|@makeFilename}` for example.
 
 The first parameter is always the variable that the modifier gets applied to.
 
 * **makeFilename** (serendipity_makeFilename): Transform a string into a URL-compatible string. A second parameter indicates if also dots (.) shall be removed from the string.
 * **emptyPrefix** (serendipity_emptyPrefix): Check if a string is not empty and prepend a prefix in that case. Else, leave empty. Second parameter is a prefix.
-* **formatTime** (serendipity_smarty_formatTime): Formats a timestamp. Second parameter is the strftime-compatible placeholder, third parameter whether timezone offsets are calculated, fourth parameter whether valid unix timestamps are checked, fifth parameter indicates if the ```date``` PHP function shall be used instead of ```strftime```.
+* **formatTime** (serendipity_smarty_formatTime): Formats a timestamp. Second parameter is the strftime-compatible placeholder, third parameter whether timezone offsets are calculated, fourth parameter whether valid unix timestamps are checked, fifth parameter indicates if the `date` PHP function shall be used instead of `strftime`.
 * **serendipity_utf8_encode** (serendipity_utf8_encode): UTF-8 encodes a string (if not already in UTF-8 charset)
 * **ifRemember** (serendipity_ifRemember): Returns a cookie-stored variable. Second parameter controls default value, third parameter whether a default is specified, fourth parameter whether a value is stored in a radio-selectbox.
 * **checkPermission** (serendipity_checkPermission): Checks if the author has specific permissions. Second parameter can specify a different author id than the currently logged in author, third parameter is whether all permission groups of a user are returned.
-* **serendipity_refhookPlugin** (serendipity_smarty_refhookPlugin): Executes a plugin API event and specifies ```$eventData``` as a parameter. Second parameter is the hook to execute, third parameter possible additional Data ```$addData```.
+* **serendipity_refhookPlugin** (serendipity_smarty_refhookPlugin): Executes a plugin API event and specifies `$eventData` as a parameter. Second parameter is the hook to execute, third parameter possible additional Data `$addData`.
 * **serendipity_html5time** (serendipity_smarty_html5time): Returns a timestamp in valid HTML5 format
 * **rewriteURL** (serendipity_rewriteURL): Return a permalink for a given permalink type. Second parameter indicates if the full URL or only a relative path is returned, third parameter indicates if possible URL-rewriting shall be discarded.
 
 ###### Smarty functions
 
-Smarty functions are meant to be executed on their own and will return their content at the place of where you put the function call. In distinction to smarty modifieres, function calls are executed with exact parameters and cannot be "stacked" upon each other like a ```{$variable|modifier1|modifier2|...}``` call.
+Smarty functions are meant to be executed on their own and will return their content at the place of where you put the function call. In distinction to smarty modifieres, function calls are executed with exact parameters and cannot be "stacked" upon each other like a `{$variable|modifier1|modifier2|...}` call.
 
-The name in brackets is the PHP function that is called and defined in include/functions_smarty.inc.php, the bold name is how you actually call the function in Smarty with ```{serendipity_printSidebar param1="value" param2="value" ...}``` for example. The list of parametes is indented below.
+The name in brackets is the PHP function that is called and defined in include/functions_smarty.inc.php, the bold name is how you actually call the function in Smarty with `{serendipity_printSidebar param1="value" param2="value" ...}` for example. The list of parametes is indented below.
 
 * **serendipity_printSidebar** (serendipity_smarty_printSidebar): Prints the list of sidebar plugins.
   * side: The name of the sidebar, i.e. "left", "right", "hidden"
   * template: The name of the Smarty template file to render a plugin with (default: "sidebar.tpl")
-  * **EXAMPLE**: ```{serendipity_printSidebar side="left|right|hidden|*" template="yourtemplate.tpl"}```
+  * **EXAMPLE**: `{serendipity_printSidebar side="left|right|hidden|*" template="yourtemplate.tpl"}`
 * **serendipity_hookPlugin** (serendipity_smarty_hookPlugin): Executes a hook of the Plugin API and return content.
   * hook: The name of the event hook to call. Available names are: frontend_header, entries_header, entries_footer, frontend_comment, frontend_footer. If other hooks are meant to be executed, the following parameter needs to be set:
   * hookAll: If set to true, any plugin API event hook can be executed.
@@ -641,34 +601,34 @@ The name in brackets is the PHP function that is called and defined in include/f
   * addData: Passes optional additional $addData for the event
   * External variable $serendipity['skip_smarty_hooks'] is evaluated, if set to "true" no plugins will be executed. This is for specific recursive calls of event hooks and used internally.
   * External variable $serendipity['skip_smarty_hook'] can contain an array of plugin hooks to not execute.  This is for specific recursive calls of event hooks and used internally.
-  * **EXAMPLE**: ```{serendipity_hookPlugin hook="hookname" hookAll="true|false" data=$eventData addData=$addData}```
+  * **EXAMPLE**: `{serendipity_hookPlugin hook="hookname" hookAll="true|false" data=$eventData addData=$addData}`
 * **serendipity_showPlugin** (serendipity_smarty_showPlugin): Shows the output of a specific sidebar plugin.
   * class: The classname of the plugin to show, like "serendipity_plugin_quicksearch"
-  * id: A distinct ID of a plugin to show (see database table ```serendipity_plugins```)
+  * id: A distinct ID of a plugin to show (see database table `serendipity_plugins`)
   * side: Which sidebar the plugins belongs to. If set to "*", the sidebar will not matter.
   * negate: If set, reverts the previous filters, can be used to "Show all plugins EXECEPT ...".
   * empty: Can be set to a string that is shown, when the plugin output was empty.
   * template: Can be set to a sidebar template file other than the default "sidebar.tpl"
-  * **EXAMPLE**: ```{serendipity_showPlugin class="serendipity_your_nugget" id="serendipity_your_plugin:21323223efsd22aa" side="left|right|hidden|*" negate="null|true"}```
+  * **EXAMPLE**: `{serendipity_showPlugin class="serendipity_your_nugget" id="serendipity_your_plugin:21323223efsd22aa" side="left|right|hidden|*" negate="null|true"}`
 * **serendipity_getFile** (serendipity_smarty_getFile): Get the full path to a template file. The file is searched in the usual template fallback mechanism, so it can also be fetched from the default location.
   * file: The name of the template file (i.e. "img/preview.png").
-  * **EXAMPLE**: ```{serendipity_getFile file="img/preview.png"}```
+  * **EXAMPLE**: `{serendipity_getFile file="img/preview.png"}`
 * **serendipity_printComments** (serendipity_smarty_printComments): Shows the comments to an entry with a specified Smarty template
   * template: Indicates which smarty template file to render comments with
-  * block: Indicates the name of a temporary placeholder for the comments output (defaults to ```{$COMMENTS}```.
+  * block: Indicates the name of a temporary placeholder for the comments output (defaults to `{$COMMENTS}`.
   * trace: Nested comments are nested with a "1.3.1.1" like terminology. You can specify a used prefix here.
   * depth: Defines the starting depth of nested comments (0)
   * entry: Holds the entry ID to which comments shall be printed
   * order: Defines the sorting order of comments (ASC or DESC)
   * mode: Defines a viewing mode ($CONST.VIEWMODE_THREADED or $CONST.VIEWMODE_LINEAR)
   * limit: How many comments to fetch (0 means all)
-  * **EXAMPLE**: ```{serendipity_printComments entry="123" mode=$CONST.VIEWMODE_LINEAR}```
+  * **EXAMPLE**: `{serendipity_printComments entry="123" mode=$CONST.VIEWMODE_LINEAR}`
 * **serendipity_printTrackback** (serendipity_smarty_printTrackbacks): Shows the trackbacks to an entry with a specified Smarty template
   * template: Indicates which smarty template file to render trackbacks with
-  * block: Indicates the name of a temporary placeholder for the trackbacks output (defaults to ```{$TRACKBACKS}```.
+  * block: Indicates the name of a temporary placeholder for the trackbacks output (defaults to `{$TRACKBACKS}`.
   * trace: Trackbacks are enumberated, you can specify a prefix here.
   * entry: Holds the entry ID to which trackbacks shall be printed
-  * **EXAMPLE**: ```{serendipity_printTrackbacks entry="123"}```
+  * **EXAMPLE**: `{serendipity_printTrackbacks entry="123"}`
 * **serendipity_rss_getguid** (serendipity_smarty_rss_getguid): Returns a canonical permalink to an entry.
   * entry: The entry ID
   * is_comments: Whether a permalink for a comment feed should be embedded
@@ -734,13 +694,13 @@ The name in brackets is the PHP function that is called and defined in include/f
 
 #### Serendipity Smarty Layer
 
-Serendipity uses it's own Layer on Top of Smarty to offer some backwards compatibility and default setup. This class ```Serendipity_Smarty``` is defined in **include/serendipity_smarty_class.inc.php**. It makes sure to only use the Serendipity theme directories, sets the compile directory and offers those backwards compatibility calls:
+Serendipity uses it's own Layer on Top of Smarty to offer some backwards compatibility and default setup. This class `Serendipity_Smarty` is defined in **include/serendipity_smarty_class.inc.php**. It makes sure to only use the Serendipity theme directories, sets the compile directory and offers those backwards compatibility calls:
 
-* **$serendipity['smarty']->register_function()** was previously used to register Smarty functions (it is now done by ```$serendipity['smarty']->registerPlugin('function', ...)```).
-* **$serendipity['smarty']->register_modifier()** was previously used to register Smarty modifiers (it is now done by ```$serendipity['smarty']->registerPlugin('modifier', ...)```).
-* **$serendipity['smarty']->assign_by_ref()** was previously used to assign Smarty variables by references (it is now done by ```$serendipity['smarty']->assignByRef()```).
+* **$serendipity['smarty']->register_function()** was previously used to register Smarty functions (it is now done by `$serendipity['smarty']->registerPlugin('function', ...)`).
+* **$serendipity['smarty']->register_modifier()** was previously used to register Smarty modifiers (it is now done by `$serendipity['smarty']->registerPlugin('modifier', ...)`).
+* **$serendipity['smarty']->assign_by_ref()** was previously used to assign Smarty variables by references (it is now done by `$serendipity['smarty']->assignByRef()`).
 
-On top of that, a ```Serendipity_Smarty_Security_Policy``` class constraints the security settings of Smarty. It allows only calling a set of PHP functions (isset, empty, count, sizeof, in_array, is_array, time, nl2br, class_exists) as well as using PHP functions for modifiers (sprintf, sizeof, count, rand, print_r, str_repeat, nl2br). If a theme or plugin needs to do more, it can override the security Settings of Serendipity by setting ```$serendipity['smarty']->security = false```.
+On top of that, a `Serendipity_Smarty_Security_Policy` class constraints the security settings of Smarty. It allows only calling a set of PHP functions (isset, empty, count, sizeof, in_array, is_array, time, nl2br, class_exists) as well as using PHP functions for modifiers (sprintf, sizeof, count, rand, print_r, str_repeat, nl2br). If a theme or plugin needs to do more, it can override the security Settings of Serendipity by setting `$serendipity['smarty']->security = false`.
 
 ##### Smarty variables
 
@@ -1081,7 +1041,7 @@ admin/js
 
 ### Linking spartacus
 
-You can easily combine the whole spartacus theme and plugin checkouts on your machine. To do that you can for example checkout these repositories to a subdirectory like ```templates/spartacus/``` and ```plugins/spartacus/```. The reason this works is because both the theme and plugin framework of Serendipity can iterate through every subdirectory of the templates/ or plugins/ structure to search for matching plugin/theme files.
+You can easily combine the whole spartacus theme and plugin checkouts on your machine. To do that you can for example checkout these repositories to a subdirectory like `templates/spartacus/` and `plugins/spartacus/`. The reason this works is because both the theme and plugin framework of Serendipity can iterate through every subdirectory of the templates/ or plugins/ structure to search for matching plugin/theme files.
 
 ### Showing entries in foreign webpages
 
@@ -1089,33 +1049,31 @@ You can quite easily "show" Serendipity entries from other parts of your website
 
 You can use the following PHP code to include the Serendipity framework and use the Serendipty API to display entries:
 
-```
-<?php
-// 1: Switch to the Serendipity path. We need to use chdir so that the s9y framework can use its relative calls.
-chdir('/home/www/public_html/blog/');
+    <?php
+    // 1: Switch to the Serendipity path. We need to use chdir so that the s9y framework can use its relative calls.
+    chdir('/home/www/public_html/blog/');
 
-// 2: Start the Serendipity API
-include 'serendipity_config.inc.php';
+    // 2: Start the Serendipity API
+    include 'serendipity_config.inc.php';
 
-// 3: Start Smarty templating
-serendipity_smarty_init();
+    // 3: Start Smarty templating
+    serendipity_smarty_init();
 
-// 4: Get the latest entries
-$entries = serendipity_fetchEntries(null, true,1);
+    // 4: Get the latest entries
+    $entries = serendipity_fetchEntries(null, true,1);
 
-// 5: Put all the variables into Smarty
-serendipity_printEntries($entries);
+    // 5: Put all the variables into Smarty
+    serendipity_printEntries($entries);
 
-// 6: Get the template file
-$tpl = serendipity_getTemplateFile('entries.tpl', 'serendipityPath');
+    // 6: Get the template file
+    $tpl = serendipity_getTemplateFile('entries.tpl', 'serendipityPath');
 
-// 7: Format and output the entries
-$serendipity['smarty']->display($tpl);
+    // 7: Format and output the entries
+    $serendipity['smarty']->display($tpl);
 
-// 8: Go back to where you came from
-chdir('/home/www/public_html/');
-?>
-```
+    // 8: Go back to where you came from
+    chdir('/home/www/public_html/');
+    ?>
 
 You can adapt each of the serendipity_fetchEntries() / serendipity_printEntries() calls to suit your needs. You can of course also pass any other template file instead of entries.tpl to the serendipity_getTemplateFile() call, so that you can have a custom layout for your entries in the PHP application, and use the default entries.tpl template in the real Serendipity installation.
 
@@ -1133,25 +1091,23 @@ Note that even if you use a custom frontend theme, the backend will always conti
 
 In your theme directory, create a template.inc.php file with a content like this:
 
-```
-include_once S9Y_INCLUDE_PATH . 'include/template_api.inc.php';
-$GLOBALS['template'] = new serendipity_smarty_emulator();
-$GLOBALS['serendipity']['smarty'] =& $GLOBALS['template'];
-```
+    include_once S9Y_INCLUDE_PATH . 'include/template_api.inc.php';
+    $GLOBALS['template'] = new serendipity_smarty_emulator();
+    $GLOBALS['serendipity']['smarty'] =& $GLOBALS['template'];
 
 This loads the Serendipity template API layer and implements a smarty emulator, and it replaces the internal Serendipity Smarty object with your own.
 
 #### Step 2: Read more
 
-Check out the instructions in the file ```include/template_api.inc.php``` if you want to know more about the internal Template API layer.
+Check out the instructions in the file `include/template_api.inc.php` if you want to know more about the internal Template API layer.
 
-All it basically does it it wraps the Smarty commands to simple PHP, which collects all variables in a ```$GLOBALS['tpl']``` array, that you can access in PHP.
+All it basically does it it wraps the Smarty commands to simple PHP, which collects all variables in a `$GLOBALS['tpl']` array, that you can access in PHP.
 
-Also, check out the alternate layer ```serendipity_smarty_emulator_xml``` which is another way to store all assigned variables in XML language, so you could use XSLT to render your blog view.
+Also, check out the alternate layer `serendipity_smarty_emulator_xml` which is another way to store all assigned variables in XML language, so you could use XSLT to render your blog view.
 
 #### Step 3: Create template files
 
-Now instead of using Smarty markup, check out the files like index.tpl which simply contain PHP markup to output the ```$GLOBALS['tpl']['...']``` values at the place you like.
+Now instead of using Smarty markup, check out the files like index.tpl which simply contain PHP markup to output the `$GLOBALS['tpl']['...']` values at the place you like.
 
 We have provided a few examples on what to replace with what, but it is more a proof-of-concept that should get you kickstarted.
 

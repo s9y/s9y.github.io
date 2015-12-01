@@ -18,11 +18,9 @@ Multi-user support has evolved a lot as serendipity has matured. The current ver
 
 You have to manually insert a row into the *serendipity\_authors* database-table:
 
-```
-INSERT INTO serendipity_authors
-            (username, password, email)
-     VALUES ('author2', md5('mypassword'), 'author2@s9y.org');
-```
+    INSERT INTO serendipity_authors
+                (username, password, email)
+         VALUES ('author2', md5('mypassword'), 'author2@s9y.org');
 
 By executing that SQL statement you would then have created an account *author2* with the password *mypassword* and the e-mail address *author2@s9y.org*. That user can now log into your s9y blog and create/edit entries, but also administrate the full blog. Every user has the same rights.
 

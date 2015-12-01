@@ -162,11 +162,9 @@ The easiest method would be to restore the backup you made previously, and then 
 
 **fixperm.php**
 
-```
-<?php
-chmod('/path/to/your/serendipity/serendipity_config_local.inc.php', 0777);
-?>
-```
+    <?php
+    chmod('/path/to/your/serendipity/serendipity_config_local.inc.php', 0777);
+    ?>
 
 On some hosts, the user as which your webserver runs is different than the user that you have FTP/SSH privileges for. In usual environments, your FTP user should be within the same group like your webserver user, so that you are able to modify files with the right umask. However, some providers might not think about that and thus deny you access to your own files. In those cases you also need the script above to change file permissions if you need to manually edit/delete a special file. Note that plugins copied by spartacus and images uploaded via the Serendipity Admin suite are affected by the same problem. You can change the default file/directory of the Spartacus plugin though by it's configuration.
 
@@ -255,11 +253,9 @@ It's possible to get an email whenever new comments are submitted to an entry by
 
 If your users don't want to leave comments, they'll have to use the Comments RSS feed.  The default templates don't supply the comment feed for individual comments; to do this, you'll need to edit entries.tpl and insert a line like this:
 
-```
-<a href="
-http://myblog/myblog_path/rss.php?version=2.0&type=comments&
-cid={$entry.id}">RSS feed for this entry's comments</a>
-```
+    <a href="
+    http://myblog/myblog_path/rss.php?version=2.0&type=comments&
+    cid={$entry.id}">RSS feed for this entry's comments</a>
 
 #### <a name="A29"></a>Customization request
 
@@ -273,11 +269,9 @@ You can turn off to receive trackbacks/comments in the configuration of your spa
 
 The other way you have is to edit your **.htaccess** file and add a mod_rewrite (if your server supports that, of course) rule to block calls to your comment.php:
 
-```
-((Rewrite Cond)) %{QUERY_STRING} ^.*type=trackback.*$ [NC]
+    ((Rewrite Cond)) %{QUERY_STRING} ^.*type=trackback.*$ [NC]
 
-((Rewrite Rule)) ^.*comment.php.*$ - [F]
-```
+    ((Rewrite Rule)) ^.*comment.php.*$ - [F]
 
 If you do not want your blog to send outgoing trackbacks, you can edit your **serendipity_config_local.inc.php** file (or **serendipity_config.inc.php**, just as you prefer) and insert this line:
 
@@ -289,24 +283,22 @@ This will make Serendipity not send any outgoing trackbacks.
 
 As Grischa explains, [you can stop trackback spam with some custom .htaccess rules](http://blog.brockha.us/index.php?/archives/69-TrackBack-SPAM-Bots-abwehren.html). Just add this to the bottom of the .htaccess in your Serendipity directory:
 
-```
-# BEGIN ANTI SPAM
-<Files comment.php>
- # short 403 error-message
- ErrorDocument 403 "403 Forbidden
+    # BEGIN ANTI SPAM
+    <Files comment.php>
+     # short 403 error-message
+     ErrorDocument 403 "403 Forbidden
 
- # Mark bots whose user agent name is starting with "TrackBack" as SPAM
- BrowserMatch ^TrackBack is_trackback_spammer
- # Mark bots don't sending a user agent name at all as SPAM
- BrowserMatch ^$ is_trackback_spammer
+     # Mark bots whose user agent name is starting with "TrackBack" as SPAM
+     BrowserMatch ^TrackBack is_trackback_spammer
+     # Mark bots don't sending a user agent name at all as SPAM
+     BrowserMatch ^$ is_trackback_spammer
 
- # Lock them out
- Order Allow,Deny
- Allow from all
- deny from env=is_trackback_spammer
-</Files>
-# END ANTI SPAM
-```
+     # Lock them out
+     Order Allow,Deny
+     Allow from all
+     deny from env=is_trackback_spammer
+    </Files>
+    # END ANTI SPAM
 
 This filters out lots of unwanted messages before Serendipity even gets started, saving you some CPU resources and reducing your log size.
 
@@ -330,50 +322,42 @@ Many ways lead to rome!
 
 The coolest solution for you is to register a custom smarty function. For that, create (or edit) a file "config.inc.php" inside your template directory. Then register your markup like this:
 
-```
-<?php
-$serendipity['smarty']->register_function('my_custom_function', 'my_custom_function');
+    <?php
+    $serendipity['smarty']->register_function('my_custom_function', 'my_custom_function');
 
-function my_custom_function($params, &$smarty) {
-  return 'I customized this: ' . $params['stuff'];
-}
-?>
-```
+    function my_custom_function($params, &$smarty) {
+      return 'I customized this: ' . $params['stuff'];
+    }
+    ?>
 
 Then you can just edit your template (index.tpl, for example) and place this piece of code somewhere:
 
-`{my_custom_function stuff="Cool!"}`
+    {my_custom_function stuff="Cool!"}
 
 With the same way, you can also include foreign PHP applications:
 
-```
-<?php
-$serendipity['smarty']->register_function('my_custom_function', 'my_custom_function');
+    <?php
+    $serendipity['smarty']->register_function('my_custom_function', 'my_custom_function');
 
-function my_custom_function($params, &$smarty) {
-  include 'my_existing_tool.php';
-  return my_existing_function($params);
-}
-?>
-```
+    function my_custom_function($params, &$smarty) {
+      include 'my_existing_tool.php';
+      return my_existing_function($params);
+    }
+    ?>
 
 ###### <a name="A35"></a>The "hackish but even easier" way
 
 Another way to embed your custom PHP code is to use Smarty's {php} tags. For that you first need to disable the Smarty security setting within your config.inc.php template file:
 
-```
-<?php
-$serendipity['smarty']->security = false;
-?>
-```
+    <?php
+    $serendipity['smarty']->security = false;
+    ?>
 
 Then you can use this in your index.tpl:
 
-```
-{php}
-include "my_existing_tool.php";
-{/php}
-```
+    {php}
+    include "my_existing_tool.php";
+    {/php}
 
 ###### <a name="A36"></a>The "elegant way"
 

@@ -27,25 +27,21 @@ To slip the braces past Smarty and on to Javascript, you need to convince Smarty
 
 Ignoring the braces is the simpler solution. Smarty passes on anything between {literal} tags, thusly:
 
-```
-{literal}
-some_javascript
-{
-  with(braces);
-}
-{/literal}
-```
+    {literal}
+    some_javascript
+    {
+      with(braces);
+    }
+    {/literal}
 
 So when you modify index.tpl, you could just enclose all your Javascript in {literal} tags.
 
 The other option, generating the braces, isn't difficult, just annoying. Smarty will turn any instance of {ldelim} into a left-curly-brace, and any instance of {rdelim} into a right-curly-brace. Thusly:
 
-```
-some_javascript
-{ldelim}
-  with(braces);
-{rdelim}
-```
+    some_javascript
+    {ldelim}
+      with(braces);
+    {rdelim}
 
 So you could just replace all occurrences of "{" with {ldelim} and all occurrences of "}" with {rdelim} in your Javascript only.
 

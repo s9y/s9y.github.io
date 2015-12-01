@@ -63,9 +63,7 @@ To disable trackbacks alltogether, please edit your serendipity\_config\_local.i
 
 Then insert this line of Code somewhere before the closing ?\> tag:
 
-```
-$serendipity['noautodiscovery'] = true;
-```
+    $serendipity['noautodiscovery'] = true;
 
 This will disable sending any trackbacks from your blog. This is not (yet) a configuration item of Serendipity, because we still believe in the fundamental use of trackbacks within blogs. That might change with SPAM being one of the largest problems of Blogs in the future... but until then, you'll need to use this manual method.
 

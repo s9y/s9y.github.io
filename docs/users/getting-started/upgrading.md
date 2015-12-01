@@ -34,20 +34,16 @@ Usually all DB schema upgrades in previous versions will be used. So when you up
 
 However, you are always advised to look at the corresponding SQL update file in sql/db\_update\*to see which changes were made.
 
-```
-.htaccess
-AuthType Basic
-AuthName "Authorisation: Serendipity Upgrade IN PROGRESS"
-AuthUserFile /absolute/path/to/your/s9y/.htpasswd
-require valid-user
-```
+    .htaccess
+    AuthType Basic
+    AuthName "Authorisation: Serendipity Upgrade IN PROGRESS"
+    AuthUserFile /absolute/path/to/your/s9y/.htpasswd
+    require valid-user
 
 Then create a file .htpasswd using a simple 'username:md5password' combination. Look at [http://www.advancehost.com/htpasswd.html](http://www.advancehost.com/htpasswd.html) for an online generator for .htpasswd files.
 
-```
-.htpasswd
-s9y:s9QXoc9dcFOT2
-```
+    .htpasswd
+    s9y:s9QXoc9dcFOT2
 
 This would create a user "s9y" with password "s9y" with which you'd have to log into your blog.
 
@@ -78,25 +74,23 @@ Please read [the 0.8 Release announcement](/63.html).
 * Smilies and the XML-button where moved from the '/pixel' subdirectory into per-template 'img/' subdirectories. If you modified the original files, you need to copy your versions inside the'templates/default/img/' directory.
 * A home-link has been added to the page headers. For that, two new CSS classes have been introduced: .homelink1 (header), .homelink2 (subheader). If you have a custom template, you need to adapt to those changes. To make them look like your header previously has, insert this in your style.css:
 
-```
-  a.homelink1,
-  a.homelink1:hover,
-  a.homelink1:link,
-  a.homelink1:visited,
-  #serendipity_banner h1 {
+    a.homelink1,
+    a.homelink1:hover,
+    a.homelink1:link,
+    a.homelink1:visited,
+    #serendipity_banner h1 {
     ... your css-definitions ...
     text-decoration: none;
-  }
+    }
 
-  a.homelink2,
-  a.homelink2:hover,
-  a.homelink2:link,
-  a.homelink2:visited,
-  #serendipity_banner h2 {
+    a.homelink2,
+    a.homelink2:hover,
+    a.homelink2:link,
+    a.homelink2:visited,
+    #serendipity_banner h2 {
     ... your css-definitions ...
     text-decoration: none;
-  }
-```
+    }
 
 #### <a name="A8"></a>Notes on updating from 0.4 -\> 0.5
 

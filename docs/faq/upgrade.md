@@ -17,8 +17,6 @@ Usually this is the result of an incomplete or corrupted upload. Either all the 
 
 If Serendipity doesn't realize that you've re-uploaded, you can force it to upgrade again by editing your serendipity\_config\_local.inc.php file. Find the line:
 
-```
-$serendipity['VersionInstalled'] = {yourversion};
-```
+    $serendipity['VersionInstalled'] = {yourversion};
 
 and change the version to your old version. When you visit your Admin page again, Serendipity will notice the change and retry the upgrade.

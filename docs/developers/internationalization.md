@@ -17,38 +17,36 @@ Now you also need to supply a UTF-8 version of your language file, which you the
 
 Now to make Serendipity recognize the new language, you need to edit the file **serendipity\_config.inc.php** in the main serendipity directory. Open that file with an editor and look for the definition of the \$serendipity['languages'] array. It will look something like this:
 
-```
-$serendipity['languages'] = array('en' => 'English',
-                                  'de' => 'German',
-                                  'da' => 'Danish',
-                                  'es' => 'Spanish',
-                                  'fr' => 'French',
-                                  'fi' => 'Finnish',
-                                  'cs' => 'Czech (Win-1250)',
-                                  'cz' => 'Czech (ISO-8859-2)',
-                                  'nl' => 'Dutch',
-                                  'is' => 'Icelandic',
-                                  'tr' => 'Turkish',
-                                  'se' => 'Swedish',
-                                  'pt' => 'Portuguese Brazilian',
-                                  'pt_PT' => 'Portuguese European',
-                                  'bg' => 'Bulgarian',
-                                  'hu' => 'Hungarian',
-                                  'no' => 'Norwegian',
-                                  'pl' => 'Polish',
-                                  'ro' => 'Romanian',
-                                  'it' => 'Italian',
-                                  'ru' => 'Russian',
-                                  'fa' => 'Persian',
-                                  'tw' => 'Traditional Chinese (Big5)',
-                                  'tn' => 'Traditional Chinese (UTF-8)',
-                                  'zh' => 'Simplified Chinese (GB2312)',
-                                  'cn' => 'Simplified Chinese (UTF-8)',
-                                  'ja' => 'Japanese',
-                                  'ko' => 'Korean',
-                                  'sa' => 'Arabic',
-                                  'ta' => 'Tamil');
-```
+    $serendipity['languages'] = array('en' => 'English',
+                                      'de' => 'German',
+                                      'da' => 'Danish',
+                                      'es' => 'Spanish',
+                                      'fr' => 'French',
+                                      'fi' => 'Finnish',
+                                      'cs' => 'Czech (Win-1250)',
+                                      'cz' => 'Czech (ISO-8859-2)',
+                                      'nl' => 'Dutch',
+                                      'is' => 'Icelandic',
+                                      'tr' => 'Turkish',
+                                      'se' => 'Swedish',
+                                      'pt' => 'Portuguese Brazilian',
+                                      'pt_PT' => 'Portuguese European',
+                                      'bg' => 'Bulgarian',
+                                      'hu' => 'Hungarian',
+                                      'no' => 'Norwegian',
+                                      'pl' => 'Polish',
+                                      'ro' => 'Romanian',
+                                      'it' => 'Italian',
+                                      'ru' => 'Russian',
+                                      'fa' => 'Persian',
+                                      'tw' => 'Traditional Chinese (Big5)',
+                                      'tn' => 'Traditional Chinese (UTF-8)',
+                                      'zh' => 'Simplified Chinese (GB2312)',
+                                      'cn' => 'Simplified Chinese (UTF-8)',
+                                      'ja' => 'Japanese',
+                                      'ko' => 'Korean',
+                                      'sa' => 'Arabic',
+                                      'ta' => 'Tamil');
 
 Now just add your new language with the prefix and the language name to that array, and you can choose it in your Serendipity Interface.
 
@@ -60,24 +58,18 @@ The date format of the Serendipity backend and frontend is specific to the selec
 
 Each language file defines a PHP constant like this:
 
-```
-@define('DATE_FORMAT_ENTRY', '%A, %B %e. %Y');
-@define('DATE_FORMAT_SHORT', '%Y-%m-%d %H:%M');
-```
+    @define('DATE_FORMAT_ENTRY', '%A, %B %e. %Y');
+    @define('DATE_FORMAT_SHORT', '%Y-%m-%d %H:%M');
 
 This defines the default date format that appears "native" to each language. This is usually preferred, because every language has it's own preference on how dates should look like to a native reader.
 
 Those constants are evaluated within the entries.tpl template file of a template, so in fact you can override the language-based date format with a template-based date formatting. Date formatting inside a template looks like this:
 
-```
-{$entry.timestamp|@formatTime:$CONST.DATE_FORMAT_ENTRY}
-```
+    {$entry.timestamp|@formatTime:$CONST.DATE_FORMAT_ENTRY}
 
 which usually means to format a timestamp of an entry variable with the content of that constant. If you want to use an ISO 8601 timestamp instead, you could use:
 
-```
-{$entry.timestamp|@formatTime:'%Y-%m-%d %H:%i'}
-```
+    {$entry.timestamp|@formatTime:'%Y-%m-%d %H:%i'}
 
 which would always format the time like "2008-10-28 15:00" in every language. The parameters are documented on the [php.net/strftime documentation](http://php.net/strftime).
 

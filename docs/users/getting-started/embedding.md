@@ -19,16 +19,14 @@ By setting the 'embed' option to true, you have to make sure the following thing
 
 This configuration option needs to be set to the wrapper file you want to use. Let's say you normally have a 'content.php' file for your webpage. This 'content.php' file sets up your internal templates, your menu structure and such.Now you want this file to be used to include your weblog. A simple content.php could look like this:
 
-```
-<?php
-$homepage = new Template_Class;
-$homepage->set_template($_REQUEST['page']);
-$homepage->output_header();
-$homepage->output_content();
-$homepage->output_footer();
-$homepage->track_statistics();
-?>
-```
+    <?php
+    $homepage = new Template_Class;
+    $homepage->set_template($_REQUEST['page']);
+    $homepage->output_header();
+    $homepage->output_content();
+    $homepage->output_footer();
+    $homepage->track_statistics();
+    ?>
 
 So normally your file would be called with 'content.php?page=about' to display your 'about' page of your personal homepage.
 
@@ -36,21 +34,19 @@ Now we want this file to be displayed, having the 'page' variable being set to '
 
 For this, we set up a 'wrapper.php' file:
 
-```
-<?php
-$_REQUEST['page'] = 'blog';
-// Let serendipity generate our content:
-ob_start();
-require 'index.php';
-$blog_data = ob_get_contents();
-ob_end_clean();
+    <?php
+    $_REQUEST['page'] = 'blog';
+    // Let serendipity generate our content:
+    ob_start();
+    require 'index.php';
+    $blog_data = ob_get_contents();
+    ob_end_clean();
 
-// Now we include our normal content building file.
-// This one has to make use of your $blog_data variable to print
-// the content where appropriate!
-require 'content.php';
-?>
-```
+    // Now we include our normal content building file.
+    // This one has to make use of your $blog_data variable to print
+    // the content where appropriate!
+    require 'content.php';
+    ?>
 
 You would then set your 'indexFile' serendipity-option to the 'wrapper.php' file.
 
@@ -58,9 +54,7 @@ You would then set your 'indexFile' serendipity-option to the 'wrapper.php' file
 
 Plugins like the serendipity\_event\_livesearch can emit [Java Script](/index.php?cmd=newdoc&newdocname=Java+Script&node=35&refnode=55)**?** library calls in the header of the blog. And because if you use the embed option, serendipity will no longer take care of that part, so you need to add the calls to those libaries by yourself. For the livesearch plugin that means you need to insert this line in your custom header:
 
-```
-<script type="text/javascript" src="/serendipity/plugin/ls-js"></script>
-```
+    <script type="text/javascript" src="/serendipity/plugin/ls-js"></script>
 
 #### <a name="A4"></a>The "easier way"
 

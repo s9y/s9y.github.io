@@ -43,32 +43,30 @@ Since the template is where we generate our HTML, we'll need to modify the templ
 
 Smarty pays attention to things in {}. Everything else is plain HTML. Stripping out all the stuff we don't care about, we see something like this:
 
-```
-{foreach from=$entries item="dategroup"}
-    <div class="serendipity_Entry_Date">
-        {if $dategroup.is_sticky}
-        <h3 class="serendipity_date">{$CONST.STICKY_POSTINGS}</h3>
-        {else}
-        <h3 class="serendipity_date">
-{$dategroup.date|@formatTime:DATE_FORMAT_ENTRY}</h3>
-        {/if}
-        {foreach from=$dategroup.entries item="entry"}
-        <h4 class="serendipity_title">
-<a href="{$entry.link}">{$entry.title}</a></h4>
-        <div class="serendipity_entry
-serendipity_entry_author_{$entry.author|@makeFilename}
-{if $entry.is_entry_owner}serendipity_entry_author_self{/if}">
-        ... entry stuff ...
+    {foreach from=$entries item="dategroup"}
+        <div class="serendipity_Entry_Date">
+            {if $dategroup.is_sticky}
+            <h3 class="serendipity_date">{$CONST.STICKY_POSTINGS}</h3>
+            {else}
+            <h3 class="serendipity_date">
+    {$dategroup.date|@formatTime:DATE_FORMAT_ENTRY}</h3>
+            {/if}
+            {foreach from=$dategroup.entries item="entry"}
+            <h4 class="serendipity_title">
+    <a href="{$entry.link}">{$entry.title}</a></h4>
+            <div class="serendipity_entry
+    serendipity_entry_author_{$entry.author|@makeFilename}
+    {if $entry.is_entry_owner}serendipity_entry_author_self{/if}">
+            ... entry stuff ...
+            </div>
+            {/foreach}
+            ... other stuff ...
         </div>
+        {foreachelse}
+        {if not $plugin_clean_page}
+            {$CONST.NO_ENTRIES_TO_PRINT}
+        {/if}
         {/foreach}
-        ... other stuff ...
-    </div>
-    {foreachelse}
-    {if not $plugin_clean_page}
-        {$CONST.NO_ENTRIES_TO_PRINT}
-    {/if}
-    {/foreach}
-```
 
 The first {foreach} loops through every item in \$entries, which is the array of articles Serendipity fills out for us. Serendipity groups the articles according to date, so really Smarty is looping once for each date. It will call each date a "dategroup". For each dategroup, it creates a div, then prints the date (or "Sticky Posts" if it's a sticky group).
 
@@ -76,7 +74,6 @@ The dategroups may have multiple articles. The next {foreach} loop goes through 
 
 If we want to insert something at the end of each article, this is the place to do it. Any HTML we type will be included after every article. So if we inserted an \<hr\> here, we'd get separators. Here's a code snippet:
 
-```
         ... entry stuff ...
         </div>
         <hr>
@@ -84,7 +81,6 @@ If we want to insert something at the end of each article, this is the place to 
         ... comment stuff ...
     </div>
     {foreachelse}
-```
 
 This would work, but because we put the \<hr\> after [i]every[/i] article, they'd look like this:
 
@@ -130,21 +126,17 @@ We simply added the "name" attribute. Any name will do, but "dategroup" seems si
 
 Now we need to ask if we're on the first entry of the group (the first loop). That's as simple as checking the "first" attribute of our foreach, like this:
 
-```
-        {if $smarty.foreach.dategroup.first}
-        <!-- No separator for this! -->
-        {else}
-        <hr>
-        {/if}
-```
+    {if $smarty.foreach.dategroup.first}
+    <!-- No separator for this! -->
+    {else}
+    <hr>
+    {/if}
 
 That'll work. There's a simpler way, of course. Since we only want the separator when it's *not* the first loop, we can just add the "not" to our {if} and lose the {else} altogether:
 
-```
-        {if not $smarty.foreach.dategroup.first}
-        <hr>
-        {/if}
-```
+    {if not $smarty.foreach.dategroup.first}
+    <hr>
+    {/if}
 
 Smaller code is better, because it's faster (minutely, in this case, but hey... I'm making a point here).
 

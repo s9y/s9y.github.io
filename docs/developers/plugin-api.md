@@ -31,42 +31,38 @@ This might sound more complicated than it is, so let's create the most simple fo
 2. Create a new file "serendipity_plugin_myfirstplugin.php" in the directory you created earlier. Note that the plugin filename needs to exactly match the directory name.
 3. Now use this code for the created file:
 
-```php
-<?php
+    <?php
 
-// This line makes sure that plugins can only be called from the Serendipity Framework.
-if (IN_serendipity !== true) {
-    die ("Don't hack!");
-}
+    // This line makes sure that plugins can only be called from the Serendipity Framework.
+    if (IN_serendipity !== true) {
+        die ("Don't hack!");
+    }
 
-// Load possible language files.
-@serendipity_plugin_api::load_language(dirname(__FILE__));
+    // Load possible language files.
+    @serendipity_plugin_api::load_language(dirname(__FILE__));
 
-// Extend the base class
-class serendipity_plugin_myfirstplugin extends serendipity_plugin {
-  var $title = MYFIRSTPLUGIN_TITLE;
+    // Extend the base class
+    class serendipity_plugin_myfirstplugin extends serendipity_plugin {
+      var $title = MYFIRSTPLUGIN_TITLE;
 
-  // Setup metadata
-  function introspect(&$propbag) {
-    $propbag->add('name', MYFIRSTPLUGIN_TITLE);
-  }
+      // Setup metadata
+      function introspect(&$propbag) {
+        $propbag->add('name', MYFIRSTPLUGIN_TITLE);
+      }
 
-  // Return content
-  function generate_content(&$title) {
-    $title = $this->title;
-    echo "Hello world!";
-  }
-}
-?>
-```
+      // Return content
+      function generate_content(&$title) {
+        $title = $this->title;
+        echo "Hello world!";
+      }
+    }
+    ?>
 
 4. Now we need a new language file for the constants we refer to (MYFIRSTPLUGIN_TITLE). Create a simple file "lang_en.inc.php" (for the english language) with this content:
 
-```php
-<?php
-@define('MYFIRSTPLUGIN_TITLE', 'This is my first plugin');
-?>
-```
+    <?php
+    @define('MYFIRSTPLUGIN_TITLE', 'This is my first plugin');
+    ?>
 
 And that's it for the plugin! You can now log into your plugin configuration management page and install the sidebar plugin. On the frontend, it will simply show you a "Hello world" statement.
 
@@ -88,63 +84,59 @@ An event plugin shares many similarities with the setup of a sidebar plugin. To 
 2. Create a new file "serendipity_event_myfirstplugin.php" in the directory you created earlier. Note that the plugin filename needs to exactly match the directory name.
 3. Now use this code for the created file:
 
-```php
-<?php
+    <?php
 
-// This line makes sure that plugins can only be called from the Serendipity Framework.
-if (IN_serendipity !== true) {
-    die ("Don't hack!");
-}
-
-// Load possible language files.
-@serendipity_plugin_api::load_language(dirname(__FILE__));
-
-// Extend the base class
-class serendipity_event_myfirstplugin extends serendipity_plugin {
-  var $title = MYFIRSTPLUGIN_TITLE;
-
-  // Setup metadata
-  function introspect(&$propbag) {
-    $propbag->add('name', MYFIRSTPLUGIN_TITLE);
-    $propbag->add('event_hooks', array('frontend_header' => true));
-  }
-
-  // Setup title
-  function generate_content(&$title) {
-    $title = $this->title;
-  }
-
-  // Listen on events
-  function event_hook($event, &$bag, &$eventData, $addData = null) {
-	global $serendipity;
-
-    $hooks = &$bag->get('event_hooks');
-
-	if (isset($hooks[$event])) {
-	  switch($event) {
-	    case 'frontend_header':
-	      echo '<!-- Hello world! -->';
-	      return true;
-	      break;
-
-        default:
-	      return false;
-	    }
-	  } else {
-	   return false;
+    // This line makes sure that plugins can only be called from the Serendipity Framework.
+    if (IN_serendipity !== true) {
+        die ("Don't hack!");
     }
-  }
-}
-?>
-```
+
+    // Load possible language files.
+    @serendipity_plugin_api::load_language(dirname(__FILE__));
+
+    // Extend the base class
+    class serendipity_event_myfirstplugin extends serendipity_plugin {
+      var $title = MYFIRSTPLUGIN_TITLE;
+
+      // Setup metadata
+      function introspect(&$propbag) {
+        $propbag->add('name', MYFIRSTPLUGIN_TITLE);
+        $propbag->add('event_hooks', array('frontend_header' => true));
+      }
+
+      // Setup title
+      function generate_content(&$title) {
+        $title = $this->title;
+      }
+
+      // Listen on events
+      function event_hook($event, &$bag, &$eventData, $addData = null) {
+    	global $serendipity;
+
+        $hooks = &$bag->get('event_hooks');
+
+    	if (isset($hooks[$event])) {
+    	  switch($event) {
+    	    case 'frontend_header':
+    	      echo '<!-- Hello world! -->';
+    	      return true;
+    	      break;
+
+            default:
+    	      return false;
+    	    }
+    	  } else {
+    	   return false;
+        }
+      }
+    }
+    ?>
 
 4. Now we need a new language file for the constants we refer to (MYFIRSTPLUGIN_TITLE). Create a simple file "lang_en.inc.php" (for the english language) with this content:
 
-```php
-<?php
-@define('MYFIRSTPLUGIN_TITLE', 'This is my first plugin');
-?>
-```
+    <?php
+    @define('MYFIRSTPLUGIN_TITLE', 'This is my first plugin');
+    ?>
 
 And that's it for the plugin! You can now log into your plugin configuration management page and install the event plugin. On the frontend, it will simply show you a "Hello world" comment statement inside the HTML head section.
 
@@ -153,29 +145,27 @@ The thing that differentiates the eventplugin from the sidebar plugin is the cen
 You can simply expand the array in the property bag for multiple event hooks; each array key can represent an event hook name. Then in the event_hook() method, you need to enhance the central switch() statement to check for additional hooks.
 
 If you want you can of course create seperate methods for each hook you want to call, if you find that easier to read:
-```php
-  function event_hook($event, &$bag, &$eventData, $addData = null) {
-	global $serendipity;
 
-    $hooks = &$bag->get('event_hooks');
+    function event_hook($event, &$bag, &$eventData, $addData = null) {
+        global $serendipity;
 
-	if (isset($hooks[$event])) {
-	  $this->$event($eventData, $addData);
-	  return true;
-    } else {
-      return false;
+        $hooks = &$bag->get('event_hooks');
+
+	   if (isset($hooks[$event])) {
+	       $this->$event($eventData, $addData);
+	       return true;
+        } else {
+            return false;
+        }
     }
-  }
 
-  function frontend_header(&$eventData, $addData) {
-    // Do something
-  }
+    function frontend_header(&$eventData, $addData) {
+        // Do something
+    }
 
-  function frontend_footer(&$eventData, $addData) {
-    // Do something
-  }
-
-```
+    function frontend_footer(&$eventData, $addData) {
+        // Do something
+    }
 
 Note that $eventData is a referenced array which you can write to and modify. The $addData is additional read-only data that certain hooks specify for context or metadata.
 
@@ -200,17 +190,16 @@ Now that the basic groundwork of a plugin is clear, let's build on that and show
 The introspect() method exists so that a plugin can advertise its metadata to the core framework. It gets passed a central serendipity_property_bag() object which is a simple getter/setter object for any kind of storage.
 
 The property bag can hold any kind of metadata:
-```php
-$bag = new serendipity_property_bag();
 
-// Set data:
-$bag->add('version', '1.0-alpha1');
-$bag->add('an array', array(1,2,3));
-// ...
+    $bag = new serendipity_property_bag();
 
-// Retrieve the data:
-echo $bag->get('version');
-```
+    // Set data:
+    $bag->add('version', '1.0-alpha1');
+    $bag->add('an array', array(1,2,3));
+    // ...
+
+    // Retrieve the data:
+    echo $bag->get('version');
 
 Internally serendipity offers those property bag attributes:
 
@@ -229,22 +218,20 @@ Internally serendipity offers those property bag attributes:
 Note that you can use a property bag to pass along any other kind of variables. The property bag is a temporary storage; it is setup and queries every time the plugin is instantiated; it does not persist on requests. To persist session data, simply use the PHP $_SESSION superglobal array. You can permanently store data through the plugin API's set_config() method, which is described later on.
 
 Here is an example of a completely filled property bag:
-```php
-  function introspect(&$propbag) {
-    $propbag->add('name', MYFIRSTPLUGIN_TITLE);
-    $propbag->add('description', 'It does nothing yet!);
-    $propbag->add('author', 'Garvin Hicking');
-    $propbag->add('copyright', 'GPL');
-    $propbag->add('version', '1.0');
-    $propbag->add('website', 'http://garv.in/');
-    $propbag->add('stackable', true);
-    $propbad->add('requirements', array('php' => '5.3.0', 'smarty' => '3.0', 'serendipity' => '2.0'));
-    $propbad->add('groups', array('MARKUP', 'FRONTEND_FEATURES'));
-    $propbad->add('configuration', array('title', 'subtitle', 'mood'));
-    $this->dependencies = array('serendipity_event_myfirstplugin' => 'keep');
-  }
 
-```
+    function introspect(&$propbag) {
+        $propbag->add('name', MYFIRSTPLUGIN_TITLE);
+        $propbag->add('description', 'It does nothing yet!);
+        $propbag->add('author', 'Garvin Hicking');
+        $propbag->add('copyright', 'GPL');
+        $propbag->add('version', '1.0');
+        $propbag->add('website', 'http://garv.in/');
+        $propbag->add('stackable', true);
+        $propbad->add('requirements', array('php' => '5.3.0', 'smarty' => '3.0', 'serendipity' => '2.0'));
+        $propbad->add('groups', array('MARKUP', 'FRONTEND_FEATURES'));
+        $propbad->add('configuration', array('title', 'subtitle', 'mood'));
+        $this->dependencies = array('serendipity_event_myfirstplugin' => 'keep');
+    }
 
 ##### The generate_content(&$title) method
 
@@ -253,40 +240,37 @@ For sidebar plugins, generate_content() is the central "main" method that return
 ##### Adding configuration options to your plugin: introspect_config_item(), get_config(), set_config(), validate()
 
 To permanently store configuration inside your plugin, you first need to setup an array of available configuration keys in the introspect() property bag:
-```php
+
     $propbad->add('configuration', array('title', 'subtitle', 'mood'));
-```
 
 When this is done, your plugin needs to define a introspect_config_item() method like this:
-```php
- function introspect_config_item($name, &$propbag) {
-	switch($name) {
-	    case 'title':
-	        $propbag->add('type',        'html');
-	        $propbag->add('name',        'Enter the title');
-	        $propbag->add('default',     '');
-	        break;
 
-	    case 'subtitle':
-	        $propbag->add('type',        'boolean');
-	        $propbag->add('name',        'Should a subtitle (mood) be used?');
-	        $propbag->add('description', 'If this is disabled, the mood is not shown in the output.');
-	        $propbag->add('default',     false);
-	        break;
+    function introspect_config_item($name, &$propbag) {
+	   switch($name) {
+	       case 'title':
+	           $propbag->add('type',        'html');
+	           $propbag->add('name',        'Enter the title');
+	           $propbag->add('default',     '');
+	           break;
 
-	    case 'mood':
-	        $propbag->add('type',        'string');
-	        $propbag->add('name',        'What is your mood?');
-	        $propbag->add('default',     "You wouldn't like me when I'm angry.");
-	        break;
+	       case 'subtitle':
+    	        $propbag->add('type',        'boolean');
+    	        $propbag->add('name',        'Should a subtitle (mood) be used?');
+    	        $propbag->add('description', 'If this is disabled, the mood is not shown in the output.');
+    	        $propbag->add('default',     false);
+    	        break;
 
-	    default:
-	    	return false;
-	}
-	return true;
-}
+	       case 'mood':
+    	        $propbag->add('type',        'string');
+    	        $propbag->add('name',        'What is your mood?');
+    	        $propbag->add('default',     "You wouldn't like me when I'm angry.");
+    	        break;
 
-```
+	       default:
+	    	  return false;
+	   }
+	   return true;
+    }
 
 As you can see, for each configuration option that is available, you can setup a central switch/case structure. Then for each configuration option you setup a configuration property bag that supports a list of options.
 
@@ -298,23 +282,21 @@ On top of that, each property bag can also have these keys:
 * validate_error: If set, contains a specific error message when validation fails. If not set a generic error message will be displayed when the user saves the configuration.
 
 Inside the plugin (i.e. in the generate_content()) method you can use this code to access the values:
-```php
-function generate_content(&$title) {
-  echo "Title: " . $this->get_config('title');
-  if (serendipity_db_bool($this->get_config('subtitle')) {
-    echo "Mood: " . $this->get_config('mood');
-  }
-}
-```
+
+    function generate_content(&$title) {
+        echo "Title: " . $this->get_config('title');
+        if (serendipity_db_bool($this->get_config('subtitle')) {
+            echo "Mood: " . $this->get_config('mood');
+        }
+        }
 
 Be sure to always wrap serendipity_db_bool() around stored boolean values. Also make sure to escape output with serendipity_specialchars() if you pass through configuration values that shall not be interpreted as HTML!
 
 You can store/overwrite configuration values inside a plugin:
-```php
-function generate_content(&$title) {
-  $this->set_config('last_run', time());
-}
-```
+
+    function generate_content(&$title) {
+        $this->set_config('last_run', time());
+    }
 
 Those internal configuration values do NOT need to be advertised in the 'configuration' introspection bag, you can use them distinctly.
 
@@ -527,16 +509,14 @@ Most of these event hooks have self-explanatory names. You can easily look them 
 You can execute events (also custom ones you created only for your own plugin and theme) easily in Smarty in two ways.
 
 The first way is to simply call an event hook with a function:
-```smarty
-{serendipity_hookPlugin hook="my_custom_event" hookAll="true" data="4711" addData=$someArray}
-```
+
+    {serendipity_hookPlugin hook="my_custom_event" hookAll="true" data="4711" addData=$someArray}
 
 This would then yield the output of what your plugin that listens on "my_custom_event" outputs.
 
 The second way is to call an event hook that modifies a distinct variable:
-```smarty
-{$entry.title|serendipity_refhookPlugin:'my_markup_transformation':false}
-```
+
+    {$entry.title|serendipity_refhookPlugin:'my_markup_transformation':false}
 
 This would then pass along your $entry.title as a parameter for the my_markup_transformation event hook.
 

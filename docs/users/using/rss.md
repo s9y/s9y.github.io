@@ -45,7 +45,7 @@ The file *rss.php* is responsible for creating your feed items. It can take vers
 *  **all**: If this is set to any value, the RSS feed will export ALL your entries instead of limiting to 15.
 
 You can combine each of the parameters with each other to construct your individual URLs:
-```
+
     http://yourblog/serendipity/rss.php?version=1.0&category=2
     -- Display a RSS 1.0 feed of your category #2
 
@@ -57,7 +57,6 @@ You can combine each of the parameters with each other to construct your individ
 
     http://yourblog/serendipity/rss.php?version=1.0&category=3&type=comments
     -- Display a RSS 1.0 feed of all comments in your category #3
-```
 
 ## <a name="A5"></a>RSS import
 
