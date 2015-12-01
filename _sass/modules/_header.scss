@@ -1,6 +1,8 @@
 // HEADER
 // --------------------------------------------------------------------
 #masthead {
+    @include clearfix;
+
     h1 {
         @include grid-box(12, .5rem);
 
