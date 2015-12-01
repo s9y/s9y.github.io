@@ -1,4 +1,5 @@
 ---
+layout: docs
 title: Serendipity -  Hosting Providers
 ---
 # Serendipity - Hosting Providers
@@ -13,9 +14,9 @@ If you need help on operating your blog in a corporate environment, customizing 
 
 [Webdesign & Serendipity-Blogs & Imperia & Typo3](http://www.faktor-e.de/)
 
-[Faktor E Multimedia GmbH, Bonn](http://www.faktor-e.de/)  
-Poppelsdorfer Allee 104  
-D-53115 Bonn (Germany)  
+[Faktor E Multimedia GmbH, Bonn](http://www.faktor-e.de/)
+Poppelsdorfer Allee 104
+D-53115 Bonn (Germany)
 [Internet: www.faktor-e.de](http://www.faktor-e.de/)
 
 ## Packages

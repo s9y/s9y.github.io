@@ -1,4 +1,5 @@
 ---
+layout: docs
 title: Removing Trackback Links
 ---
 

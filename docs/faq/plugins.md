@@ -1,4 +1,5 @@
 ---
+layout: docs
 title: Commonly Requested Extras
 ---
 

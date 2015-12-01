@@ -1,5 +1,6 @@
 ---
-title: Admin Interface 
+layout: docs
+title: Admin Interface
 ---
 
 ## Admin Interface

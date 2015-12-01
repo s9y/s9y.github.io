@@ -1,4 +1,5 @@
 ---
+layout: docs
 title: Moving Serendipity to a New Directory
 ---
 

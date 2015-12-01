@@ -1,4 +1,5 @@
 ---
+layout: docs
 title: Printing Latest Entries with JavaScript
 ---
 

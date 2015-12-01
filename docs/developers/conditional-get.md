@@ -1,4 +1,5 @@
 ---
+layout: docs
 title: Conditional Get for RSS Feeds
 ---
 

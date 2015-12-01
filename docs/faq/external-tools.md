@@ -1,4 +1,5 @@
 ---
+layout: docs
 title: Interfacing with Serendipity
 ---
 

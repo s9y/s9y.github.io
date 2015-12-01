@@ -1,4 +1,5 @@
 ---
+layout: docs
 title: Moving an External Page Into Serendipity
 ---
 
