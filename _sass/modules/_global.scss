@@ -80,6 +80,13 @@ body > main {
         text-align: justify;
     }
 
+    pre {
+        background-color: $lite-grey;
+        border: 1px solid $silver;
+        box-sizing: border-box;
+        padding: .5rem;
+    }
+
     @media screen and (min-width: $sm) {
         @include grid-box(12, 1rem);
     }
