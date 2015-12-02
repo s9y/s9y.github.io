@@ -15,7 +15,7 @@ Users who have been watching your feed and where not able to catch up the latest
 
 If you want to permanently disable that feature (whatever the reasons are) you can either set a "\$\_REQUEST['nocache'] = true" inside your rss.php file (first line) or append the '&nocache=true' request variable to your feed so that it looks like:
 
-`http://example.host/serendipity/rss.php?version=2.0&nocache=true`.
+    http://example.host/serendipity/rss.php?version=2.0&nocache=true
 
 Of course, the usual feed behaviour is not affected if none of the caching headers are provided. So if you use syndication methods to embed content from a blog inside an application, just tune your application to either send the 'nocache'-Variable to a Serendipity blog, or to not send the caching headers.
 

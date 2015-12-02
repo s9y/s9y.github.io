@@ -5,11 +5,9 @@ title: Editing entries.tpl
 
 ### Tutorial: Editing entries.tpl template
 
-This verbose tutorial is an excerpt of a thread on the forums [http://board.s9y.org/viewtopic.php?t=4013](http://board.s9y.org/viewtopic.php?t=4013).
+This verbose tutorial is an excerpt of a thread [on the forums](http://board.s9y.org/viewtopic.php?t=4013).
 
-The initial question was this:
-
-#### The question
+#### Initial question
 
 I'm helping another user to customise my carl blue theme, we've changed the entries.tpl back to the default method, rather than my custom version, so now of course the entries that were posted on the same day all appear grouped. This is fine, but we were wondering if its possible to add a dividing line between these entries only, ie not between dates, just between entries of the same date.
 
@@ -19,21 +17,21 @@ I'd like to take a shot at explaining, in plain English, if that's even possible
 
 First, let's state the problem: we want separators between articles that appear in groups, like so:
 
-DATE
+    DATE
 
-article
+    article
 
-* * * * *
+    * * * * *
 
-article
+    article
 
-* * * * *
+    * * * * *
 
-article
+    article
 
-DATE
+    DATE
 
-article
+    article
 
 ...and so on. When I look at this pattern, I see that there's a separator beneath every article except the last one.
 
@@ -84,21 +82,21 @@ If we want to insert something at the end of each article, this is the place to 
 
 This would work, but because we put the \<hr\> after [i]every[/i] article, they'd look like this:
 
-DATE
+    DATE
 
-article
+    article
 
-* * * * *
+    * * * * *
 
-article
+    article
 
-* * * * *
+    * * * * *
 
-DATE
+    DATE
 
-article
+    article
 
-* * * * *
+    * * * * *
 
 See the extra separator after the last article? We don't need that. Let's take it out.
 
@@ -110,17 +108,12 @@ Fortunately, Smarty provides exactly this capability. Unfortunately, this is not
 
 So now we must do two things:
 
-1) We have to name our {foreach}.
-
-2) We have to ask our {foreach} if we're on the first loop, and skip the separator if we are.
+1. We have to name our `{foreach}`.
+2. We have to ask our `{foreach}` if we're on the first loop, and skip the separator if we are.
 
 Simple enough. Here's how we name our foreach:
 
-\<code\>
-
-{foreach name="dategroup" from=\$dategroup.entries item="entry"}
-
-\</code\>
+    {foreach name="dategroup" from=$dategroup.entries item="entry"}
 
 We simply added the "name" attribute. Any name will do, but "dategroup" seems simple. That makes the actual, full name of the {foreach} \$smarty.foreach.dategroup.
 
