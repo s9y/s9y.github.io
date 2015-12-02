@@ -12,10 +12,10 @@ If you need help on operating your blog in a corporate environment, customizing 
 
 <a href="http://www.faktor-e.de"><img src="http://www.inpuncto-bonn.de/img_con/logopartner_faktore.gif" alt="Faktor E Multimedia GmbH: Internetagentur für Design, Content Management und PHP-Programmierung in Bonn"></a>
 
-[Webdesign & Serendipity-Blogs & Imperia & Typo3](http://www.faktor-e.de/)
-Faktor E Multimedia GmbH, Bonn
-Poppelsdorfer Allee 104
-D-53115 Bonn (Germany)
+[Webdesign & Serendipity-Blogs & Imperia & Typo3](http://www.faktor-e.de/)<br>
+Faktor E Multimedia GmbH, Bonn<br>
+Poppelsdorfer Allee 104<br>
+D-53115 Bonn (Germany)<br>
 [Internet: www.faktor-e.de](http://www.faktor-e.de/)
 
 #### Packages
