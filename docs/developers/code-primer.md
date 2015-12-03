@@ -236,7 +236,7 @@ Those layers implement these central functions:
 * serendipity_db_in_sql: Assemble and return SQL condition for a "IN (...)" clause
 * serendipity_db_concat: Returns the SQL code used for concatenating strings
 
-The database structure of Serendipity tries to be self-explanatory. For a list of all Serendipity database tables check out our [Database structure documentation](documentation/developing/database.md).
+The database structure of Serendipity tries to be self-explanatory. For a list of all Serendipity database tables check out our [Database structure documentation](/docs/developers/database.html).
 
 ##### Important variables and constants
 
@@ -382,7 +382,7 @@ On top of that, some global and user-specific configuration is passed through op
 
 We have created seperate bundles for specific API functions. An overview of most relevant functions and where they are defined can be found here:
 
-[List of Important API functions](documentation/developing/functions.md)
+[List of Important API functions](/docs/developers/functions.html)
 
 ##### Error-Handling
 
@@ -511,7 +511,7 @@ A plugin is defined by the files in the plugins/ subdirectory. Each plugin has i
 
 Plugin files within those directories are then only loaded, if you have activated/installed that plugin through the Admin interface.
 
-To see how the plugin files must be coded, please refer to our [Plugin API Documentation](documentation/developing/plugin-api.md).
+To see how the plugin files must be coded, please refer to our [Plugin API Documentation](/docs/developers/plugin-api.html).
 
 #### Themes
 
@@ -521,7 +521,7 @@ So whenever we say "Theme", we mean that what an end-user selects to affect outp
 
 Our themes are built upon single Smarty template files. Each file is responsible for a specific aspect of frontend or backend display. Serendipity implements both frontend and backend themes, so that you can basically build your own backend. The drawback to building a custom backend of course is, that anytime we add new functionality, we only add this to our internal default theme. We suggest to only make visual changes on the CSS side of things, unless you know what you are doing.
 
-A description for how themes are built, which variables they refer to please check the [Theme Documentation](documentation/developing/themes.md).
+A description for how themes are built, which variables they refer to please check the [Theme Documentation](/docs/developers/themes.html).
 
 #### Coding Gudelines
 

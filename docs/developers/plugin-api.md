@@ -274,7 +274,7 @@ When this is done, your plugin needs to define a introspect_config_item() method
 
 As you can see, for each configuration option that is available, you can setup a central switch/case structure. Then for each configuration option you setup a configuration property bag that supports a list of options.
 
-The available property keys are actually the same as for theme options, and they are descriped here: [Configuration keys](/documentation/developing/themes.md#Configurationkeys) **TODO: Proper link**.
+The available property keys are actually the same as for theme options, and they are descriped here: [Configuration keys](/docs/developers/themes.html#Configurationkeys).
 
 On top of that, each property bag can also have these keys:
 
