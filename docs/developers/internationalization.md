@@ -50,7 +50,7 @@ Now to make Serendipity recognize the new language, you need to edit the file **
 
 Now just add your new language with the prefix and the language name to that array, and you can choose it in your Serendipity Interface.
 
-Please also think about [contributing](http://docs.s9y.org/contributing/index.html) your translated language files so that all users can benefit from your efforts!
+Please also think about [contributing](/docs/contributing/index.html) your translated language files so that all users can benefit from your efforts!
 
 ### Date formats
 

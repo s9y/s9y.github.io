@@ -21,7 +21,7 @@ We are an open source project with emphasis on "open": We welcome all kinds of u
 
 #### Discussion / Feature Requests
 
-If you want to simply discuss about Serendipity, have a pet peeve, a suggestion or a specific feature in mind you don't know how to achieve? Our [forums](http://board.s9y.org) offer the exact place to go to. Most of our developers hang out there, and can give you valuable insight - given, that you take the time to properly describe what you want. Also, **please first always read the [FAQ (Frequently Asked Questions)](http://docs.s9y.org/faq/index.html)** to see if your issue can be covered there.
+If you want to simply discuss about Serendipity, have a pet peeve, a suggestion or a specific feature in mind you don't know how to achieve? Our [forums](http://board.s9y.org) offer the exact place to go to. Most of our developers hang out there, and can give you valuable insight - given, that you take the time to properly describe what you want. Also, **please first always read the [FAQ (Frequently Asked Questions)](/docs/faq/index.html)** to see if your issue can be covered there.
 
 Feature requests are not to be entered into our issue tracker on Github; we first discuss them in the forums, and when it is agreed and the specifics are clear, our developers will enter it as a issue on the tracker.
 
@@ -46,7 +46,7 @@ If you prefer, you can also open a github issue about security things and provid
 You want to join efforts, and actually code something with or for Serendipity? That's great. Here's what you need:
 
 * Get a GitHub account, clone our repository, develop your code and contribute as a pull request. If you submit multiple requests, we'll happily hand out direct repository access (if you are interested)
-* Check our our [code documentation primer](http://docs.s9y.org/contributing/developers/index.md) to see what's what in the Serendipity API
+* Check our our [code documentation primer](/docs/developers/code-primer.html) to see what's what in the Serendipity API
 * You want to **contribute a theme or plugin**? You can do that either with GitHub pull requests, or the old-fashioned way by announcing it on our Forums. We can then put your theme to our central repository (Spartacus), if you like (after we have initially checked the theme and verified it working). This also applies to plugins - our developers perform basic security checks / code reviews, and then either give feedback to improve the plugin, or simply add it to our repository. Please bear in mind that we object to having multiple plugins performing the same task, so we kindly ask you to add new features either to existing plugins where this matches, or make your plugin so unique that it rectifies being added to a central list.
 
 #### Commercial Serendipity support

@@ -61,7 +61,7 @@ Serendipity can be installed on any Webspace offering PHP 5.3+ and any of those 
 
 Please take a tour through this webpage and additional resources on the top of this page to browse the Serendipity World.
 
-**If you are looking on how to help us with the project, please check out our [Contributing](http://docs.s9y.org/contributing/) section on this site.**
+**If you are looking on how to help us with the project, please check out our [Contributing](/docs/contributing/index.html) section on this site.**
 
 * Our plugin and core [code is maintained on GitHub](https://github.com/s9y/). Contributions are welcome of course!
 * Documentation is also maintained through GitHub and available for browsing on [docs.s9y.org](http://docs.s9y.org).
