@@ -31,8 +31,8 @@ This might sound more complicated than it is, so let's create the most simple fo
 2. Create a new file "serendipity_plugin_myfirstplugin.php" in the directory you created earlier. Note that the plugin filename needs to exactly match the directory name.
 3. Now use this code for the created file:
 
+<pre><code>
     <?php
-
     // This line makes sure that plugins can only be called from the Serendipity Framework.
     if (IN_serendipity !== true) {
         die ("Don't hack!");
@@ -43,26 +43,27 @@ This might sound more complicated than it is, so let's create the most simple fo
 
     // Extend the base class
     class serendipity_plugin_myfirstplugin extends serendipity_plugin {
-      var $title = MYFIRSTPLUGIN_TITLE;
+        var $title = MYFIRSTPLUGIN_TITLE;
 
-      // Setup metadata
-      function introspect(&$propbag) {
-        $propbag->add('name', MYFIRSTPLUGIN_TITLE);
-      }
+        // Setup metadata
+        function introspect(&$propbag) {
+            $propbag->add('name', MYFIRSTPLUGIN_TITLE);
+        }
 
-      // Return content
-      function generate_content(&$title) {
-        $title = $this->title;
-        echo "Hello world!";
-      }
+        // Return content
+        function generate_content(&$title) {
+            $title = $this->title;
+            echo "Hello world!";
+        }
     }
-    ?>
+    ?></code></pre>
 
 4. Now we need a new language file for the constants we refer to (MYFIRSTPLUGIN_TITLE). Create a simple file "lang_en.inc.php" (for the english language) with this content:
 
+<pre><code>
     <?php
     @define('MYFIRSTPLUGIN_TITLE', 'This is my first plugin');
-    ?>
+    ?></code></pre>
 
 And that's it for the plugin! You can now log into your plugin configuration management page and install the sidebar plugin. On the frontend, it will simply show you a "Hello world" statement.
 
