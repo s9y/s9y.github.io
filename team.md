@@ -16,9 +16,9 @@ Thanks so much to all of them!
 * [Onli](http://www.onli-blogging.de): Developer
 * Ian
 * [Matthias Gutjahr](http://matthias-gutjahr.de/): Developer
-* [Matthias Mees](http://yellowled.de/): Theme Contributor, bulletproof theme author, 2k11 theme author.
-* [Don Chambers](http://www.optional-necessity.com/) Theme Contributor, bulletproof theme author.
-* Jannis Hermanns]: Project founder, Server Hosting
+* [Matthias Mees](http://yellowled.de): Theme Contributor, bulletproof theme author, 2k11 theme author.
+* [Don Chambers](http://www.optional-necessity.com) Theme Contributor, bulletproof theme author.
+* [Jannis Hermanns](http://jann.is): Project founder, Server Hosting
 
 #### Former Developers:
 
@@ -26,7 +26,7 @@ Thanks so much to all of them!
 * Carl Galloway: Theme Contributor
 * Matthew Groeninger: Developer, Support, Plugin-Support
 * [Falk Döring](http://www.fadoe.de/blog/): Plugins (Staticpage)
-* [Judebert](http://judebert.com/): Support, Documentation
+* [Judebert](http://judebert.com): Support, Documentation
 * Grischa Brockhaus
 * Tom Sommer: Developer
 * Joseph Tate: Developer, PostgreSQL support
