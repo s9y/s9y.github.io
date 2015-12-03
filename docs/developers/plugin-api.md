@@ -31,39 +31,37 @@ This might sound more complicated than it is, so let's create the most simple fo
 2. Create a new file "serendipity_plugin_myfirstplugin.php" in the directory you created earlier. Note that the plugin filename needs to exactly match the directory name.
 3. Now use this code for the created file:
 
-<pre><code>
-    <?php
-    // This line makes sure that plugins can only be called from the Serendipity Framework.
-    if (IN_serendipity !== true) {
-        die ("Don't hack!");
+<pre><code>&lt;?php
+// This line makes sure that plugins can only be called from the Serendipity Framework.
+if (IN_serendipity !== true) {
+    die ("Don't hack!");
+}
+
+// Load possible language files.
+@serendipity_plugin_api::load_language(dirname(__FILE__));
+
+// Extend the base class
+class serendipity_plugin_myfirstplugin extends serendipity_plugin {
+    var $title = MYFIRSTPLUGIN_TITLE;
+
+    // Setup metadata
+    function introspect(&amp;$propbag) {
+        $propbag->add('name', MYFIRSTPLUGIN_TITLE);
     }
 
-    // Load possible language files.
-    @serendipity_plugin_api::load_language(dirname(__FILE__));
-
-    // Extend the base class
-    class serendipity_plugin_myfirstplugin extends serendipity_plugin {
-        var $title = MYFIRSTPLUGIN_TITLE;
-
-        // Setup metadata
-        function introspect(&$propbag) {
-            $propbag->add('name', MYFIRSTPLUGIN_TITLE);
-        }
-
-        // Return content
-        function generate_content(&$title) {
-            $title = $this->title;
-            echo "Hello world!";
-        }
+    // Return content
+    function generate_content(&amp;$title) {
+        $title = $this->title;
+        echo "Hello world!";
     }
-    ?></code></pre>
+}
+?&gt;</code></pre>
 
 4. Now we need a new language file for the constants we refer to (MYFIRSTPLUGIN_TITLE). Create a simple file "lang_en.inc.php" (for the english language) with this content:
 
-<pre><code>
-    <?php
-    @define('MYFIRSTPLUGIN_TITLE', 'This is my first plugin');
-    ?></code></pre>
+<pre><code>&lt;?php
+@define('MYFIRSTPLUGIN_TITLE', 'This is my first plugin');
+?&gt;</code></pre>
 
 And that's it for the plugin! You can now log into your plugin configuration management page and install the sidebar plugin. On the frontend, it will simply show you a "Hello world" statement.
 
@@ -85,59 +83,59 @@ An event plugin shares many similarities with the setup of a sidebar plugin. To 
 2. Create a new file "serendipity_event_myfirstplugin.php" in the directory you created earlier. Note that the plugin filename needs to exactly match the directory name.
 3. Now use this code for the created file:
 
-    <?php
+<pre><code>&lt;?php
 
-    // This line makes sure that plugins can only be called from the Serendipity Framework.
-    if (IN_serendipity !== true) {
-        die ("Don't hack!");
+// This line makes sure that plugins can only be called from the Serendipity Framework.
+if (IN_serendipity !== true) {
+    die ("Don't hack!");
+}
+
+// Load possible language files.
+@serendipity_plugin_api::load_language(dirname(__FILE__));
+
+// Extend the base class
+class serendipity_event_myfirstplugin extends serendipity_plugin {
+  var $title = MYFIRSTPLUGIN_TITLE;
+
+  // Setup metadata
+  function introspect(&amp;$propbag) {
+    $propbag->add('name', MYFIRSTPLUGIN_TITLE);
+    $propbag->add('event_hooks', array('frontend_header' => true));
+  }
+
+  // Setup title
+  function generate_content(&amp;$title) {
+    $title = $this->title;
+  }
+
+  // Listen on events
+  function event_hook($event, &amp;$bag, &amp;$eventData, $addData = null) {
+	global $serendipity;
+
+    $hooks = &amp;$bag->get('event_hooks');
+
+	if (isset($hooks[$event])) {
+	  switch($event) {
+	    case 'frontend_header':
+	      echo '<!-- Hello world! -->';
+	      return true;
+	      break;
+
+        default:
+	      return false;
+	    }
+	  } else {
+	   return false;
     }
-
-    // Load possible language files.
-    @serendipity_plugin_api::load_language(dirname(__FILE__));
-
-    // Extend the base class
-    class serendipity_event_myfirstplugin extends serendipity_plugin {
-      var $title = MYFIRSTPLUGIN_TITLE;
-
-      // Setup metadata
-      function introspect(&$propbag) {
-        $propbag->add('name', MYFIRSTPLUGIN_TITLE);
-        $propbag->add('event_hooks', array('frontend_header' => true));
-      }
-
-      // Setup title
-      function generate_content(&$title) {
-        $title = $this->title;
-      }
-
-      // Listen on events
-      function event_hook($event, &$bag, &$eventData, $addData = null) {
-    	global $serendipity;
-
-        $hooks = &$bag->get('event_hooks');
-
-    	if (isset($hooks[$event])) {
-    	  switch($event) {
-    	    case 'frontend_header':
-    	      echo '<!-- Hello world! -->';
-    	      return true;
-    	      break;
-
-            default:
-    	      return false;
-    	    }
-    	  } else {
-    	   return false;
-        }
-      }
-    }
-    ?>
+  }
+}
+?&gt;</code></pre>
 
 4. Now we need a new language file for the constants we refer to (MYFIRSTPLUGIN_TITLE). Create a simple file "lang_en.inc.php" (for the english language) with this content:
 
-    <?php
-    @define('MYFIRSTPLUGIN_TITLE', 'This is my first plugin');
-    ?>
+<pre><code>&lt;?php
+@define('MYFIRSTPLUGIN_TITLE', 'This is my first plugin');
+?&gt;</code></pre>
 
 And that's it for the plugin! You can now log into your plugin configuration management page and install the event plugin. On the frontend, it will simply show you a "Hello world" comment statement inside the HTML head section.
 
@@ -147,26 +145,26 @@ You can simply expand the array in the property bag for multiple event hooks; ea
 
 If you want you can of course create seperate methods for each hook you want to call, if you find that easier to read:
 
-    function event_hook($event, &$bag, &$eventData, $addData = null) {
-        global $serendipity;
+<pre><code>function event_hook($event, &amp;$bag, &amp;$eventData, $addData = null) {
+    global $serendipity;
 
-        $hooks = &$bag->get('event_hooks');
+    $hooks = &amp;$bag->get('event_hooks');
 
-	   if (isset($hooks[$event])) {
-	       $this->$event($eventData, $addData);
-	       return true;
-        } else {
-            return false;
-        }
+   if (isset($hooks[$event])) {
+       $this->$event($eventData, $addData);
+       return true;
+    } else {
+        return false;
     }
+}
 
-    function frontend_header(&$eventData, $addData) {
-        // Do something
-    }
+function frontend_header(&amp;$eventData, $addData) {
+    // Do something
+}
 
-    function frontend_footer(&$eventData, $addData) {
-        // Do something
-    }
+function frontend_footer(&amp;$eventData, $addData) {
+    // Do something
+}</code></pre>
 
 Note that $eventData is a referenced array which you can write to and modify. The $addData is additional read-only data that certain hooks specify for context or metadata.
 
@@ -178,7 +176,7 @@ As you may have noted due to the naming scheme, you can only put one single plug
 
 You can however, bundle one event and sidebar plugin within the same directory, because Serendipity actually only needs the filename to match the classname and can ignore the directory name. We just advise for clarity to name the directories distinctively matching either the sidebar or event plugin name.
 
-With a setup like this you can bundle event and sidebar plugins, because often a plugin provides both event functionality and sidebar functionality. Those plugins can, if they reside in the same directory, access the same language constants and also other central shared classfiles that you can include. In spartacus, the serendipity_plugin_adduser & serendipity_event_adduser plugins are a good example of such a bundled plugin that provides common class names through a "common.inc.php" file.
+With a setup like this you can bundle event and sidebar plugins, because often a plugin provides both event functionality and sidebar functionality. Those plugins can, if they reside in the same directory, access the same language constants and also other central shared classfiles that you can include. In spartacus, the serendipity_plugin_adduser and serendipity_event_adduser plugins are a good example of such a bundled plugin that provides common class names through a "common.inc.php" file.
 
 When creating bundled plugins you can even link them together with a dependencies-property (see below)
 
