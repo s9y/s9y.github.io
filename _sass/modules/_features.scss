@@ -6,8 +6,8 @@
     -moz-column-count: 2;
     -webkit-column-count: 2;
     column-count: 2;
-
     -webkit-perspective: 1;
+    
     dt {
         -webkit-column-break-after: avoid;
         break-after: avoid;
@@ -19,7 +19,8 @@
         page-break-inside: avoid;
     }
 
-    margin-bottom: 2em;
+    margin-bottom: 3em;
+    margin-top: 0;
 
     img {
         height: 3em;
