@@ -2,71 +2,50 @@
 layout: home
 title: Serendipity -  A reliable, secure and extensible PHP blog
 ---
-### Our mission statement:
+## Features
 
-* **Reliability** (in terms of compatibility, functionality and adaptibility)
-* **Security** (our track record shows that we have dealt with the few issues swiftly)
-* **Extensibility** (easy plugins, themes)
-* **Ease of use** (uncomplicated, understandable interface, PHP code with a low entry barrier)
+Plugins & Themes
+: [![list of plugins](/img/screenshots/plugin-installation.png)](/img/screenshots/plugin-installation.png) Extending Serendipity is as simple as clicking on a button to install a plugin or theme, and the central repository Spartacus makes it easy to find the right one.
 
-Casual users appreciate the way Serendipity's sophisticated **plugin architecture** allows you to easily modify both the appearance of your blog and its features. You can install more than 120 plugins with just one click (using the core plugin SPARTACUS), instantly enhancing your blog's functionality. **No need to edit code!**
+WYSIWYG, or not
+: [![The Editor](/img/screenshots/03_editor.jpg)](/img/screenshots/03_editor.jpg) A graphical editor is included, though you could also use one of the common markup languages. Or just HTML.
 
-Likewise, one click offers more than 80 official **templates**, so your blog looks the way you like it.
+Media Library
+: [![The Library](/img/screenshots/04_media.jpg)](/img/screenshots/04_media.jpg) Serve and organize images, videos or other files directly from your blog.
 
-Advanced users value Serendipity's **Smarty templates** for combining simplicity with well-documented **web standards** and no need to learn PHP logic. It makes minor modifications trivial, but still provides the power to unleash your creativity and completely customize your site! Serendipity's *outstanding support* gives you the confidence to be adventurous, too.
+Multi-User & Multi-Blog
+: [![List of authors](/img/screenshots/authors.png)](/img/screenshots/authors.png) Multiple authors can write in the same blog. The permission system keeps everything controllable. Or run a shared installation with one blog per user.
 
-Programmers and other technical users recommend Serendipity for its **fast, stable, understandable PHP code** and its **great track-record in caring about backwards-compatibility** as well as **established security and fast reactions to (few) issues found in the past**.
+Secure
+: [![List of security issues, 4 in 2015](/img/cve-details.png)](/img/cve-details.png) Written with care, we have a very good track record of providing a secure software. [See for yourself](http://www.cvedetails.com/product/3867/S9Y-Serendipity.html?vendor_id=2214).
 
-While beginners can learn from Serendipity, advanced programmers can easily make complex modifications. Serendipity is programmed in PHP, long recognized for its ideal blend of power, simplicity, and speed. Serendipity's **BSD licensing** ensures that programmers around the world can learn from it and improve it, and use it for any scenario they see fit.
+Run everywhere
+: [![An example hoster](/img/hoster-example.png)](/img/hoster-example.png) All is needed is a normal Hoster with PHP. As database use MySQL, Postgres or SQLite.
+{:#featurelist}
 
-Users of other blogging/CMS applications are already switching to Serendipity, thanks to its easy customization and outstanding support.  Corporate users are taking advantage of Serendipity's unparalleled flexibility to set up fast, simple and customized blogs.
 
-### Features
+## Blogs powered by Serendipity
 
-Serendipity's basic features include something for everybody, from the personal blogger to the professional corporate web designer:
+<section id="blogs" markdown="1">
+### Der Shopblogger
+[![Der Blog des Shopbloggers](/img/blogs/shopblogger.png)](http://www.shopblogger.de/blog/)
 
-* WYSIWYG and HTML editing
-* Built-in, powerful media database
-* Multiple authors, configurable permission/usergroup system
-* Threaded comments, nested categories, post to multiple categories
-* Multiple languages (internationalization)
-* Online plugin and template repository for easy plug-and-play installation
-* Easy-to-use API functions for common tasks and powerful event-driven plugin API
-* Cool plugins: category-based sub-blogs, podcasting, RSS planet/aggregator, static pages
-* Robust and customizable spam blocking
-* One-click upgrading, even from very old Serendipity versions with automatic database upgrades
-* Can be embedded into your existing web pages
-* Standards-compliant templating through Smarty, remote blogging via XML-RPC
-* BSD-style licensing
-* Multiple Database support (SQLite, PostgreSQL, MySQL, MySQLi)
-* Shared installations can power multiple blogs from just one codebase
-* Native import from other blog applications (WordPress, Textpattern, Moveable Type, bblog, ...)
+### Dirks Logbuch
+[![Dirks Logbuck](/img/blogs/dirks_logbuch.png)](http://www.deimeke.net/dirk/blog/)
 
-Of course, Serendipity has far too many other features to list!
+### YellowLeds Weblog v2
+[![YellowLeds Weblog](/img/blogs/yellowleds_weblog.png)](http://yellowled.de/)
 
-### Goals
+### S9y InfoCamp
+[![S9y InfoCamp](/img/blogs/s9ycamp.png)](http://www.s9ycamp.info/)
+</section>
 
-Our current goals are:
+## Latest News
 
-* Make interface as user-friendly as possible; customization should be possible to cover all aspects of easy blogging, without extra complexity.
-* Make interface functionality as clear as possible, so that users might not even need to read info-bubbles or labels, but directly understand all options.
-* Adapt libraries/components to modern technologies, ensure compatibility and security of existing features
-* Clean, separated, understandable and adaptable code workflows / architecture
-
-### Requirements
-
-Serendipity can be installed on any Webspace offering PHP 5.3+ and any of those database backends: MySQL 5.0+, PostgreSQL 4+, SQLite3. It can run as both CGI (Apache, Lighttpd, IIS, ...) or mod_php (Apache).
-
-### Where to go from here
-
-Please take a tour through this webpage and additional resources on the top of this page to browse the Serendipity World.
-
-**If you are looking on how to help us with the project, please check out our [Contributing](/docs/contributing/index.html) section on this site.**
-
-* Our plugin and core [code is maintained on GitHub](https://github.com/s9y/). Contributions are welcome of course!
-* Documentation is also maintained through GitHub and available for browsing on [docs.s9y.org](http://docs.s9y.org).
-* User Support and Discussion is offered on our [Forums](http://board.s9y.org).
-* Our [own blog](http://blog.s9y.org) contains news, release and security announcement
-* Additional Plugins and Themes can be checked out on [spartacus.s9y.org](http://spartacus.s9y.org); they can also be easily downloaded directly from within Serendipity!
-* Our old [SourceForge project page](http://sf.net/projects/php-blog) is used as a Download-Service for releases and provides a central read-only mailinglist for commits to our GitHub repository.
-* Für Deutsche Benutzer: Das Serendipity-Handbuch steht als [PDF zur Verfügung](https://github.com/s9y/Book/blob/master/serendipity.pdf?raw=true) und kann auch über [GitHub/s9y/Book](https://github.com/s9y/Book) von Helfern bearbeitet werden.
+ 1. ### [Serendipity 2.0.2 Security Fix Release](http://blog.s9y.org/archives/265-Serendipity-2.0.2-Security-Fix-Release.html)
+    Thanks to the report of Tim Coen (of Curesec GmbH) we were able to adress three security issues in the Serendipity Code…
+ 2. ### [Serendipity on Scaleway](http://blog.s9y.org/archives/264-Serendipity-on-Scaleway.html)
+   Our core-developer onli has created a Serendipity-Bundle for the "Baremetal SSD cloud server" service Scaleway, which allows an easy deployment of Serendipity on those servers…
+ 3. ### [Serendipity 2.0.1 released](http://blog.s9y.org/archives/263-Serendipity-2.0.1-released.html)
+   Serendipity 2.0.1 has just been released. This is the first maintenance release which fixes a couple of minor issues, and one security-related issue where improper escaping of category names can lead to a possible XSS attack. This atnly be performed by authenticated editors, so we consider it medium-impact. If you run a multi-user blog with untrusted authors, you are urged to upgrade to the new release…
+{:#news}
