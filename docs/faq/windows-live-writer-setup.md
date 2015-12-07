@@ -1,15 +1,15 @@
 ---
 layout: docs
-title: Windows Live Writer Setup
+title: Windows Live Writer setup
 ---
 
-## Windows Live Writer Setup
+## Windows Live Writer setup
 
 Serendipity supports Windows Live Writer through our [XML-RPC plugin](http://spartacus.s9y.org/cvs/additional_plugins/serendipity_event_xmlrpc.zip).
 
 There is now a Serendipity preset in Windows Live Writer! Unfortunately, it does not configure Live Writer properly to interact with Serendipity.
 
-Thanks to Xeno Phage from the [Serendipity forums](http://board.s9y.org/) for the following information:
+Thanks to Xeno Phage from the [Serendipity forums](http://board.s9y.org) for the following information:
 
 Install Windows Live Writer and set your blog up as "Custom (Moveable Type API)". Make sure you have the xmlrpc plugin installed in Serendipity.
 
