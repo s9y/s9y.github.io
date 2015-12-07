@@ -5,11 +5,11 @@ title: Removing Trackback Links
 
 ### Removing Trackback Links
 
-Entries often include a link for [Trackbacks](glossary.html). This allows other bloggers to blog about your blog, or to give you credit for blogging an idea or event first. Unfortunately, those evil minions, spammers, abused trackbacks just like they abuse everything else.
+Entries often include a link for [Trackbacks](/docs/faq/ask-the-expert/glossary.html). This allows other bloggers to blog about your blog, or to give you credit for blogging an idea or event first. Unfortunately, those evil minions, spammers, abused trackbacks just like they abuse everything else.
 
-Removing the trackback links from your blog entries won't stop the spammers, but it will change the appearance of your blog. To disable trackbacks altogether, you'll want to read about the [Spam Protector](spam-protector.html) plugin.
+Removing the trackback links from your blog entries won't stop the spammers, but it will change the appearance of your blog. To disable trackbacks altogether, you'll want to read about the [Spam Protector](/docs/faq/ask-the-expert/spam-protector.html) plugin.
 
-The trackback display is printed from the entries.tpl. This will be in the templates/ directory, under your current template's subdirectory. If your template doesn't use its own entries.tpl, it will use the one in templates/default/ instead. If it does use its own entries.tpl, the lines below may vary slightly. Use your judgement, and read about [User Modifications](user-modifications.html) and [Editing entries.tpl](http://www.s9y.org/121.html) if you have any questions.
+The trackback display is printed from the entries.tpl. This will be in the templates/ directory, under your current template's subdirectory. If your template doesn't use its own entries.tpl, it will use the one in templates/default/ instead. If it does use its own entries.tpl, the lines below may vary slightly. Use your judgement, and read about [User Modifications](/docs/faq/ask-the-expert/user-modifications.html) and [Editing entries.tpl](/docs/developers/entries_tpl.html) if you have any questions.
 
 All you need to do is remove these lines from your entries.tpl:
 

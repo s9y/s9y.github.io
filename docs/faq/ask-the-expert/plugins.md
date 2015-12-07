@@ -9,6 +9,5 @@ Serendipity's plugin system lets you add special capabilities to your blog with 
 
 What do you want your blog to do?
 
-[I want to hide entries from the front page.](???)
-
-[I want to make some entries sticky, so they always show up on top of the list.](sticky-entries.html)
+* I want to hide entries from the front page. (???)
+* [I want to make some entries sticky, so they always show up on top of the list.](/docs/faq/ask-the-expert/sticky-entries.html)

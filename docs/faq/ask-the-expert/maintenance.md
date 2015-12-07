@@ -9,6 +9,5 @@ It's not all just blogging, you know.  From time to time, you'll want to maintai
 
 What would you like to do?
 
-[Upgrade to a newer version!](upgrade.html)
-
-[Move my blog to a new directory.](moving-to-new-directory.html)
+* [Upgrade to a newer version!](/docs/faq/ask-the-expert/upgrade.html)
+* [Move my blog to a new directory.](/docs/faq/ask-the-expert/moving-to-new-directory.html)

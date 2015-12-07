@@ -17,8 +17,6 @@ The fastest way is to **move the external page inside Serendipity**. This involv
 
 So, which way would you like to try?
 
-*broken link* -->[Printing the Latest Entries with JavaScript](http://www.s9y.org/205.html)
-
-*broken link* -->[Printing the Latest Entries with PHP](http://www.s9y.org/206.html)
-
-*broken link* -->[Moving an External Page into Serendipity](http://www.s9y.org/207.html)
+* [Printing the Latest Entries with JavaScript](/docs/faq/ask-the-expert/printing-latest-entries-with-javascript.html)
+* [Printing the Latest Entries with PHP](/docs/faq/ask-the-expert/printing-latest-entries-with-php.html)
+* [Moving an External Page into Serendipity](/docs/faq/ask-the-expert/moving-external-page-into-serendipity.html)
