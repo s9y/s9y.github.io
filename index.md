@@ -26,13 +26,13 @@ title: Serendipity -  A reliable, secure and extensible PHP blog
 ## Blogs powered by Serendipity
 
 * ### Der Shopblogger
-  [![Der Blog des Shopbloggers](/img/blogs/shopblogger.png)](http://www.shopblogger.de/blog/)
+  [![Der Blog des Shopbloggers](/img/blogs/shopblogger.jpg)](http://www.shopblogger.de/blog/)
 * ### Dirks Logbuch
-  [![Dirks Logbuck](/img/blogs/dirks_logbuch.png)](http://www.deimeke.net/dirk/blog/)
+  [![Dirks Logbuck](/img/blogs/dirks_logbuch.jpg)](http://www.deimeke.net/dirk/blog/)
 * ### YellowLeds Weblog v2
-  [![YellowLeds Weblog](/img/blogs/yellowleds_weblog.png)](http://yellowled.de/)
+  [![YellowLeds Weblog](/img/blogs/yellowleds_weblog.jpg)](http://yellowled.de/)
 * ### S9y InfoCamp
-  [![S9y InfoCamp](/img/blogs/s9ycamp.png)](http://www.s9ycamp.info/)
+  [![S9y InfoCamp](/img/blogs/s9ycamp.jpg)](http://www.s9ycamp.info/)
 {:#blogs-list}
 </section>
 
