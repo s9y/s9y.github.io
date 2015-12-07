@@ -3,33 +3,10 @@ layout: docs
 title: Database structure
 ---
 
-## Database structure
+<h2>Database structure</h2>
 
-### TOC
-
-* Database structure
-  * serendipity_authors
-  * serendipity_groups
-  * serendipity_groupconfig
-  * serendipity_authorgroups
-  * serendipity_access
-  * serendipity_comments
-  * serendipity_entries
-  * serendipity_references
-  * serendipity_exits
-  * serendipity_referrers
-  * serendipity_config
-  * serendipity_options
-  * serendipity_suppress
-  * serendipity_plugins
-  * serendipity_category
-  * serendipity_images
-  * serendipity_entrycat
-  * serendipity_entryproperties
-  * serendipity_mediaproperties
-  * serendipity_permalinks
-  * serendipity_plugincategories
-  * serendipity_pluginlist
+* TOC
+{:toc}
 
 ### serendipity_authors
 

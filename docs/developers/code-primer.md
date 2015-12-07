@@ -3,34 +3,10 @@ layout: docs
 title: Code primer
 ---
 
-## Code Primer
+<h2>Code primer</h2>
 
-### TOC
-
-* Code Primer
-  * The "core"
-    * Initializing the Framework: serendipity_config(_local).inc.php
-    * .htaccess
-    * serendipity.css.php
-    * deployment directory
-    * Composer / Bundled-Libs
-    * Internationalization
-    * Other files and directories
-    * Database layers and structure
-    * Important variables and constants
-      * Local configuration
-      * Personal Configuration
-    * Important API functions
-    * Error-Handling
-  * Frontend-Routing: index.php
-    * Archive view
-    * External plugin
-  * Backend-Routing: serendipity_admin.php
-    * Backend Modules
-    * Importers / Exporters
-  * Plugins
-  * Themes
-  * Coding Gudelines
+* TOC
+{:toc}
 
 To get started with developing Serendipity, here's a few things to get you kickstarted.
 

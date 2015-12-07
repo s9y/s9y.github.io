@@ -3,12 +3,12 @@ layout: docs
 title: Microsoft IIS Setup
 ---
 
-## Microsoft IIS Setup
+<h2>Microsoft IIS Setup</h2>
 
-*  [Execute Access Forbidden](#A2)
-*  [Using Image Magick](#A3)
+* TOC
+{:toc}
 
-### <a name="A2"></a>Execute Access Forbidden
+### Execute Access Forbidden
 
 This information comes courtesy of **lyew** of the Serendipity forums.
 
@@ -40,6 +40,6 @@ Click "OK" all the way to exit IIS manager.
 
 In my particular case, I discovered that everything was set correctly: directory permissions, IIS website execute permissions. Apparently, I followed the suggested PHP configuration for "Verbs" to be set at "GET, POST,HEAD", but for Serendipity to execute, it appears that it needs to be set to "ALL".
 
-### <a name="A3"></a>Using Image Magick
+### Using Image Magick
 
 Thanks to **PaulF** from the forums, we now know that Image Magick requires either a PHP configuration change, or the Image Magick DLL must be in a subfolder of the Serendipity folder.

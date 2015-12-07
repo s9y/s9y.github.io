@@ -3,13 +3,10 @@ layout: docs
 title: Plugin API
 ---
 
-## TOC
+<h2>Plugin API</h2>
 
-* Plugin API
-  * Important event hooks
-  * Creating new event hooks
-
-## Plugin API
+* TOC
+{:toc}
 
 The general meaning of Plugins for Serendipity is described in the section [Plugins](/contributing/developers/index.md#Plugins) of our "Getting started" documentation.
 
@@ -309,27 +306,27 @@ There are a couple of more methods of the serendipity_plugin class that are call
 
 This method is executed when the Serendipity configuration screen of a plugin is displayed. In this you can execute PHP code that should only be executed when configuring the plugin, and not every time the plugin is loaded.
 
-#### install()
+##### install()
 
 THis method is called when the plugin is installed.
 
-#### uninstall()
+##### uninstall()
 
 This method is called when a plugin is uninstalled. You can use it to clean up variables or perform specific tasks.
 
-#### cleanup()
+##### cleanup()
 
 This is called whenever the user saves the configuration and configuration values were updated/saved. You can use that for possible garbage collection.
 
-#### parseTemplate($filename)
+##### parseTemplate($filename)
 
 This helper method can be called to render a smarty template file inside the plugin directory path.
 
-#### register_dependencies($remove, $authorid)
+##### register_dependencies($remove, $authorid)
 
 This is performed when a plugin has dependencies and those related plugins are uninstalled or installed. Usually you should not need to modify this piece of code, but if you have specific dependency management, you can.
 
-#### validate($config_item, &$bag, &$value)
+##### validate($config_item, &$bag, &$value)
 
 This is the default validation class. It is provided by the Serendipity API and should work for most validation scenarios, but if it doesn't, you can overwrite it.
 
@@ -380,7 +377,7 @@ And this property bag attribute:
 
 ** TODO: Example for external_plugin **
 
-#### Important event hooks:
+#### Important event hooks
 
 The easiest way to see how to implement any given event hook is to search in the .php files for:
 `hook_event('XXX')`
@@ -404,7 +401,7 @@ where you replace 'XXX' with the name of the even thook you want to look up. The
 * frontend_display:rss-2.0:per_entry: Single entry display in RSS feed
 * frontend_display:atom-1.0:per_entry: Single entry display in Atom feed
 
-#### Other event hooks:
+#### Other event hooks
 
 Most of these event hooks have self-explanatory names. You can easily look them up in the codebase by searching for those names, they usually only occur once at a specific place in code.
 
