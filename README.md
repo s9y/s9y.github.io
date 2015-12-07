@@ -41,4 +41,4 @@ title: Serendipity
 {:toc}
 ```
 
-This will *automagically* generate a table of contents based on the headings in that pages content, i.e. a list of links to said headings. (Of course, this only makes sense if the page actually *contains* headings and a *logicaly* heading hierarchy.)
+This will *automagically* generate a table of contents based on the headings in that pages content, i.e. a list of links to said headings. (Of course, this only makes sense if the page actually *contains* headings and a *logicaly* heading hierarchy.) Please note that you **have to** write the page title heading in HTML, otherwise it would be included in the TOC.
