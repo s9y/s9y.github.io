@@ -3,11 +3,12 @@ layout: docs
 title: Glossary
 ---
 
-## Glossary
+<h2>Glossary</h2>
 
-* [Trackback](#A2)
+* TOC
+{:toc}
 
-### <a name="A2"></a>Trackback
+### Trackback
 
 A way for other blogs to let you know they're using your articles. Like a footnote, but in reverse. It is considered polite to provide a link and a trackback to any articles you reference.
 
