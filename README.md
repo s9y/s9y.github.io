@@ -31,3 +31,14 @@ layout: home
 title: Serendipity
 ---
 ```
+
+* To add a table of contents to a page, add this add the *start* of an `.md` file *after* the YAML front matter:
+
+```
+<h2>(title of the page)</h2>
+
+* TOC
+{:toc}
+```
+
+This will *automagically* generate a table of contents based on the headings in that pages content, i.e. a list of links to said headings. (Of course, this only makes sense if the page actually *contains* headings and a *logicaly* heading hierarchy.)
