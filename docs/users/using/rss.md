@@ -3,15 +3,12 @@ layout: docs
 title: RSS
 ---
 
-# RSS / Syndication
+<h2>RSS/Syndication</h2>
 
-*  [What is RSS?](#A2)
-*  [RSS in s9y](#A3)
-  *  [The rss.php file](#A4)
-*  [RSS import](#A5)
+* TOC
+{:toc}
 
-
-## <a name="A2"></a>What is RSS?
+### What is RSS?
 
 RSS is an acronym for either "RDF Site Summary" (whereas RDF means "Rich Data Format"), or "Really Simple Syndication".
 
@@ -25,15 +22,15 @@ However the basic principle of each syndication format is the same: It's there t
 
 Those utilities can read many feeds at once and make it easy for the reader to be notified on updates to your site.
 
-## <a name="A3"></a>RSS in s9y
+### RSS in s9y
 
 s9y supports all known and documented RSS versions, [Atom](http://www.atomenabled.org/) 0.3 and 1.0, and [OPML](http://www.opml.org/) 1.0.
 
 If you enable the *Syndication Sidebar plugin* you can select which versions you want to make public to your audience. The link to those RDF/XML files can be interpreted by most RSS readers and contain additional information to your entries: Number of Comments, Link to Comments, a small logo for your feed, mail contact adresses and even License information.
 
-The RSS feature of PHP also supports [Conditional Get for RSS Feeds](/42.html).
+The RSS feature of PHP also supports [Conditional Get for RSS Feeds](/docs/developers/conditional-get.html).
 
-### <a name="A4"></a>The rss.php file
+#### The rss.php file
 
 The file *rss.php* is responsible for creating your feed items. It can take versions HTTP GET variables:
 
@@ -46,19 +43,12 @@ The file *rss.php* is responsible for creating your feed items. It can take vers
 
 You can combine each of the parameters with each other to construct your individual URLs:
 
-    http://yourblog/serendipity/rss.php?version=1.0&category=2
-    -- Display a RSS 1.0 feed of your category #2
+* `http://yourblog/serendipity/rss.php?version=1.0&category=2` – Display a RSS 1.0 feed of your category #2
+* `http://yourblog/serendipity/rss.php?version=1.0&category=2;4;6` – Display a RSS 1.0 feed of your category #2, 4 & 6
+* `http://yourblog/serendipity/rss.php?version=2.0&type=comments` – Display a RSS 2.0 feed of all your comments
+* `http://yourblog/serendipity/rss.php?version=1.0&category=3&type=comments` – Display a RSS 1.0 feed of all comments in your category #3
 
-    http://yourblog/serendipity/rss.php?version=1.0&category=2;4;6
-    -- Display a RSS 1.0 feed of your category #2, 4 & 6
-
-    http://yourblog/serendipity/rss.php?version=2.0&type=comments
-    -- Display a RSS 2.0 feed of all your comments
-
-    http://yourblog/serendipity/rss.php?version=1.0&category=3&type=comments
-    -- Display a RSS 1.0 feed of all comments in your category #3
-
-## <a name="A5"></a>RSS import
+### RSS import
 
 As most blog applications syndicate their data with the RSS format, this is ideal for importing and exporting data. If you switched from Moveable Type to Serendipity and want to import your entries, you can easily switch to your *Administration Suite* and click on *Import Export*. There you can enter the URL to your RSS-feed of your Moveable Type installation and click in Import.
 

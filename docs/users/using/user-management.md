@@ -3,18 +3,14 @@ layout: docs
 title: User management
 ---
 
-# User management
+<h2>User management</h2>
 
-* [The way it was a long time ago (\< 0.6.1-CVS)](#A2)
-* [The way it was for a while (\>= 0.6.1 \< 0.9 beta 1)](#A3)
-  * [What can a user do depending on his userlevel?](#A4)
-  * [Private/Public](#A5)
-* [The way it is now (\> 0.9 beta 1)](#A6)
-  * [Default user group permissions](#A7)
+* TOC
+{:toc}
 
 Multi-user support has evolved a lot as serendipity has matured. The current version grants/denies capabilities based on user group memberships. Earlier user rights are maintained to a limited degree for backwards compatibility.
 
-## <a name="A2"></a>The way it was a long time ago (\< 0.6.1-CVS)
+### The way it was a long time ago (\< 0.6.1-CVS)
 
 You have to manually insert a row into the *serendipity\_authors* database-table:
 
@@ -24,7 +20,7 @@ You have to manually insert a row into the *serendipity\_authors* database-table
 
 By executing that SQL statement you would then have created an account *author2* with the password *mypassword* and the e-mail address *author2@s9y.org*. That user can now log into your s9y blog and create/edit entries, but also administrate the full blog. Every user has the same rights.
 
-## <a name="A3"></a>The way it was for a while (\>= 0.6.1 \< 0.9 beta 1)
+### The way it was for a while (\>= 0.6.1 \< 0.9 beta 1)
 
 In previous versions, all users shared the same rights in the blog. Beginning with 0.6.1 through 0.9, user management was based on so called "userlevels". If you log into your installation with your superuser account (created on installation) you can go to the administration area and then click on the "user management" link. There you have a simple interface to easily add users to your blog.
 
@@ -36,7 +32,7 @@ You can assign their login-names, passwords, e-mail addresses and some minor set
 
 After you created an account, the users can log into your blog. Depending on their userlevels, there are different possibilities a user can or cannot do. One of the important things is that even a standard editor user can go to the administration panel and click on "Configuration". There he can alter his personal account options and choose the language he wants his s9y displayed in. Or choose if he wants to use the WYSIWYG-editing utility or rather use plaintext.
 
-### <a name="A4"></a>What can a user do depending on his userlevel?
+#### What can a user do depending on his userlevel?
 
 **ACTION** | **editor** | **chief** | **admin**
 ---------- | ---------- | --------- | ---------
@@ -69,11 +65,11 @@ Edit private pictures | + | + | +
 
 It is advised that in shared setups only the webmaster has an admin-access. The users should be given a chief-login, and them their selves can distribute user logins.
 
-### <a name="A5"></a>Private/Public
+#### Private/Public
 
 Many items like categories, images and plugins can have a public/private flag. As soon as a category is marked as 'public', each user can access and use that category. If it is flagged as private, only the owner can use a category. Same with images and plugins, even though admin users always have the freedem to use anything they want.
 
-## <a name="A6"></a>The way it is now (\> 0.9 beta 1)
+### The way it is now (\> 0.9 beta 1)
 
 User levels worked great for a while, but the need for increased power and flexibility led to user groups. There is no limit to the number of groups that can be created, and users can be assigned to as many groups as necessary.
 
@@ -81,7 +77,7 @@ The key difference between the former user levels, and the current user groups i
 
 S9y defaults to three user groups, each corresponding to the previous user levels: Administrator, Chief Editor and Standard Editor. The corresponding default permissions for each of these groups is as follows:
 
-### <a name="A7"></a>Default user group permissions
+#### Default user group permissions
 
 **ACTION** | **editor** | **chief** | **admin**
 ---------- | ---------- | --------- | ---------

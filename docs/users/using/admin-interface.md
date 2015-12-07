@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: Admin Interface
+title: Admin interface
 ---
 
-## Admin Interface
+## Admin interface
 
-The Administrative Interface allows you to fine tune the features and settings of your site. The exact menu options available will vary depending on which plugins are installed. Users will only see those items for which they have sufficient access rights.
+The administrative interface allows you to fine tune the features and settings of your site. The exact menu options available will vary depending on which plugins are installed. Users will only see those items for which they have sufficient access rights.
 
 **Frontpage:** Administrative Suite front page.
 

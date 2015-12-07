@@ -3,7 +3,7 @@ layout: docs
 title: Import-Export Entries
 ---
 
-# Import/Export Entries
+## Import/Export Entries
 
 On this page you can import entries from your past/older blogs. There are several sources to choose from: Native Word Press, moveableType, b2evo and other systems are supported. After you have selected the source of your blog you may need to specify additional options to the database access, so that Serendipity can fetch your old entries/users/categories/comments and import them into your Serendipity blog.
 
