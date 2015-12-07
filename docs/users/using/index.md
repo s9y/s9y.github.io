@@ -3,7 +3,7 @@ layout: docs
 title: User Documentation
 ---
 
-## User Documentation
+## User documentation
 
 * [Posting](posting-blog-entry.html)
 * [Plugins](using-plugins.html)

@@ -1,29 +1,22 @@
 ---
 layout: docs
-title: Markup Plugins
+title: Markup plugins
 ---
 
-# Markup Plugins
+<h2>Markup plugins</h2>
 
-*  [Standard S9y Markup Plugins](#A2)
-  *  [nl2br](#A3)
-  *  [Emoticate](#A4)
-  *  [S9y Markup](#A5)
-  *  [Textile](#A6)
-  *  [BBCode](#A7)
-  *  [TextWiki](#A8)
-  *  [RegExp](#A9)
+* TOC
+{:toc}
 
-
-# <a name="A2"></a>Standard S9y Markup Plugins
+### Standard S9y Markup Plugins
 
 Please note: This page is a work in progress.
 
-## <a name="A3"></a>nl2br
+#### nl2br
 
 This cryptically named markup plugin simply takes any newline and turns it into the html code "\<br/\>".
 
-## <a name="A4"></a>Emoticate
+#### Emoticate
 
 This will turn some of the more common smilies/emoticons into images, which images it turns them into depends on which template you have selected. The emoticons it uses are:
 
@@ -34,18 +27,18 @@ This will turn some of the more common smilies/emoticons into images, which imag
     :-O | embaressed\_smile.gif
     :O' | embaressed\_smile.gif
     :-( | sad\_smile.gif
-    :( | sad\_smile.gif
-    :) | regular\_smile.gif
+    :(  | sad\_smile.gif
+    :)  | regular\_smile.gif
     8-) | shades\_smile.gif
     :-D | teeth\_smile.gif
-    :D | teeth\_smile.gif
-    8) | shades\_smile.gif
+    :D  | teeth\_smile.gif
+    8)  | shades\_smile.gif
     :-P | tounge\_smile.gif
     ;-) | wink\_smile.gif
-    ;) | wink\_smile.gif
-    :P | tounge\_smile.gif
+    ;)  | wink\_smile.gif
+    :P  | tounge\_smile.gif
 
-## <a name="A5"></a>S9y Markup
+#### S9y Markup
 
     **bolded text**
 
@@ -60,15 +53,15 @@ This will turn some of the more common smilies/emoticons into images, which imag
     #yyy# embeds #yyy# as an html entity, (#gt#, #lt# and #amp# for instance)
 
 
-## <a name="A6"></a>Textile
+#### Textile
 
-## <a name="A7"></a>BBCode
+#### BBCode
 
-## <a name="A8"></a>TextWiki
+#### TextWiki
 
 This uses the PEAR Text\_Wiki rules (which is an extension of the standard [WikiWikiWeb](http://www.c2.com/) text transformation rules. Notice that it does not currently handle [Wiki Words](/index.php?cmd=newdoc&newdocname=Wiki+Words&node=38&refnode=50)**?**.
 
-## <a name="A9"></a>RegExp
+#### RegExp
 
 This is the catch-all of markup plugins. It allows you to add custom markup to your blog with [PHP regular expressions](http://us2.php.net/manual/en/function.preg-replace.php)!
 
