@@ -1,18 +1,11 @@
 // HOME: NEWS
 // --------------------------------------------------------------------
-#news {
-    @include grid-box(12, .5rem);
+#news-list {
+    @extend %plain-list;
 
-    li {
-        list-style-type: none;
-    }
-
-    ol {
-        padding: 0;
-        margin: 0;
-    }
+    margin-bottom: 2rem;
 
     h3 {
-        margin-top: 0;
+        margin: 0;
     }
 }
