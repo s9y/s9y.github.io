@@ -1,10 +1,10 @@
 ---
 layout: docs
-title: Ask The Expert
+title: Ask the expert
 ---
-### Ask The Expert
+### Ask the expert
 
-If this virtual expert is unable to answer your questions, fear not! You can get help from a real, live person (often the developers, no less!) on the [Serendipity Forums](http://board.s9y.org). Please use the forum search feature to see if your question has already been answered before opening a new thread.
+If this virtual expert is unable to answer your questions, fear not! You can get help from a real, live person (often the developers, no less!) on the [Serendipity forums](http://board.s9y.org). Please use the forum search feature to see if your question has already been answered before opening a new thread.
 
 Now, let's see what we can do for you.  Show us where it hurts.
 
