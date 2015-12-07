@@ -3,7 +3,7 @@ layout: docs
 title: nl2br
 ---
 
-### nl2br
+## nl2br
 
 The nl2br plugin is enabled by default in new Serendipity blogs.  It converts newlines (nl) to break tags (<br/>) in entries and comments.  Whenever you press the "Enter" key on your keyboard, you're adding a newline to your entry; it looks like you've ended the current line and started a new line.
 

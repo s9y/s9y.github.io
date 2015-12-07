@@ -3,9 +3,9 @@ layout: docs
 title: Database structure
 ---
 
-### Database structure
+## Database structure
 
-#### TOC
+### TOC
 
 * Database structure
   * serendipity_authors
@@ -31,7 +31,7 @@ title: Database structure
   * serendipity_plugincategories
   * serendipity_pluginlist
 
-#### serendipity_authors
+### serendipity_authors
 
 Holds the users/authors. Columns are:
 
@@ -46,14 +46,14 @@ Holds the users/authors. Columns are:
 * mail_comments: Configuration option "receive mail notifications for comments"
 * mail_trackbacks: Configuration option "receive mail notifications for trackbacks"
 
-#### serendipity_groups
+### serendipity_groups
 
 Holds the user groups
 
 * id: Primary ID
 * Name: Name of the group
 
-#### serendipity_groupconfig
+### serendipity_groupconfig
 
 Holds ACL configuration data of usergroups
 
@@ -61,14 +61,14 @@ Holds ACL configuration data of usergroups
 * property: Property name
 * value: Property value
 
-#### serendipity_authorgroups
+### serendipity_authorgroups
 
 Holds n:m associations for users to groups
 
 * groupid: Foreign key of serendipity_groups.id
 * authorid: Foreign key of serendipity_authors.authorid
 
-#### serendipity_access
+### serendipity_access
 
 Holds access control lists for any kind of stored data (entries, categories, entries) to indicate which author is allowed to access what. Access is granted on a usergroup level.
 
@@ -78,7 +78,7 @@ Holds access control lists for any kind of stored data (entries, categories, ent
 * artifact_mode: Read or write
 * artifact_index: Possible additional data for an item
 
-#### serendipity_comments
+### serendipity_comments
 
 Holds the comments to entries
 
@@ -97,7 +97,7 @@ Holds the comments to entries
 * status: Whether the comment is approved/pending
 * referer: URL of the referrer
 
-#### serendipity_entries
+### serendipity_entries
 
 Holds the blog entries
 
@@ -116,7 +116,7 @@ Holds the blog entries
 * last_modified: Timestamp of last modification
 * moderate_comments: Boolean to indicate if comments are moderated
 
-#### serendipity_references
+### serendipity_references
 
 Holds parsed references within a blog entry
 
@@ -126,7 +126,7 @@ Holds parsed references within a blog entry
 * name: Link title
 * type: Link type
 
-#### serendipity_exits
+### serendipity_exits
 
 Holds external URLs that are captured through exit tracking
 
@@ -139,7 +139,7 @@ Holds external URLs that are captured through exit tracking
 * path: URL path
 * query: URL query part
 
-#### serendipity_referrers
+### serendipity_referrers
 
 Holds external URLs that reference to blog entries
 
@@ -152,7 +152,7 @@ Holds external URLs that reference to blog entries
 * path: URL path
 * query: URL query part
 
-#### serendipity_config
+### serendipity_config
 
 Holds the central serendipity configuration options
 
@@ -160,7 +160,7 @@ Holds the central serendipity configuration options
 * value: Value of the config option
 * authorid: 0 if global, or reference to the authorid that the configuration option is valid for
 
-#### serendipity_options
+### serendipity_options
 
 Holds template options.
 
@@ -168,7 +168,7 @@ Holds template options.
 * value: Value of the config option
 * okey: Key/ID of the template the config option belongs to
 
-#### serendipity_suppress
+### serendipity_suppress
 
 Holds URLs that are blocked from exit-tracking
 
@@ -180,7 +180,7 @@ Holds URLs that are blocked from exit-tracking
 * query: URL query part
 * last: Last access
 
-#### serendipity_plugins
+### serendipity_plugins
 
 Holds the list of enabled plugins
 
@@ -190,7 +190,7 @@ Holds the list of enabled plugins
 * authorid: Owner of the plugin
 * path: Path to plugin directory
 
-#### serendipity_category
+### serendipity_category
 
 Holds the categories of a blog.
 
@@ -205,7 +205,7 @@ Holds the categories of a blog.
 * sort_order: Sort order of a category within parent hierarchy
 * hide_sub: Boolean whether subcategories are hidden
 
-#### serendipity_images
+### serendipity_images
 
 Holds media items of the database
 
@@ -223,14 +223,14 @@ Holds media items of the database
 * hotlink: Whether media file is hotlinked (comes from foreign server)
 * realname: Full media file
 
-#### serendipity_entrycat
+### serendipity_entrycat
 
 Holds n:m associations of entries to categories
 
 * entryid: Foreign key to serendipity_entries.id
 * categoryid: Foreign key to serendipity_category.categoryid
 
-#### serendipity_entryproperties
+### serendipity_entryproperties
 
 Holds additional entry properties
 
@@ -238,7 +238,7 @@ Holds additional entry properties
 * property: Property name
 * value: Property value
 
-#### serendipity_mediaproperties
+### serendipity_mediaproperties
 
 Holds additional properties of media files
 
@@ -248,7 +248,7 @@ Holds additional properties of media files
 * property_subgroup: Property sub group
 * value: Property value
 
-#### serendipity_permalinks
+### serendipity_permalinks
 
 Holds the created permalinks for articles, authors and categories for lookup purposes.
 
@@ -257,14 +257,14 @@ Holds the created permalinks for articles, authors and categories for lookup pur
 * type: The typ eof an item (entry, author, category, ...)
 * data: Additional data
 
-#### serendipity_plugincategories
+### serendipity_plugincategories
 
 Holds categorization information for available plugins
 
 * class_name: Plugin class name
 * category: Name of category the plugin belongs to
 
-#### serendipity_pluginlist
+### serendipity_pluginlist
 
 Holds information about all available plugins
 

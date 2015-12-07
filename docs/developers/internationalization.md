@@ -3,7 +3,7 @@ layout: docs
 title: Internationalization
 ---
 
-### Languages / i18n
+## Languages / i18n
 
 s9y is fully compatible to be used in a native language and supports native and UTF-charsets, timezones and entity-encoding. Apart from the bundled languages (english, german, danish, czech, french, spanish and many others) you can easily translate the strings into your language. Given that you can read at least one of the mentioned languages. :-)
 
@@ -52,7 +52,7 @@ Now just add your new language with the prefix and the language name to that arr
 
 Please also think about [contributing](/docs/contributing/index.html) your translated language files so that all users can benefit from your efforts!
 
-### Date formats
+## Date formats
 
 The date format of the Serendipity backend and frontend is specific to the selected language you have chosen.
 

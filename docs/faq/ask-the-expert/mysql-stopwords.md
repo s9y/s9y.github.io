@@ -3,7 +3,7 @@ layout: docs
 title: MySQL Stopwords
 ---
 
-### MySQL Stopwords
+## MySQL Stopwords
 
 The Serendipity search function uses the SQL fulltext search capability. In MySQL, this capability includes "stopwords". Basically, searching for any of the stopwords would return (almost) all the entries, so MySQL ignores those words for efficiency.
 

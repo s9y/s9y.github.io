@@ -3,6 +3,6 @@ layout: docs
 title: Codex
 ---
 
-### Codex
+## Codex
 
 TODO

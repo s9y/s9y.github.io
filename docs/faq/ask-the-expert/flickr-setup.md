@@ -3,7 +3,7 @@ layout: docs
 title: Flickr Setup
 ---
 
-### Flickr Setup
+## Flickr Setup
 
 Just download the [Import from Flickr Plugin](http://spartacus.s9y.org/cvs/additional_plugins/serendipity_event_flickr.zip) and follow the directions!
 

@@ -3,7 +3,7 @@ layout: docs
 title: Interfacing with Serendipity
 ---
 
-### Interfacing with Serendipity
+## Interfacing with Serendipity
 
 Serendipity interoperates with many external tools and websites.  Even if the tool doesn't include Serendipity settings, you can usually make it work pretty easily.
 

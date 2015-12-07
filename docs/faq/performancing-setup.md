@@ -3,7 +3,7 @@ layout: docs
 title: Performancing Setup
 ---
 
-### Performancing Setup
+## Performancing Setup
 
 Serendipity supports Performancing for Firefox (PFF) through our [XML-RPC plugin](http://spartacus.s9y.org/cvs/additional_plugins/serendipity_event_xmlrpc.zip). You'll need Firefox version 1.5 or better with the PFF extension installed.
 

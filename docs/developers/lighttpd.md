@@ -3,7 +3,7 @@ layout: docs
 title: Lighttpd
 ---
 
-### Lighttpd
+## Lighttpd
 
 This sample config was posted by Niclas Kühne [on our Forums](http://board.s9y.org/viewtopic.php?p=19244):
 

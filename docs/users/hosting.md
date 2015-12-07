@@ -2,9 +2,10 @@
 layout: docs
 title: Hosting Providers
 ---
-### Hosting Providers
 
-#### Commercial Support
+## Hosting Providers
+
+### Commercial Support
 
 Serendipity's Core Developer Garvin Hicking works at the german web-design/multimedia agency Faktor E (Bonn). His company offers commercial support for all needs touching Serendipity's featureset.
 
@@ -18,17 +19,17 @@ Poppelsdorfer Allee 104<br>
 D-53115 Bonn (Germany)<br>
 [Internet: www.faktor-e.de](http://www.faktor-e.de/)
 
-#### Packages
+### Packages
 
 * Debian: [Serendipity Debian Package](http://packages.debian.org/sid/serendipity)
 * Softaculous: [Softaculous Automatted Installer cPanel/DirectAdmin](http://www.softaculous.com/softwares/blogs/Serendipity)
 * Aefer: [Aefer from Softaculous](http://www.aefer.com/scripts/php/blogs)
 
-#### Hosting
+### Hosting
 
 Below is a list of companies that supply easy (and sometimes free) access to Serendipity by allowing its customers to automatically deploy and install Serendipity onto a customers site.
 
-##### English
+#### English
 
 * [HostPapa Canada](http://www.hostpapa.ca/serendipity-hosting.html)
 * [1 click installation via the friendly nerds over at Certified Hosting](http://certifiedhosting.com/applications/index.php?act=3)
@@ -40,12 +41,12 @@ Below is a list of companies that supply easy (and sometimes free) access to Ser
 * [A2 Hosting's serendipity package](http://www.a2hosting.com/blog-software/serendipity-hosting)
 * [Hosting Ireland](http://www.hostingireland.ie/serendipity-hosting.php)
 
-##### French
+#### French
 
 * [Thalix](http://www.thalix.com/index.php?/pages/serendipity.html)
 * [Free.fr](http://support.free.fr/web/)
 
-##### German
+#### German
 
 * [de-punkt webhosting](http://www.de-punkt.de/)
 * [Domainfactory](http://www.domainfactory.de/)
@@ -62,15 +63,15 @@ Below is a list of companies that supply easy (and sometimes free) access to Ser
 
 While Serendipity has no unique or difficult requirements to its environment, it is sometimes good to know if a provider has been tested with Serendipity. We have compiled a list of hosting providers that we can confirm support Serendipity without any (technical) problems:
 
-##### English
+#### English
 
 * [Rogue Hosting](http://roguehosting.com)
 
-##### Danish
+#### Danish
 
 * [unoeuro.com](http://www.unoeuro.com)
 
-##### German
+#### German
 
 * [Schottenhost](http://www.schottenhost.de/)
 * [manitu](http://www.manitu.de/webhosting/pakete-domains/vergleich/)

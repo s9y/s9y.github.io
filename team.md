@@ -2,7 +2,7 @@
 title: Developer Team
 ---
 
-### Developer Team
+## Developer Team
 
 Here are the folks maintaining and having continuously contributed to Serendipity, in no specific order. Also check out our [GitHub memberlist](https://github.com/orgs/s9y/people) for recent commits.
 
@@ -10,7 +10,7 @@ Thanks so much to all of them!
 
 **TODO: Check for more contributors that should be listed?**
 
-#### Current Developers:
+### Current Developers:
 
 * [Garvin Hicking](http://garv.in): Lead developer since 2003, Maintainer
 * [Onli](http://www.onli-blogging.de): Developer
@@ -20,7 +20,7 @@ Thanks so much to all of them!
 * [Don Chambers](http://www.optional-necessity.com) Theme Contributor, bulletproof theme author.
 * [Jannis Hermanns](http://jann.is): Project founder, Server Hosting
 
-#### Former Developers:
+### Former Developers:
 
 * Martin Jacobsen: Serendipity Logo
 * Carl Galloway: Theme Contributor

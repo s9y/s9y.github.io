@@ -3,7 +3,7 @@ layout: docs
 title: Printing Latest Entries with PHP
 ---
 
-### Printing the Latest Entries with PHP
+## Printing the Latest Entries with PHP
 
 For this method of printing the latest entries in an external webpage, we'll add a some PHP to it.  That code will retrieve the latest entries from Serendipity, all on the same server.
 

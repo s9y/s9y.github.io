@@ -3,6 +3,6 @@ layout: docs
 title: Users
 ---
 
-### Users
+## Users
 
 TODO

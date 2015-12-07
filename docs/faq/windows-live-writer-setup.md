@@ -3,7 +3,7 @@ layout: docs
 title: Windows Live Writer Setup
 ---
 
-### Windows Live Writer Setup
+## Windows Live Writer Setup
 
 Serendipity supports Windows Live Writer through our [XML-RPC plugin](http://spartacus.s9y.org/cvs/additional_plugins/serendipity_event_xmlrpc.zip).
 

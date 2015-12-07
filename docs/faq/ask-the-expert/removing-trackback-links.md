@@ -3,7 +3,7 @@ layout: docs
 title: Removing Trackback Links
 ---
 
-### Removing Trackback Links
+## Removing Trackback Links
 
 Entries often include a link for [Trackbacks](/docs/faq/ask-the-expert/glossary.html). This allows other bloggers to blog about your blog, or to give you credit for blogging an idea or event first. Unfortunately, those evil minions, spammers, abused trackbacks just like they abuse everything else.
 

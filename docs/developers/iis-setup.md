@@ -3,12 +3,12 @@ layout: docs
 title: Microsoft IIS Setup
 ---
 
-### Microsoft IIS Setup
+## Microsoft IIS Setup
 
 *  [Execute Access Forbidden](#A2)
 *  [Using Image Magick](#A3)
 
-#### <a name="A2"></a>Execute Access Forbidden
+### <a name="A2"></a>Execute Access Forbidden
 
 This information comes courtesy of **lyew** of the Serendipity forums.
 
@@ -18,7 +18,7 @@ This applies to users who have installed Serendipity on platforms similar to the
 * Microsoft Windows 2003/IIS6
 * Microsoft .NET framework (asp.net 2.0) enabled
 
-##### Problem
+#### Problem
 
 While trying to access a php file from the Serendipity directory, Microsoft IIS returns an http 403.1 error, showing this message:
 
@@ -30,7 +30,7 @@ In my particular case, there was no problem running index.php from the serendipi
 
 Clicking on simple installation or expert installation successfully brought me to the configuration page, but when I clicked on "Complete Installation", I got the http 403.1 error message described above.
 
-##### Solution
+#### Solution
 
 Go to the IIS MMC and drill down to the website that Serendipity is installed in. Right click and go to properties. In the Home Directory Tab, ensure that the "Execute Permissions" is set to "Scripts" or "Scripts and Executables".
 
@@ -40,6 +40,6 @@ Click "OK" all the way to exit IIS manager.
 
 In my particular case, I discovered that everything was set correctly: directory permissions, IIS website execute permissions. Apparently, I followed the suggested PHP configuration for "Verbs" to be set at "GET, POST,HEAD", but for Serendipity to execute, it appears that it needs to be set to "ALL".
 
-#### <a name="A3"></a>Using Image Magick
+### <a name="A3"></a>Using Image Magick
 
 Thanks to **PaulF** from the forums, we now know that Image Magick requires either a PHP configuration change, or the Image Magick DLL must be in a subfolder of the Serendipity folder.

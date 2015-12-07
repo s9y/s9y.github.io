@@ -2,7 +2,7 @@
 title: Features
 ---
 
-### Features
+## Features
 
 * **Simple**. Designed for users of all technical levels.
 * **Robust Editing Interface**. Featuring an (optional) WSYISWG editor, easily browsable image manager, extended entry support, entries statistics and a host of other features.
@@ -24,13 +24,13 @@ title: Features
 * **PHP-powered** to fulfill the needs of ever-growing PHP-enabled websites and easy integration with support of *embedding* Serendipity into your webpage.
 * **Actively maintained** by some skilled and open-minded developers who enjoy the touch to the actual user and give support on the Forums as well as listen to every new user suggestion.
 
-#### Why is Serendipity better than...
+### Why is Serendipity better than...
 
 First off, choosing the right weblog tool is like choosing your religion. You should be wise in your requirements and where your focus lies.
 
 Serendipity is aimed to make everything possible you ever wish for. It is technically up to par to other well-known weblog scripts like Moveable Type or Wordpress.
 
-##### Wordpress
+#### Wordpress
 
 * **Easy plugin integration**. No hacks, no problems during upgrades, good compatibility and a **central plugin repository**. Enhance flexibility without the need to touch any core files.
 * **BSD-licensed**, Wordpress is only GPL. That means, you can use Serendipity to power your commercial applications or sites without any issues. Of course, the Serendipity team still likes to get credited where credit is due. ;-)
@@ -39,7 +39,7 @@ Serendipity is aimed to make everything possible you ever wish for. It is techni
 * **Multiple DB support** speaks for itself.
 * Good **PHP code style**. Open and responsible release management, covering fast security updates.
 
-##### Moveable Type
+#### Moveable Type
 
 * A great plus for Serendipity: **BSD-Licensing**. **PHP** instead of PERL, which often is harder to get on shared servers. Also, PHP tends to be better suitable for the web than Perl.
 * **Easy and extensible plugin API**.

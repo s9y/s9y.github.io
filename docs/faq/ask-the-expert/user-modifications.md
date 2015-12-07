@@ -3,19 +3,19 @@ layout: docs
 title: User Modifications
 ---
 
-### User Modifications
+## User Modifications
 
 Yes, you can add **any** HTML or Javascript to your Serendipity blog! And there's more than one way to do it.
 
-#### The easiest way is to install the "HTML Nugget" plugin.
+### The easiest way is to install the "HTML Nugget" plugin.
 
 This plugin provides a block in the sidebar where you can insert your custom code.
 
-#### If you want your code in the head of the document, you can use the "Head Nugget" plugin.
+### If you want your code in the head of the document, you can use the "Head Nugget" plugin.
 
 This does exactly the same thing, but inserts your code in the head of every Serendipity page. You can verify that it works with your browser's "View Source" capability.
 
-#### If you want to make the changes directly, you should modify your template.
+### If you want to make the changes directly, you should modify your template.
 
 To put Javascript in the head of the page, for instance, you'd want to modify the index.tpl in templates/{your currently selected template's name}. If it doesn't exist, please copy it from templates/default/index.tpl.
 

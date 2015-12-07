@@ -3,7 +3,7 @@ layout: docs
 title: Spam Protector
 ---
 
-### Spam Protector
+## Spam Protector
 
 Serendipity's Spam Protector plugin is a quite powerful tool to protect your blog from spam. It can provide CAPTCHAs and block trackback or comment spam based on domains or keywords.
 
@@ -11,7 +11,7 @@ The Spam Protector plugin is included and automatically enabled with every Seren
 
 Most of the configuration is easy to understand. Here are a few of the tricky bits.
 
-#### Disabling Trackbacks
+### Disabling Trackbacks
 
 Set "How to treat comments made via APIs" to "reject". Trackbacks are comments made via API. This also rejects plain comments made by API, which are also generally spam. It does not reject comments made directly from your blog. If you choose to disable trackbacks, you may also want to [remove the trackback links from the entry display](/docs/faq/ask-the-expert/removing-trackback-links.html).
 

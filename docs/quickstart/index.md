@@ -3,6 +3,6 @@ layout: docs
 title: Quickstart
 ---
 
-### Quickstart
+## Quickstart
 
 TODO

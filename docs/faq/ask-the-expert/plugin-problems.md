@@ -3,7 +3,7 @@ layout: docs
 title: Plugin Problems
 ---
 
-### Plugin Problems
+## Plugin Problems
 
 Which of the following best describes your problem?
 

@@ -3,7 +3,7 @@ layout: docs
 title: Important API functions
 ---
 
-### Important API functions
+## Important API functions
 
 We have created seperate bundles for specific API functions. An overview of most relevant functions and where they are defined can be found here:
 

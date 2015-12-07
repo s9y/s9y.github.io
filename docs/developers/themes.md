@@ -3,13 +3,13 @@ layout: docs
 title: Themes and Smarty Templating
 ---
 
-### Themes and Smarty Templating
+## Themes and Smarty Templating
 
 A theme is a collection of single template files, and must be put into the templates/ subdirectory to be available for selection your blog's "Manage Themes" admin section.
 
 Themes can either consist of a Frontend Theme, a Backend Theme or provide both. All styling for the backend is done in a subdirectory "admin" of the theme directory.
 
-#### Smarty
+### Smarty
 
 Are you afraid of using PHP? Get the shivers of complexity? Don't be afraid: Serendipity uses the Smarty PHP templating system, see (http://www.smarty.net). There you can also find a complete description of how it can be used - it is very easy to lern, has a lower entry barrier that using PHP code, and generally "looks" cleaner und more understandable.
 
@@ -28,7 +28,7 @@ This means, Smarty themes are actually mostly HTML files where you can put in sp
 * So called "modifiers" can be stacked to operate on a single variable with the "pipe" sign: `{$variable|escape|lower}`
 * Modifers can have parameters: `{$variable|format_date:"%d.%m.%Y"}`
 
-#### Fallback templates
+### Fallback templates
 
 A frontend theme can hold multiple files in its directory and define its custom output. Serendipity contains a lot of individual template files (see below), but very often a theme can work with the default template files that are provided by Serendipity.
 
@@ -44,13 +44,13 @@ When your frontend is called and the entries.tpl file should be rendered, Serend
 
 So make sure that you only copy over those files to your theme directory which you are really going to customize!
 
-#### Frontend Themes
+### Frontend Themes
 
 The frontend theme is the collection of files that are used to show anything on the content.
 
 The most important files of a theme are these:
 
-##### info.txt
+#### info.txt
 
 This file is the only required file of a theme directory. It specifies the metadata of a theme. The format of this file is simple and consists of a few "Key: Value" pairs (only one line per key!)
 
@@ -67,11 +67,11 @@ Every line except "Name:" is optional.
 * `[BACKEND]` can hold the string "Yes" if your theme also provides a backend theme. Leave out this line, if no backend is provided
 * `[ENGINE]` can hold the string of any theme directory (i.e. "bulletproof", "2k11", "default") to specify, which fallback to use. If not provided, falls back to $serendipity['defaultTemplate'] (2k11).
 
-##### preview.png, preview_fullsize.jpg
+#### preview.png, preview_fullsize.jpg
 
 These image files represent the thumbnails for the theme. "preview.png" is a small thumbnail (usually around 100-150px wide), while preview_fullsize.jpg is used for a large screenshot.
 
-##### config.inc.php
+#### config.inc.php
 
 This is another very central file of a theme, but it is optional. If that file is present, it is included just after Smarty is initialized by the core. This means that this file can use the whole range of Serendipity API functions and extend the Smarty framework with any custom Smarty modifiers or function you would like.
 
@@ -86,7 +86,7 @@ Please make sure that this file always contains those lines at the top:
 
 This ensures that the file can only be called from within the Serendipity framework, and not by outside HTTP calls.
 
-###### Defining custom Smarty functions/modifiers / Executing custom PHP
+##### Defining custom Smarty functions/modifiers / Executing custom PHP
 
 Since config.inc.php is called after the Smarty framework is initialized, you can easily access `$serendipity['smarty']` to register custom functions:
 
@@ -126,7 +126,7 @@ You can also influence whether the Smarty security should be disabled so that yo
 
 If you want to include foreign PHP scripts to show them on your own page, consider using the "External PHP" or "Wrap URL" event plugins available via Spartacus - or of course, creating your own simple PHP Serendipity Plugin. Head over to the Plugin API Docs for more information about this. **TODO:LINK**
 
-###### Using Smarty in entries
+##### Using Smarty in entries
 
 The "Markup: Smarty" plugin allows you to insert Smarty markup into your entries, complete with the power Smarty offers you. PHP within entries is not allowed, as it imposes a huge security risk.
 
@@ -134,7 +134,7 @@ Of course you can use the method of a config.inc.php file as described above to 
 
 So you can declare a my_magic_function() which executes the PHP code you want, and if you register the function inside the config.inc.php file you can re-use it in your entry.
 
-###### Listen on Plugin Hooks
+##### Listen on Plugin Hooks
 
 A themes's config.inc.php file can also hook into the Serendipity code flow. Usually this is done only by plugins. Offering this functionality in a theme has the benefit that a user does not require to install additional plugins to perform minor tasks. Also hooking into events like the CSS and JS generation is important for themes.
 
@@ -183,7 +183,7 @@ For each additional event hook the theme wants to "listen on", you can add multi
 
 The examples above are trivial, but the usage nearly unlimited. Themes can provide any kind of plugin as internal functionality, even with complete plugin output that hooks into saving entries, offering new frontend functionality and anything else you can think of.
 
-###### Custom Entryproperties
+##### Custom Entryproperties
 
 **Using the plugin serendipity_event_entryproperties**
 
@@ -293,7 +293,7 @@ The code below integrates the custom entry property fields "entry_subtitle" and 
     }
     ?>
 
-###### Theme Options
+##### Theme Options
 
 A theme can offer complex configuration for any kind of options. Those can be evaluated by the template files and affect anything from custom header images up to different entry listings or magazine-style themes.
 
@@ -348,7 +348,7 @@ An example (copied from the bulletproof theme):
         )
     );
 
-###### Configuration keys
+##### Configuration keys
 
 This example defines four different configuration options. Each configuration option has a specific variable name, a title displayed for the user, an indicator of what type it is, and its available options. Those are defined by these array keys:
 
@@ -410,7 +410,7 @@ Currently only the **navigation** global option is supported, but there might be
 
 Internally, serendipity_loadGlobalThemeOptions() simply appends a predefined set of configuration keys to the central array.
 
-###### Internationalization
+##### Internationalization
 
 Just like plugins, you can make a theme available in multiple languages. For that, you need to define custom translation constants. Create a file like `lang_en.inc.php` in the theme's directory and put in the usual PHP deifnitions:
 
@@ -438,7 +438,7 @@ If you now provide a translation for german, you would add a file `lang_de.inc.p
 
 and save that file also in the UTF-8 subdirectory (the base file should be encoded in ISO-8859-1). Serendipity will automatically now pick up that file.
 
-###### Theme Sidebars
+##### Theme Sidebars
 
 The variable `$sidebars` inside a `config.inc.php` defines an array of which sidebars a theme offers. By default Serendipity provides "left", "right" and "hidden". Themes can use this to define specific "footer" and "header" sidebars for example:
 
@@ -457,85 +457,85 @@ If you want that users are able to define their own sidebars dynamically, you ca
         'default'       => 'left,right,hidden',
     )
 
-##### Specific FRONTEND theme files and their meaning
+#### Specific FRONTEND theme files and their meaning
 
 Each of those files is not mandatory in your theme directory. If you want to adapt it, you should copy it over from the 2k11 directory. Only copy over the files you actually change, so that the fallback-chain can work properly (see above).
 
-###### atom.css
+##### atom.css
 
 Stylesheet applied to ATOM feeds
 
-###### style_fallback.css
+##### style_fallback.css
 
 It emits CSS rules that all templates should have and is supplied in the templates/default/ subdirectory.
 Classes are declared on top of the file, so if you  want to make changes in your own template, you should override the rules on the bottom of your own style.css template.
 It is not advised to create your own  style_fallback.css file.
 
-###### style.css
+##### style.css
 
 This is the custom CSS of your theme. If you do not write a theme from scratch, it is advised to use tools like Firebug or Developer Tools to inspect the HTML layout of a page to be able to style it properly.
 
-###### user.css
+##### user.css
 
 This file can be used by actual users of your theme. This is where users shall place custom CSS rules that enhance a theme. Theme developers shall NOT bundle such a file, because the file is meant to survive updates of a theme when overwriting a directory with a newer version.
 
-###### commentform.tpl
+##### commentform.tpl
 
 This file controls the look of your comment form where visitors can comment on your entries.
 
-###### commentpopup.tpl
+##### commentpopup.tpl
 
 This controls the basic HTML layout of the optional comment popup window.
 
-###### comments.tpl, trackbacks.tpl
+##### comments.tpl, trackbacks.tpl
 
 This shows the available comments and trackbacks made to an entry.
 
-###### comments_by_author.tpl
+##### comments_by_author.tpl
 
 This controls the layout of the functionality where comments by visitors are shown.
 
-###### content.tpl
+##### content.tpl
 
 This is a master template that holds your page content area, and depending on the page type (entries overview, entry search, archive page, ...) emits different messages.
 
-###### entries_archives.tpl
+##### entries_archives.tpl
 
 This file holds the display of entry archives (per month / year).
 
-###### entries_summary.tpl
+##### entries_summary.tpl
 
 This file displays the overview of entry archives (per month/year).
 
-###### feed_*.tpl
+##### feed_*.tpl
 
 These files hold the various RSS/Atom feed template files. Here you could add customization to those feeds.
 
-###### index.tpl
+##### index.tpl
 
 This is the main template file that controls the general look of your page as well as HTML headers, meta tags, CSS embedding, sidebar locations etc.
 
-###### entries.tpl
+##### entries.tpl
 
 This is the main logic file and it tells Serendipity how to format your entry overview, how to loop entries, where to show commentsforms etc.
 
-###### plugin_calendar.tpl, plugin_categories.tpl, plugin_staticpage.tpl
+##### plugin_calendar.tpl, plugin_categories.tpl, plugin_staticpage.tpl
 
 Some plugins allow their own templating. Those files are prefixed with "plugin_" and can also come with certain plugins. Putting those files into your template directory will customize the look of that plugin within your theme. The files available by default for bundled plugins are for the Calendar and Categories sidebar plugins. You first need to enable the templating option in the configuration of those plugins, though!
 
-###### preview_iframe.tpl
+##### preview_iframe.tpl
 
 When you create a preview from within the admin interface, this file controls the basic look of the embedded iframe holding the preview. You need to adapt this file if your preview looks odd/off.
 
-###### sidebar.tpl
+##### sidebar.tpl
 
 This file controls how the list of sidebar plugins is displayed in the frontent.
 
-###### media_showitem.tpl
+##### media_showitem.tpl
 
 If a media database file is shown in the frontend, this file controls its layout.
 
-###### img/ subfolder and others
+##### img/ subfolder and others
 
 Of course your theme can hold its own assets and javascript file. You can put them anywhere you like. Most themes use a "js" and "img" subdirectory.
 
@@ -560,15 +560,15 @@ This will override the default list of emoticons set inside the file plugins/ser
 
 Alternatively, you can also simply deliver a set of image files that match the default image file names.
 
-###### jQuery
+##### jQuery
 
 **TODO: @yellowled, I don't remember, how do we actually use jquery in the frontend? We're not bundling it, only in the backend? Write something here :) **
 
-##### Smarty methods
+#### Smarty methods
 
 Serendipity offers a list of custom Smarty methods and functions that can be used by the template files. They are defined in the serendipity_smarty_init() function inside include/functions_smarty.inc.php.
 
-###### Smarty modifiers
+##### Smarty modifiers
 
 The name in brackets is the PHP function that is called and defined in include/functions_smarty.inc.php, the bold name is how you actually call the modifier in Smarty with `{$variable|@makeFilename}` for example.
 
@@ -584,7 +584,7 @@ The first parameter is always the variable that the modifier gets applied to.
 * **serendipity_html5time** (serendipity_smarty_html5time): Returns a timestamp in valid HTML5 format
 * **rewriteURL** (serendipity_rewriteURL): Return a permalink for a given permalink type. Second parameter indicates if the full URL or only a relative path is returned, third parameter indicates if possible URL-rewriting shall be discarded.
 
-###### Smarty functions
+##### Smarty functions
 
 Smarty functions are meant to be executed on their own and will return their content at the place of where you put the function call. In distinction to smarty modifieres, function calls are executed with exact parameters and cannot be "stacked" upon each other like a `{$variable|modifier1|modifier2|...}` call.
 
@@ -702,23 +702,23 @@ Serendipity uses it's own Layer on Top of Smarty to offer some backwards compati
 
 On top of that, a `Serendipity_Smarty_Security_Policy` class constraints the security settings of Smarty. It allows only calling a set of PHP functions (isset, empty, count, sizeof, in_array, is_array, time, nl2br, class_exists) as well as using PHP functions for modifiers (sprintf, sizeof, count, rand, print_r, str_repeat, nl2br). If a theme or plugin needs to do more, it can override the security Settings of Serendipity by setting `$serendipity['smarty']->security = false`.
 
-##### Smarty variables
+#### Smarty variables
 
 Here is a list of commonly used smarty variables within the frontend .tpl files:
 
-###### $raw_data [mixed]
+##### $raw_data [mixed]
 
 If a theme with an old-style "layout.php" is used, this contains the output from that layout.php code.
 
 Scope: *.tpl
 
-###### $plugin_calendar_weeks [array], $plugin_calendar_dow [array], plugin_calendar_head [array]
+##### $plugin_calendar_weeks [array], $plugin_calendar_dow [array], plugin_calendar_head [array]
 
 Contains the calendar item data for displaying the sidebar calendar (associative arrays)
 
 Scope: plugin_calendar.tpl
 
-###### $is_form [bool], $category_image [string], $form_url [string], $categories [array]
+##### $is_form [bool], $category_image [string], $form_url [string], $categories [array]
 
 Specific variables for displaying the category listing in the sidebar.
 
@@ -729,54 +729,54 @@ Specific variables for displaying the category listing in the sidebar.
 
 Scope: plugin_categories.tpl
 
-###### $plugindata [array], $pluginside [string]
+##### $plugindata [array], $pluginside [string]
 
 * $plugindata contains an associative array for the output of a sidebar plugin. The keys are 'side' (left/right), 'class' (CSS), 'title' (text), 'content' (HTML), 'id' (plugin ID).
 * $pluginside holds the currently renderd sidebar key.
 
 Scope: sidebar.tpl
 
-###### $leftSidebarElements [int], $rightSidebarElements [int]
+##### $leftSidebarElements [int], $rightSidebarElements [int]
 
 Contains the amount of sidebar plugins for each side.
 
 Scope: *.tpl
 
-###### $content_message [string]
+##### $content_message [string]
 
 Holds some output about the specific error/notice messages from Serendipity (like number of searchresults, no entries found, etc.)
 
-###### $searchresult_tooShort [bool], $searchresult_error [bool], $searchresult_noEntries [bool], $searchresult_results [bool]
+##### $searchresult_tooShort [bool], $searchresult_error [bool], $searchresult_noEntries [bool], $searchresult_results [bool]
 
 Indicates whether the quicksearc returned errors/results/no entries
 
 Scope: index.tpl, content.tpl
 
-###### $startpage [bool]
+##### $startpage [bool]
 
 If set, then serendipity currently displays the startpage on the frontend
 
 Scope: *.tpl
 
-###### $uriargs [array]
+##### $uriargs [array]
 
 Contains a list of URI arguments passed to the current page
 
 Scope: *.tpl
 
-###### $is_preview [bool]
+##### $is_preview [bool]
 
 If set, the template is currently being called in "preview mode" from the backend
 
 Scope: *.tpl
 
-###### $preview [string]
+##### $preview [string]
 
 Contains the entry preview (parsed 'entries.tpl')
 
 Scope: preview_iframe.tpl
 
-###### $commentform_action [string], $commentform_id [string], $commentform_name [string], $commentform_email [string], $commentform_url [string], $commentform_remember [string], $commentform_replyTo [array], $commentform_subscribe [string], $commentform_data [string], $is_commentform_showToolbar [bool], $is_allowSubscriptions [bool], $is_moderate_comments [bool], $commentform_entry [array]
+##### $commentform_action [string], $commentform_id [string], $commentform_name [string], $commentform_email [string], $commentform_url [string], $commentform_remember [string], $commentform_replyTo [array], $commentform_subscribe [string], $commentform_data [string], $is_commentform_showToolbar [bool], $is_allowSubscriptions [bool], $is_moderate_comments [bool], $commentform_entry [array]
 
 Multiple variables used for representing the comment form.
 
@@ -791,13 +791,13 @@ Multiple variables used for representing the comment form.
 
 Scope: commentform.tpl
 
-###### $comments [array]
+##### $comments [array]
 
 The list of (threaded) comments.
 
 Scope: comments.tpl
 
-###### $metadata [array], $entries [array], $is_comments [bool], $last_modified [string], $self_url [string], $namespace_display_dat [string], $once_display_dat [string], $channel_display_dat [string]
+##### $metadata [array], $entries [array], $is_comments [bool], $last_modified [string], $self_url [string], $namespace_display_dat [string], $once_display_dat [string], $channel_display_dat [string]
 
 Contains multiple values for displaying an RSS/ATOM feed.
 
@@ -811,7 +811,7 @@ Contains multiple values for displaying an RSS/ATOM feed.
 
 Scope: feed*.tpl
 
-###### $entry_id [int], $is_comment_added [bool], $comment_url [string], $comment_string [string], $is_showtrackbacks [bool], $comment_entryurl [string], $is_showcomments [bool], $is_comment_allowed [bool], $is_comment_notadded [bool], $is_comment_empty [bool]
+##### $entry_id [int], $is_comment_added [bool], $comment_url [string], $comment_string [string], $is_showtrackbacks [bool], $comment_entryurl [string], $is_showcomments [bool], $is_comment_allowed [bool], $is_comment_notadded [bool], $is_comment_empty [bool]
 
 Multiple values for showing the comments inside a popup window.
 
@@ -828,13 +828,13 @@ Multiple values for showing the comments inside a popup window.
 
 Scope: commentpopup.tpl
 
-###### $view [string]
+##### $view [string]
 
 Indicates the current "view" on the frontend. One of: "archives, entry, feed, admin, archive, plugin, categories, authors, search, css, js, comments, start, 404"
 
 Scope: *.tpl
 
-###### $footer_prev_page [string], $footer_next_page [string] $footer_totalEntries [int], $footer_totalPages [int], $footer_currentPage [int], $footer_pageLink [string], $footer_info [string]
+##### $footer_prev_page [string], $footer_next_page [string] $footer_totalEntries [int], $footer_totalPages [int], $footer_currentPage [int], $footer_pageLink [string], $footer_info [string]
 
 Specifies multiple variables for showing the pagination footer.
 
@@ -846,7 +846,7 @@ Specifies multiple variables for showing the pagination footer.
 
 Scope: entries.tpl
 
-###### $plugin_clean_page [bool], $comments_messagestack [array], $is_comment_added [bool], $is_comment_moderate [bool], $entries [array]
+##### $plugin_clean_page [bool], $comments_messagestack [array], $is_comment_added [bool], $is_comment_moderate [bool], $entries [array]
 
 Several variables for showing/parsing entries.
 
@@ -891,67 +891,67 @@ Several variables for showing/parsing entries.
 
 Scope: entries.tpl
 
-###### $trackbacks [array]
+##### $trackbacks [array]
 
 Holds an array of trackbacks being displayed
 
 Scope: trackbacks.tpl
 
-###### $head_charset [string], $head_version [string], $head_title [string], $head_subtitle [string], $head_link_stylesheet [string], $is_xhtml [bool], $serendipityVersion [string], $lang [string], $head_link_script [string], $head_link_stylesheet_frontend [string], $is_logged_in [bool]
+##### $head_charset [string], $head_version [string], $head_title [string], $head_subtitle [string], $head_link_stylesheet [string], $is_xhtml [bool], $serendipityVersion [string], $lang [string], $head_link_script [string], $head_link_stylesheet_frontend [string], $is_logged_in [bool]
 
 Multiple variables defining the Serendipity version/language, blog title and link to Stylesheets. $head_title and $head_subtitle are set according to which action is currently performed on the frontend (category view, archive view etc.)
 
 Scope: *.tpl
 
-###### $use_popups [bool], $is_embedded [bool], $is_raw_mode [bool]
+##### $use_popups [bool], $is_embedded [bool], $is_raw_mode [bool]
 
 Indicates if popups are enabled on the blog, if the blog is embedded, and if the blog is using deprecated layout.php styling
 
 Scope: *.tpl
 
-###### $entry_id [int], $is_single_entry [bool]
+##### $entry_id [int], $is_single_entry [bool]
 
 If the frontend is currently displaying a single article, those variables hold the boolean state and entry id.
 
 Scope: *.tpl
 
-###### $blogTitle [string], $blogSubTitle [string], $blogDescription [string]
+##### $blogTitle [string], $blogSubTitle [string], $blogDescription [string]
 
 Holds the configured blog's title, subtitle and description as entered by the admin. Note that those variables will not be changed, unlike the $head_subtitle / $head_title variables!
 
 Scope: *.tpl
 
-###### $serendipityHTTPPath [string], $serendipityBaseURL [string], $serendipityRewritePrefix [string], $serendipityIndexFile [string]
+##### $serendipityHTTPPath [string], $serendipityBaseURL [string], $serendipityRewritePrefix [string], $serendipityIndexFile [string]
 
 Holds several URL strings for the blog
 
 Scope: *.tpl
 
-###### $category [int], $category_info [array]
+##### $category [int], $category_info [array]
 
 $category holds the current ID of a category, if a category is being viewed. $category_info contains an associative array with the full category data ('category_name', 'parentid', 'category_description' etc.)
 
 Scope: *.tpl
 
-###### $template [string]
+##### $template [string]
 
 The name of the currently selected template
 
 Scope: *.tpl
 
-###### $dateRange [array]
+##### $dateRange [array]
 
 Holds an array of two timestamps that restrict the date scope of entries being displayed (if set)
 
 Scope: *.tpl
 
-###### $template_option [array - available only for Serendipity 1.1 and above]
+##### $template_option [array - available only for Serendipity 1.1 and above]
 
 Holds configured template options that were set in the backend for templates supporting options (like colorsets, navigation links etc.)
 
 Scope: *.tpl
 
-#### Backend themes
+### Backend themes
 
 Serendipity provides its default backend theme inside the "2k11/admin" directory. The template files in that directory specify the complete look of the whole admin interface, and also contains workflow and logic as well as javascript libaries.
 
@@ -961,15 +961,15 @@ Thus we suggest to only modify the CSS portion of the backend to adapt the look 
 
 Having said this, here is a description of what each backend template does. Note that the described template-fallback mechanism of the frontend (see above) also applies to the backend.
 
-##### Specific BACKEND theme files and their meaning
+#### Specific BACKEND theme files and their meaning
 
 All backend-related theme files are listed in the admin/ subdirectory of a theme.
 
-###### user.css
+##### user.css
 
 Just like a frontend theme, a backend can have it's own "user.css" file with custom rules. You should not bundle this file with your theme (see note on the frontend's user.css).
 
-###### Styling the media manager
+##### Styling the media manager
 
 The media manager is the only part of the admin interface that is Smarty customizable.
 
@@ -999,7 +999,7 @@ Used when displaying an image via the frontend of your blog to visitors.
 
 The template file for uploading a single or multiple images.
 
-###### The core workflow
+##### The core workflow
 
 The following files influence how the actual admin interface operates and looks:
 
@@ -1039,11 +1039,11 @@ admin/img/
 admin/font/
 admin/js
 
-### Linking spartacus
+## Linking spartacus
 
 You can easily combine the whole spartacus theme and plugin checkouts on your machine. To do that you can for example checkout these repositories to a subdirectory like `templates/spartacus/` and `plugins/spartacus/`. The reason this works is because both the theme and plugin framework of Serendipity can iterate through every subdirectory of the templates/ or plugins/ structure to search for matching plugin/theme files.
 
-### Showing entries in foreign webpages
+## Showing entries in foreign webpages
 
 You can quite easily "show" Serendipity entries from other parts of your website, if PHP is available there and you have filesystem access to the Serendipity installation.
 
@@ -1079,7 +1079,7 @@ You can adapt each of the serendipity_fetchEntries() / serendipity_printEntries(
 
 To look up possible functions, check out the include/functions_entries.inc.php file of your Serendipity installation to see phpDoc comments above the functions for which parameters you can use.
 
-### You hate Smarty? You've come a long way!
+## You hate Smarty? You've come a long way!
 
 We love Smarty. But we also covered people like you, who hate it. Since Smarty is a template layer that implements very specific methods, you can simply overwrite it with whatever you like: XML-based transformations, or PHP transformations.
 
@@ -1087,7 +1087,7 @@ Since we firmly believe in Smarty as a great templating system, we only provide 
 
 Note that even if you use a custom frontend theme, the backend will always continue to use Smarty templating, because it would be too much work to port alternate layers for the code.
 
-#### Step 1: Create a template.inc.php file
+### Step 1: Create a template.inc.php file
 
 In your theme directory, create a template.inc.php file with a content like this:
 
@@ -1097,7 +1097,7 @@ In your theme directory, create a template.inc.php file with a content like this
 
 This loads the Serendipity template API layer and implements a smarty emulator, and it replaces the internal Serendipity Smarty object with your own.
 
-#### Step 2: Read more
+### Step 2: Read more
 
 Check out the instructions in the file `include/template_api.inc.php` if you want to know more about the internal Template API layer.
 
@@ -1105,13 +1105,13 @@ All it basically does it it wraps the Smarty commands to simple PHP, which colle
 
 Also, check out the alternate layer `serendipity_smarty_emulator_xml` which is another way to store all assigned variables in XML language, so you could use XSLT to render your blog view.
 
-#### Step 3: Create template files
+### Step 3: Create template files
 
 Now instead of using Smarty markup, check out the files like index.tpl which simply contain PHP markup to output the `$GLOBALS['tpl']['...']` values at the place you like.
 
 We have provided a few examples on what to replace with what, but it is more a proof-of-concept that should get you kickstarted.
 
-### Best practice for themes
+## Best practice for themes
 
 * Make sure that you only change template files you absolutely must. Serendipity can fallback to use default template files, so if you do not need to change the 'index.tpl' file for example, please simply do not provide that file.
 * If your templates needs a config.inc.php file or custom language files, please try to make those files as small as possible. Performance counts, and PHP code should only be used if the code in there is fit to be executed on each page visit. You can disable smarty security through $serendipity['smarty']->security = false - but only do this, if you absolutely must due to custom use of unregistered PHP functions or modifiers or {php} calls.

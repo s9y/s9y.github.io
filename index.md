@@ -2,6 +2,7 @@
 layout: home
 title: Serendipity -  A reliable, secure and extensible PHP blog
 ---
+
 ## Features
 
 Plugins & Themes
@@ -22,7 +23,6 @@ Secure
 Run everywhere
 : [![An example hoster](/img/hoster-example.png)](/img/hoster-example.png) All is needed is a normal Hoster with PHP. As database use MySQL, Postgres or SQLite.
 {:#featurelist}
-
 
 ## Blogs powered by Serendipity
 
