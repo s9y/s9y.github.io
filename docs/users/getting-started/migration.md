@@ -3,9 +3,9 @@ layout: docs
 title: Migration
 ---
 
-### Migration from other blogs / RSS Import
+## Migration from other blogs / RSS Import
 
-Serendipity support importing [RSS feeds](/38.html) into your articlebase. This way you can migrate your entries from your old blog to Serendipity, as long as your old blog supports RSS export.
+Serendipity support importing [RSS feeds](/docs/users/using/rss.html) into your articlebase. This way you can migrate your entries from your old blog to Serendipity, as long as your old blog supports RSS export.
 
 RSS is a simple format to contain XML-data of your entries. We use the external library Onyx for parsing an RSS feed, so everything which is supported by Onyx is supported by us: RSS 1.0, 0.91, 2.0. (No Atom in our bundled version yet)
 

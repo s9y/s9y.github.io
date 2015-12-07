@@ -3,11 +3,10 @@ layout: docs
 title: Embed Configuration
 ---
 
-### The 'embed' Configuration Directive
+<h2>The 'embed' Configuration Directive</h2>
 
-* ['indexFile' option.](#A2)
-* [Plugins](#A3)
-* [The "easier way"](#A4)
+* TOC
+{:toc}
 
 In your serendipity configuration, you can set an 'embed' option to true or false.
 
@@ -15,7 +14,7 @@ This defines, whether you use your blog as a standalone webpage - or if you have
 
 By setting the 'embed' option to true, you have to make sure the following things to get everything to work well:
 
-#### <a name="A2"></a>'indexFile' option.
+### 'indexFile' option.
 
 This configuration option needs to be set to the wrapper file you want to use. Let's say you normally have a 'content.php' file for your webpage. This 'content.php' file sets up your internal templates, your menu structure and such.Now you want this file to be used to include your weblog. A simple content.php could look like this:
 
@@ -50,13 +49,13 @@ For this, we set up a 'wrapper.php' file:
 
 You would then set your 'indexFile' serendipity-option to the 'wrapper.php' file.
 
-#### <a name="A3"></a>Plugins
+### Plugins
 
 Plugins like the serendipity\_event\_livesearch can emit [Java Script](/index.php?cmd=newdoc&newdocname=Java+Script&node=35&refnode=55)**?** library calls in the header of the blog. And because if you use the embed option, serendipity will no longer take care of that part, so you need to add the calls to those libaries by yourself. For the livesearch plugin that means you need to insert this line in your custom header:
 
     <script type="text/javascript" src="/serendipity/plugin/ls-js"></script>
 
-#### <a name="A4"></a>The "easier way"
+### The "easier way"
 
 For many users, this setup using a Wrapper-file may sound too complicated (even if it isn't).
 

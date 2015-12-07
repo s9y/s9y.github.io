@@ -3,7 +3,7 @@ layout: docs
 title: Shared Installation
 ---
 
-### Shared installation
+## Shared installation
 
 (WARNING: THIS FEATURE IS EXPERIMENTAL!)
 
@@ -106,7 +106,7 @@ Open up your [http://garvin.s9yblogs.org/](http://garvin.s9yblogs.org/) file. Yo
 
 Now every user can manage his/her blog just as if it were a standalone installation.
 
-#### Special Notes
+### Special Notes
 
 * Each blog is still a standalone blog.
 * If you update the core library files from version 0.5 to 0.6 (for example) every user of your core library will get the default s9y-Upgrader script to see and needs to update his local configuration.

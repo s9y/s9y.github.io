@@ -3,34 +3,18 @@ layout: docs
 title: Fresh Installation
 ---
 
-### Fresh Installation
+<h2>Fresh Installation</h2>
 
-* [Preface](#A2)
-  * [Requirements](#A3)
-  * [Uploading Serendipity](#A4)
-  * [Permissions on Files/Directories](#A5)
-* [Installing](#A6)
-  * [Database Settings](#A7)
-  * [General Settings](#A8)
-  * [Appearance and Options](#A9)
-  * [Complete installation](#A10)
-  * [Accessing your Blog Frontend](#A11)
-  * [Accessing the Admin panel](#A12)
-    * [Frontpage](#A13)
-    * [Personal Settings](#A14)
-    * [Entries](#A15)
-    * [Media](#A16)
-    * [Appearance](#A17)
-    * [Administration](#A18)
-  * [And what now?](#A19)
+* TOC
+{:toc}
 
-#### <a name="A2"></a>Preface
+### Before the installation
 
 Serendipity is a PHP-based web application. That means, to use Serendipity, you need to have access to a Web Server that has PHP support enabled. You upload the Serendipity files to that Web Server (by using FTP, SSH or other means) into a directory that is part of your Web Servers document tree.
 
 After you have uploaded the files to your web space, you need to "open" the Serendipity application. You do that by opening an URL like [http://yourdomain.com/serendipity/index.php.](http://yourdomain.com/serendipity/index.php.)
 
-#### <a name="A3"></a>Requirements
+#### Requirements
 
 Serendipity is tailored for the Apache Webserver. However, people are successfully running Serendipity with Microsoft IIS and Lighttpd. When using Serendipity on Windows servers, pay attention to always enter path references using forward slashes ('/') instead of the notation using backslaches ("C:\\...\\").
 
@@ -54,11 +38,11 @@ Write access must be granted to:
 * plugins/ (if you plan to use Spartacus plugin)
 * templates/ (if you plan to use Spartacus plugin)
 
-#### <a name="A4"></a>Uploading Serendipity
+#### Uploading Serendipity
 
 You can install Serendipity into either your document root of the web server, or into any subdirectory you like. Make sure that you upload ALL files that you extracted from your Serendipity release .ZIP or .TGZ file, including empty directories. Make sure, your FTP editor doesn't report any trouble or permission errors when uploading Serendipity files.
 
-#### <a name="A5"></a>Permissions on Files/Directories
+#### Permissions on files/directories
 
 Very important to Serendipity are the directories **archives**, **templates\_c** and **uploads**. The directory **archives** is used to store pregenerated files, the directory **templates\_c** will contain automatically compiled HTML templates from the Smarty Templating Engine and the directory **uploads** will contain any media files you upload to your Blog. This means, all three folders will require write access for your webserver.
 
@@ -70,7 +54,7 @@ If you plan to use the SPARTACUS plugin to download plugins and templates over t
 
 Further permission-related questions are answered in our [FAQ](http://www.s9y.org/11.html#A15).
 
-#### <a name="A6"></a>Installing
+### Installing
 
 Once you have uploaded Serendipity to your web space you can call the installer interface via something like [http://yourdomain.com/serendipity/index.php.](http://yourdomain.com/serendipity/index.php.) It will take no longer than 1-2 minutes to install Serendipity.
 
@@ -88,13 +72,13 @@ Since the goal of this Document is to show how fast you can install Serendipity,
 
 As you can see, this screen is divided into several sections.
 
-#### <a name="A7"></a>Database Settings
+#### Database Settings
 
 In this section, you must enter the credentials to access the selected database. First you choose the database type you want to use for Serendipity. Serendipity will only show the database types that are available to PHP. Note, that your provider must have given you credentials to access your database, and that this database must already exist. Serendipity requires an empty database, so if you have not yet created a database, just do that via the SQL command "CREATE DATABASE serendipity" using your favourite SQL tool (phpMyAdmin, phpPgAdmin, sqliteAdmin).
 
 Now you just fill in the values you got from your provider for the host, user, password and database name fields.
 
-#### <a name="A8"></a>General Settings
+#### General Settings
 
 This section contains the most basic Blog setup options. First you enter the username and password for your Admin user. It is recommended to not use special characters like Umlauts for the username. Your username will not be displayed in the blog to enhance login security - to display your username, the "real name" option will be used.
 
@@ -104,11 +88,11 @@ The blog name and description will later be shown on the frontpage of your blog.
 
 As the last option of this section, you need to choose the language of your blog. Note that this will be the default language for both your frontend of the blog and the personal language of your editor. All other users you are later able to create can define their own language for viewing your blog!
 
-#### <a name="A9"></a>Appearance and Options
+#### Appearance and Options
 
 In this section you will see a few customization options. The most important distinct option is whether to use the "WYSIWYG" editor. This will show you a Word-like interface for creating blog entries. WYSIWYG editors often create trouble because they use very generic HTML markup that hurts the eye of any HTML professional. On the other hand, if you do not know any HTML at all, you will be very glad about that editor that will allow you to insert images, links and text formatting at ease. This option can also be changed later, if you happen to dislike the WYSIWYG editor, or if you're missing it.
 
-#### <a name="A10"></a>Complete installation
+#### Complete installation
 
 After you have entered all options, you click on the button "Complete installation". Serendipity will then try to connect to your database. If that fails, it will inform you of this.
 
@@ -124,7 +108,7 @@ This screen tells you that Serendipity has created the tables, inserted your adm
 
 REMEMBER WELL that if you ever want to reinstall Serendipity from scratch, you need to DROP all Serendipity-created Database tables. Else, reinstalling into the same database will Serendipity lead to think that it shall not re-create the tables and authors. This would then lead to duplicate inserted plugins and non-matching user credentials you entered!
 
-#### <a name="A11"></a>Accessing your Blog Frontend
+#### Accessing your Blog Frontend
 
 After the installation, the screen above showed you a link to "Visit your new blog here". You can click on this, and then you should see your empty blog like this:
 
@@ -132,7 +116,7 @@ After the installation, the screen above showed you a link to "Visit your new bl
 
 If you instead see a "HTTP 500" error screen, this means that your Web Server did not allow Serendipity to create custom ".htaccess" directives. In this case, you can just delete the file ".htaccess". Serendipity can operate well without this file, BUT you will not be able to use "pretty URLs". Those pretty URLs are configured via the "URL Rewriting" option inside Serendipity Configuration.
 
-#### <a name="A12"></a>Accessing the Admin panel
+#### Accessing the Admin panel
 
 After you've installed Serendipity, you most probably want to access the admin interface to customize further options. You can do that by calling your URL [http://yourdomain.com/serendipity/serendipity\_admin.php](http://yourdomain.com/serendipity/serendipity_admin.php) - a link to the admin interface is also shown on the Blog Frontend, as you might have noticed.
 
@@ -148,35 +132,35 @@ Then you will see the admin interface:
 
 The left navigation takes you to specific sections of your blog:
 
-##### <a name="A13"></a>Frontpage
+##### Frontpage
 
 The Frontpage currently just shows you the empty basic page. Here, specific plugins might show you specific output.
 
-##### <a name="A14"></a>Personal Settings
+##### Personal Settings
 
 The personal settings section will show all user-specific options to your currently logged-in user. There you can change your username, your password and also the language you want to see for the Admin interface.
 
 ![](http://blog.s9y.org/uploads/installer7.png)
 
-##### <a name="A15"></a>Entries
+##### Entries
 
 This section contains all relevant options to create and maintain entries, view the comments made to your entries and maintain categories.
 
 ![](http://blog.s9y.org/uploads/installer8.png)
 
-##### <a name="A16"></a>Media
+##### Media
 
 The media section allows you to upload and maintain images and documents you uploaded and can embed into entries.
 
 ![](http://blog.s9y.org/uploads/installer9.png)
 
-##### <a name="A17"></a>Appearance
+##### Appearance
 
 This section allows you to configure and setup plugins as well as choose the layout of your Blog
 
 ![](http://blog.s9y.org/uploads/installer10.png)![](http://blog.s9y.org/uploads/installer11.png)
 
-##### <a name="A18"></a>Administration
+##### Administration
 
 This section covers the configuration of your blog, the users and groups that are allowed to login to your blog, and importing/exporting entries.
 
@@ -184,7 +168,7 @@ Note that the "Configuration" item will show you all the options you would see i
 
 ![](http://blog.s9y.org/uploads/installer12.png)
 
-#### <a name="A19"></a>And what now?
+#### And what now?
 
 Now that you have successfully installed Serendipity, go ahead and explore. Create some entries, categories, install a few plugins you can also find on [spartacus.s9y.org](http://spartacus.s9y.org/). The interface is in most cases self-explanatory and open for experiments.
 
