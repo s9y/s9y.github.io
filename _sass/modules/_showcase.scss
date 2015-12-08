@@ -43,7 +43,6 @@
 }
 
 .download-link {
-    // @include gradient-button($s9y-orange, $off-black);
     @include flat-button($s9y-orange, $black, 4px, $s9y-blue-dark);
 
     box-sizing: border-box;
