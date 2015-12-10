@@ -87,6 +87,15 @@
         margin: 1rem 0;
     }
 
+    ul {
+        width: 100%;
+
+        @media screen and (min-width: $md) {
+            display: table;
+            table-layout: fixed;
+        }
+    }
+
     li {
         display: block;
         margin: 0 0 1rem;
