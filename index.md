@@ -4,29 +4,28 @@ title: Serendipity -  A reliable, secure and extensible PHP blog
 ---
 
 <section id="home-features" markdown="1">
-## Features
+## Serendipity stands for
 
-* ### Plugins & themes
-  [![List of plugins](/img/screenshots/plugin-installation.png)](/img/screenshots/plugin-installation.png)
-  Extending Serendipity is as simple as clicking on a button to install a plugin or theme, and the central repository [Spartacus](http://spartacus.s9y.org) makes it easy to find the right one.
-* ### WYSIWYG (or not)
-  [![The editor](/img/screenshots/03_editor.jpg)](/img/screenshots/03_editor.jpg) A graphical editor is included, though you could also use one of the common markup languages. Or just HTML.
-* ### Media library
-  [![The library](/img/screenshots/04_media.jpg)](/img/screenshots/04_media.jpg) Serve and organize images, videos or other files directly from your blog.
-* ### Multi-user & multi-blog
-  [![List of authors](/img/screenshots/authors.png)](/img/screenshots/authors.png) Multiple authors can write in the same blog. The permission system keeps everything controllable. Or run a shared installation with one blog per user.
-* ### Secure
-  [![List of security issues, 4 in 2015](/img/cve-details.png)](/img/cve-details.png) Written with care, we have a very good track record of providing a secure software. [See for yourself](http://www.cvedetails.com/product/3867/S9Y-Serendipity.html?vendor_id=2214).
-* ### Run everywhere
-  [![An example hoster](/img/hoster-example.png)](/img/hoster-example.png) All is needed is a normal hoster with PHP. As database use MySQL, Postgres or SQLite.
+* ### ![](/img/icons/cogs.png) Reliability
+  We want to provide a blog engine that users can trust, for which they can get indivdual support, while being able to influence the project (both as users and developers).
+* ### ![](/img/icons/stethoscope.png) Security
+  The developer team is always mindful of and open to reports on potential security issues. Our track record shows that we have dealt with few issues switfly [over the years](http://www.cvedetails.com/product/3867/S9Y-Serendipity.html?vendor_id=2214).
+* ### ![](/img/icons/code-fork.png) Extensibility
+  Plugins and themes provide easy ways to add functionality or change the looks of a blog. *Add some filler text here because I don't know what exactly to fill in here just yet.*
+* ### ![](/img/icons/magic.png) Ease of use
+  We aim to build simple, but powerful as well as understandable interfaces. The same approach is used for our PHP code, which is supposed to have a low entry barrier.
 {:#featurelist}
+
+<div class="features-more">
+    <a class="button-link" href="/features.html">List of features</a>
+</div>
 </section>
 
 <section id="home-blogs" markdown="1">
 ## Blogs powered by Serendipity
 
 * ### Der Shopblogger
-  [![Der Blog des Shopbloggers](/img/blogs/shopblogger.jpg)](http://www.shopblogger.de/blog/)
+  [![Das Blog des Shopbloggers](/img/blogs/shopblogger.jpg)](http://www.shopblogger.de/blog/)
 * ### Dirks Logbuch
   [![Dirks Logbuck](/img/blogs/dirks_logbuch.jpg)](http://www.deimeke.net/dirk/blog/)
 * ### YellowLeds Weblog v2
