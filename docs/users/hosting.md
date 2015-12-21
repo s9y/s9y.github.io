@@ -1,11 +1,11 @@
 ---
 layout: docs
-title: Hosting Providers
+title: Hosting providers
 ---
 
-## Hosting Providers
+## Hosting providers
 
-### Commercial Support
+### Commercial support
 
 Serendipity's Core Developer Garvin Hicking works at the german web-design/multimedia agency Faktor E (Bonn). His company offers commercial support for all needs touching Serendipity's featureset.
 
