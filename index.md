@@ -18,6 +18,7 @@ title: Serendipity -  A reliable, secure and extensible PHP blog
 
 <div class="features-more">
     <a class="button-link" href="/features.html">List of features</a>
+    <a class="button-link" href="/team.html">List of developers</a>
 </div>
 </section>
 
