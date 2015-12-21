@@ -42,3 +42,9 @@ title: Serendipity
 ```
 
 This will *automagically* generate a table of contents based on the headings in that pages content, i.e. a list of links to said headings. (Of course, this only makes sense if the page actually *contains* headings and a *logicaly* heading hierarchy.) Please note that you **have to** write the page title heading in HTML, otherwise it would be included in the TOC.
+
+### Adding images
+
+* Any image used (as an `<img>`) in the docs should be available in 2x format for HDPI screens. That means that it needs to be twice the size of the largest instance of the image. For example, if the largest version of an image displayed is 640x320 pixels, it should be supplied in 1280x640 pixels.
+* For image formats, the rule of thumb should be “PNG, unless that's too large”. So, what is “too large”? Hard to say because it depends on the content and importance of the image. In general, please use JPG for photos or screenshots and PNG for everything else.
+* Please store images used in the docs in the `img` directory in a subdirectory, especially if it's a group of images. Try to pick a logical name for the subdirectory.
