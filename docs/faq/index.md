@@ -29,7 +29,7 @@ Just download the .tar.gz to your server, unpack it inside your document root, m
 
 #### What system requirements does serendipity have?
 
-You need a [PHP](http://www.php.net) installation together with a [MySQL](http://www.mysql.com) or [PostgreSQL](http://www.postgresql.org) server. We also require you use the Apache webserver, because we utilize a number of internal functions to make Serendipity run correctly. To fully enjoy serendipity, you should have either [ImageMagick](http://www.imagick.org)'s convert binary installed on your server or a PHP installation with gd2 support (recommended). You should also verify, that your Apache takes notice of the ".htaccess" file in your document root (Override All), otherwise s9y won't be able to run properly.
+You need a [PHP](http://www.php.net) installation together with [MySQL](http://www.mysql.com), [PostgreSQL](http://www.postgresql.org) or [SQLite](https://www.sqlite.org/) . We also require the Apache webserver, because we utilize a number of internal functions to make Serendipity run correctly. To fully enjoy serendipity, you should have either [ImageMagick](http://www.imagick.org)'s convert binary installed on your server or a PHP installation with gd2 support (recommended).
 
 #### Serendipity asks me for entering data to a database, but when I enter a name and install Serendipity it tells me the database does not exist
 
@@ -38,27 +38,6 @@ Serendipity requires that you have already setup the Database in your favorite d
 The reason why Serendipity does not create a database automatically is because on most hosting providers you already have an existing database (like usrdb_htdu1_sql) and are not able to create more databases. To make serendipity detect that and guess the right user privileges would be too error-prone. So it is best that you create an empty database with the right privileges to use for Serendipity (assign CREATE, INSERT, UPDATE, DELETE, ALTER and INDEX privileges for the SQL user account).
 
 ### Errors/Problems
-
-#### What does this warning mean: Your current template is using a deprecated template method, you are advised to update if possible
-
-Since Serendipity 0.8, we offer the users a way to use Smarty Templating to customize their templates. This means that older 'layout.php' files inside the templates directories are no longer needed, as everything done there can be achieved via editing the various *.tpl files.
-
-The usage of that layout.php method is still possible, but you get better performance, if you adjust the template to use Smarty. If Serendipity detects that you use the old method, it emits a warning on the Theme Selection panel:
-
-"Warning: Your current template is using a deprecated template method, you are advised to update if possible"
-
-Doing that is quite easy: Take the .tpl files you need from the 'default' template folder and adjust them to fit the style of your template. Make it look like it looked previously using the layout.php.
-If you need to execute certain PHP-code within the layout.php you can now put that code into 'config.inc.php' inside your template directory. This PHP code is then executed before our templating engine displays your templates. That means you can also add your custom Smarty modifiers in that file.
-After having adjusted the files (you usually only need to edit the index.tpl file) you can delete layout.php and the warning message will disappear, and you will be able to use the full power of Smarty Templating.
-Currently, a few bundled templates (like Mozilla Modern) are still using the old method. As soon as the developers find some time, they will be adapted to the new templating.
-
-#### My calendar shows weird 1969 dates when I browse it!
-
-This can happen if your Configuration Directive for the "Relative HTTP Path to Serendipity direcotry" (serendipityHTTPPath) is set to an empty string. You need to set it to at least "/" when having Serendipity installed in your base directory!
-
-#### I cannot change my WYSIWYG option, it always stays enabled!
-
-You need to deactivate the WYSIWYG option in your **Personal Configuration** menu option, not within the global **Configuration** section of the blog. The first menu shows your user accounts personal preferences, the latter only sets the default option for new authors or the default option when installing. In the upcoming 0.9 version the option will only be visible in the Personal Configuration screen.
 
 #### When I use mod_rewrite URL rewriting, I cannot access any files in subdirectories of my Serendipity install! If I go to any of my own URLs it keeps redirecting me to my blog plage!
 
@@ -96,15 +75,13 @@ This means, one of the Locales specified there need to be existing on your serve
 
 #### How do I upgrade Serendipity?
 
-*NOTE*: When your server runs PHP 5.3+ you must use at least Serendipity 1.5.5. If you want to move an earlier version of Serendipity to a new server running PHP 5.3+, you should first upload all your old files, and then immediately upload the new Serendipity version files to your host, and then proceed the upgrade as usual.
-
-Serendipity has an automatted upgrade system. You can upgarde from any Serendipity version starting from 0.4 to the latest version, even nightlies/snapshots - and you will not loose any previous content. First of all, you should make a backup of your existing installtion by copying your whole directory and by creating a Database dump (use phpMyAdmin or something similar).
+Serendipity has an automatted upgrade system. You can upgrade from any Serendipity version starting from 0.4 to the latest version, even nightlies/snapshots - and you will not loose any previous content. First of all, you should make a backup of your existing installation by copying your whole directory and by creating a Database dump (use phpMyAdmin or something similar).
 
 After you have done that, you only need to extract the new Serendpipity release files over your old directory. Make sure that you never delete the serendipity_config_local.inc.php file, as it contains the most vital Serendipity configuration data.
 
-Then go to your Serendipity Admin Panel, and you will see the Serendipity upgrader.
+Then go to your Serendipity Admin Panel and you will see the Serendipity upgrader.
 
-It will tell you which version you are running, and which tasks are going to get executed. That means, some PHP functions can be called, and some DB updates are called. The DB update files are stored in the `sql/` subdirectory of Serendipity.
+It will tell you which version you are running, and which tasks are going to get executed. That means some PHP functions can be called, and some DB updates are called. The DB update files are stored in the `sql/` subdirectory of Serendipity.
 
 Before you continue the process, make sure that the PHP/Apache webserver is able to write to your `serendipity_config_local.inc.php` and `.htaccess` file, and that the directory `templates_c/` exists and is writable. You can change permissions using chmod commands in your favourite FTP or SSH client.
 
@@ -112,9 +89,7 @@ Also make sure that your configured database users are privileged to execute ALT
 
 When you have ensured all the things mentioned, you can click on the Upgrade button.
 
-If you encounter any errors on the next page, write them down carefully and go to ask the Serendipity Forums for help. Most errors happen, if your SQL user does not have sufficient privileges, or one of the mentioned files could not be written.
-
-If you are upgrading from Serendipity versions older than 1.2, you might need to instruct your browser to clear your currently set Cookies for your Blog so that you can properly re-login. You might also want to flush your browser's cache (CSS, images, javascripts) after upgrading to make sure, the new files get loaded properly.
+If you encounter any errors on the next page, write them down carefully and go to ask the Serendipity Forums for help. Most errors happen if your SQL user does not have sufficient privileges, or one of the mentioned files could not be written.
 
 #### My upgrade failed! (or: I cannot change permissions of my files)
 
@@ -144,8 +119,6 @@ Then call that simple script via http://yourblog/serendipity/fixperm.php and the
 3. Just set the version to "0.8.5" or whatever version you upgraded from, then save the file and re-enter your Serendipity Config Panel. The upgrader will say hello to you once again and re-execute the steps!
 
 #### How can I move an existing Serendipity installation to a different place (server or path)?
-
-[This shows how to move Serendipity to a new directory, with pictures.](moving-to-new-directory.html)
 
 First, you copy over all files from your old server to the new server. Especially pay attention that you copy the .htaccess and serendipity_config_local.inc.php files as well. If those files are not readable by your FTP user, you can use the little fixperm.php script from the "My upgrade failed!" section above to fix the permissions so that you can read the files.
 
@@ -177,23 +150,13 @@ The problems of enabling URL Rewriting without meeting the requirements are the 
 
 You can easily fix this by entering your admin panel with the "http://localhost/serendipity_admin.php" URL. Then enter the configuration area, and set "URL Rewriting" to "None" and save your config. Make sure your .htaccess file is writable!
 
-Another problem that calls this symtopms is that your .htaccess file might not be parsed/readable by the webserver. Check your permissions or contact your provider to check the Apache errorlogs for detailed information.
+Another problem that calls this symptoms is that your .htaccess file might not be parsed/readable by the webserver. Check your permissions or contact your provider to check the Apache errorlogs for detailed information.
 
 What can also affect the symptom of "no stylesheets are used" is if you enabled the 'embed' directive in Serendipity Configuration. As mentioned in the Configuration, if you enabled this setting, you must take care for the HTML head and body sections for yourself, Serendipity only outputs the straight content and nothing different. So either disable the embed mode, or use it as intended. :-)
 
-#### When I try to send trackbacks, they always fail!
-
-Sending trackbacks is explained here [Trackbacks/Pingbacks](http://www.s9y.org/48.html) in the section "How to create a trackback". This chapter also explains, why trackbacks might fail.
-
-#### My IE browser displays PNG images weirdly and I get "Access Denied" Javascript errors!
-
-Serendipity requires you to configure the HTTP URL you are using to access your blog within the Configuration section. If you entered "http://www.example.com/" in that configuration field, you are required to only use that URL to access your blog. Else, plugins like the Browsercompatibility plugin (that loads a javascript for showing transparent PNG images for the IE) fail to load their scripts because access through domain boundaries is not allowed.
-
-The solution is to either properly use and configure the domains you want to use, or to enable the "HTTP-Host autodetection" in your Serendipity Configuration. If you enable this, Serendipity will always use the same host for follow-up request like your visitor initially used.
-
 #### What is "Spartacus"? How do I install Spartacus?
 
-Spartacus is the name of the Serendipity Online Plugin Repository, and the name of the correspondig plugin of your Serendipity Weblog that connects to this repository.
+Spartacus is the name of the Serendipity Online Plugin Repository, and the name of the corresponding plugin of your Serendipity blog that connects to this repository.
 
 You can view all the plugins of that repository on http://spartacus.s9y.org.
 
@@ -247,26 +210,7 @@ This will make Serendipity not send any outgoing trackbacks.
 
 #### I want trackbacks and comments, but spammers are killing my blog!
 
-As Grischa explains, [you can stop trackback spam with some custom .htaccess rules](http://blog.brockha.us/index.php?/archives/69-TrackBack-SPAM-Bots-abwehren.html). Just add this to the bottom of the .htaccess in your Serendipity directory:
-
-    # BEGIN ANTI SPAM
-    <Files comment.php>
-     # short 403 error-message
-     ErrorDocument 403 "403 Forbidden
-
-     # Mark bots whose user agent name is starting with "TrackBack" as SPAM
-     BrowserMatch ^TrackBack is_trackback_spammer
-     # Mark bots don't sending a user agent name at all as SPAM
-     BrowserMatch ^$ is_trackback_spammer
-
-     # Lock them out
-     Order Allow,Deny
-     Allow from all
-     deny from env=is_trackback_spammer
-    </Files>
-    # END ANTI SPAM
-
-This filters out lots of unwanted messages before Serendipity even gets started, saving you some CPU resources and reducing your log size.
+Use the Spamblock-plugins provided. We recommend the anti-spam trinity: the core Spamblock-plugin with its wide selection of anti-spam measures, Spamblock-Bee with its honeypot and hidden captcha plus Spamblock-bayes, a local learning spamfilter.
 
 #### I want to add some links / HTML to my blog!
 
@@ -327,6 +271,4 @@ Then you can use this in your index.tpl:
 
 ##### The "elegant way"
 
-The third, and actually the coolest way is to create your own plugins that deal with content. You can then access them with {serendipity_hookPlugin ...} smarty calls.
-
-Read more about that [here](http://www.s9y.org/78.html).
+The third and often the best way is to create your own plugins that deal with content. You can then access them with {serendipity_hookPlugin ...} smarty calls.
