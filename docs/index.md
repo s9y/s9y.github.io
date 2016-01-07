@@ -5,10 +5,14 @@ title: Documentation overview
 
 ## Documentation overview
 
-We offer several technical documentation files that can be enhanced on our Wiki.
+Our documentation is separated into four sections.
 
-In the section [Installation Docs](/docs/users/getting-started/index.html) you will find helpful information covering (shared) installation and Embedding.
+The [FAQ](/docs/faq/index.html) collects solutions to questions that get asked often.
 
-The section [User Documentation](/docs/users/using/index.html) contains information for using and navigating Serendipity. Also see the [Translated Documentations](#) overview for some translations.
+Deeper explanations on how to use Serendipity can be found in the [User Documentation](/docs/users/index.html).
 
-For the Geeks and Techies, the [Technical Documentation](/docs/developers/index.html) will prove useful for enhancing Serendipity using its plugin API and Smarty templating.
+Developer can use the [Technical Documentation](/docs/developers/index.html) to learn how to modify all aspects of Serendipity, from developing plugins to changing Smarty templates to changing the core itself.
+
+Finally, [Contributing](/docs/contributing/index.html) explains how to help the project.
+
+In all cases, don't forget that there also is [the forum](http://board.s9y.org/) to get direct help from developers and other users.
