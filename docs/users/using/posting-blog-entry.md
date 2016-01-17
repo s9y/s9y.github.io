@@ -44,10 +44,6 @@ This will allow users to comment on your post. If you'd like it to be enabled, s
 
 This will set all comments and trackbacks to require approval before they are allowed to post to your blog. Good for removing profanity, nonsense links, and other such material from comments of those visiting your website. If you'd like it to be enabled, simply checkmark the selection box by clicking on it with your mouse. PLEASE NOTE: If you'd like to be notified of comments posting to your site via email, you must have a valid email address listed under Admin Interface \>\> Personal Settings.
 
-#### HTML Validator
-
-HTML Validator is not present in version .7 and upward.
-
 #### Announce Entries
 
 If you wish to announce entries to toher blog services, you can select them here. See [Trackbacks / Pingbacks / CommentAPI](/48.html) for more information.

@@ -91,7 +91,13 @@ Displays a browseable calendar in your sidebar. Days on which you made entries a
 
 ### Quicksearch
 
-Shows a small form field where a user can insert search words and then gets a list of matching entries you made. MySQL users please note that this plugin requires MySQL version 3.23.23 or later.
+Shows a small form field where a user can insert search words and then gets a list of matching entries you made.
+
+#### MySQL Stopwords
+
+The Serendipity search function uses the SQL fulltext search capability. In MySQL, this capability includes "stopwords". Basically, searching for any of the stopwords would return (almost) all the entries, so MySQL ignores those words for efficiency.
+
+If you're searching for a word that appears in every entry of your blog, you really don't need to search for it, do you? Even if you do, you can't. MySQL won't return any results for a word on the stopword list, and there is no known workaround.
 
 ### Archives
 

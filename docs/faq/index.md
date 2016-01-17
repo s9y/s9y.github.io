@@ -61,6 +61,17 @@ To sum it up: After installation, the only permissions you may want to adjust ar
 
 If you're especially paranoid, also change the **serendipity_config_local.inc.php** and **.htaccess** files to be only readable for the webserver. But then you need to remember to make those files writable when you upgrade Serendipity!
 
+#### Blog Is Blank
+
+Blank blog pages almost always mean the server has encountered an error. Luckily, web servers almost always keep track of errors in a log file. Ask your provider for the error logs for your web page; they'll tell you what the problem is.
+
+If you're having trouble finding the logs, you can try modifying your .htaccess with these lines:
+
+    php_value display_errors on
+    php_value error_log /path/to/your/serendipity/errors.log
+
+Of course, replace *path/to/your/serendipity* with the path to Serendipity on your server. Unfortunately, not all providers will allow you to do this. But if it works, you can read the errors.log in your Serendipity directory to determine the problem.
+
 #### When I save/preview an entry, it shows my admin panel in the preview section! Or: I need to login after each page request, and can't perform any action!
 
 This can happen, if your Webserver/PHP is not properly configured to use HTTP Cookie sessions. Serendipity requests PHP to have HTTP Session cookies enabled, and the session extension properly working.
@@ -75,7 +86,7 @@ This means, one of the Locales specified there need to be existing on your serve
 
 #### How do I upgrade Serendipity?
 
-Serendipity has an automatted upgrade system. You can upgrade from any Serendipity version starting from 0.4 to the latest version, even nightlies/snapshots - and you will not loose any previous content. First of all, you should make a backup of your existing installation by copying your whole directory and by creating a Database dump (use phpMyAdmin or something similar).
+Serendipity has an automated upgrade system. You can upgrade from any Serendipity version starting from 0.4 to the latest version, even nightlies/snapshots - and you will not loose any previous content. First of all, you should make a backup of your existing installation by copying your whole directory and by creating a Database dump (use phpMyAdmin or something similar).
 
 After you have done that, you only need to extract the new Serendpipity release files over your old directory. Make sure that you never delete the serendipity_config_local.inc.php file, as it contains the most vital Serendipity configuration data.
 
@@ -154,6 +165,24 @@ Another problem that calls this symptoms is that your .htaccess file might not b
 
 What can also affect the symptom of "no stylesheets are used" is if you enabled the 'embed' directive in Serendipity Configuration. As mentioned in the Configuration, if you enabled this setting, you must take care for the HTML head and body sections for yourself, Serendipity only outputs the straight content and nothing different. So either disable the embed mode, or use it as intended. :-)
 
+
+#### The text in a blog entry has additional spacing
+
+Check your source using your browser's View/Source capabilities.  Are there extra <BR/> tags where the extra space occurs? If yes, deactivate the [nl2br plugin](/docs/user/using/markup-plugins.html#nl2br).
+
+#### Entries Display HTML
+
+This is sometimes caused by the Wiki Markup plugin.  If it's installed, remove it and see if the problem is corrected.
+
+The "Options for trustworthy editing on multi-user blogs" plugin can also cause this problem.  It's main purpose is to escape any HTML that was entered by a non-trusted user, so if you're not one of the trusted users, your images and formatting will show up as HTML!  Either add yourself to trusted users, or remove the plugin to correct the problem.
+
+Other possible causes include entering HTML in the WYSIWYG editor and improper imports.
+
+To enter custom HTML in the WYSIWYG editor, you must click the button that places the editor into tag-editing mode.  Sometimes this is marked "View Source" or "Show HTML".  If you tried to enter, for instance, an <img> tag in WYSIWYG mode, you'd see the <img> tag in your entry.  Edit the entry to correct the problem.
+
+If your imported entries display HTML tags, you'll probably have to modify the database.  The easiest method is to create a database dump.  This is a plain text file; you can then edit it and replace all the instances of "&lt;" with "<" and "&gt;" with ">".
+
+
 #### What is "Spartacus"? How do I install Spartacus?
 
 Spartacus is the name of the Serendipity Online Plugin Repository, and the name of the corresponding plugin of your Serendipity blog that connects to this repository.
@@ -190,7 +219,7 @@ If your users don't want to leave comments, they'll have to use the Comments RSS
 
 #### I don't want to have comments and trackbacks in my blog!
 
-First off, blogging is about getting contributions and comments. Having said that, you can turn of the comments and trackbacks by editing your entries.tpl template and removing the trackback/comment sections. Or you can also even use CSS to set "display: none" for those regions.
+First off, blogging is about getting contributions and comments. Having said that, you can turn of the comments and trackbacks by editing your entries.tpl template and [removing the trackback/comment sections](/docs/users/using/trackbacks-pingbacks-commentsapi.html#hide trackback links). Or you can also even use CSS to set "display: none" for those regions.
 
 You can turn off to receive trackbacks/comments in the configuration of your spamblock plugin. To totally ban trackbacks from your site, you can edit the serendipity file **comment.php** After the first <?php add this:
 
@@ -208,21 +237,20 @@ If you do not want your blog to send outgoing trackbacks, you can edit your **se
 
 This will make Serendipity not send any outgoing trackbacks.
 
-#### I want trackbacks and comments, but spammers are killing my blog!
+#### How to fight spam
 
-Use the Spamblock-plugins provided. We recommend the anti-spam trinity: the core Spamblock-plugin with its wide selection of anti-spam measures, Spamblock-Bee with its honeypot and hidden captcha plus Spamblock-bayes, a local learning spamfilter.
+Use the Spamblock-plugins provided. We recommend the anti-spam trinity: the core Spamblock-plugin with its wide selection of anti-spam measures (be sure to reads [its documentation](/docs/users/using/spam.html), Spamblock-Bee with its honeypot and hidden captcha plus Spamblock-bayes, a local learning spamfilter.
 
 #### I want to add some links / HTML to my blog!
 
-You can add custom pieces of HTML code or links to any special pages to your blog sidebar by installing a "HTML Nugget" sidebar plugin. There you can enter arbitrary HTML or ((Javascript)).
+See [how to modify themes](/docs/users/using/tehems.html#User Modifications).
 
-The other possibility is to use a editor to edit your *.tpl template files and place custom HTML inside the files where you want it. Like you can add custom headers into the index.tpl file.
+#### I want to keep one entry at the top
 
-When you paste javascript code into a .tpl file, you must make sure to replace all occurences of "{" to "{ldelim}" and "}" to "{rdelim}". Smarty requires you to do that, because it uses the {} characters for special instructions. If you forget to escape this, you get an error like
+The Extended Properties for Entries plugin includes exactly this capability! Just install it from your admin screen like any other event plugin.
 
-`Fatal error: Smarty error: [in file:...]: syntax error: unrecognized tag: ..."`
+After it's installed, an extended options section appears at the bottom of each entry while you edit it. Just click the "Make this entry sticky" box to make it appear at the top of any list it appears in.
 
-If you paste huge amounts of ((Java Script)), you can also enclose the whole block with {literal}...{/literal} so that Smarty will ignore any { and } instructions within that block.
 
 #### How do I add PHP code to my templates?
 

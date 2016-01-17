@@ -60,6 +60,37 @@ Then insert this line of Code somewhere before the closing ?\> tag:
 
 This will disable sending any trackbacks from your blog. This is not (yet) a configuration item of Serendipity, because we still believe in the fundamental use of trackbacks within blogs. That might change with SPAM being one of the largest problems of Blogs in the future... but until then, you'll need to use this manual method.
 
+#### Hide trackback links
+
+Removing the trackback links from your blog entries won't stop the spammers, but it will change the appearance of your blog. To disable trackbacks altogether, you'll want to read about the [Spam Protector](/docs/users/using/spam.html) plugin.
+
+The trackback display is printed from the entries.tpl. This will be in the templates/ directory, under your current template's subdirectory. If your template doesn't use its own entries.tpl, it will use the one in templates/default/ instead. If it does use its own entries.tpl, the lines below may vary slightly.
+
+All you need to do is remove these lines from your entries.tpl:
+
+    {if $entry.has_trackbacks}
+     {if $use_popups}
+        | <a href="{$entry.link_popup_trackbacks}" onclick="window.open(this.href, 'comments', 'width=480,height=480,scrollbars=yes'); return false;">{$entry.label_trackbacks} ({$entry.trackbacks})</a>
+      {else}
+        | <a href="{$entry.link}#trackbacks">{$entry.label_trackbacks} ({$entry.trackbacks})</a>
+      {/if}
+    {/if}
+
+Don't forget to get these ones, too:
+
+    <div class="serendipity_comments serendipity_section_trackbacks">
+      <br />
+      <a id="trackbacks"></a>
+      <div class="serendipity_commentsTitle">{$CONST.TRACKBACKS}</div>
+      <div class="serendipity_center">
+        <a rel="nofollow" style="font-weight: normal" href="{$entry.link_trackback}" onclick="alert('{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|@escape:htmlall}'); return false;" title="{$CONST.TRACKBACK_SPECIFIC_ON_CLICK|@escape}">{$CONST.TRACKBACK_SPECIFIC}</a>
+      </div>
+      <br />
+      {serendipity_printTrackbacks entry=$entry.id}
+    </div>
+
+You can check for other lines including the word "trackback" and remove any of them you find problematic, too.
+
 ### What is a pingback?
 
 When you create your entries, you may want to announce your entries on certain blog-pages like technorati.com or others. This announcement is called "pingback".
