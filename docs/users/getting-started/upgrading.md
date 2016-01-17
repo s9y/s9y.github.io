@@ -14,19 +14,28 @@ A shorter guide, also covering most common errors is outlined in our [FAQ](/docs
 
 ### Updating
 
+A proper backup of BOTH the file system and your database is suggested. Whenever you made changes to the distributed files (or to the files like xml.gif or the smilies) you have to make sure to copy them over the distributed files after updating.
+
+#### Using the Autoupdater
+
+Install the Auptoupdater plugin (serendipity_event_autoupdate) and visit the dashboard. If an update is available, a button will appear. Click on the button to get an installer that will download and apply the update for you.
+
+#### Update manually
+
 Serendipity has been designed to make upgrading easy. Make a complete backup of your existing installation, we recommend saving every file to a backup folder on your local hard drive, and be sure to save a dump of your database as well. Using phpMyAdmin, select your database from the left side drop down, then click 'export' from the main navbar, select the options you need, then click 'save as file' and 'Go'.
 
 Next, download and unzip the version of Serendipity you wish to upgrade to, and upload every file to the same folder as your existing installation, and overwriting your previous files. Be sure not to delete or modify the .htaccess or serendipity\_config\_local.inc.php files. The upgrade script needs these and will modify them for you.
 
-The automatic update script should find and execute any necessary changes to the database layout made in different s9y versions beginning from 0.5. The upgrader will perform its automatic actions, as soon as you have copied the new s9y files over your old installation and access the start page of your blog.
-
-You can speed up the process of backing up your data and copying the files by using the supplied "upgrade.sh" script. Be sure to edit the file and change the variables to your needs.
+The automatic update script should find and execute any necessary changes to the database layout made in different s9y versions. The upgrader will perform its automatic actions, as soon as you have copied the new s9y files over your old installation and access the start page of your blog.
 
 Usually all DB schema upgrades in previous versions will be used. So when you upgrade from 0.5 to 0.7 you will get upgrades from 0.5 -\> 0.6 and 0.6 -\> 0.7.
 
-However, you are always advised to look at the corresponding SQL update file in sql/db\_update\*to see which changes were made.
+However, you are always advised to look at the corresponding SQL update file in sql/db\_update\* to see which changes were made.
 
-    .htaccess
+#### Locking the blog during the upgrade
+
+Create this .htacess file in your server webroot:
+
     AuthType Basic
     AuthName "Authorisation: Serendipity Upgrade IN PROGRESS"
     AuthUserFile /absolute/path/to/your/s9y/.htpasswd
@@ -39,9 +48,8 @@ Then create a file .htpasswd using a simple 'username:md5password' combination. 
 
 This would create a user "s9y" with password "s9y" with which you'd have to log into your blog.
 
-A proper backup of BOTH the file system and your database is suggested. Whenever you made changes to the distributed files (or to the files like xml.gif or the smilies) you have to make sure to copy them over the distributed files after updating.
 
-### Will upgrading overwrite my custom plugins/templates?
+#### Will upgrading overwrite my custom plugins/templates?
 
 No custom templates, plugins or other files will be touched when upgrading Serendipity.
 

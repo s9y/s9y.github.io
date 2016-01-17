@@ -16,7 +16,7 @@ It is also important to note that as of s9y version .7, that there are two main 
 
 ### Posting to S9y using S9y
 
-Posting to S9y is as easy! Use the "Open Administration" link on your weblog, enter your login and password. Then click on "New Entry". From there, you are given the option to give your entry a title, a category, and to set the date and time of your posting (its default is the current date at time). Type in your post and even add pictures using the Image Manager Icon (hovering over the top of each icon on the bars above your post will display text as to what they are...look for the one displaying "Manage Images")
+Use the "Open Administration" link on your weblog, enter your login and password. Then click on "New Entry". From there, you are given the option to give your entry a title, a category, and to set the date and time of your posting (its default is the current date at time). Type in your post and even add pictures using the Image Manager Icon (hovering over the top of each icon on the bars above your post will display text as to what they are...look for the one displaying "Manage Images")
 
 Posts will Accept plain text and HTML, and there are a variety of [Markup Plugins](/50.html) that one can enable in order to beautify your post.
 
