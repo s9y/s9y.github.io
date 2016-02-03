@@ -6,6 +6,10 @@ This is the documentation for [Serendipity](http://s9y.org).
 
 Documentation is maintained in [Markdown](https://daringfireball.net/projects/markdown/) (`.md`) files using the [kramdown](http://kramdown.gettalong.org) library to transform it to HTML though [Jekyll](http://jekyllrb.com) on [GitHub pages](https://pages.github.com).
 
+### Building locally
+
+To build the site locally, please follow GitHub's instructions for [using Jekyll with Pages]](https://help.github.com/articles/using-jekyll-with-pages/).
+
 ### Markdown usage
 
 * Some heading levels are reserved for other elements of the site layout. The first heading level you may use in Markdown files is `h2` (`##` in Markdown), so you have `h2` to `h6` available. If you feel that a section needs more structuring, it should probably be split up in two or more sections.
