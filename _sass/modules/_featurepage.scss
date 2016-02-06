@@ -1,0 +1,49 @@
+// FEATURES
+// --------------------------------------------------------------------
+#features {
+    @extend %plain-list;
+
+    @include clearfix;
+
+    h3 {
+        margin: 0;
+    }
+
+    img {
+        box-sizing: border-box;
+        margin: 0 1rem 0 0;
+        width: 100%;
+    }
+
+    li {
+        @include clearfix;
+
+        margin-top: 2em;
+
+        > p {
+            clear: left;
+        }
+
+        @media screen and (min-width: $md) {
+            @include grid-box(6);
+        }
+
+        &:nth-child(odd) {
+            clear: left;
+            padding-left: 0;
+        }
+
+        &:nth-child(even) {
+            padding-right: 0;
+        }
+    }
+
+    #featurethemes {
+        img {
+            width: 48%;
+            margin-right: 1%;
+            display: inline;
+        }
+    }
+}
+
