@@ -256,7 +256,7 @@ After it's installed, an extended options section appears at the bottom of each 
 
 Many ways lead to rome!
 
-##### The "Easy and cool" way
+##### Register a custom smarty function
 
 The coolest solution for you is to register a custom smarty function. For that, create (or edit) a file "config.inc.php" inside your template directory. Then register your markup like this:
 
@@ -283,7 +283,7 @@ With the same way, you can also include foreign PHP applications:
     }
     ?>
 
-##### The "hackish but even easier" way
+##### Use Smarty's {php} tags
 
 Another way to embed your custom PHP code is to use Smarty's {php} tags. For that you first need to disable the Smarty security setting within your config.inc.php template file:
 
@@ -297,6 +297,6 @@ Then you can use this in your index.tpl:
     include "my_existing_tool.php";
     {/php}
 
-##### The "elegant way"
+##### Create your own plugin
 
 The third and often the best way is to create your own plugins that deal with content. You can then access them with {serendipity_hookPlugin ...} smarty calls.
