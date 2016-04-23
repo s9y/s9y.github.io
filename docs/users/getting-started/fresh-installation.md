@@ -140,7 +140,7 @@ The most important distinct option is whether to use the "WYSIWYG" editor. This 
 ![](/img/docs/users/getting-started/s9y_fresh_install_07.png)
 
 
-##### Creating content
+##### Content
 
 This section contains all relevant options to create and maintain entries and maintain categories.
 
