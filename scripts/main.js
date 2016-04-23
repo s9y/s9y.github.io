@@ -27,4 +27,12 @@ $(function() {
         },
         type: 'image'
     });
+
+    $('#content a:has(>img)').magnificPopup({
+        gallery: {
+            enabled: true,
+            tCounter: '<span class="mfp-counter">%curr%/%total%</span>' // markup of counter
+        },
+        type: 'image'
+    });
 });
