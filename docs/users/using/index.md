@@ -19,6 +19,3 @@ title: User Documentation
 * [Themes/Styles](themes.html)
 * [Import/Export](import-export.html)
 * [Spam](spam.html)
-* (TODO: SEO)
-* (TODO: MAINTENANCE)
-* (TODO: Check topics from the book, what is missing as general instructions)

@@ -82,7 +82,8 @@ This file is usally called through the URL RewriteRules, and dynamically assembl
 #### deployment directory
 
 Serendipity supports the concept of a "shared installation". This keeps Serendipity as a kind of library in a central directory outside the DocumentRoot. Each blog will then only use stub-files which actually include that library file. The deployment-Directory contains exactly those stubs that point back to the library (through simply "include" calls). Note that the file names are exactly those that the core actually uses.
-For more information, see "Setting up a shared installation" **TODO: Link**
+
+For more information, see [Setting up a shared installation](/docs/users/getting-started/shared-installation.html).
 
 #### Composer / Bundled-Libs
 
@@ -271,7 +272,7 @@ On top of that, some global and user-specific configuration is passed through op
 * $serendipity['uploadHTTPPath']: URL-path to "uploads" directory
 * $serendipity['autodetect_baseURL']: Boolean whether to enable autodetection of HTPP host name
 * $serendipity['defaultBaseURL']: When HTTP-Hostname autodetection is turned off, contains the default URL to Serendipity
-* $serendipity['indexFile']: Name to index.php (used for "Embedded Installation", see **TODO: Link**)
+* $serendipity['indexFile']: Name to index.php (used for [Embedded Installation](/docs/users/getting-started/embedding.html))
 * $serendipity['permalinkStructure']: Permalink for archives/ patterns
 * $serendipity['permalinkAuthorStructure']: Permalink for authors/ patterns
 * $serendipity['permalinkCategoryStructure']: Permalink for categories/ patterns
@@ -301,10 +302,10 @@ On top of that, some global and user-specific configuration is passed through op
 * $serendipity['updateCheck']: Boolean whether performing update checks is allowed
 * $serendipity['archiveSortStable']: Boolean whether pagination URLs start with the pages enumberated from first or last page
 * $serendipity['searchsort']: Default sort order for sorting search results
-* $serendipity['enforce_RFC2616']: Boolean whether for RSS feeds Conditional Get may be used (see **TODO: Link**)
+* $serendipity['enforce_RFC2616']: Boolean whether for RSS feeds Conditional Get may be used (see [Configuration](/docs/users/using/configuration.html#appearance-and-options))
 * $serendipity['useGzip']: Boolean whether gzip'ing pages is enabled
 * $serendipity['enablePopup']: Boolean whether Popups are used in the frontend (depends on the theme)
-* $serendipity['embed']: Boolean whether embedded mode is enabled (see **TODO: Link**)
+* $serendipity['embed']: Boolean whether embedded mode is enabled (see [Configuration](/docs/users/using/configuration.html#appearance-and-options))
 * $serendipity['top_as_links']: Boolean whether links outputted by exit/referrer tracking are clickable (anti-spam)
 * $serendipity['trackReferer']: Boolean whether referrer tracking is enabled
 * $serendipity['blogReferer']: List of referrer URL patters that shall be blocked
@@ -470,8 +471,6 @@ All files simple implement their own Class that extends from Serendipity_Import 
 * import: Central function that is called, can access input data through $this->data.
 
 A class can now implement as many helper functions as it needs; the Serendipity importer uses one method for each kind of metadata it imports: import_cat, import_groups, import_authors and so on. All data is popuplated through another helper function import_table that performs the SQL queries for copying over data.
-
-Please see **TODO:Link** for the database structure if you need to know how to read/write to the Serendipity core tables.
 
 ### Plugins
 

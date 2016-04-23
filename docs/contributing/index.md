@@ -51,10 +51,7 @@ You want to join efforts, and actually code something with or for Serendipity? T
 
 ### Commercial Serendipity support
 
-Serendipity's Core Developer Garvin Hicking works at the german web-design/multimedia agency Faktor E (Bonn). His company offers commercial support for all needs touching Serendipity's featureset.
-
-If you need help on operating your blog in a corporate environment, customizing plugins, creating plugins, altering workflow structures feel free to contact them. You can be sure to get qualified help there: [Faktor E Multimedia GmbH](http://www.faktor-e.de)
-**TODO: Add image http://www.inpuncto-bonn.de/img_con/logopartner_faktore.gif here**
+Serendipity's Core Developer Garvin Hicking works at the german web-design/multimedia agency Faktor E (Bonn). His company offers [commercial support](/docs/users/hosting.html) for all needs touching Serendipity's featureset.
 
 ### We need your help!
 
@@ -76,7 +73,6 @@ Not only will we benefit from a larger user base, here's what you benefit from:
 
 You can stay up to date with Serendipity's development by:
 
-* Checking the docs/NEWS file or our repository for recent changes (or follow the github commits, or the commit mailinglist)
-* Reading our blog
-* Participating in the forums
-**TODO: Add links for all mentioned services**
+* Checking the [docs/NEWS](https://github.com/s9y/Serendipity/blob/master/docs/NEWS) file or our repository for recent changes (or follow the [github commits](https://github.com/s9y/Serendipity/commits/)).
+* Reading our [blog](http://blog.s9y.org/)
+* Participating in the [forums](http://www.s9y.org/forums)
