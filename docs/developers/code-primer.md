@@ -498,7 +498,7 @@ Our themes are built upon single Smarty template files. Each file is responsible
 
 A description for how themes are built, which variables they refer to please check the [Theme Documentation](/docs/developers/themes.html).
 
-### Coding Gudelines
+### Coding Guidelines
 
 Serendipity has been around since 2002, and code has been gradually built upon the same core. This has advantages (stability, adaptibility, compatibility), and also disadvantages ("old flair", mixed code patterns).
 
@@ -507,6 +507,7 @@ Most notably it shows that Serendipity does not use specific object-oriented pat
 This also means, we only have a few strict rules:
 
 * Use 4 spaces to indent code
+* Use the proper [versioning](/docs/versioning.html)] on plugins
 * Put opening braces on the same line like the preceding logic, put closing braces on a new line:
 
     if (condition) {
