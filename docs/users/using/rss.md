@@ -43,10 +43,10 @@ The file *rss.php* is responsible for creating your feed items. It can take vers
 
 You can combine each of the parameters with each other to construct your individual URLs:
 
-* `http://yourblog/serendipity/rss.php?version=1.0&category=2` – Display a RSS 1.0 feed of your category #2
-* `http://yourblog/serendipity/rss.php?version=1.0&category=2;4;6` – Display a RSS 1.0 feed of your category #2, 4 & 6
-* `http://yourblog/serendipity/rss.php?version=2.0&type=comments` – Display a RSS 2.0 feed of all your comments
-* `http://yourblog/serendipity/rss.php?version=1.0&category=3&type=comments` – Display a RSS 1.0 feed of all comments in your category #3
+* `http://example.org/serendipity/rss.php?version=1.0&category=2` – Display a RSS 1.0 feed of your category #2
+* `http://example.org/serendipity/rss.php?version=1.0&category=2;4;6` – Display a RSS 1.0 feed of your category #2, 4 & 6
+* `http://example.org/serendipity/rss.php?version=2.0&type=comments` – Display a RSS 2.0 feed of all your comments
+* `http://example.org/serendipity/rss.php?version=1.0&category=3&type=comments` – Display a RSS 1.0 feed of all comments in your category #3
 
 ### RSS import
 
