@@ -6,7 +6,7 @@ $(function() {
     });
 
     // Skip links
-    $('#to-top, #table-of-contents a').click(function() {
+    $('#to-top, #markdown-toc a').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
             var $target = $(this.hash);
             $target = $target.length && $target || $('[name=' + this.hash.slice(1) +']');
