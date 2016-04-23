@@ -1,0 +1,65 @@
+// RESPONSIVE IMAGES
+// --------------------------------------------------------------------
+// unstoppablerobotninja.com/entry/fluid-images
+@mixin responsive-media {
+    height: auto;
+    max-width: 100%;
+}
+
+
+// RESPONSIVE INLINE SVG IMAGES
+// --------------------------------------------------------------------
+// tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/
+// apply to container element; remove width/height from svg
+@mixin responsive-svg($svg-width, $svg-height, $container-width: 100%) {
+    height: 0;
+    padding-top: ($svg-height/$svg-width) * $container-width;
+    position: relative;
+    width: $container-width;
+
+    > svg {
+        left: 0;
+        position: absolute;
+        top: 0;
+    }
+}
+
+
+// RETINA BACKGROUND IMAGES
+// --------------------------------------------------------------------
+@mixin retina-img($imgname, $imgwidth, $imgheight, $imgtype: 'png', $imgsize: contain) {
+    background: url('../img/#{$imgname}.#{$imgtype}') 0 0 no-repeat;
+    background-size: $imgsize;
+    height: $imgheight;
+    width: $imgwidth;
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+           only screen and (min--moz-device-pixel-ratio: 2),
+           only screen and (-o-min-device-pixel-ratio: 2/1),
+           only screen and (min-device-pixel-ratio: 2),
+           only screen and (min-resolution: 192dpi),
+           only screen and (min-resolution: 2dppx) {
+        background-image: url('../img/#{$imgname}-2x.#{$imgtype}');
+
+  }
+}
+
+@mixin retina-svg($imgname, $imgwidth, $imgheight, $imgtype: 'png', $imgsize: contain) {
+    background: url('../img/#{$imgname}.svg') 0 0 no-repeat;
+    background-size: $imgsize;
+    height: $imgheight;
+    width: $imgwidth;
+
+    .no-svg & {
+        background-image: url('../img/#{$imgname}.#{$imgtype}');
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 2),
+               only screen and (min--moz-device-pixel-ratio: 2),
+               only screen and (-o-min-device-pixel-ratio: 2/1),
+               only screen and (min-device-pixel-ratio: 2),
+               only screen and (min-resolution: 192dpi),
+               only screen and (min-resolution: 2dppx) {
+            background-image: url('../img/#{$imgname}-2x.#{$imgtype}');
+        }
+    }
+}

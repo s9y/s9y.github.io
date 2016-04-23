@@ -1,0 +1,128 @@
+// HOME: SHOWCASE
+// --------------------------------------------------------------------
+#preface {
+    @include grid-box(12, .5rem);
+
+    h2 {
+        @include visuallyhidden;
+    }
+
+    p {
+        margin-top: 0;
+        text-align: justify;
+    }
+
+    @media screen and (min-width: $md) {
+        @include grid-box(9, 1rem);
+        @include grid-prefix(3);
+
+        > p {
+            font-size: 1.125rem;
+        }
+    }
+}
+
+#download {
+    @include grid-box(12, .5rem);
+
+    h2 {
+        @include visuallyhidden;
+    }
+
+    > p {
+        font-size: .875rem;
+
+        @media screen and (min-width: $md) {
+            max-width: 12.5rem;
+        }
+    }
+
+    @media screen and (min-width: $md) {
+        @include grid-box(3, 1rem);
+    }
+}
+
+.download-link {
+    @include flat-button($s9y-orange, $black, 4px, $s9y-blue-dark);
+
+    box-sizing: border-box;
+    line-height: 1.5;
+    margin: 0;
+    padding: .5rem .625rem;
+    transition: all .25s linear;
+    width: 100%;
+
+    &:hover {
+        color: $white;
+        transition: all .25s linear;
+    }
+
+    @media screen and (min-width: $sm) {
+        width: auto;
+    }
+
+    @media screen and (min-width: $md) {
+        margin: 1rem 0 0;
+        max-width: 12.5rem;
+        padding: .625rem 1rem;
+        width: 100%;
+    }
+
+    @media screen and (min-width: $lg) {
+        font-size: 1.125rem;
+    }
+}
+
+#screenshots {
+    @include grid-box(12, .5rem);
+
+    > h2 {
+        @include visuallyhidden;
+    }
+
+    .image-gallery {
+        @extend %plain-list;
+
+        margin: 1rem 0;
+    }
+
+    ul {
+        width: 100%;
+
+        @media screen and (min-width: $md) {
+            display: table;
+            table-layout: fixed;
+        }
+    }
+
+    li {
+        display: block;
+        margin: 0 0 1rem;
+
+        @media screen and (min-width: $md) {
+            display: table-cell;
+            padding-right: 1rem;
+            width: 1%;
+        }
+    }
+
+    img {
+        border: 1px solid $s9y-blue-dark;
+        box-sizing: border-box;
+        opacity: 1;
+        transition: opacity .25s linear;
+
+        &:hover {
+            opacity: .5;
+            transition: opacity .25s linear;
+        }
+    }
+
+    @media screen and (min-width: $md) {
+        @include grid-box(9, 1rem);
+    }
+
+    @media screen and (min-width: $lg) {
+        @include grid-box(9, 1rem);
+    }
+}

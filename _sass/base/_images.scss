@@ -1,0 +1,77 @@
+// RESPONSIVE FLOATED IMAGES
+// --------------------------------------------------------------------
+// Defaults
+$img-breakpoint:    $md !default; // Breakpoint for floated images
+$img-margin:        $type-rhythm 0 !default;   // Margins for images
+$img-left-margin:   .25rem $type-rhythm .75rem 0 !default;
+$img-right-margin:  .25rem 0 .75rem $type-rhythm !default;
+$img-left-class:    align_left !default;
+$img-right-class:   align_right !default;
+
+%image-block {
+    display: block;
+    margin: $img-margin;
+}
+
+// For use with image positioning classes assigned by CMS/WYSIWYG editor
+@if $use-cms-classes {
+    .#{$img-left-class},
+    .#{$img-right-class} {
+        @extend %image-block;
+    }
+}
+
+@if $use-cms-classes {
+    @media only screen and (min-width: $img-breakpoint) {
+        // For use with image positioning classes assigned by CMS/WYSIWYG editor
+        .#{$img-left-class} {
+            float: left;
+            margin: $img-left-margin;
+        }
+
+        .#{$img-right-class} {
+            float: right;
+            margin: $img-right-margin;
+        }
+    }
+}
+
+// Figures
+figure {
+    @extend %image-block;
+}
+
+
+// SVG SPRITES
+// --------------------------------------------------------------------
+// Defaults
+$svg-fallback-class:    svg-fallback !default;
+$svg-icon-fill:         $off-black !default;
+$svg-icon-dims:         1rem !default;
+
+
+@if $use-svg-sprites {
+    // 1. Hide SVG fallback text for browsers supporting SVG
+    // 2. Hide SVG icons if JS is deactivated
+    .svg .#{$svg-fallback-class},
+    .no-js svg {
+        @include hidden;
+    }
+
+    // 1. Show fallback text on IE < 9
+    // 2. Show fallback text if JS is deactivated
+    .lt-ie9 .#{$svg-fallback-class},
+    .no-js .#{$svg-fallback-class} {
+        display: inline-block !important;
+        visibility: visible;
+    }
+
+    // 1. Set fill color for SVG icons
+    // 2. Set dimensions of SVG icons
+    [class^="icon-"],
+    [class*="icon-"] {
+        fill: $svg-icon-fill;
+        height: $svg-icon-dims;
+        width: $svg-icon-dims;
+    }
+}

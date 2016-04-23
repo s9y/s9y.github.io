@@ -1,0 +1,68 @@
+// HOME: FEATURES
+// --------------------------------------------------------------------
+#featurelist {
+    @extend %plain-list;
+
+    @include clearfix;
+
+    h3 {
+        margin: 0;
+    }
+
+    img {
+        box-sizing: border-box;
+        float: left;
+        height: 32px;
+        margin: 0 1rem 0 0;
+        width: 32px;
+    }
+
+    li {
+        @include clearfix;
+
+        > p {
+            clear: left;
+        }
+
+        @media screen and (min-width: $md) {
+            @include grid-box(6);
+        }
+
+        &:nth-child(odd) {
+            clear: left;
+            padding-left: 0;
+        }
+
+        &:nth-child(even) {
+            padding-right: 0;
+        }
+    }
+}
+
+.features-more {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.button-link {
+    @include flat-button($s9y-blue-dark, $white, 4px, $s9y-blue-very);
+
+    box-sizing: border-box;
+    line-height: 1.5;
+    margin: 0 .4rem 0 0;
+    padding: .25rem 1rem;
+    transition: all .25s linear;
+
+    &,
+    &:visited {
+        color: $white;
+    }
+
+    &:hover {
+        transition: all .25s linear;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}

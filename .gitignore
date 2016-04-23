@@ -6,3 +6,7 @@ DEADJOE
 .DS_Store
 .editorconfig
 *.git
+.sass-cache/
+Gemfile
+Gemfile.lock
+_site/

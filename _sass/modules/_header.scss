@@ -1,0 +1,59 @@
+// HEADER
+// --------------------------------------------------------------------
+#masthead {
+    @include clearfix;
+
+    h1 {
+        @include grid-box(12, .5rem);
+
+        font-size: 1.75rem;
+        text-align: center;
+
+        > span {
+            @include visuallyhidden;
+        }
+
+        @media screen and (min-width: $sm) {
+            @include grid-box(9, 1rem);
+            @include grid-prefix(3);
+
+            text-align: left;
+        }
+
+        @media screen and (min-width: $lg) {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        @media screen and (min-width: $xx) {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+    }
+}
+
+#claim {
+    background-color: $s9y-blue-dark;
+    padding: .25rem 0;
+}
+
+#slogan {
+    @include grid-box(12, .5rem);
+
+    color: $off-white;
+    font-size: .875rem;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media screen and (min-width: $sm) {
+        @include grid-box(9, 1rem);
+        @include grid-prefix(3);
+
+        letter-spacing: 4px;
+        text-align: left;
+        word-spacing: .25rem;
+    }
+}

@@ -1,0 +1,42 @@
+// HOME: BLOGS
+// --------------------------------------------------------------------
+#blogs-list {
+    @extend %plain-list;
+
+    @include clearfix;
+
+    margin-bottom: 2rem;
+
+    h3 {
+        margin: 0;
+    }
+
+    li {
+        @include clearfix;
+
+        @media screen and (min-width: $md) {
+            @include grid-box(6);
+        }
+
+        &:nth-child(odd) {
+            clear: left;
+            padding-left: 0;
+        }
+
+        &:nth-child(even) {
+            padding-right: 0;
+        }
+    }
+
+    img {
+        border: 1px solid $s9y-blue-dark;
+        box-sizing: border-box;
+        opacity: 1;
+        transition: opacity .25s linear;
+
+        &:hover {
+            opacity: .5;
+            transition: opacity .25s linear;
+        }
+    }
+}

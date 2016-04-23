@@ -1,0 +1,87 @@
+// GLOBAL STYLES
+// --------------------------------------------------------------------
+html {
+    background-color: $off-white;
+    color: $off-black;
+
+    @media screen and (min-width: $xx) {
+        font-size: 112.5%;
+    }
+}
+
+body {
+    background-color: $s9y-blue-lite;
+
+    @media screen and (min-width: $md) {
+        padding-top: 2rem;
+    }
+}
+
+a {
+    &,
+    &:visited {
+        color: $s9y-blue-dark;
+    }
+
+    &:hover,
+    &:focus {
+        color: $s9y-blue-very;
+    }
+}
+
+ul {
+    padding-left: 1.25rem;
+}
+
+
+// GENERIC CLASSES + EXTENDS
+// --------------------------------------------------------------------
+%plain-list {
+    list-style: none;
+    padding: 0;
+}
+
+.layout-container {
+    @include clearfix;
+
+    @include grid-row;
+}
+
+
+// GLOBAL: CONTENT
+// --------------------------------------------------------------------
+body > main {
+    background: $off-white;
+
+    .layout-container {
+        border-bottom: 1px solid $silver;
+
+        @media screen and (min-width: $lg) {
+            padding-top: 1rem;
+        }
+    }
+}
+
+#content {
+    @include grid-box(12, .5rem);
+
+    p {
+        text-align: justify;
+    }
+
+    pre {
+        background-color: $lite-grey;
+        border: 1px solid $silver;
+        box-sizing: border-box;
+        padding: .5rem;
+    }
+
+    @media screen and (min-width: $sm) {
+        @include grid-box(12, 1rem);
+    }
+
+    @media screen and (min-width: $lg) {
+        @include grid-box(9, 1rem);
+        @include grid-push(3);
+    }
+}

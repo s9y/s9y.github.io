@@ -1,0 +1,11 @@
+// HOME: NEWS
+// --------------------------------------------------------------------
+#news-list {
+    @extend %plain-list;
+
+    margin-bottom: 2rem;
+
+    h3 {
+        margin: 0;
+    }
+}
