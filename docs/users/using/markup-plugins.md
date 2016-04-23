@@ -80,6 +80,16 @@ This will turn some of the more common smilies/emoticons into images, which imag
 
 #### Textile
 
+[Textile](https://github.com/textile/php-textile/blob/master/README.textile) is a markup language parser like MarkDown but not as widespread. The Markup is slightly different and in some cases easier to use than MarkDown.
+
+    "Link":http://example.org
+    *strong* or **bolded**
+    _emphasized_ or __italic__
+    ^superscript^ and ~subscript~
+    -delete- and +insert+
+
+The complete documentation of the syntax and an online sandbox can be found at [txstyle.org](http://txstyle.org)
+
 #### BBCode
 
 #### TextWiki
