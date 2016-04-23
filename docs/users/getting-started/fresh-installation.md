@@ -12,7 +12,7 @@ title: Fresh Installation
 
 Serendipity is a PHP-based web application. That means, to use Serendipity, you need to have access to a Web Server that has PHP support enabled. You upload the Serendipity files to that Web Server (by using FTP, SSH or other means) into a directory that is part of your Web Servers document tree.
 
-After you have uploaded the files to your web space, you need to "open" the Serendipity application. You do that by opening an URL like [http://yourdomain.com/serendipity/index.php.](http://yourdomain.com/serendipity/index.php.)
+After you have uploaded the files to your web space, you need to "open" the Serendipity application. You do that by opening an URL like [http://example.com/serendipity/index.php.](http://example.org/serendipity/index.php.)
 
 #### Requirements
 
@@ -20,7 +20,7 @@ Serendipity is tailored for the Apache Webserver. However, people are successful
 
 For full operation, Serendipity relies on .htaccess files that your [Virtual Host](/index.php?cmd=newdoc&newdocname=Virtual+Host&node=35&refnode=36)**?** must allow. For Apache, this requires the "[Allow Override](/index.php?cmd=newdoc&newdocname=Allow+Override&node=35&refnode=36)**?** [File Info](/index.php?cmd=newdoc&newdocname=File+Info&node=35&refnode=36)**?** Indexes Limit" (or "[Allow Override](/index.php?cmd=newdoc&newdocname=Allow+Override&node=35&refnode=36)**?** All") option set to the directory of your Serendipity installation.
 
-Serendipity requires PHP \>= 4.3.0 and fully enabled and working Cookie Session support. It requires the PCRE extension, and optionally makes use of the GD, iconv, zlib and mbstring extensions. Serendipity is fully PHP 5.x compatible and encourages the use of PHP bytecode compilers like APC, [Zend Cache](/index.php?cmd=newdoc&newdocname=Zend+Cache&node=35&refnode=36)**?** or ionCube.
+Serendipity requires PHP \>= 5.4.x and fully enabled and working Cookie Session support. It requires the PCRE extension, and optionally makes use of the GD, iconv, zlib and mbstring extensions. Serendipity is fully PHP 5.x compatible and encourages the use of PHP bytecode compilers like APC, [Zend Cache](/index.php?cmd=newdoc&newdocname=Zend+Cache&node=35&refnode=36)**?** or ionCube.
 
 When operating Serendipity in PHP's [Safe Mode](/index.php?cmd=newdoc&newdocname=Safe+Mode&node=35&refnode=36)**?**, you will not be able to use File Upload and SPARTACUS Plugin fetching facilities. Enabling error\_reporting and display\_errors (or directing this to a logfile) is suggested to keep track of possible errors. The file\_uploads directory should be turned ON if you want to have media file upload features. For graphic processing, you either require GDLib or [Image Magick](/index.php?cmd=newdoc&newdocname=Image+Magick&node=35&refnode=36)**?**.
 
@@ -56,11 +56,11 @@ Further permission-related questions are answered in our [FAQ](http://www.s9y.or
 
 ### Installing
 
-Once you have uploaded Serendipity to your web space you can call the installer interface via something like [http://yourdomain.com/serendipity/index.php.](http://yourdomain.com/serendipity/index.php.) It will take no longer than 1-2 minutes to install Serendipity.
+Once you have uploaded Serendipity to your web space you can call the installer interface via something like [http://example.org/serendipity/index.php.](http://example.org/serendipity/index.php.) It will take no longer than 1-2 minutes to install Serendipity.
 
 On this screen, you will see a basic pre-installation report that shows you a diagnosis of your Web Server settings. All variables that possibly might create trouble are listed orange-coloured. You usually do not need to pay attention to those, unless you are experiencing errors. Here's an example screenshot:
 
-![](http://blog.s9y.org/uploads/installer1.png)
+![](/img/docs/users/getting-started/s9y_fresh_install_01.png)
 
 Fatal problems are shown in red color. The most usual case of a red error is if Serendipity cannot create the directories **templates\_c**, **archives** or **uploads**. In this case, please follow the suggestions in the "Permissions on Files/Directories" step of this documentation.
 
@@ -68,7 +68,7 @@ On the bottom of the diagnosis screen, you can choose if you want to perform a "
 
 Since the goal of this Document is to show how fast you can install Serendipity, we will only discuss the "Simple installation" right now, so please click on this link and you will see a screen like this:
 
-![](http://blog.s9y.org/uploads/installer2.png)
+![](/img/docs/users/getting-started/s9y_fresh_install_02.png)
 
 As you can see, this screen is divided into several sections.
 
@@ -88,10 +88,6 @@ The blog name and description will later be shown on the frontpage of your blog.
 
 As the last option of this section, you need to choose the language of your blog. Note that this will be the default language for both your frontend of the blog and the personal language of your editor. All other users you are later able to create can define their own language for viewing your blog!
 
-#### Appearance and Options
-
-In this section you will see a few customization options. The most important distinct option is whether to use the "WYSIWYG" editor. This will show you a Word-like interface for creating blog entries. WYSIWYG editors often create trouble because they use very generic HTML markup that hurts the eye of any HTML professional. On the other hand, if you do not know any HTML at all, you will be very glad about that editor that will allow you to insert images, links and text formatting at ease. This option can also be changed later, if you happen to dislike the WYSIWYG editor, or if you're missing it.
-
 #### Complete installation
 
 After you have entered all options, you click on the button "Complete installation". Serendipity will then try to connect to your database. If that fails, it will inform you of this.
@@ -102,7 +98,7 @@ If you ever have troubles because of wrong auto-detected directories or URLs, yo
 
 Else, Serendipity will create the required database tables and sets up your blog as configured:
 
-![](http://blog.s9y.org/uploads/installer3.png)
+![](/img/docs/users/getting-started/s9y_fresh_install_03.png)
 
 This screen tells you that Serendipity has created the tables, inserted your admin user account, installed default plugins and auto-created the ".htaccess" file.
 
@@ -112,64 +108,69 @@ REMEMBER WELL that if you ever want to reinstall Serendipity from scratch, you n
 
 After the installation, the screen above showed you a link to "Visit your new blog here". You can click on this, and then you should see your empty blog like this:
 
-![](http://blog.s9y.org/uploads/installer4.png)
+![](/img/docs/users/getting-started/s9y_fresh_install_04.png)
 
 If you instead see a "HTTP 500" error screen, this means that your Web Server did not allow Serendipity to create custom ".htaccess" directives. In this case, you can just delete the file ".htaccess". Serendipity can operate well without this file, BUT you will not be able to use "pretty URLs". Those pretty URLs are configured via the "URL Rewriting" option inside Serendipity Configuration.
 
 #### Accessing the Admin panel
 
-After you've installed Serendipity, you most probably want to access the admin interface to customize further options. You can do that by calling your URL [http://yourdomain.com/serendipity/serendipity\_admin.php](http://yourdomain.com/serendipity/serendipity_admin.php) - a link to the admin interface is also shown on the Blog Frontend, as you might have noticed.
+After you've installed Serendipity, you most probably want to access the admin interface to customize further options. You can do that by calling your URL [http://example.org/serendipity/serendipity\_admin.php](http://example.org/serendipity/serendipity_admin.php) - a link to the admin interface is also shown on the Blog Frontend, as you might have noticed.
 
 Accessing this interface will give you a login screen:
 
-![](http://blog.s9y.org/uploads/installer5.png)
+![](/img/docs/users/getting-started/s9y_fresh_install_05.png)
 
 Enter the user details there, which you specified in the installation. By default this is username "John Doe" and password "john". If you check the box "Save information" below, this will make Serendipity save a persistent Cookie on your client, and you can auto-login to your panel any time you want. Note that if you are not the only person using your browser, you may not want to do this. :-)
 
 Then you will see the admin interface:
 
-![](http://blog.s9y.org/uploads/installer6.png)
+![](/img/docs/users/getting-started/s9y_fresh_install_06.png)
 
 The left navigation takes you to specific sections of your blog:
 
 ##### Frontpage
 
-The Frontpage currently just shows you the empty basic page. Here, specific plugins might show you specific output.
+The Frontpage currently just shows you the basic page. Here, specific plugins might show you specific output.
 
 ##### Personal Settings
 
-The personal settings section will show all user-specific options to your currently logged-in user. There you can change your username, your password and also the language you want to see for the Admin interface.
+The button with the three gears on the upper right of the page will lead you to personal settings section. The personal settings section will show all user-specific options to your currently logged-in user. There you can change your username, your password and also the language you want to see for the Admin interface.
+The most important distinct option is whether to use the "WYSIWYG" editor. This will show you a Word-like interface for creating blog entries. WYSIWYG editors often create trouble because they use very generic HTML markup that hurts the eye of any HTML professional. On the other hand, if you do not know any HTML at all, you will be very glad about that editor that will allow you to insert images, links and text formatting at ease. This option can also be changed later, if you happen to dislike the WYSIWYG editor, or if you're missing it.
 
-![](http://blog.s9y.org/uploads/installer7.png)
+![](/img/docs/users/getting-started/s9y_fresh_install_07.png)
 
-##### Entries
+##### Content
 
-This section contains all relevant options to create and maintain entries, view the comments made to your entries and maintain categories.
+This section contains all relevant options to create and maintain entries and maintain categories.
 
-![](http://blog.s9y.org/uploads/installer8.png)
+![](/img/docs/users/getting-started/s9y_fresh_install_08.png)
 
 ##### Media
 
 The media section allows you to upload and maintain images and documents you uploaded and can embed into entries.
 
-![](http://blog.s9y.org/uploads/installer9.png)
+![](/img/docs/users/getting-started/s9y_fresh_install_09.png)
 
-##### Appearance
+##### Activity
 
-This section allows you to configure and setup plugins as well as choose the layout of your Blog
+This section contains options to maintain comments to your entries and manage spam protection settings.
 
-![](http://blog.s9y.org/uploads/installer10.png)![](http://blog.s9y.org/uploads/installer11.png)
-
-##### Administration
+##### Settings
 
 This section covers the configuration of your blog, the users and groups that are allowed to login to your blog, and importing/exporting entries.
 
 Note that the "Configuration" item will show you all the options you would see in the Expert Installation. There you can configure all the detailed options of your blog, like URL Rewriting, Permalinks, Charsets etc.
 
-![](http://blog.s9y.org/uploads/installer12.png)
+![](/img/docs/users/getting-started/s9y_fresh_install_12.png)
+
+The sections Themes and Plugins allow you to configure and setup plugins as well as choose the layout of your Blog
+
+![](/img/docs/users/getting-started/s9y_fresh_install_10.png)
+![](/img/docs/users/getting-started/s9y_fresh_install_11.png)
+
 
 #### And what now?
 
 Now that you have successfully installed Serendipity, go ahead and explore. Create some entries, categories, install a few plugins you can also find on [spartacus.s9y.org](http://spartacus.s9y.org/). The interface is in most cases self-explanatory and open for experiments.
 
-If you have any questions, feel free to come to [the forums](http://board.s9y.org/) or to browse the [Wiki](http://www.s9y.org/) for further documentation.
+If you have any questions, feel free to come to [the forums](http://board.s9y.org/) or to browse the [docs section](/docs/index.html/) for further documentation.
