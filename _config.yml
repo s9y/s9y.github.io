@@ -9,6 +9,10 @@ baseurl: ""
 # Build settings
 markdown: kramdown
 
+# kramdown options
+kramdown:
+    auto_id_prefix: 'docs-'
+
 # Defaults
 defaults:
   -
