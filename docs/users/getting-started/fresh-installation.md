@@ -52,7 +52,7 @@ On top of those three directories, Serendipity will also need to write the two f
 
 If you plan to use the SPARTACUS plugin to download plugins and templates over the web, PHP also needs to be able to write to the directories **plugins** and **templates**.
 
-Further permission-related questions are answered in our [FAQ](http://www.s9y.org/11.html#A15).
+Further permission-related questions are answered in our [FAQ](/docs/faq/index.html).
 
 ### Installing
 
@@ -138,6 +138,7 @@ The button with the three gears on the upper right of the page will lead you to 
 The most important distinct option is whether to use the "WYSIWYG" editor. This will show you a Word-like interface for creating blog entries. WYSIWYG editors often create trouble because they use very generic HTML markup that hurts the eye of any HTML professional. On the other hand, if you do not know any HTML at all, you will be very glad about that editor that will allow you to insert images, links and text formatting at ease. This option can also be changed later, if you happen to dislike the WYSIWYG editor, or if you're missing it.
 
 ![](/img/docs/users/getting-started/s9y_fresh_install_07.png)
+
 
 ##### Content
 
