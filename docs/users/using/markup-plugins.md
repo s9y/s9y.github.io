@@ -77,20 +77,43 @@ This will turn some of the more common smilies/emoticons into images, which imag
 
     #yyy# embeds #yyy# as an html entity, (#gt#, #lt# and #amp# for instance)
 
+#### MarkDown
+
+[MarkDown](https://daringfireball.net/projects/markdown/) is a well known markup language parser and included in a lot of projects and text-editors. 
+
+    [example.org](http://example.org/ "Title")
+    *emphasized* or **strong**
+    _emphasized_ __strong__
+    # This is an H1
+    ## This is an H2
+
+The complete documentation of the syntax can be found at [daringfireball.net](https://daringfireball.net/projects/markdown/syntaxi). There is also an [online tool](https://daringfireball.net/projects/markdown/dingus) to try it first.
 
 #### Textile
 
-[Textile](https://github.com/textile/php-textile/blob/master/README.textile) is a markup language parser like MarkDown but not as widespread. The Markup is slightly different and in some cases easier to use than MarkDown.
+[Textile](https://github.com/textile/php-textile/blob/master/README.textile) is a markup language parser like MarkDown but not as widespread. The markup is slightly different and in some cases easier to use than MarkDown.
 
     "Link":http://example.org
     *strong* or **bolded**
     _emphasized_ or __italic__
     ^superscript^ and ~subscript~
     -delete- and +insert+
+    h1. This is H1
+    h2. This is H2
 
-The complete documentation of the syntax and an online sandbox can be found at [txstyle.org](http://txstyle.org)
+The complete documentation of the syntax and an online sandbox can be found at [txstyle.org](http://txstyle.org).
 
 #### BBCode
+
+[BBCode](http://php.net/manual/en/book.bbcode.php) is an markup language used by the messaging board [PHPBB](http://www.phpbb.com/)
+
+    [b]bolded[/b]
+    [i]italicized[/i]
+    [u]underlined/inserted[/u]
+    [s]strikethrough/deleted[/s]
+    [url=http://example.org]example.org[/url]
+
+Some more examples can be found at [bbcode.org](http://www.bbcode.org/reference.php), an [online test tool](http://www.bbcode.org/playground.php) is available too.
 
 #### TextWiki
 
