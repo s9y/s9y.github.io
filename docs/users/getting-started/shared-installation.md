@@ -13,7 +13,7 @@ Let's do this using an example. You own the domain 's9yblogs.org'. You want to h
 
 Of course, for security reasons, you should set the open\_basedir directive to the user's document root, so he can't access other installations on your host.
 
-So your Apache-Webserver should contain [Virtual Hosts](/index.php?cmd=newdoc&newdocname=Virtual+Hosts&node=35&refnode=41)**?** like this:
+So your Apache-Webserver should contain Virtual Hosts like this:
 
     -- httpd.conf
     <VirtualHost 42.42.42.42:80>
@@ -47,7 +47,7 @@ So your Apache-Webserver should contain [Virtual Hosts](/index.php?cmd=newdoc&ne
     </VirtualHost>
     -- httpd.conf
 
-You will unpack the default s9y distribution files in "/usr/local/lib/php/s9y/". Where you store the directory 's9y' is not important, as long as you adjust the include\_path setting in the [Virtual Hosts](/index.php?cmd=newdoc&newdocname=Virtual+Hosts&node=35&refnode=41)**?**. But the directory name 's9y' is significant.
+You will unpack the default s9y distribution files in "/usr/local/lib/php/s9y/". Where you store the directory 's9y' is not important, as long as you adjust the include\_path setting in the Virtual Hosts. But the directory name 's9y' is significant.
 
 Now you can either **copy** or **link** the following subcategories:
 

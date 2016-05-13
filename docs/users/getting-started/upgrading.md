@@ -10,7 +10,7 @@ title: Upgrading Serendipity
 
 ### Shortcut to updating
 
-A shorter guide, also covering most common errors is outlined in our [FAQ](/docs/faq/index.html#A18).
+A shorter guide, also covering most common errors is outlined in our [FAQ](/docs/faq/index.html#docs-upgrading).
 
 ### Updating
 
