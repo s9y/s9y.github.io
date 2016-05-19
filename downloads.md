@@ -4,15 +4,9 @@ title: Downloads
 
 ## Downloads
 
-There are several ways to download Serendipity. The FULL release contains everything you need, wheras the LITE release only provides the default template and does not have the dummy stub files you need to setup a shared installation (which is for advanced users only). Thus, the LITE release is more lightweight for bandwidth-conservative people. You can easily upgrade a LITE release to a FULL release by simply uploading the FULL release. The core files in both versions are fully identical.
-
-* **Download latest 2.0.1 (March 12, 2015)**
-  * [Serendipity 2.0.1 tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.1.tar.gz?download)
-    (MD5: d2e0aec742545b260892bc462806c54e)
-  * [Serendipity 2.0.1 tar.bz2](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.1.tar.bz2?download)
-    (MD5: 5fc26028b80fc8c03b8a1681c195e214)
-  * [Serendipity 2.0.1 ZIP](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.1.zip?download)
-    (MD5: e9b9d9de43c4374acee105d81312d17f)
+* **Download latest 2.0.3 (January 4th, 2016)**
+  * [Serendipity 2.0.3 on Github](https://github.com/s9y/Serendipity/releases/tag/2.0.3)
+    (MD5: ba57e13b41828bc4b4661e9047132369)
 
 * **Fetch a snapshot (2.1 development)**
 
@@ -23,8 +17,8 @@ There are several ways to download Serendipity. The FULL release contains everyt
 **Recommendation**: Use 2.0.3
 
 * **Download older releases**
-  * [Serendipity 2.0.2 tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.0.tar.gz?download) - January 23rd, 2015
-  * [Serendipity 2.0.1 tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.1.tar.gz?download) - January 23rd, 2015
+  * [Serendipity 2.0.2 tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.0.tar.gz?download) - July 24th, 2015
+  * [Serendipity 2.0.1 tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.1.tar.gz?download) - March 12th, 2015
   * [Serendipity 2.0.0 tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.0.tar.gz?download) - January 23rd, 2015
   * [Serendipity 1.7.8 tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-1.7.8.tar.gz?download) - February 9th, 2014
   * [Serendipity 1.7.7 tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-1.7.7.tar.gz?download) - February 6th, 2014
