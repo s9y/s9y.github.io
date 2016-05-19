@@ -157,6 +157,12 @@ JRss.prototype  = {
             item.title = jQuery(this).find('title').eq(0).text();
             item.link = jQuery(this).find('link').eq(0).text();
             item.description = jQuery(this).find('description').eq(0).text();
+
+            console.log(jQuery(this));
+            if (item.description == '') {
+                item.description = jQuery(this).find('content:encoded').text();
+            }
+
             item.updated = jQuery(this).find('pubDate').eq(0).text();
             item.id = jQuery(this).find('guid').eq(0).text();
             
