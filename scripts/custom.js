@@ -1,8 +1,13 @@
 $(document).ready(function() {
-    jQuery.getFeed({
-        url: 'http://blog.s9y.org/rss.php',
-        success: function(feed) {
-          console.log(feed);
-        }
-    });
+    $('*[data-rss*="http"]').each(function() {
+        console.log($(this).attr('data-rss'));
+        jQuery.getFeed({
+            url: $(this).attr('data-rss'),
+            feedparent: $(this),
+            success: jQuery.function(feed) {
+              console.log(feed);
+              console.log(this.feedparent);
+            }
+        });
+    });    
 });
