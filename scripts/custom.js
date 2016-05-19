@@ -4,7 +4,7 @@ $(document).ready(function() {
         jQuery.getFeed({
             url: $(this).attr('data-rss'),
             feedparent: $(this),
-            success: jQuery.function(feed) {
+            success: function(feed) {
               console.log(feed);
               console.log(this.feedparent);
             }
