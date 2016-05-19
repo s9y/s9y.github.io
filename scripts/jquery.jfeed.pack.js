@@ -117,7 +117,7 @@ JAtom.prototype = {
             item.description = jQuery(this).find('content').eq(0).text();
             console.log(jQuery(this));
             if (item.description == '') {
-                item.description = jQuery(this).find('content:encoded').text();
+                item.description = jQuery(this).find('content\\:encoded').text();
             }
             item.updated = jQuery(this).find('updated').eq(0).text();
             item.id = jQuery(this).find('id').eq(0).text();
@@ -160,7 +160,7 @@ JRss.prototype  = {
 
             console.log(jQuery(this));
             if (item.description == '') {
-                item.description = jQuery(this).find('content:encoded').text();
+                item.description = jQuery(this).find('content\\:encoded').text();
             }
 
             item.updated = jQuery(this).find('pubDate').eq(0).text();
