@@ -1,5 +1,162 @@
-// jFeed: jQuery feed parser plugin
-// Copyright (C) 2007-2011 Jean-François Hovinne - http://hovinne.com/
-// Dual licensed under the MIT (MIT-license.txt) and GPL (GPL-license.txt) licenses.
+/* jFeed : jQuery feed parser plugin
+ * Copyright (C) 2007 Jean-François Hovinne - http://www.hovinne.com/
+ * Dual licensed under the MIT (MIT-license.txt)
+ * and GPL (GPL-license.txt) licenses.
+ */
 
-eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('2.W=b(7){7=2.R({y:o,L:o,K:Y,x:o,A:o,n:o,J:Y},7);g(7.y){g(2.V(7.A)&&2.m(7.n)===\'o\'){7.n=b(M,z,e){7.A(z,e)}}D g(2.m(7.A)===2.m(7.n)===\'o\'){7.n=b(M,z,e){1j.X&&X.1i(\'W 1h 1g 1f h\',M,z,e)}}1e $.1d({m:\'1c\',y:7.y,L:7.L,K:7.K,1b:(2.T.S)?"6":"4",x:b(4){f h=k I(4);g(2.V(7.x))7.x(h)},n:7.n,J:7.J})}};b I(4){g(4)3.U(4)};I.v={m:\'\',p:\'\',d:\'\',c:\'\',j:\'\',U:b(4){g(2.T.S){f H=k 1a("19.18");H.17(4);4=H}g(2(\'9\',4).E==1){3.m=\'C\';f w=k F(4)}D g(2(\'h\',4).E==1){3.m=\'16\';f w=k G(4)}g(w)2.R(3,w)}};b s(){};s.v={d:\'\',c:\'\',j:\'\',l:\'\',r:\'\'};b G(4){3.u(4)};G.v={u:b(4){f 9=2(\'h\',4).a(0);3.p=\'1.0\';3.d=2(9).5(\'d:i\').6();3.c=2(9).5(\'c:i\').t(\'Q\');3.j=2(9).5(\'15:i\').6();3.B=2(9).t(\'4:14\');3.l=2(9).5(\'l:i\').6();3.q=k P();f h=3;2(\'13\',4).O(b(){f 8=k s();8.d=2(3).5(\'d\').a(0).6();8.c=2(3).5(\'c\').a(0).t(\'Q\');8.j=2(3).5(\'12\').a(0).6();8.l=2(3).5(\'l\').a(0).6();8.r=2(3).5(\'r\').a(0).6();h.q.N(8)})}};b F(4){3.u(4)};F.v={u:b(4){g(2(\'C\',4).E==0)3.p=\'1.0\';D 3.p=2(\'C\',4).a(0).t(\'p\');f 9=2(\'9\',4).a(0);3.d=2(9).5(\'d:i\').6();3.c=2(9).5(\'c:i\').6();3.j=2(9).5(\'j:i\').6();3.B=2(9).5(\'B:i\').6();3.l=2(9).5(\'11:i\').6();3.q=k P();f h=3;2(\'8\',4).O(b(){f 8=k s();8.d=2(3).5(\'d\').a(0).6();8.c=2(3).5(\'c\').a(0).6();8.j=2(3).5(\'j\').a(0).6();8.l=2(3).5(\'10\').a(0).6();8.r=2(3).5(\'Z\').a(0).6();h.q.N(8)})}};',62,82,'||jQuery|this|xml|find|text|options|item|channel|eq|function|link|title||var|if|feed|first|description|new|updated|type|error|null|version|items|id|JFeedItem|attr|_parse|prototype|feedClass|success|url|msg|failure|language|rss|else|length|JRss|JAtom|xmlDoc|JFeed|global|cache|data|xhr|push|each|Array|href|extend|msie|browser|parse|isFunction|getFeed|console|true|guid|pubDate|lastBuildDate|content|entry|lang|subtitle|atom|loadXML|XMLDOM|Microsoft|ActiveXObject|dataType|GET|ajax|return|load|to|failed|log|window'.split('|')))
+jQuery.getFeed = function(options) {
+
+    options = jQuery.extend({
+
+        url: null,
+        data: null,
+        cache: true,
+        success: null,
+        failure: null,
+        error: null,
+        global: true
+
+    }, options);
+
+    if (options.url) {
+        
+        if (jQuery.isFunction(options.failure) && jQuery.type(options.error)==='null') {
+          // Handle legacy failure option
+          options.error = function(xhr, msg, e){
+            options.failure(msg, e);
+          }
+        } else if (jQuery.type(options.failure) === jQuery.type(options.error) === 'null') {
+          // Default error behavior if failure & error both unspecified
+          options.error = function(xhr, msg, e){
+            window.console&&console.log('getFeed failed to load feed', xhr, msg, e);
+          }
+        }
+
+        return $.ajax({
+            type: 'GET',
+            url: options.url,
+            data: options.data,
+            cache: options.cache,
+            dataType: "xml",
+            success: function(xml) {
+                var feed = new JFeed(xml);
+                if (jQuery.isFunction(options.success)) options.success(feed);
+            },
+            error: options.error,
+            global: options.global
+        });
+    }
+};
+
+function JFeed(xml) {
+    if (xml) this.parse(xml);
+}
+;
+
+JFeed.prototype = {
+
+    type: '',
+    version: '',
+    title: '',
+    link: '',
+    description: '',
+    parse: function(xml) {
+        if (jQuery('channel', xml).length == 1) {
+
+            this.type = 'rss';
+            var feedClass = new JRss(xml);
+
+        } else if (jQuery('feed', xml).length == 1) {
+
+            this.type = 'atom';
+            var feedClass = new JAtom(xml);
+        }
+
+        if (feedClass) jQuery.extend(this, feedClass);
+    }
+};
+
+function JFeedItem() {};
+
+JFeedItem.prototype = {
+
+    title: '',
+    link: '',
+    description: '',
+    updated: '',
+    id: ''
+};
+
+function JAtom(xml) {
+    this._parse(xml);
+};
+
+JAtom.prototype = {
+    
+    _parse: function(xml) {
+    
+        var channel = jQuery('feed', xml).eq(0);
+
+        this.version = '1.0';
+        this.title = jQuery(channel).find('title:first').text();
+        this.link = jQuery(channel).find('link:first').attr('href');
+        this.description = jQuery(channel).find('subtitle:first').text();
+        this.language = jQuery(channel).attr('xml:lang');
+        this.updated = jQuery(channel).find('updated:first').text();
+        
+        this.items = new Array();
+        
+        var feed = this;
+        
+        jQuery('entry', xml).each( function() {
+        
+            var item = new JFeedItem();
+            
+            item.title = jQuery(this).find('title').eq(0).text();
+            item.link = jQuery(this).find('link').eq(0).attr('href');
+            item.description = jQuery(this).find('content').eq(0).text();
+            item.updated = jQuery(this).find('updated').eq(0).text();
+            item.id = jQuery(this).find('id').eq(0).text();
+            
+            feed.items.push(item);
+        });
+    }
+};
+
+function JRss(xml) {
+    this._parse(xml);
+};
+
+JRss.prototype  = {
+    
+    _parse: function(xml) {
+    
+        if(jQuery('rss', xml).length == 0) this.version = '1.0';
+        else this.version = jQuery('rss', xml).eq(0).attr('version');
+
+        var channel = jQuery('channel', xml).eq(0);
+    
+        this.title = jQuery(channel).find('title:first').text();
+        this.link = jQuery(channel).find('link:first').text();
+        this.description = jQuery(channel).find('description:first').text();
+        this.language = jQuery(channel).find('language:first').text();
+        this.updated = jQuery(channel).find('lastBuildDate:first').text();
+    
+        this.items = new Array();
+        
+        var feed = this;
+        
+        jQuery('item', xml).each( function() {
+        
+            var item = new JFeedItem();
+            
+            item.title = jQuery(this).find('title').eq(0).text();
+            item.link = jQuery(this).find('link').eq(0).text();
+            item.description = jQuery(this).find('description').eq(0).text();
+            item.updated = jQuery(this).find('pubDate').eq(0).text();
+            item.id = jQuery(this).find('guid').eq(0).text();
+            
+            feed.items.push(item);
+        });
+    }
+};
