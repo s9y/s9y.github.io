@@ -17,6 +17,10 @@ To build the site locally, please follow GitHub's instructions for [using Jekyll
 * Also, a span of code in copy text (i.e. `<code>` within `<p>`, not within `<pre>`) is limited by single backticks, not three backticks.
 * To set internal links (i.e. links to other pages of the docs), please use relative links starting with a `/`, and *always* link to the HTML version of the page; for example `/docs/faq/index.html`
 
+### Generating CSS + JS assets
+
+The CSS in `css` is generated from Sass source files, the JS in `scripts` is combined from various sources, and both are optimized by a build process. Since these assets are supposed to be re-used on multiple s9y platforms, they have been moved to a [separate repository](https://github.com/s9y/website_assets). Please consult the [README](https://github.com/s9y/website_assets#s9y-website-assets) there for build instructions.
+
 ### Jekyll usage
 
 * Every Markdown file needs a [YAML front matter](http://jekyllrb.com/docs/frontmatter/) with at least a sensible title. Like this:
