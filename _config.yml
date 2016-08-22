@@ -3,7 +3,7 @@ exclude: [Gemfile, Gemfile.lock, README.md]
 
 # Site settings
 title: Serendipity Blog System
-description: TODO
+description: Serendipity is a PHP-powered weblog engine giving users an easy way to maintain a blog and developers a framework with the power for professional applications.
 baseurl: ""
 
 # Build settings
