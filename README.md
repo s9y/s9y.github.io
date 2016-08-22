@@ -8,7 +8,7 @@ Documentation is maintained in [Markdown](https://daringfireball.net/projects/ma
 
 ### Building locally
 
-To build the site locally, please follow GitHub's instructions for [using Jekyll with Pages]](https://help.github.com/articles/using-jekyll-with-pages/).
+To build the site locally, please follow GitHub's instructions for [using Jekyll with Pages](https://help.github.com/articles/using-jekyll-with-pages/).
 
 ### Markdown usage
 
