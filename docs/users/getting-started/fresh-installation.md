@@ -60,7 +60,7 @@ Once you have uploaded Serendipity to your web space you can call the installer 
 
 On this screen, you will see a basic pre-installation report that shows you a diagnosis of your Web Server settings. All variables that possibly might create trouble are listed orange-coloured. You usually do not need to pay attention to those, unless you are experiencing errors. Here's an example screenshot:
 
-![](/img/docs/users/getting-started/s9y_fresh_install_01.png)
+![First page of the installer](/img/docs/users/getting-started/s9y_fresh_install_01.png){: .content-image}
 
 Fatal problems are shown in red color. The most usual case of a red error is if Serendipity cannot create the directories **templates\_c**, **archives** or **uploads**. In this case, please follow the suggestions in the "Permissions on Files/Directories" step of this documentation.
 
@@ -68,7 +68,7 @@ On the bottom of the diagnosis screen, you can choose if you want to perform a "
 
 Since the goal of this Document is to show how fast you can install Serendipity, we will only discuss the "Simple installation" right now, so please click on this link and you will see a screen like this:
 
-![](/img/docs/users/getting-started/s9y_fresh_install_02.png)
+![Simple installation options](/img/docs/users/getting-started/s9y_fresh_install_02.png){: .content-image}
 
 As you can see, this screen is divided into several sections.
 
@@ -98,7 +98,7 @@ If you ever have troubles because of wrong auto-detected directories or URLs, yo
 
 Else, Serendipity will create the required database tables and sets up your blog as configured:
 
-![](/img/docs/users/getting-started/s9y_fresh_install_03.png)
+![Results of the database tables creation](/img/docs/users/getting-started/s9y_fresh_install_03.png){: .content-image}
 
 This screen tells you that Serendipity has created the tables, inserted your admin user account, installed default plugins and auto-created the ".htaccess" file.
 
@@ -108,7 +108,7 @@ REMEMBER WELL that if you ever want to reinstall Serendipity from scratch, you n
 
 After the installation, the screen above showed you a link to "Visit your new blog here". You can click on this, and then you should see your empty blog like this:
 
-![](/img/docs/users/getting-started/s9y_fresh_install_04.png)
+![Index page of an empty blog](/img/docs/users/getting-started/s9y_fresh_install_04.png){: .content-image}
 
 If you instead see a "HTTP 500" error screen, this means that your Web Server did not allow Serendipity to create custom ".htaccess" directives. In this case, you can just delete the file ".htaccess". Serendipity can operate well without this file, BUT you will not be able to use "pretty URLs". Those pretty URLs are configured via the "URL Rewriting" option inside Serendipity Configuration.
 
@@ -118,13 +118,13 @@ After you've installed Serendipity, you most probably want to access the admin i
 
 Accessing this interface will give you a login screen:
 
-![](/img/docs/users/getting-started/s9y_fresh_install_05.png)
+![Login screen](/img/docs/users/getting-started/s9y_fresh_install_05.png){: .content-image}
 
 Enter the user details there, which you specified in the installation. By default this is username "John Doe" and password "john". If you check the box "Save information" below, this will make Serendipity save a persistent Cookie on your client, and you can auto-login to your panel any time you want. Note that if you are not the only person using your browser, you may not want to do this. :-)
 
 Then you will see the admin interface:
 
-![](/img/docs/users/getting-started/s9y_fresh_install_06.png)
+![Dashboard](/img/docs/users/getting-started/s9y_fresh_install_06.png){: .content-image}
 
 The left navigation takes you to specific sections of your blog:
 
@@ -137,20 +137,20 @@ The Frontpage currently just shows you the basic page. Here, specific plugins mi
 The button with the three gears on the upper right of the page will lead you to personal settings section. The personal settings section will show all user-specific options to your currently logged-in user. There you can change your username, your password and also the language you want to see for the Admin interface.
 The most important distinct option is whether to use the "WYSIWYG" editor. This will show you a Word-like interface for creating blog entries. WYSIWYG editors often create trouble because they use very generic HTML markup that hurts the eye of any HTML professional. On the other hand, if you do not know any HTML at all, you will be very glad about that editor that will allow you to insert images, links and text formatting at ease. This option can also be changed later, if you happen to dislike the WYSIWYG editor, or if you're missing it.
 
-![](/img/docs/users/getting-started/s9y_fresh_install_07.png)
+![Personal settings](/img/docs/users/getting-started/s9y_fresh_install_07.png){: .content-image}
 
 
 ##### Content
 
 This section contains all relevant options to create and maintain entries and maintain categories.
 
-![](/img/docs/users/getting-started/s9y_fresh_install_08.png)
+![Entry editor](/img/docs/users/getting-started/s9y_fresh_install_08.png){: .content-image}
 
 ##### Media
 
 The media section allows you to upload and maintain images and documents you uploaded and can embed into entries.
 
-![](/img/docs/users/getting-started/s9y_fresh_install_09.png)
+![Upload form for the s9y media database](/img/docs/users/getting-started/s9y_fresh_install_09.png){: .content-image}
 
 ##### Activity
 
@@ -162,12 +162,13 @@ This section covers the configuration of your blog, the users and groups that ar
 
 Note that the "Configuration" item will show you all the options you would see in the Expert Installation. There you can configure all the detailed options of your blog, like URL Rewriting, Permalinks, Charsets etc.
 
-![](/img/docs/users/getting-started/s9y_fresh_install_12.png)
+![Configuration section](/img/docs/users/getting-started/s9y_fresh_install_12.png){: .content-image}
 
 The sections Themes and Plugins allow you to configure and setup plugins as well as choose the layout of your Blog
 
-![](/img/docs/users/getting-started/s9y_fresh_install_10.png)
-![](/img/docs/users/getting-started/s9y_fresh_install_11.png)
+![Theme selection](/img/docs/users/getting-started/s9y_fresh_install_10.png){: .content-image}
+
+![Plugin configuration](/img/docs/users/getting-started/s9y_fresh_install_11.png){: .content-image}
 
 
 #### And what now?

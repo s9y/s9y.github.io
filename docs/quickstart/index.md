@@ -20,11 +20,11 @@ Download the [newest version of serendipity](http://www.s9y.org/latest) and unpa
 
 Go to the URL of your server, or on your local machine to [localhost](http://localhost/serendipity).
 
-[![first page of the installer](/img/quickstart/s9y_installer1_thumb.png)](/img/quickstart/s9y_installer1.png)
+[![first page of the installer](/img/quickstart/s9y_installer1_thumb.png){: .content-image}](/img/quickstart/s9y_installer1.png)
 
 The first page of the installer checks if the server has all the capabilities needed and if the rights are correct. Follow its hints, then click on *Simple Installation*.
 
-[![second page of the installer](/img/quickstart/s9y_installer2_thumb.png)](/img/quickstart/s9y_installer2.png)
+[![second page of the installer](/img/quickstart/s9y_installer2_thumb.png){: .content-image}](/img/quickstart/s9y_installer2.png)
 
 The second page asks for various configuration options. Important are the database settings at the top. Either use MySQL (your hoster should provide you with the access data) or PDO-Sqlite (no access data needed). Next step is your username and password. The other options can be ignored.
 
