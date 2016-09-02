@@ -11,7 +11,7 @@ title: Features
   [![](/img/screenshots/showcase/03_editor_thumb.jpg)](img/screenshots/showcase/03_editor.jpg)
 * ### Anti-Spam
   Fight spam in comments and trackbacks with Akismet, Honeypots, word filters, a local learning bayes filter, captchas or full moderation. Those means are provided by and extensible with plugins.
-  
+
   [![](/img/screenshots/showcase/05_spamplugins_thumb.jpg)](/img/screenshots/showcase/05_spamplugins.jpg)
 * ### Dynamic
   You don't need to constantly wait while your weblogging system regenerates pages. Caching is dynamically managed, so you don't need to worry about it. Optional advanced URL rewriting rules and customizable permalinks are available.
@@ -40,7 +40,7 @@ title: Features
 * ### Multiple Users
   Multiple users can edit and administrate the weblog. A permission system controls which user is allowed to do what.
 * ### Standards Compliant
-  Serendipity supports HTML5, CSS 2.0, RSS 2.0 and Atom 1.0. Supports conditional GET for caching RSS feeds on the client-side. It also supports UTF-8 environments.
+  Serendipity supports HTML5, CSS3, RSS 2.0 and Atom 1.0. Supports conditional GET for caching RSS feeds on the client-side. It also supports UTF-8 environments.
 * ### Shared Installation
   You can use Serendipity as a single installation to serve multiple and independent weblogs, but only maintaining a single codebase.
 * ### Easy Upgrading
@@ -54,5 +54,3 @@ title: Features
 {:#features}
 
 </section>
-
-
