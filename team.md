@@ -23,7 +23,7 @@ Thanks so much to all of them!
 * Martin Jacobsen: Serendipity Logo
 * Carl Galloway: Theme Contributor
 * Matthew Groeninger: Developer, Support, Plugin-Support
-* [Falk Döring](http://www.fadoe.de/blog/): Plugins (Staticpage)
+* [Falk Döring](http://www.fadoe.de): Plugins (Staticpage)
 * [Judebert](http://judebert.com): Support, Documentation
 * Grischa Brockhaus
 * Tom Sommer: Developer
