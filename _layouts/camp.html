@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html class="no-js" lang="de">
+{% include meta-head.html %}
+<body id="top">
+{% include nav-default.html %}
+{% include header-default.html %}
+{% include claim.html %}
+    <main role="main">
+        <div class="layout-container">
+            <article id="content">
+            {{ content }}
+            </article>
+
+            <aside id="sidebar">
+                <h2>Wetere Infos</h2>
+                {% include sidebar-camp.html %}
+            </aside>
+        </div>
+    </main>
+{% include footer.html %}
+{% include meta-foot.html %}
+</body>
+</html>
