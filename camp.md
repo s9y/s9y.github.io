@@ -20,9 +20,10 @@ Das Serendipity-Treffen ist ein formloses Kennenlernen der s9y-Benutzer und -Ent
 
 Der Termin wird per Abstimmung ermittelt. Wer zu diesem Termin kann und später dazu kommen mag, ist herzlich willkommen, aber spätestens, wenn einzelne Teilnehmer erstmal Züge oder Flüge gebucht haben, steht der Termin *endgültig* fest.
 
-![Villa Vogelsang, Standort des Linuxhotels Essen](/img/camp/linuxhotel.jpg){: .content-image}
-
-(Villa Vogelsang, Essen, Germany – Photo by Reinhard Wiesemann, Essen, 2004, [GNU/FDL](https://commons.wikimedia.org/wiki/Commons:GNU_Free_Documentation_License,_version_1.2))
+<figure>
+    <img src="/img/camp/linuxhotel.jpg" alt="Villa Vogelsang, Standort des Linuxhotels Essen">
+    <figcaption>Villa Vogelsang, Essen, Germany – Photo by Reinhard Wiesemann, Essen, 2004, <a href="https://commons.wikimedia.org/wiki/Commons:GNU_Free_Documentation_License,_version_1.2">GNU/FDL</a></figcaption>
+</figure>
 
 Wir nehmen ein Angebot für Open-Source-Projekte des Linuxhotels wahr, daher sind wir auf deren Zeitvorgaben angewiesen. Das bedeutet, wir haben Seminarraum und Übernachtungsmöglichkeiten von **Freitag, 18:00 Uhr bis Sonntag, 18:00 Uhr** – bitte plant Eure An- und Abreise entsprechend. Natürlich können Einzelne später an- oder früher abreisen, wenn es die Verbindungen so vorgeben. (Die Erfahrung lehrt, dass das Treffen wegen Bahn- und Flugverbindungen am Sonntag eher schon gegen Mittag endet.)
 
