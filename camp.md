@@ -3,7 +3,12 @@ layout: camp
 title: s9ycamp
 ---
 
-## Serendipity-Treffen 2017
+<h2>Serendipity-Treffen 2017</h2>
+
+* TOC
+{:toc}
+
+### Allgemeines
 
 * **Datum:** Abstimmung läuft ([Doodle](http://doodle.com/poll/vggi4hwhfqyka9zg))
 * **Ort:** [Linuxhotel](http://www.linuxhotel.de), Essen-Horst
