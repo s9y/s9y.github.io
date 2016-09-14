@@ -1,5 +1,5 @@
 ---
-layout: Camp
+layout: camp
 title: s9ycamp
 ---
 
