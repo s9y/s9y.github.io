@@ -27,7 +27,7 @@ Below is a list of hosters we know work well for Serendipity:
 * [tiggersWelt](http://tiggerswelt.net/Hosting/)
 * [Schokokeks.org](https://www.schokokeks.org)
 * [Lafruit.com](https://www.lafruit.com/static/template-webspace_serendipity.htm)
-
+* [Pixel X](https://www.pixelx.de/cloud-hosting.html)
 
 If you know of any providers that belong on these lists, please don't hesitate to contact the [development team](/team.html).
 
