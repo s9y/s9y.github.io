@@ -10,19 +10,18 @@ Thanks so much to all of them!
 
 ### Current Developers:
 
-* [Garvin Hicking](http://garv.in): Lead developer since 2003, Maintainer
+* [Garvin Hicking](http://garv.in): Lead developer (since 2003), Maintainer
 * [Onli](http://www.onli-blogging.de): Developer
-* Ian
 * [Matthias Gutjahr](http://matthias-gutjahr.de): Developer
-* [Matthias Mees](http://yellowled.de): Theme Contributor, bulletproof theme author, 2k11 theme author.
-* [Don Chambers](http://www.optional-necessity.com) Theme Contributor, bulletproof theme author.
+* [Matthias Mees](http://yellowled.de): Theme Developer
+* [Don Chambers](http://www.optional-necessity.com) Theme Developer
 * [Jannis Hermanns](http://jann.is): Project founder, Server Hosting
 
 ### Former Developers:
 
 * Martin Jacobsen: Serendipity Logo
-* Carl Galloway: Theme Contributor
-* Matthew Groeninger: Developer, Support, Plugin-Support
+* Carl Galloway: Theme Developer
+* Matthew Groeninger: Developer, Support
 * [Falk Döring](http://www.fadoe.de): Plugins (Staticpage)
 * [Judebert](http://judebert.com): Support, Documentation
 * Grischa Brockhaus
@@ -35,3 +34,4 @@ Thanks so much to all of them!
 * Wez Furlong: Developer
 * George Schlossnagle: Developer
 * Sebastian Nohn: Developer
+* Ian
