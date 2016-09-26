@@ -48,7 +48,7 @@ Want to actually code something with or for Serendipity? Great. Here's what you 
 
 ### Commercial Serendipity support
 
-Serendipity's Core Developer Garvin Hicking works at the german web-design/multimedia agency Faktor E (Bonn). His company offers [commercial support](/docs/users/hosting.html) for all needs touching Serendipity's featureset.
+Serendipity's Core Developer Garvin Hicking works at the german web-design/multimedia agency Faktor E (Bonn). His company offers [commercial support](/docs/users/hosting.html#docs-commercial-support) for all needs touching Serendipity's featureset.
 
 ### We need your help!
 
