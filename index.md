@@ -11,7 +11,7 @@ title: Serendipity -  A reliable, secure and extensible PHP blog
 * ### ![](/img/icons/stethoscope.png) Security
   The developer team is always mindful of and open to reports on potential security issues. Our track record shows that we have dealt with few issues switfly [over the years](http://www.cvedetails.com/product/3867/S9Y-Serendipity.html?vendor_id=2214).
 * ### ![](/img/icons/code-fork.png) Extensibility
-  Plugins and themes provide easy ways to add functionality or change the looks of a blog. *Add some filler text here because I don't know what exactly to fill in here just yet.*
+  Plugins and themes provide easy ways to add functionality or change the looks of a blog. With the online plugin repository Spartacus they are well organized and easy to install.
 * ### ![](/img/icons/magic.png) Ease of use
   We aim to build simple, but powerful as well as understandable interfaces. The same approach is used for our PHP code, which is supposed to have a low entry barrier.
 {:#featurelist}
