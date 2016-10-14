@@ -10,9 +10,9 @@ title: s9ycamp
 
 ### Allgemeines
 
-* **Datum:** Abstimmung läuft ([Doodle](http://doodle.com/poll/vggi4hwhfqyka9zg))
+* **Datum:** 7.-9. April 2017 ([Doodle](http://doodle.com/poll/vggi4hwhfqyka9zg))
 * **Ort:** [Linuxhotel](http://www.linuxhotel.de), Essen-Horst
-* [Forum-Thread](http://board.s9y.org/viewtopic.php?p=10446043)
+* [Forum-Thread](http://board.s9y.org/viewtopic.php?p=10446283) bzw. [alter Thread](http://board.s9y.org/viewtopic.php?p=10446043)
 
 Das Serendipity-Treffen ist ein formloses Kennenlernen der s9y-Benutzer und -Entwickler, es ist ausdrücklich *keine* „Klausurtagung“ für Entwickler oder Ähnliches. Wir schaffen es erfahrungsgemäß zwar, uns „nebenbei“ auch ein wenig um unser Lieblings-Blogsystem zu kümmern. Aber erstmal geht es um ein Kennenlernen und Austauschen der Community „in real life“.
 
@@ -29,7 +29,7 @@ Wir nehmen ein Angebot für Open-Source-Projekte des Linuxhotels wahr, daher sin
 
 #### Nachzügler und Kurzentschlossene
 
-Nach Terminfindung blockieren wir normalerweise eine passende Zahl Hotelplätze. Es wäre aber wohl weiterhin möglich, zusätzliche Teilnehmer nachzumelden und für diese Zimmerplätze zu blocken. Dazu bitte [im Forum melden](http://board.s9y.org/viewtopic.php?p=10446043).
+Nach Terminfindung blockieren wir normalerweise eine passende Zahl Hotelplätze. Es wäre aber wohl weiterhin möglich, zusätzliche Teilnehmer nachzumelden und für diese Zimmerplätze zu blocken. Dazu bitte [im Forum melden](http://board.s9y.org/viewtopic.php?p=10446283).
 
 Ab einem gewissen Zeitpunkt (der unklar ist) bleibt weiteren Teilnehmern allerdings leider nur noch die Schlafsack-Option, eine externe Unterkunft oder als Tagesgäste (siehe unten) dazu zu kommen.
 
