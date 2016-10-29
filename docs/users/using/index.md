@@ -19,4 +19,4 @@ title: User Documentation
 * [Themes/Styles](themes.html)
 * [Import/Export](import-export.html)
 * [Spam](spam.html)
-* [Using SSL encryption (HTTPS) for your blog](ssl-encrypting.md)
+* [Using SSL encryption (HTTPS) for your blog](ssl-encrypting.html)
