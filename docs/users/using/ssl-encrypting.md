@@ -14,7 +14,7 @@ How to do this depends from your hosting provider. Many providers make it very e
 
 When you operate a root server on your own, you should know how to do this. ;-)
 
-There is to say that noadays you can easily get SSL certificates for no charge at [Let's Encrypt](https://letsencrypt.org).
+There is to say that nowadays you can easily get SSL certificates for no charge at [Let's Encrypt](https://letsencrypt.org).
 
 ### Map all HTTP-calls to HTTPS
 
@@ -42,7 +42,7 @@ That should do it.
     
 ### Some things to think about
 
-If you embed anything in your blog (fonts, javascript, pictures) you have to take care to do this via HTTPS. If not that could lead to a broken security chain. Tis is shown differently in dependence of the browser you are using. For example, firefox shows an exclamation mark beside the lock symbol at the url. 
+If you embed anything in your blog (fonts, javascript, pictures) you have to take care to do this via HTTPS. If not that could lead to a broken security chain. This is shown differently in dependence of the browser you are using. For example, firefox shows an exclamation mark beside the lock symbol at the url. 
 
 The modern themes and the plugins usually are aware to use the prefix from the configuration. There could be plugins which use external services that may implemet them with http instead of https. This will lead to a broken security chain. For the most cases, an entry on our [board](http://board.s9y.org) will activate a developer to fix it (if it is possible for the external service). :)
 
