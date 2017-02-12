@@ -15,7 +15,7 @@ By default Serendipity ships with several attractive styles for you to try. Simp
 
 If your Serendipity blog isn't able to use Spartacus, perhaps because your webhost won't allow it, you can still install new styles for your blog. Either visit the web-based version of the [Serendipity repository](http://spartacus.s9y.org) or download a zipfile of the style directly from the template designer. You'll need to unzip the style and upload it (using ftp) to the templates folder of your Serendipity installation. Once you have uploaded your new style, select the style from 'Manage Styles' page within the administration suite.
 
-If you have any questions about Serendipity styles, please be sure to visit the [forums](http://board.s9y.org) and ask your question in the themes forum.
+If you have any questions about Serendipity styles, please be sure to visit the [forums](https://board.s9y.org) and ask your question in the themes forum.
 
 ### User Modifications
 

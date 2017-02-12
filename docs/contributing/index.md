@@ -10,16 +10,16 @@ You want to spread the word about Serendipity? See how you can give back to the 
 ### Quick links
 
 * plugin and core [code on GitHub](https://github.com/s9y/)
-* documentation on [docs.s9y.org](http://docs.s9y.org)
-* user support on our [forums](http://board.s9y.org)
-* news, release and security announcements on [our blog](http://blog.s9y.org)
+* documentation on [docs.s9y.org](https://docs.s9y.org)
+* user support on our [forums](https://board.s9y.org)
+* news, release and security announcements on [our blog](https://blog.s9y.org)
 * additional plugins and themes on [Spartacus](http://spartacus.s9y.org)
 * [SourceForge project page](http://sf.net/projects/php-blog)
 * [GitHub/s9y/Book](https://github.com/s9y/Book)/[PDF](https://github.com/s9y/Book/blob/master/serendipity.pdf?raw=true) – German **only**
 
 ### Discussion/feature requests
 
-You want to simply talk about Serendipity, have a pet peeve, a suggestion or a specific feature in mind you don't know how to achieve? Our [forums](http://board.s9y.org) are the best place to go to. Most of our developers hang out there and can give you valuable insight - given that you take the time to properly describe what you want. Also, **please first always read the [FAQ (Frequently Asked Questions)](/docs/faq/index.html)** to see if your issue is covered there.
+You want to simply talk about Serendipity, have a pet peeve, a suggestion or a specific feature in mind you don't know how to achieve? Our [forums](https://board.s9y.org) are the best place to go to. Most of our developers hang out there and can give you valuable insight - given that you take the time to properly describe what you want. Also, **please first always read the [FAQ (Frequently Asked Questions)](/docs/faq/index.html)** to see if your issue is covered there.
 
 Feature requests are **not** to be entered into our issue tracker on Github; we first discuss them in the forums, and when it is agreed and the specifics are clear, our developers will enter it as a issue on the tracker.
 

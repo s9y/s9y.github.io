@@ -15,7 +15,7 @@ title: Downloads
 
 ### **Fetch a snapshot (2.1 development)**
 
-We have migrated our Source Repository to [GitHub](https://github.com/s9y/Serendipity/) and are using `git` there. Want a nightly snapshot of the ongoing development? Be sure to read [blog.s9y.org](http://blog.s9y.org) for updates on the stability of the current `git` nightlies. If you previously installed a "full" release, you might need to delete the file `checksums.inc.php` in your serendipity directory to be able to use a snapshot without integrity check warnings.
+We have migrated our Source Repository to [GitHub](https://github.com/s9y/Serendipity/) and are using `git` there. Want a nightly snapshot of the ongoing development? Be sure to read [blog.s9y.org](https://blog.s9y.org) for updates on the stability of the current `git` nightlies. If you previously installed a "full" release, you might need to delete the file `checksums.inc.php` in your serendipity directory to be able to use a snapshot without integrity check warnings.
 
 * **Current Status**: Working on 2.1.
 * **Recommendation**: Try 2.1-rc1 :-)

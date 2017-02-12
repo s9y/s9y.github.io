@@ -5,7 +5,7 @@ title: Lighttpd
 
 ## Lighttpd
 
-This sample config was posted by Niclas Kühne [on our Forums](http://board.s9y.org/viewtopic.php?p=19244):
+This sample config was posted by Niclas Kühne [on our Forums](https://board.s9y.org/viewtopic.php?p=19244):
 
     $HTTP["host"] == "www.s9y-site.com" {
         url.access-deny = ( ".tpl", ".inc.php", ".sql", ".db" )

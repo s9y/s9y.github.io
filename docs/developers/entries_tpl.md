@@ -5,7 +5,7 @@ title: Editing entries.tpl
 
 ## Tutorial: Editing entries.tpl template
 
-This verbose tutorial is an excerpt of a thread [on the forums](http://board.s9y.org/viewtopic.php?t=4013).
+This verbose tutorial is an excerpt of a thread [on the forums](https://board.s9y.org/viewtopic.php?t=4013).
 
 ### Initial question
 

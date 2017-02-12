@@ -44,6 +44,6 @@ That should do it.
 
 If you embed anything in your blog (fonts, javascript, pictures) you have to take care to do this via HTTPS. If not that could lead to a broken security chain. This is shown differently in dependence of the browser you are using. For example, firefox shows an exclamation mark beside the lock symbol at the url. 
 
-The modern themes and the plugins usually are aware to use the prefix from the configuration. There could be plugins which use external services that may implemet them with http instead of https. This will lead to a broken security chain. For the most cases, an entry on our [board](http://board.s9y.org) will activate a developer to fix it (if it is possible for the external service). :)
+The modern themes and the plugins usually are aware to use the prefix from the configuration. There could be plugins which use external services that may implemet them with http instead of https. This will lead to a broken security chain. For the most cases, an entry on our [board](https://board.s9y.org) will activate a developer to fix it (if it is possible for the external service). :)
 
 You have to take care for things you embed via the http-nugget-plugin or other things you modify individually in your blogs sources. If you embed external elements to your blog entries you also have to take care that they use a secure connection.

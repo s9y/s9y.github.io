@@ -35,7 +35,7 @@ To correct this, download the [PEAR Flickr\_API](http://code.iamcal.com/php/flic
 
 ## Plogger Setup
 
-To embed a plogger gallery, [follow this forum thread](http://board.s9y.org/viewtopic.php?t=6110).
+To embed a plogger gallery, [follow this forum thread](https://board.s9y.org/viewtopic.php?t=6110).
 
 ## Showing entries elsewhere
 
@@ -139,7 +139,7 @@ Right now, the entries are formatted as if they were entries.  You can custom fo
     $tpl = serendipity_getTemplateFile('external_entries.tpl',
       'serendipityPath');
 
-If you need something not mentioned here, be sure to check [the forums](http://board.s9y.org/).  We're always happy to help out!
+If you need something not mentioned here, be sure to check [the forums](http://boards.s9y.org/).  We're always happy to help out!
 
 ### Moving an External Page Into Serendipity
 
