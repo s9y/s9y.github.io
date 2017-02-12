@@ -24,7 +24,7 @@ Those utilities can read many feeds at once and make it easy for the reader to b
 
 ### RSS in s9y
 
-s9y supports all known and documented RSS versions, [Atom](http://www.atomenabled.org/) 0.3 and 1.0, and [OPML](http://www.opml.org/) 1.0.
+s9y supports all known and documented RSS versions, [Atom](http://atomenabled.org/) 0.3 and 1.0, and [OPML](http://opml.org/) 1.0.
 
 If you enable the *Syndication Sidebar plugin* you can select which versions you want to make public to your audience. The link to those RDF/XML files can be interpreted by most RSS readers and contain additional information to your entries: Number of Comments, Link to Comments, a small logo for your feed, mail contact adresses and even License information.
 
