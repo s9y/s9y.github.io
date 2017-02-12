@@ -11,8 +11,8 @@ Thanks so much to all of them!
 ### Current Developers:
 
 * [Garvin Hicking](http://garv.in): Lead developer (since 2003), Maintainer
-* [Onli](http://www.onli-blogging.de): Developer
-* [Matthias Gutjahr](http://matthias-gutjahr.de): Developer
+* [Onli](https://www.onli-blogging.de): Developer
+* [Matthias Gutjahr](https://matthias-gutjahr.de): Developer
 * [Matthias Mees](http://yellowled.de): Theme Developer
 * [Don Chambers](http://www.optional-necessity.com) Theme Developer
 * [Jannis Hermanns](http://jann.is): Project founder, Server Hosting

@@ -102,7 +102,7 @@ This will enable the wordfilter for URLs, author names and the comment body. If 
 
 #### Wordfilter for URLs, author names, comment body
 
-In these large textareas you can enter a ";" delimited number of regular expressions. If you just want to block names like "casino", "phentermine" etc. you can simply enter the words. But regular expressions would also allow you a broader range of filtering. See more about regular expressions here: [http://en.wikipedia.org/wiki/Regular\_expression](http://en.wikipedia.org/wiki/Regular_expression)
+In these large textareas you can enter a ";" delimited number of regular expressions. If you just want to block names like "casino", "phentermine" etc. you can simply enter the words. But regular expressions would also allow you a broader range of filtering. See more about regular expressions here: [http://en.wikipedia.org/wiki/Regular\_expression](https://en.wikipedia.org/wiki/Regular_expression)
 
 The most important rule is that in Regular Expressions there are a few special characters: "." means "any character", and ".\*" would mean "any ammount of any character".
 
@@ -114,7 +114,7 @@ The blogg.de blacklist contains a list of "bad" URL names that spambots enter as
 
 #### Akismet API KEY
 
-Akismet.com is a central anti-spam and blacklisting server. It can analyze your incoming comments and check if that comment has been listed as Spam. Akismet was developed for Word Press specifically, but can be used by other systems. You just need an API Key from [http://www.akismet.com/](http://www.akismet.com/) by registering an account at [http://www.wordpress.com/.](http://www.wordpress.com/.) If you leave this API key empty, Akismet will not be used.
+Akismet.com is a central anti-spam and blacklisting server. It can analyze your incoming comments and check if that comment has been listed as Spam. Akismet was developed for Word Press specifically, but can be used by other systems. You just need an API Key from [http://www.akismet.com/](https://www.akismet.com/) by registering an account at [http://www.wordpress.com/](https://www.wordpress.com/). If you leave this API key empty, Akismet will not be used.
 
 Akismet will inspect submitted spam according to their central blacklist and decide if it is "bad" or "good". The Akismet API also supports to submit uncaught spam, but this is not yet supported by this Serendipity plugin.
 

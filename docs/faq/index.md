@@ -12,7 +12,7 @@ title: FAQ
 
 #### Where does the name Serendipity originate from?
 
-While Serendipity in itself means "The faculty of making fortunate discoveries by accident.", the name of this project was described by [Sterling Hughes](http://www.s9y.org/24.html) as originating from two things:
+While Serendipity in itself means "The faculty of making fortunate discoveries by accident.", the name of this project was described by [Sterling Hughes](http://www.edwardbear.org/) as originating from two things:
 
 1. [Manufactured Serendipity](http://www.intertwingly.net/stories/2002/03/13/manufacturedSerendipity.html), an essay by Sam Ruby.
 2. Serendipity, the hot ass stripper in [Dogma](http://www.imdb.com/title/tt0120655/). Played by Selma Hayek.
@@ -29,7 +29,7 @@ Just download the .tar.gz to your server, unpack it inside your document root, m
 
 #### What system requirements does serendipity have?
 
-You need a [PHP](http://www.php.net) installation together with [MySQL](http://www.mysql.com), [PostgreSQL](http://www.postgresql.org) or [SQLite](https://www.sqlite.org/) . We also require the Apache webserver, because we utilize a number of internal functions to make Serendipity run correctly. To fully enjoy serendipity, you should have either [ImageMagick](http://www.imagick.org)'s convert binary installed on your server or a PHP installation with gd2 support (recommended).
+You need a [PHP](http://php.net) installation together with [MySQL](https://www.mysql.com), [PostgreSQL](https://www.postgresql.org) or [SQLite](https://www.sqlite.org/) . We also require the Apache webserver, because we utilize a number of internal functions to make Serendipity run correctly. To fully enjoy serendipity, you should have either [ImageMagick](http://www.imagick.org)'s convert binary installed on your server or a PHP installation with gd2 support (recommended).
 
 #### Serendipity asks me for entering data to a database, but when I enter a name and install Serendipity it tells me the database does not exist
 

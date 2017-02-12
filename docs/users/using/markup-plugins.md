@@ -101,11 +101,11 @@ The complete documentation of the syntax can be found at [daringfireball.net](ht
     h1. This is H1
     h2. This is H2
 
-The complete documentation of the syntax and an online sandbox can be found at [txstyle.org](http://txstyle.org).
+The complete documentation of the syntax and an online sandbox can be found at [txstyle.org](https://txstyle.org).
 
 #### BBCode
 
-[BBCode](http://php.net/manual/en/book.bbcode.php) is an markup language used by the messaging board [PHPBB](http://www.phpbb.com/)
+[BBCode](http://php.net/manual/en/book.bbcode.php) is an markup language used by the messaging board [PHPBB](https://www.phpbb.com/)
 
     [b]bolded[/b]
     [i]italicized[/i]
