@@ -5,6 +5,7 @@ exclude: [Gemfile, Gemfile.lock, README.md]
 title: Serendipity Blog System
 description: Serendipity is a PHP-powered weblog engine giving users an easy way to maintain a blog and developers a framework with the power for professional applications.
 baseurl: ""
+url: "https://docs.s9y.org"
 
 # Build settings
 markdown: kramdown
