@@ -41,7 +41,7 @@ Create this .htacess file in your server webroot:
     AuthUserFile /absolute/path/to/your/s9y/.htpasswd
     require valid-user
 
-Then create a file .htpasswd using a simple 'username:md5password' combination. Look at [http://www.advancehost.com/htpasswd.html](http://www.advancehost.com/htpasswd.html) for an online generator for .htpasswd files.
+Then create a file .htpasswd using a simple 'username:md5password' combination. Look at [http://www.htaccesstools.com/htpasswd-generator/](http://www.htaccesstools.com/htpasswd-generator/) for an online generator for .htpasswd files.
 
     .htpasswd
     s9y:s9QXoc9dcFOT2

@@ -54,9 +54,9 @@ If you click on that link, Serendipity will connect itself to our Plugin Reposit
 
 There are 3 important issues to note with this somewhat experimental plugin:
 
-1. Spartacus requires an outgoing connection to the [Source Forge](/index.php?cmd=newdoc&newdocname=Source+Forge&node=38&refnode=45)**?**.Net servers. That means your webserver shall not block HTTP requests.
+1. Spartacus requires an outgoing connection to the sourceforge.net servers. That means your webserver shall not block HTTP requests.
 
-2. The [Source Forge](/index.php?cmd=newdoc&newdocname=Source+Forge&node=38&refnode=45)**?**.net ViewCVS server is sometimes a bit laggy or unresponsive. It can happen that you get error messages like "File not found" or the list of plugins could not be downloaded. In this case, please have patience and try again after some time.
+2. The sourceforge.net ViewCVS server is sometimes a bit laggy or unresponsive. It can happen that you get error messages like "File not found" or the list of plugins could not be downloaded. In this case, please have patience and try again after some time.
 
 3. Spartacus needs write privileges to your /plugins directory so that it can install new files. Thus you will need to change the directory privileges of /plugins to something like 777, depending on your installation. If you do not do this you will get error message like "Could not create file...".
 
@@ -68,7 +68,7 @@ This requires some basic Linux/Windows-Shell knowledge and knowledge how to use 
 
 #### Downloading a plugin
 
-You can download the plugin you want either via the [ViewCVS file browser](http://cvs.sourceforge.net/viewcvs.py/php-blog/additional_plugins/) or by downloading our full plugin snapshot at [Netmirror.org](http://www.netmirror.org/mirror/serendipity/additional_plugins.tgz).
+You can download the plugin you want either via the [ViewCVS file browser](http://php-blog.cvs.sourceforge.net/php-blog/additional_plugins/) or by downloading our full plugin snapshot at [Netmirror.org](http://www.netmirror.org/mirror/serendipity/additional_plugins.tgz).
 
 A plugin always consists of a single directory like "serendipity\_event\_trackback" with at least one file in it. If you use the ViewCVS facility you can click on each single file and then on the following page click on the first "Download" link which fetches the latest version of that file. Save that file on your Serendipity installation and place them all into a subdirectory of your /plugins directory. First create a directory with the same name as the plugin ("serendipity\_event\_trackback"). Then save the file "serendipity\_event\_trackback.php" inside that directory.
 
@@ -222,7 +222,7 @@ This plugin is paired with the *Template Chooser Event plugin*. It shows in your
 
 ### Content Rewrite
 
-This is a very powerful plugin to insert a list of words which may be rewritten by applying transformation rules. More precisely: Say you always want to have "PHP" rewritten as \<code\>\<a href="[http://www.php.net/](http://www.php.net/)" title="PHP Hypertext Preprocessor"\>PHP\</a\>\</code\> and not type that every time, you can use this plugin.
+This is a very powerful plugin to insert a list of words which may be rewritten by applying transformation rules. More precisely: Say you always want to have "PHP" rewritten as `<code><a href="http://www.php.net/" title="PHP Hypertext Preprocessor">PHP</a></code>` and not type that every time, you can use this plugin.
 
 If you want to display some kind of glossary of all your entered words, you can use the *Event Wrapper Sidebar plugin*.
 

@@ -168,7 +168,7 @@ What can also affect the symptom of "no stylesheets are used" is if you enabled 
 
 #### The text in a blog entry has additional spacing
 
-Check your source using your browser's View/Source capabilities.  Are there extra <BR/> tags where the extra space occurs? If yes, deactivate the [nl2br plugin](/docs/user/using/markup-plugins.html#nl2br).
+Check your source using your browser's View/Source capabilities.  Are there extra <BR/> tags where the extra space occurs? If yes, deactivate the [nl2br plugin](/docs/users/using/markup-plugins.html#nl2br).
 
 #### Entries Display HTML
 
@@ -243,7 +243,7 @@ Use the Spamblock-plugins provided. We recommend the anti-spam trinity: the core
 
 #### I want to add some links / HTML to my blog!
 
-See [how to modify themes](/docs/users/using/tehems.html#User Modifications).
+See [how to modify themes](/docs/users/using/themes.html#docs-user-modifications).
 
 #### I want to keep one entry at the top
 
