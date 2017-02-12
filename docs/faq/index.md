@@ -12,7 +12,7 @@ title: FAQ
 
 #### Where does the name Serendipity originate from?
 
-While Serendipity in itself means "The faculty of making fortunate discoveries by accident.", the name of this project was described by [Sterling Hughes](http://www.s9y.org/24.html) as originating from two things:
+While Serendipity in itself means "The faculty of making fortunate discoveries by accident.", the name of this project was described by [Sterling Hughes](http://www.edwardbear.org/) as originating from two things:
 
 1. [Manufactured Serendipity](http://www.intertwingly.net/stories/2002/03/13/manufacturedSerendipity.html), an essay by Sam Ruby.
 2. Serendipity, the hot ass stripper in [Dogma](http://www.imdb.com/title/tt0120655/). Played by Selma Hayek.
