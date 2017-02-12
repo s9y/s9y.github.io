@@ -114,7 +114,7 @@ If you instead see a "HTTP 500" error screen, this means that your Web Server di
 
 #### Accessing the Admin panel
 
-After you've installed Serendipity, you most probably want to access the admin interface to customize further options. You can do that by calling your URL `http://example.org/serendipity/serendipity\_admin.php`) - a link to the admin interface is also shown on the Blog Frontend, as you might have noticed.
+After you've installed Serendipity, you most probably want to access the admin interface to customize further options. You can do that by calling your URL `http://example.org/serendipity/serendipity_admin.php`) - a link to the admin interface is also shown on the Blog Frontend, as you might have noticed.
 
 Accessing this interface will give you a login screen:
 
