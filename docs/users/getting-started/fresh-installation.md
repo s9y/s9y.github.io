@@ -175,4 +175,4 @@ The sections Themes and Plugins allow you to configure and setup plugins as well
 
 Now that you have successfully installed Serendipity, go ahead and explore. Create some entries, categories, install a few plugins you can also find on [spartacus.s9y.org](http://spartacus.s9y.org/). The interface is in most cases self-explanatory and open for experiments.
 
-If you have any questions, feel free to come to [the forums](http://board.s9y.org/) or to browse the [docs section](/docs/index.html) for further documentation.
+If you have any questions, feel free to come to [the forums](https://board.s9y.org/) or to browse the [docs section](/docs/index.html) for further documentation.

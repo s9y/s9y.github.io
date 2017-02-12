@@ -45,9 +45,9 @@ The administrative interface allows you to fine tune the features and settings o
 
 **Further Links**
 
-*  **Serendipity Homepage:** Link to the Serendipity [home page](http://www.s9y.org/).
+*  **Serendipity Homepage:** Link to the Serendipity [home page](/).
 *  **Serendipity Documentation:** Link to Serendipity's [documentation](/docs/) (you are here!).
-*  **Official Blog:** Link to Serendipity's official [blog](http://blog.s9y.org/).
-*  **Forums:** Link to Serendipity [user forums](http://board.s9y.org/).
+*  **Official Blog:** Link to Serendipity's official [blog](https://blog.s9y.org/).
+*  **Forums:** Link to Serendipity [user forums](https://board.s9y.org/).
 *  **Spartacus:** Link to Serendipity's [plugin and template repository](http://spartacus.s9y.org/).
 *  **Bookmarklet:** Convenient bookmark link to your Serendipity site.

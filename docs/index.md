@@ -12,4 +12,4 @@ Our documentation is separated into four sections:
 * Developers can use the [Technical Documentation](/docs/developers/index.html) to learn how to modify all aspects of Serendipity, from developing plugins to changing Smarty templates to changing the core itself.
 * Finally, [Contributing](/docs/contributing/index.html) explains how to help the project.
 
-In all cases, don't forget that there also is [the forum](http://board.s9y.org) to get direct help from developers and other users.
+In all cases, don't forget that there also is [the forum](https://board.s9y.org) to get direct help from developers and other users.

@@ -154,4 +154,4 @@ Also you will see a wrench-icon near author names and URLs, which will put those
 
 ### Questions?
 
-If you have further questions about blocking spam, or have some ideas on how to improve fighting spam, please drop by on our [Forums](http://board.s9y.org)!
+If you have further questions about blocking spam, or have some ideas on how to improve fighting spam, please drop by on our [Forums](https://board.s9y.org)!

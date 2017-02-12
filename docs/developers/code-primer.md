@@ -302,10 +302,10 @@ On top of that, some global and user-specific configuration is passed through op
 * $serendipity['updateCheck']: Boolean whether performing update checks is allowed
 * $serendipity['archiveSortStable']: Boolean whether pagination URLs start with the pages enumberated from first or last page
 * $serendipity['searchsort']: Default sort order for sorting search results
-* $serendipity['enforce_RFC2616']: Boolean whether for RSS feeds Conditional Get may be used (see [Configuration](/docs/users/using/configuration.html#appearance-and-options))
+* $serendipity['enforce_RFC2616']: Boolean whether for RSS feeds Conditional Get may be used (see [Configuration](/docs/users/using/configuration.html#docs-appearance-and-options))
 * $serendipity['useGzip']: Boolean whether gzip'ing pages is enabled
 * $serendipity['enablePopup']: Boolean whether Popups are used in the frontend (depends on the theme)
-* $serendipity['embed']: Boolean whether embedded mode is enabled (see [Configuration](/docs/users/using/configuration.html#appearance-and-options))
+* $serendipity['embed']: Boolean whether embedded mode is enabled (see [Configuration](/docs/users/using/configuration.html#docs-appearance-and-options))
 * $serendipity['top_as_links']: Boolean whether links outputted by exit/referrer tracking are clickable (anti-spam)
 * $serendipity['trackReferer']: Boolean whether referrer tracking is enabled
 * $serendipity['blogReferer']: List of referrer URL patters that shall be blocked
