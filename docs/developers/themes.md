@@ -138,7 +138,7 @@ So you can declare a my_magic_function() which executes the PHP code you want, a
 
 A themes's config.inc.php file can also hook into the Serendipity code flow. Usually this is done only by plugins. Offering this functionality in a theme has the benefit that a user does not require to install additional plugins to perform minor tasks. Also hooking into events like the CSS and JS generation is important for themes.
 
-You can read more about plugin hooks [here](/docs/developers/plugin-api.html#important-event-hooks).
+You can read more about plugin hooks [here](/docs/developers/plugin-api.html#docs-important-event-hooks).
 
 To make a theme hook into the "js" hook to add some javascript to the frontend, a function needs to be defined. This is done by a central function called `serendipity_plugin_api_event_hook`:
 

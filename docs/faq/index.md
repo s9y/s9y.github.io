@@ -168,7 +168,7 @@ What can also affect the symptom of "no stylesheets are used" is if you enabled 
 
 #### The text in a blog entry has additional spacing
 
-Check your source using your browser's View/Source capabilities.  Are there extra <BR/> tags where the extra space occurs? If yes, deactivate the [nl2br plugin](/docs/users/using/markup-plugins.html#nl2br).
+Check your source using your browser's View/Source capabilities.  Are there extra <BR/> tags where the extra space occurs? If yes, deactivate the [nl2br plugin](/docs/users/using/markup-plugins.html#docs-nl2br).
 
 #### Entries Display HTML
 
@@ -219,7 +219,7 @@ If your users don't want to leave comments, they'll have to use the Comments RSS
 
 #### I don't want to have comments and trackbacks in my blog!
 
-First off, blogging is about getting contributions and comments. Having said that, you can turn of the comments and trackbacks by editing your entries.tpl template and [removing the trackback/comment sections](/docs/users/using/trackbacks-pingbacks-commentsapi.html#hide trackback links). Or you can also even use CSS to set "display: none" for those regions.
+First off, blogging is about getting contributions and comments. Having said that, you can turn of the comments and trackbacks by editing your entries.tpl template and [removing the trackback/comment sections](/docs/users/using/trackbacks-pingbacks-commentapi.html#docs-hide-trackback-links). Or you can also even use CSS to set "display: none" for those regions.
 
 You can turn off to receive trackbacks/comments in the configuration of your spamblock plugin. To totally ban trackbacks from your site, you can edit the serendipity file **comment.php** After the first <?php add this:
 
