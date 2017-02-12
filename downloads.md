@@ -24,9 +24,9 @@ We have migrated our Source Repository to [GitHub](https://github.com/s9y/Serend
 
 * [Serendipity 2.0.4 on Github](https://github.com/s9y/Serendipity/releases/tag/2.0.4) - September 26th, 2016
 * [Serendipity 2.0.3 on Github](https://github.com/s9y/Serendipity/releases/tag/2.0.3)
-* [Serendipity 2.0.2 tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.tar.gz?download) - July 24th, 2015
+* [Serendipity 2.0.2 tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.2.tar.gz?download) - July 24th, 2015
 * [Serendipity 2.0.1 tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.1.tar.gz?download) - March 12th, 2015
-* [Serendipity 2.0.0 tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.0.tar.gz?download) - January 23rd, 2015
+* [Serendipity 2.0.0 tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.tar.gz?download) - January 23rd, 2015
 * [Serendipity 1.7.8 tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-1.7.8.tar.gz?download) - February 9th, 2014
 * [Serendipity 1.7.7 tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-1.7.7.tar.gz?download) - February 6th, 2014
 * [Serendipity 1.7.6 tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-1.7.6.tar.gz?download) - February 6th, 2014
