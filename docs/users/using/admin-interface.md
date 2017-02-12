@@ -16,14 +16,14 @@ The administrative interface allows you to fine tune the features and settings o
 *  **New Entry:** Create a new entry. See [Posting a Blog Entry](posting-blog-entry.html).
 *  **Edit Entries:** Edit an existing entry.
 *  **Comments:** Maintain comments posted to entries. See [Approve Comments](approving-comments.html).
-*  **Categories:** Maintain entry categories. See [Manage Categories](managing-categories.html).
+*  **Categories:** Maintain entry categories. See [Manage Categories](categories.html).
 
 **Media**
 
 *  **Add media:** Add media items (images, documents, PDFs, MP3, etc) to the media library.
 *  **Media library:** Manage items already stored in the media library.
 *  **Manage directories:** Media items can be stored in individual directores/folders. This is especially useful when your media library contains many items.
-*  **Rebuild Thumbs:** Rebuild thumbnail images of all media items. This can be very useful if you change thumbnail dimensions in the site's [configuration](/66.html) or if images become accidentally corrupted.
+*  **Rebuild Thumbs:** Rebuild thumbnail images of all media items. This can be very useful if you change thumbnail dimensions in the site's [configuration](configuration.html) or if images become accidentally corrupted.
 
 **Appearance**
 
@@ -46,7 +46,7 @@ The administrative interface allows you to fine tune the features and settings o
 **Further Links**
 
 *  **Serendipity Homepage:** Link to the Serendipity [home page](http://www.s9y.org/).
-*  **Serendipity Documentation:** Link to Serendipity's [documentation](http://www.s9y.org/documentation/index.html) (you are here!).
+*  **Serendipity Documentation:** Link to Serendipity's [documentation](/docs/) (you are here!).
 *  **Official Blog:** Link to Serendipity's official [blog](http://blog.s9y.org/).
 *  **Forums:** Link to Serendipity [user forums](http://board.s9y.org/).
 *  **Spartacus:** Link to Serendipity's [plugin and template repository](http://spartacus.s9y.org/).

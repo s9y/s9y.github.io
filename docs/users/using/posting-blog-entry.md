@@ -53,4 +53,4 @@ You can post so S9Y using the BloggerAPI or the Moveable Type extension to Blogg
 
 Webservices are notorious for being sketchy, and some services may not work.
 
-The Webservices path is [http://your.host/path/to/s9y/serendipity\_xmlrpc.php](http://your.host/path/to/s9y/serendipity_xmlrpc.php)
+The Webservices path is `http://your.host/path/to/s9y/serendipity\_xmlrpc.php`

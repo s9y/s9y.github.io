@@ -33,7 +33,7 @@ This does exactly the same thing, but inserts your code in the head of every Ser
 
 To put Javascript in the head of the page, for instance, you'd want to modify the index.tpl in templates/{your currently selected template's name}. If it doesn't exist, please copy it from templates/default/index.tpl.
 
-Just remember, the index.tpl is parsed by [Smarty](http://smarty.php.net/), and both Smarty and Javascript assign special meaning to the curly braces "{}", so there's going to be a conflict.
+Just remember, the index.tpl is parsed by [Smarty](http://www.smarty.net/), and both Smarty and Javascript assign special meaning to the curly braces "{}", so there's going to be a conflict.
 
 Smarty is going to win, since it goes first -- on the server, whereas Javascript has to wait until the client's browser is ready to execute it.
 

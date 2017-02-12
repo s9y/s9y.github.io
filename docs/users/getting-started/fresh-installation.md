@@ -12,17 +12,17 @@ title: Fresh Installation
 
 Serendipity is a PHP-based web application. That means, to use Serendipity, you need to have access to a Web Server that has PHP support enabled. You upload the Serendipity files to that Web Server (by using FTP, SSH or other means) into a directory that is part of your Web Servers document tree.
 
-After you have uploaded the files to your web space, you need to "open" the Serendipity application. You do that by opening an URL like [http://example.com/serendipity/index.php.](http://example.org/serendipity/index.php.)
+After you have uploaded the files to your web space, you need to "open" the Serendipity application. You do that by opening an URL like `http://example.com/serendipity/index.php`.
 
 #### Requirements
 
 Serendipity is tailored for the Apache Webserver. However, people are successfully running Serendipity with Microsoft IIS and Lighttpd. When using Serendipity on Windows servers, pay attention to always enter path references using forward slashes ('/') instead of the notation using backslaches ("C:\\...\\").
 
-For full operation, Serendipity relies on .htaccess files that your [Virtual Host](/index.php?cmd=newdoc&newdocname=Virtual+Host&node=35&refnode=36)**?** must allow. For Apache, this requires the "[Allow Override](/index.php?cmd=newdoc&newdocname=Allow+Override&node=35&refnode=36)**?** [File Info](/index.php?cmd=newdoc&newdocname=File+Info&node=35&refnode=36)**?** Indexes Limit" (or "[Allow Override](/index.php?cmd=newdoc&newdocname=Allow+Override&node=35&refnode=36)**?** All") option set to the directory of your Serendipity installation.
+For full operation, Serendipity relies on .htaccess files that your Virtual Host must allow. For Apache, this requires the `Allow Override File Info Indexes Limit` (or `Allow Override All`) option set to the directory of your Serendipity installation.
 
-Serendipity requires PHP \>= 5.4.x and fully enabled and working Cookie Session support. It requires the PCRE extension, and optionally makes use of the GD, iconv, zlib and mbstring extensions. Serendipity is fully PHP 5.x compatible and encourages the use of PHP bytecode compilers like APC, [Zend Cache](/index.php?cmd=newdoc&newdocname=Zend+Cache&node=35&refnode=36)**?** or ionCube.
+Serendipity requires PHP \>= 5.4.x and fully enabled and working Cookie Session support. It requires the PCRE extension, and optionally makes use of the GD, iconv, zlib and mbstring extensions. Serendipity is fully PHP 5.x compatible and encourages the use of PHP bytecode compilers like APC, Zend Cache or ionCube.
 
-When operating Serendipity in PHP's [Safe Mode](/index.php?cmd=newdoc&newdocname=Safe+Mode&node=35&refnode=36)**?**, you will not be able to use File Upload and SPARTACUS Plugin fetching facilities. Enabling error\_reporting and display\_errors (or directing this to a logfile) is suggested to keep track of possible errors. The file\_uploads directory should be turned ON if you want to have media file upload features. For graphic processing, you either require GDLib or [Image Magick](/index.php?cmd=newdoc&newdocname=Image+Magick&node=35&refnode=36)**?**.
+When operating Serendipity in PHP's Safe Mode, you will not be able to use File Upload and SPARTACUS Plugin fetching facilities. Enabling error\_reporting and display\_errors (or directing this to a logfile) is suggested to keep track of possible errors. The file\_uploads directory should be turned ON if you want to have media file upload features. For graphic processing, you either require GDLib or Image Magick.
 
 It is very much suggested to DISABLE the register\_globals, session.use\_trans\_sid and magic\_quotes\_\* directives of PHP.
 
@@ -56,7 +56,7 @@ Further permission-related questions are answered in our [FAQ](/docs/faq/index.h
 
 ### Installing
 
-Once you have uploaded Serendipity to your web space you can call the installer interface via something like [http://example.org/serendipity/index.php.](http://example.org/serendipity/index.php.) It will take no longer than 1-2 minutes to install Serendipity.
+Once you have uploaded Serendipity to your web space you can call the installer interface via something like `http://example.org/serendipity/index.php`. It will take no longer than 1-2 minutes to install Serendipity.
 
 On this screen, you will see a basic pre-installation report that shows you a diagnosis of your Web Server settings. All variables that possibly might create trouble are listed orange-coloured. You usually do not need to pay attention to those, unless you are experiencing errors. Here's an example screenshot:
 
@@ -114,7 +114,7 @@ If you instead see a "HTTP 500" error screen, this means that your Web Server di
 
 #### Accessing the Admin panel
 
-After you've installed Serendipity, you most probably want to access the admin interface to customize further options. You can do that by calling your URL [http://example.org/serendipity/serendipity\_admin.php](http://example.org/serendipity/serendipity_admin.php) - a link to the admin interface is also shown on the Blog Frontend, as you might have noticed.
+After you've installed Serendipity, you most probably want to access the admin interface to customize further options. You can do that by calling your URL `http://example.org/serendipity/serendipity\_admin.php`) - a link to the admin interface is also shown on the Blog Frontend, as you might have noticed.
 
 Accessing this interface will give you a login screen:
 

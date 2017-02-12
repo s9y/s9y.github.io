@@ -34,9 +34,9 @@ S9y has an easy automatic trackback discovery. If you create an article and put 
 
 So basically you don't have to do anything manually at all!
 
-When a blog does not support the "magic" RDF metadata so that Serendipity can send and automatic trackback, you can specify the "manual" Trackback URI when using the [serendipity\_event\_trackback](http://cvs.sourceforge.net/viewcvs.py/php-blog/additional_plugins/serendipity_event_trackback/) plugin.
+When a blog does not support the "magic" RDF metadata so that Serendipity can send and automatic trackback, you can specify the "manual" Trackback URI when using the [serendipity\_event\_trackback](http://php-blog.cvs.sourceforge.net/php-blog/additional_plugins/serendipity_event_trackback/) plugin.
 
-If a page does not contain the magic RDF metadata, or wrong metadata (the RDF:specifier does not equal the URL you entered - sometimes it matters if you use http://www.example.com or http://example.com! you will get this message when saving an entry:
+If a page does not contain the magic RDF metadata, or wrong metadata (the RDF:specifier does not equal the URL you entered - sometimes it matters if you use http://www.example.com or http://example.com!) you will get this message when saving an entry:
 
 "The autodiscovered trackback URI does not match our target URI"
 

@@ -507,7 +507,7 @@ Most notably it shows that Serendipity does not use specific object-oriented pat
 This also means, we only have a few strict rules:
 
 * Use 4 spaces to indent code
-* Use the proper [versioning](/docs/versioning.html)] on plugins
+* Use the proper [versioning](/docs/contributing/versioning.html) on plugins
 * Put opening braces on the same line like the preceding logic, put closing braces on a new line:
 
     if (condition) {

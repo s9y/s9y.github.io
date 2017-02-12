@@ -16,7 +16,7 @@ The [RSS 1.0 Specification](http://www.purl.org/rss/1.0/) says:
 
 RDF Site Summary (RSS) is a lightweight multipurpose extensible metadata description and syndication format. RSS is an XML application, conforms to the W3C's RDF specification and is extensible via XML-namespace and/or RDF based modularization.
 
-RSS is a format consisting of several concurring versions and dialects. Most common are the version 0.91, 1.0 and 2.0. You can look up the [history of RSS](http://goatee.net/2003/rss-history.html) to see how that came about. A new format called Atom is considered to take on the job of advancing the technology in the future.
+RSS is a format consisting of several concurring versions and dialects. Most common are the version 0.91, 1.0 and 2.0. You can look up the [history of RSS](https://en.wikipedia.org/wiki/RSS#History) to see how that came about. A new format called Atom is considered to take on the job of advancing the technology in the future.
 
 However the basic principle of each syndication format is the same: It's there to make your valuable data (your articles) independent from your homepage. To share your articles for other aggregators or web pages. And most of all, to make your articles easily readable by special RSS readers.
 

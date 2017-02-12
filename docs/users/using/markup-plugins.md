@@ -87,7 +87,7 @@ This will turn some of the more common smilies/emoticons into images, which imag
     # This is an H1
     ## This is an H2
 
-The complete documentation of the syntax can be found at [daringfireball.net](https://daringfireball.net/projects/markdown/syntaxi). There is also an [online tool](https://daringfireball.net/projects/markdown/dingus) to try it first.
+The complete documentation of the syntax can be found at [daringfireball.net](https://daringfireball.net/projects/markdown/syntax). There is also an [online tool](https://daringfireball.net/projects/markdown/dingus) to try it first.
 
 #### Textile
 
@@ -117,7 +117,7 @@ Some more examples can be found at [bbcode.org](http://www.bbcode.org/reference.
 
 #### TextWiki
 
-This uses the PEAR Text\_Wiki rules (which is an extension of the standard [WikiWikiWeb](http://www.c2.com/) text transformation rules. Notice that it does not currently handle [Wiki Words](/index.php?cmd=newdoc&newdocname=Wiki+Words&node=38&refnode=50)**?**.
+This uses the PEAR Text\_Wiki rules (which is an extension of the standard [WikiWikiWeb](http://www.c2.com/) text transformation rules. Notice that it does not currently handle Wiki Words.
 
 #### RegExp
 

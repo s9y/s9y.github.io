@@ -8,7 +8,7 @@ title: Plugin API
 * TOC
 {:toc}
 
-The general meaning of Plugins for Serendipity is described in the section [Plugins](/contributing/developers/index.md#Plugins) of our "Getting started" documentation.
+The general meaning of Plugins for Serendipity is described in the section [Plugins](/docs/users/using/using-plugins.html) of our "[User](/docs/users/using/)" documentation.
 
 This page provides more in depth description of the inner workings.
 

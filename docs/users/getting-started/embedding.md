@@ -51,7 +51,7 @@ You would then set your 'indexFile' serendipity-option to the 'wrapper.php' file
 
 ### Plugins
 
-Plugins like the serendipity\_event\_livesearch can emit [Java Script](/index.php?cmd=newdoc&newdocname=Java+Script&node=35&refnode=55)**?** library calls in the header of the blog. And because if you use the embed option, serendipity will no longer take care of that part, so you need to add the calls to those libaries by yourself. For the livesearch plugin that means you need to insert this line in your custom header:
+Plugins like the serendipity\_event\_livesearch can emit Java Script library calls in the header of the blog. And because if you use the embed option, serendipity will no longer take care of that part, so you need to add the calls to those libaries by yourself. For the livesearch plugin that means you need to insert this line in your custom header:
 
     <script type="text/javascript" src="/serendipity/plugin/ls-js"></script>
 

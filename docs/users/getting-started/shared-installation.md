@@ -102,7 +102,7 @@ For later management access, it is advised you keep a list of all URLs for your 
 
 Now you are almost ready for take-off. We assume that every user has access to a seperate SQL database where his blog-data is later stored in. You can already see, that the steps needed above shouldn't be to hard to put into a customized script.sh file for use in your setup.
 
-Open up your [http://garvin.s9yblogs.org/](http://garvin.s9yblogs.org/) file. You should now see s9y's installation screen. Enter the database- and username and the corresponding password. Everything else can be left to the user.
+Open up your `http://garvin.s9yblogs.org/` file. You should now see s9y's installation screen. Enter the database- and username and the corresponding password. Everything else can be left to the user.
 
 Now every user can manage his/her blog just as if it were a standalone installation.
 

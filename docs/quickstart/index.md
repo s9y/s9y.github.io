@@ -18,7 +18,7 @@ Download the [newest version of serendipity](http://www.s9y.org/latest) and unpa
 
 ### Installation
 
-Go to the URL of your server, or on your local machine to [localhost](http://localhost/serendipity).
+Go to the URL of your server, or on your local machine to `http://localhost/serendipity`.
 
 [![first page of the installer](/img/quickstart/s9y_installer1_thumb.png){: .content-image}](/img/quickstart/s9y_installer1.png)
 
