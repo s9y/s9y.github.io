@@ -15,6 +15,6 @@ Install Windows Live Writer and set your blog up as "Custom (Moveable Type API)"
 
 When it asks for the URL to post, it will be something like this:
 
-http://{full path to Serendipity}/serendipity\_xmlrpc.php
+`http://{full path to Serendipity}/serendipity_xmlrpc.php`
 
 Give it your login info and you're good to go. Categories, keywords (tags), and trackbacks all seem to work fine.
