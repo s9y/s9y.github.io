@@ -28,7 +28,7 @@ title: Serendipity -  A reliable, secure and extensible PHP blog
 * ### Der Shopblogger
   [![Das Blog des Shopbloggers](/img/screenshots/blogs/shopblogger.jpg)](http://www.shopblogger.de/blog/)
 * ### Dirks Logbuch
-  [![Dirks Logbuck](/img/screenshots/blogs/dirks_logbuch.jpg)](https://www.deimeke.net/dirk/blog/)
+  [![Dirks Logbuch](/img/screenshots/blogs/dirks_logbuch.jpg)](https://www.deimeke.net/dirk/blog/)
 * ### YellowLeds Weblog v2
   [![YellowLeds Weblog](/img/screenshots/blogs/yellowleds_weblog.jpg)](http://yellowled.de/)
 * ### S9y InfoCamp
