@@ -300,3 +300,49 @@ Then you can use this in your index.tpl:
 ##### Create your own plugin
 
 The third and often the best way is to create your own plugins that deal with content. You can then access them with {serendipity_hookPlugin ...} smarty calls.
+
+### Blog editors/interfaces
+
+#### Performancing for Firefox setup
+
+Serendipity supports [Performancing for Firefox (PFF)](http://performancing.com/firefox__the_social_browser/) through our [XML-RPC plugin](http://spartacus.s9y.org/cvs/additional_plugins/serendipity_event_xmlrpc.zip). You'll need Firefox version 1.5 or better with the PFF extension installed. (There is currently no Serendipity preset in Performancing for Firefox. If enough of us write to them and request it, that could easily change!)
+
+Start PFF and make the following settings in the "account wizard":
+
+* Blogging Service = Custom Blog
+* Blog System = Movable Type
+* Server API URL = `http://{yourblog}/serendipity_xmlrpc.php`
+* User Name = {your Serendipity user name}
+* Password = {your Serendipity password}
+* click on "next"
+* follow the further description
+
+At this time, Performancing does not support extended bodies. We're working to help extend this popular blogging application!
+
+#### POPfetcher: Posting new entries by email
+
+Serendipity's [POPfetcher plugin](http://spartacus.s9y.org/cvs/additional_plugins/serendipity_event_popfetcher.zip) allows you to post new entries just by emailing them to your blog!
+
+First, get yourself an email account only for adding blog entries. Either you can create a mail adress on your hosting server, or use a free POP3 service like hotmail.com or Gmail. Let's pretend you picked up `blog-this@gmail.com`.
+
+Next, install the POPfetcher plugin. Enter the username and password to the blog Email account in the POPfetcher configuration. You'll also need to tell it what host the POP3 mail server is running on. In our example, the user is `blog-this`, and the host is `gmail.com`.
+
+Now you can write a mail to the account. In our example, just send it to `blog-this@gmail.com`. The content of the mail will be used as the blog entry.
+
+When you want Serendipity to check the mail, log in to your Admin screen and click the "Fetch Mails" link. POPfetcher will connect to the mail account, fetch all its mails, and insert them as Serendipity entries. Alternatively, just set your browser's "Go" or address bar to the special URL: `http://{yourblog}/index.php?/plugin/popfetcher_poll` (You could even bookmark it and visit the bookmark whenever you feel like checking blog mails.)
+
+Of course, you probably want Serendipity to check the mail account automatically. Unfortunately, blogs like Serendipity don't run all the time; they can only perform tasks when they're called.
+
+You could hire an army of monkeys to visit that special URL regularly. Or you could use the "cron" utility. Cron acts like an army of monkeys that perform tasks as often as you tell them to. Any cron facility will do; some webservers offer them, and every Linux installation has cron.
+
+Just configure cron (or the crontab, if that's how your cron utility works) to visit the `popfetcher_poll` URL every hour with a lightweight browser, such as lynx or wget.
+
+#### Windows Live Writer setup
+
+Serendipity supports Windows Live Writer through our [XML-RPC plugin](http://spartacus.s9y.org/cvs/additional_plugins/serendipity_event_xmlrpc.zip). There is now a Serendipity preset in Windows Live Writer! Unfortunately, it does not configure Live Writer properly to interact with Serendipity.
+
+Thanks to Xeno Phage from the [Serendipity forums](https://board.s9y.org) for the following information:
+
+* Install Windows Live Writer and set your blog up as "Custom (Moveable Type API)". Make sure you have the xmlrpc plugin installed in Serendipity.
+* When it asks for the URL to post, it will be something like this: `http://{full path to Serendipity}/serendipity_xmlrpc.php`
+*  Give it your login info and you're good to go. Categories, keywords (tags), and trackbacks all seem to work fine.
