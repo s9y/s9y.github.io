@@ -251,7 +251,6 @@ The Extended Properties for Entries plugin includes exactly this capability! Jus
 
 After it's installed, an extended options section appears at the bottom of each entry while you edit it. Just click the "Make this entry sticky" box to make it appear at the top of any list it appears in.
 
-
 #### How do I add PHP code to my templates?
 
 Many ways lead to rome!
@@ -300,6 +299,14 @@ Then you can use this in your index.tpl:
 ##### Create your own plugin
 
 The third and often the best way is to create your own plugins that deal with content. You can then access them with {serendipity_hookPlugin ...} smarty calls.
+
+#### I don't want the login screen to expose the s9y and PHP version
+
+Per default, s9y's login screen exposes the s9y and PHP version you're using. If you would like to disable this for security reasons, you can set
+
+    $serendipity['expose_s9y'] = false;
+
+in your `serendipity_config_local.inc.php`. Since this file is not part of the s9y core distribution, this is safe in case of an update to s9y.
 
 ### Blog editors/interfaces
 
