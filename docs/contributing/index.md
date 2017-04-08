@@ -46,6 +46,8 @@ Want to actually code something with or for Serendipity? Great. Here's what you 
 * if you like, your theme or plugin can be added to Spartacus after the team has run basic security checks and code reviews
 * we object to having multiple plugins for same task, so please add new features to existing plugins where applicable
 
+New to s9y development, want to know where and how to get started? We have a [list of issues](https://github.com/s9y/Serendipity/issues?q=is%3Aopen+is%3Aissue+label%3A%22easy+fix%22) that should be easy to fix for new contributors.
+
 ### Commercial Serendipity support
 
 Serendipity's Core Developer Garvin Hicking works at the german web-design/multimedia agency Faktor E (Bonn). His company offers [commercial support](/docs/users/hosting.html#docs-commercial-support) for all needs touching Serendipity's featureset.
