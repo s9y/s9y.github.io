@@ -45,9 +45,6 @@ The defined variables in this file by default are:
 
 On top of that, certain variables that are not included in the Serendipity Configuration panel can be configured in this file; if they are not present, the Serendipity defaults will be used. Such variables are:
 
-* $serendipity['dashboardCommentsLimit']: How many comments to show in the dashboard overview (default 5)
-* $serendipity['dashboardLimit']: How many entries to show in dashboard (default 5)
-* $serendipity['dashboardDraftLimit']: How many of those dashboard entries are filled up with draft entries (default 5)
 * $serendipity['production']: If set to "false" you can evoke extra debugging output when errors occur. If set to "debug", it will be extra-verbose. (default: based on version, RC and alpha/betas default to false)
 * $serendipity['allowDateManipulation']: If set to true (default), users can change the date of entries
 * $serendipity['max_last_modified']: Amount of seconds how fresh an article must be, so that a comment to an entry will modify its LastModified-timestamp (default: 7 days)
@@ -65,6 +62,8 @@ On top of that, certain variables that are not included in the Serendipity Confi
 * $serendipity['defaultTemplate']: Which template directory to use for fallback chaining (see below) (default "2k111")
 * $serendipity['template_backend']: Which backend template to use when none is configured (default "2k11")
 * $serendipity['backendBlogtitleFirst'']: If true, the page titles of backend pages will have the form "blog title | backend section name" instead of "backend section name | blog title" (default false)
+* $serendipity['dashboardCommentsLimit']: How many comments to show in the dashboard overview (default 5)
+* $serendipity['dashboardEntriesLimit']: How many future entries and drafts to show in the dashboard overview (default 5)
 * $serendipity['languages']: Holds an array of available languages
 * $serendipity['calendars']: Holds an array of available calendar types (gregorian and persian by default)
 * $serendipity['charsets']: Holds an array of supported charsets (native and UTF-8 by default)
