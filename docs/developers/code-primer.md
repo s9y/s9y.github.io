@@ -64,6 +64,7 @@ On top of that, certain variables that are not included in the Serendipity Confi
 * $serendipity['autolang']: Default language, when autodetection fails (default "en")
 * $serendipity['defaultTemplate']: Which template directory to use for fallback chaining (see below) (default "2k111")
 * $serendipity['template_backend']: Which backend template to use when none is configured (default "2k11")
+* $serendipity['backendBlogtitleFirst'']: If true, the page titles of backend pages will have the form "blog title | backend section name" instead of "backend section name | blog title" (default false)
 * $serendipity['languages']: Holds an array of available languages
 * $serendipity['calendars']: Holds an array of available calendar types (gregorian and persian by default)
 * $serendipity['charsets']: Holds an array of supported charsets (native and UTF-8 by default)
