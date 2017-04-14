@@ -26,7 +26,7 @@ While trying to access a php file from the Serendipity directory, Microsoft IIS 
 
 In my particular case, there was no problem running index.php from the serendipity directory, and on first run, I was redirected to the serendipity-admin.php, where I saw a screen similar to that shown in:
 
-[/docs/users/getting-startet/fresh-installation.html](/docs/users/getting-started/fresh-installation.html)
+[/docs/users/getting-started/fresh-installation.html](/docs/users/getting-started/fresh-installation.html)
 
 Clicking on simple installation or expert installation successfully brought me to the configuration page, but when I clicked on "Complete Installation", I got the http 403.1 error message described above.
 
