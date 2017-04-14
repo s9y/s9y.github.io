@@ -1,16 +1,11 @@
 ---
 layout: docs
-title: Technical Documentation
+title: Developers
 ---
 
-## Technical Documentation
+## Users
 
-*  [Database](database.html)
-*  [Important API Functions](functions.html)
-*  [Plugin API](plugin-api.html)
-*  [Themes and Smarty Templating](themes.html)
-*  [Conditional Get for RSS Feeds](conditional-get.html)
-*  [Internationalization](internationalization.html)
-*  [Lighttpd](lighttpd.html)
-*  [Editing entries.tpl](entries_tpl.html)
-*  [Microsoft IIS Setup](iis-setup.html)
+This part of the documentation is aimed at developers.
+
+* [Code Primer](/docs/developers/code-primer.html)
+* [Technical Documentation](/docs/developers/developing.html)
