@@ -44,7 +44,7 @@ Create this .htacess file in your server webroot (or edit the existing one):
     #
     # END s9y
 
-Note the BE3GIN/END s9y section - if you use a fresh .htaccess file, this marker needs to exist. If this already exists in your file, you do not add it a second time.
+Note the BEGIN/END s9y section - if you use a fresh .htaccess file, this marker needs to exist. If this already exists in your file, you do not add it a second time.
 
 Then create a file .htpasswd using a simple 'username:md5password' combination. Look at [http://www.htaccesstools.com/htpasswd-generator/](http://www.htaccesstools.com/htpasswd-generator/) for an online generator for .htpasswd files.
 
@@ -53,7 +53,7 @@ Then create a file .htpasswd using a simple 'username:md5password' combination. 
 
 This would create a user "s9y" with password "s9y" with which you'd have to log into your blog.
 
-*SECURITY RECOMMENDATION*: Do not skip this step due to security implications. You want to make sure, that only you are authorized to update the blog, and calls to your site from others are prevented.
+**SECURITY RECOMMENDATION:** Do not skip this step due to security implications. You want to make sure that only you are authorized to update the blog, and calls to your site from others are prevented.
 
 
 #### Will upgrading overwrite my custom plugins/templates?
