@@ -14,6 +14,8 @@ Serendipity is a PHP-based web application. That means, to use Serendipity, you 
 
 After you have uploaded the files to your web space, you need to "open" the Serendipity application. You do that by opening an URL like `http://example.com/serendipity/index.php`.
 
+*SECURITY RECOMMENDATION*: When you upload the Serendipity files to your webspace, this means temporarily everyone who knows the URL to your blog would be able to use the Serendipity installer. To prevent unauthorized access, you should immediately secure your installation during this process. The best way to do this is by securing the blog with a password by using a .htaccess file that you upload first, as outlined in the section [Locking the Blog](/docs/users/getting-started/upgrading.html#docs-locking-the-blog-during-the-upgrade).
+
 #### Requirements
 
 Serendipity is tailored for the Apache Webserver. However, people are successfully running Serendipity with Microsoft IIS and Lighttpd. When using Serendipity on Windows servers, pay attention to always enter path references using forward slashes ('/') instead of the notation using backslaches ("C:\\...\\").

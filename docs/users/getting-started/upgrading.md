@@ -34,12 +34,17 @@ However, you are always advised to look at the corresponding SQL update file in 
 
 #### Locking the blog during the upgrade
 
-Create this .htacess file in your server webroot:
+Create this .htacess file in your server webroot (or edit the existing one):
 
     AuthType Basic
     AuthName "Authorisation: Serendipity Upgrade IN PROGRESS"
     AuthUserFile /absolute/path/to/your/s9y/.htpasswd
     require valid-user
+    # BEGIN s9y
+    #
+    # END s9y
+
+Note the BE3GIN/END s9y section - if you use a fresh .htaccess file, this marker needs to exist. If this already exists in your file, you do not add it a second time.
 
 Then create a file .htpasswd using a simple 'username:md5password' combination. Look at [http://www.htaccesstools.com/htpasswd-generator/](http://www.htaccesstools.com/htpasswd-generator/) for an online generator for .htpasswd files.
 
@@ -47,6 +52,8 @@ Then create a file .htpasswd using a simple 'username:md5password' combination. 
     s9y:s9QXoc9dcFOT2
 
 This would create a user "s9y" with password "s9y" with which you'd have to log into your blog.
+
+*SECURITY RECOMMENDATION*: Do not skip this step due to security implications. You want to make sure, that only you are authorized to update the blog, and calls to your site from others are prevented.
 
 
 #### Will upgrading overwrite my custom plugins/templates?

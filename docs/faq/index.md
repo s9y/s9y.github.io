@@ -90,6 +90,8 @@ Serendipity has an automated upgrade system. You can upgrade from any Serendipit
 
 After you have done that, you only need to extract the new Serendpipity release files over your old directory. Make sure that you never delete the serendipity_config_local.inc.php file, as it contains the most vital Serendipity configuration data.
 
+*SECURITY RECOMMENDATION*: To make sure that only you are authorized to execute the update, edit your .htaccess file to block access only to your IP or create a username/password combination, as outlined in [the detailed upgrade notes](/docs/users/getting-started/upgrading.html#docs-locking-the-blog-during-the-upgrade)
+
 Then go to your Serendipity Admin Panel and you will see the Serendipity upgrader.
 
 It will tell you which version you are running, and which tasks are going to get executed. That means some PHP functions can be called, and some DB updates are called. The DB update files are stored in the `sql/` subdirectory of Serendipity.
