@@ -3,7 +3,7 @@ layout: docs
 title: Developers
 ---
 
-## Users
+## Developers
 
 This part of the documentation is aimed at developers.
 
