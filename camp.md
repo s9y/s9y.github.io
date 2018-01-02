@@ -10,15 +10,17 @@ title: s9ycamp
 
 ### Allgemeines
 
-* **Datum:** noch zu ermitteln ([Doodle](https://beta.doodle.com/poll/nw4kiutdy4burb8w))
-* **Ort:** voraussichtlich [Linuxhotel](http://www.linuxhotel.de), Essen-Horst
+* **Datum:** 23.3.-25.3.2018 ([Doodle](https://beta.doodle.com/poll/nw4kiutdy4burb8w))
+* **Ort:** [Linuxhotel](http://www.linuxhotel.de), Essen-Horst
 * [Forum-Thread](https://board.s9y.org/viewtopic.php?p=10448042)
 
 Das Serendipity-Treffen ist ein formloses Kennenlernen der s9y-Benutzer und -Entwickler, es ist ausdrücklich *keine* „Klausurtagung“ für Entwickler oder Ähnliches. Wir schaffen es erfahrungsgemäß zwar, uns „nebenbei“ auch ein wenig um unser Lieblings-Blogsystem zu kümmern. Aber erstmal geht es um ein Kennenlernen und Austauschen der Community „in real life“.
 
 ### Termin
 
-Der Termin wird per Abstimmung ermittelt. Wer zu diesem Termin kann und später dazu kommen mag, ist herzlich willkommen, aber spätestens, wenn einzelne Teilnehmer erstmal Züge oder Flüge gebucht haben, steht der Termin *endgültig* fest.
+Der Termin (Freitg, 23.3. bis Sonntag, 25.3. 2018) wurde per Abstimmung ermittelt.
+
+Wer zu diesem Termin kann und später dazu kommen mag, ist herzlich willkommen, aber spätestens, wenn einzelne Teilnehmer erstmal Züge oder Flüge gebucht haben, steht der Termin *endgültig* fest.
 
 <figure>
     <img src="/img/camp/linuxhotel.jpg" alt="Villa Vogelsang, Standort des Linuxhotels Essen">
