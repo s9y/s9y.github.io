@@ -18,7 +18,7 @@ Das Serendipity-Treffen ist ein formloses Kennenlernen der s9y-Benutzer und -Ent
 
 ### Termin
 
-Der Termin (Freitg, 23.3. bis Sonntag, 25.3. 2018) wurde per Abstimmung ermittelt.
+Der Termin (Freitag, 23.3. bis Sonntag, 25.3. 2018) wurde per Abstimmung ermittelt.
 
 Wer zu diesem Termin kann und später dazu kommen mag, ist herzlich willkommen, aber spätestens, wenn einzelne Teilnehmer erstmal Züge oder Flüge gebucht haben, steht der Termin *endgültig* fest.
 
