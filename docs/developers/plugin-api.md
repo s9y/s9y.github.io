@@ -10,7 +10,7 @@ title: Plugin API
 
 The general meaning of Plugins for Serendipity is described in the section [Plugins](/docs/users/using/using-plugins.html) of our "[User](/docs/users/using/)" documentation.
 
-This page provides more in depth description of the inner workings.
+This page provides more in depth description of the inner workings. For even more informatiopn, have a look at the [link section](#docs-learn-more-links-to-tutorials-and-other-references) (deep) down below.
 
 All plugins in Serendipity are objects that are inherited from the base class as defined in `include/plugin_api.inc.php`. This offers the layout of a simple `serendipity_event` or `serendipity_plugin` class. If you extend your plugin from this class, you can customize it with its own methods.
 
@@ -523,3 +523,10 @@ If there is an event hook missing in the current Serendipity code, a single line
 ### Linking spartacus
 
 You can easily combine the whole spartacus theme and plugin checkouts on your machine. To do that you can for example checkout these repositories to a subdirectory like `templates/spartacus/` and `plugins/spartacus/`. The reason this works is because both the theme and plugin framework of Serendipity can iterate through every subdirectory of the templates/ or plugins/ structure to search for matching plugin/theme files.
+
+### Learn more: links to tutorials and other references
+
+* [Serendipity plugin template](https://www.onli-blogging.de/index.php?/876/Rohform-eines-Serendipity-Plugins.html) *(German language)*
+* [Einführung: Serendipity-Plugins schreiben](https://www.onli-blogging.de/879/Einfuehrung-Serendipity-Plugins-schreiben.html) *(Introduction to Serendipity plugins - German language)*
+  * [Eigene Seiten in Serendipitys Adminbereich](https://www.onli-blogging.de/index.php?/885/Eigene-Seiten-in-Serendipitys-Adminbereich.html) *(Create your own page in Serendipity admin - German language)*
+  * [Eigene Pluginseiten in Serendipity](https://www.onli-blogging.de/index.php?/888/Eigene-Pluginseiten-in-Serendipity.html) *(Create your own Serendipity blog page - German language)*
