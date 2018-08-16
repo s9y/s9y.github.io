@@ -6,7 +6,7 @@ title: Downloads
 
 * **Download latest 2.1.3 (August 16th, 2018)**
   * [Serendipity 2.1.3 on Github](https://github.com/s9y/Serendipity/releases/tag/2.1.3)
-   (MD5: b838ffc635199c77f36edc092971d81f)
+   (MD5: ed48dae940511bfbe1c0ae9cae6194de)
 
 ### **Fetch a snapshot (2.2 development)**
 
