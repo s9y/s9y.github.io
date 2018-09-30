@@ -36,7 +36,7 @@ title: Serendipity -  A reliable, secure and extensible PHP blog
 {:#blogs-list}
 </section>
 
-<section id="home-news" markdown="1" data-rss="https://blog.s9y.org/rss.php">
+<section id="home-news" markdown="1" data-rss="https://blog.s9y.org/feeds/atom10.xml">
 ## Latest News
 
  1. ### [Serendipity 2.0.2 Security Fix Release](https://blog.s9y.org/archives/265-Serendipity-2.0.2-Security-Fix-Release.html)
