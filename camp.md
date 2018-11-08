@@ -10,15 +10,15 @@ title: s9ycamp
 
 ### Allgemeines
 
-* **Datum:** 23.3.-25.3.2018 ([Doodle](https://beta.doodle.com/poll/nw4kiutdy4burb8w))
+* **Datum:** 2019 ([Terminermittlung: Doodle](https://doodle.com/poll/22e56n3idzz2r6ax))
 * **Ort:** [Linuxhotel](http://www.linuxhotel.de), Essen-Horst
-* [Forum-Thread](https://board.s9y.org/viewtopic.php?p=10448042)
+* [Forum-Thread](https://board.s9y.org/viewtopic.php?f=10&t=24136)
 
 Das Serendipity-Treffen ist ein formloses Kennenlernen der s9y-Benutzer und -Entwickler, es ist ausdrücklich *keine* „Klausurtagung“ für Entwickler oder Ähnliches. Wir schaffen es erfahrungsgemäß zwar, uns „nebenbei“ auch ein wenig um unser Lieblings-Blogsystem zu kümmern. Aber erstmal geht es um ein Kennenlernen und Austauschen der Community „in real life“.
 
 ### Termin
 
-Der Termin (Freitag, 23.3. bis Sonntag, 25.3. 2018) wurde per Abstimmung ermittelt.
+Der Termin (2019) wird noch per Abstimmung ermittelt.
 
 Wer zu diesem Termin kann und später dazu kommen mag, ist herzlich willkommen, aber spätestens, wenn einzelne Teilnehmer erstmal Züge oder Flüge gebucht haben, steht der Termin *endgültig* fest.
 
@@ -31,7 +31,7 @@ Wir nehmen ein Angebot für Open-Source-Projekte des Linuxhotels wahr, daher sin
 
 #### Nachzügler und Kurzentschlossene
 
-Nach Terminfindung blockieren wir normalerweise eine passende Zahl Hotelplätze. Es wäre aber wohl weiterhin möglich, zusätzliche Teilnehmer nachzumelden und für diese Zimmerplätze zu blocken. Dazu bitte [im Forum melden](https://board.s9y.org/viewtopic.php?p=10448042).
+Nach Terminfindung blockieren wir normalerweise eine passende Zahl Hotelplätze. Es wäre aber wohl weiterhin möglich, zusätzliche Teilnehmer nachzumelden und für diese Zimmerplätze zu blocken. Dazu bitte [im Forum melden](https://board.s9y.org/viewtopic.php?f=10&t=24136).
 
 Ab einem gewissen Zeitpunkt (der unklar ist) bleibt weiteren Teilnehmern allerdings leider nur noch die Schlafsack-Option, eine externe Unterkunft oder als Tagesgäste (siehe unten) dazu zu kommen.
 
