@@ -3,7 +3,7 @@ layout: camp
 title: s9ycamp
 ---
 
-<h2>Serendipity-Treffen 2018</h2>
+<h2>Serendipity-Treffen 2019</h2>
 
 * TOC
 {:toc}
