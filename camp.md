@@ -10,7 +10,7 @@ title: s9ycamp
 
 ### Allgemeines
 
-* **Datum:** 2019 ([Terminermittlung: Doodle](https://doodle.com/poll/22e56n3idzz2r6ax))
+* **Datum:** 26.-28. April 2019 ([Terminermittlung: Doodle](https://doodle.com/poll/22e56n3idzz2r6ax))
 * **Ort:** [Linuxhotel](http://www.linuxhotel.de), Essen-Horst
 * [Forum-Thread](https://board.s9y.org/viewtopic.php?f=10&t=24136)
 
@@ -18,7 +18,7 @@ Das Serendipity-Treffen ist ein formloses Kennenlernen der s9y-Benutzer und -Ent
 
 ### Termin
 
-Der Termin (2019) wird noch per Abstimmung ermittelt.
+Der Termin (**26.-28. April 2019**) wurde per Abstimmung ermittelt.
 
 Wer zu diesem Termin kann und später dazu kommen mag, ist herzlich willkommen, aber spätestens, wenn einzelne Teilnehmer erstmal Züge oder Flüge gebucht haben, steht der Termin *endgültig* fest.
 
