@@ -58,12 +58,11 @@ There are 2 important issues to note with this plugin:
 
 2. Spartacus needs write privileges to your /plugins directory so that it can install new files. Thus you will need to change the directory privileges of /plugins to something like 777, depending on your installation. If you do not do this you will get error message like "Could not create file...".
 
+#### Installing a plugin from git
 
-#### Installing a plugin via CVS checkouts
+You can checkout our "additional\_plugins" [repository on Github](https://github.com/s9y/additional_plugins). Then you could create a symbolic link of that additional\_plugins directory into your serendipity/plugins/ directory. Serendipity will then detect the nested new plugin lists and offer you the plugins in the Installation facility.
 
-You can checkout our "additional\_plugins" repository using CVS into a seperate directory. Then you could create a symbolic link of that additional\_plugins directory into your serendipity/plugins/ directory. Serendipity will then detect the nested new plugin lists and offer you the plugins in the Installation facility.
-
-This requires some basic Linux/Windows-Shell knowledge and knowledge how to use CVS.
+This requires some basic Linux/Windows-Shell knowledge and knowledge how to use git.
 
 #### Downloading a plugin
 
