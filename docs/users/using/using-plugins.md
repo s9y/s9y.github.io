@@ -66,14 +66,13 @@ This requires some basic Linux/Windows-Shell knowledge and knowledge how to use 
 
 #### Downloading a plugin
 
-You can download the plugin you want either via the [ViewCVS file browser](http://php-blog.cvs.sourceforge.net/php-blog/additional_plugins/) or by downloading our full plugin snapshot at [Netmirror.org](http://www.netmirror.org/mirror/serendipity/additional_plugins.tgz).
+You can download the plugin you want from our [Spartacus site](http://spartacus.s9y.org/index.php). All plugins listed there will have a handy download link.
 
 A plugin always consists of a single directory like "serendipity\_event\_trackback" with at least one file in it. If you use the ViewCVS facility you can click on each single file and then on the following page click on the first "Download" link which fetches the latest version of that file. Save that file on your Serendipity installation and place them all into a subdirectory of your /plugins directory. First create a directory with the same name as the plugin ("serendipity\_event\_trackback"). Then save the file "serendipity\_event\_trackback.php" inside that directory.
 
 After you have downloaded all files you can go to your Serendipity Plugin manager and on the list of available plugins you will see your latest acquired plugin. :-)
 
 The same applies when having downloaded our Netmirror Snapshot file. Just extract the tarball somewher and copy the files and directory you want to your /plugins subdirectory of the Serendipity installation.
-
 
 ## Available internal sidebar plugins bundled with s9y
 
