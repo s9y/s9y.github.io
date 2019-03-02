@@ -52,30 +52,27 @@ Since Serendipity 0.8 we offer a Event Plugin called "SPARTACUS". This is a repo
 
 If you click on that link, Serendipity will connect itself to our Plugin Repository, fetch a list of available plugins and offer those to you. Then you can click on the plugin to install just like you do with bundled plugins, and the files will automatically be downloaded.
 
-There are 3 important issues to note with this somewhat experimental plugin:
+There are 2 important issues to note with this plugin:
 
 1. Spartacus requires an outgoing connection to the sourceforge.net servers. That means your webserver shall not block HTTP requests.
 
-2. The sourceforge.net ViewCVS server is sometimes a bit laggy or unresponsive. It can happen that you get error messages like "File not found" or the list of plugins could not be downloaded. In this case, please have patience and try again after some time.
+2. Spartacus needs write privileges to your /plugins directory so that it can install new files. Thus you will need to change the directory privileges of /plugins to something like 777, depending on your installation. If you do not do this you will get error message like "Could not create file...".
 
-3. Spartacus needs write privileges to your /plugins directory so that it can install new files. Thus you will need to change the directory privileges of /plugins to something like 777, depending on your installation. If you do not do this you will get error message like "Could not create file...".
+#### Installing a plugin from git
 
-#### Installing a plugin via CVS checkouts
+You can checkout our "additional\_plugins" [repository on Github](https://github.com/s9y/additional_plugins). Then you could create a symbolic link of that additional\_plugins directory into your serendipity/plugins/ directory. Serendipity will then detect the nested new plugin lists and offer you the plugins in the Installation facility.
 
-You can checkout our "additional\_plugins" repository using CVS into a seperate directory. Then you could create a symbolic link of that additional\_plugins directory into your serendipity/plugins/ directory. Serendipity will then detect the nested new plugin lists and offer you the plugins in the Installation facility.
-
-This requires some basic Linux/Windows-Shell knowledge and knowledge how to use CVS.
+This requires some basic Linux/Windows-Shell knowledge and knowledge how to use git.
 
 #### Downloading a plugin
 
-You can download the plugin you want either via the [ViewCVS file browser](http://php-blog.cvs.sourceforge.net/php-blog/additional_plugins/) or by downloading our full plugin snapshot at [Netmirror.org](http://www.netmirror.org/mirror/serendipity/additional_plugins.tgz).
+You can download the plugin you want from our [Spartacus site](http://spartacus.s9y.org/index.php). All plugins listed there will have a handy download link.
 
 A plugin always consists of a single directory like "serendipity\_event\_trackback" with at least one file in it. If you use the ViewCVS facility you can click on each single file and then on the following page click on the first "Download" link which fetches the latest version of that file. Save that file on your Serendipity installation and place them all into a subdirectory of your /plugins directory. First create a directory with the same name as the plugin ("serendipity\_event\_trackback"). Then save the file "serendipity\_event\_trackback.php" inside that directory.
 
 After you have downloaded all files you can go to your Serendipity Plugin manager and on the list of available plugins you will see your latest acquired plugin. :-)
 
 The same applies when having downloaded our Netmirror Snapshot file. Just extract the tarball somewher and copy the files and directory you want to your /plugins subdirectory of the Serendipity installation.
-
 
 ## Available internal sidebar plugins bundled with s9y
 
