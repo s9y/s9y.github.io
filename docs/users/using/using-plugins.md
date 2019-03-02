@@ -52,13 +52,12 @@ Since Serendipity 0.8 we offer a Event Plugin called "SPARTACUS". This is a repo
 
 If you click on that link, Serendipity will connect itself to our Plugin Repository, fetch a list of available plugins and offer those to you. Then you can click on the plugin to install just like you do with bundled plugins, and the files will automatically be downloaded.
 
-There are 3 important issues to note with this somewhat experimental plugin:
+There are 2 important issues to note with this plugin:
 
 1. Spartacus requires an outgoing connection to the sourceforge.net servers. That means your webserver shall not block HTTP requests.
 
-2. The sourceforge.net ViewCVS server is sometimes a bit laggy or unresponsive. It can happen that you get error messages like "File not found" or the list of plugins could not be downloaded. In this case, please have patience and try again after some time.
+2. Spartacus needs write privileges to your /plugins directory so that it can install new files. Thus you will need to change the directory privileges of /plugins to something like 777, depending on your installation. If you do not do this you will get error message like "Could not create file...".
 
-3. Spartacus needs write privileges to your /plugins directory so that it can install new files. Thus you will need to change the directory privileges of /plugins to something like 777, depending on your installation. If you do not do this you will get error message like "Could not create file...".
 
 #### Installing a plugin via CVS checkouts
 
