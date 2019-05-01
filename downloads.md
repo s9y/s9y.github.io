@@ -4,10 +4,11 @@ title: Downloads
 
 ## Downloads
 
-* **Download latest 2.1.4 (September 20, 2018)**
+* **Download latest stable release 2.1.4 (September 20, 2018)**
   * [Serendipity 2.1.4 on
     Github](https://github.com/s9y/Serendipity/releases/tag/2.1.4)
    (MD5: a85dc82d58e31bb4f6192cb279a7a90a)
+* **Download current beta (April 27, 2019)**
   * [Serendipity 2.3-beta1 on
     Github](https://github.com/s9y/Serendipity/releases/tag/2.3-beta1)
    (MD5: 46e662fd5c992d95d69b9479034ee9b7)
@@ -17,7 +18,7 @@ title: Downloads
 We have migrated our Source Repository to [GitHub](https://github.com/s9y/Serendipity/) and are using `git` there. Want a nightly snapshot of the ongoing development? Be sure to read [blog.s9y.org](https://blog.s9y.org) for updates on the stability of the current `git` nightlies. If you previously installed a "full" release, you might need to delete the file `checksums.inc.php` in your serendipity directory to be able to use a snapshot without integrity check warnings.
 
 * **Current Status**: Working on 2.3
-* **Recommendation**: Use 2.1.4
+* **Recommendation**: Use 2.1.4 *(or check out 2.3-beta1!)*
 
 ### **Download older releases**
 
