@@ -4,10 +4,11 @@ title: Downloads
 
 ## Downloads
 
-* **Download latest 2.1.4 (September 20, 2018)**
+* **Download latest stable release 2.1.4 (September 20, 2018)**
   * [Serendipity 2.1.4 on
     Github](https://github.com/s9y/Serendipity/releases/tag/2.1.4)
    (MD5: a85dc82d58e31bb4f6192cb279a7a90a)
+* **Download current beta (April 27, 2019)**
   * [Serendipity 2.3-beta1 on
     Github](https://github.com/s9y/Serendipity/releases/tag/2.3-beta1)
    (MD5: 46e662fd5c992d95d69b9479034ee9b7)
