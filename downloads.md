@@ -8,7 +8,7 @@ title: Downloads
   * [Serendipity 2.1.5 on
     Github](https://github.com/s9y/Serendipity/releases/tag/2.1.5)
    (MD5: 67d55af6738137c0646268590f21397f)
-* **Download current beta (April 27, 2019)**
+* **Download current beta (April 27th, 2019)**
   * [Serendipity 2.3-beta1 on
     Github](https://github.com/s9y/Serendipity/releases/tag/2.3-beta1)
    (MD5: 46e662fd5c992d95d69b9479034ee9b7)
@@ -22,13 +22,13 @@ We have migrated our Source Repository to [GitHub](https://github.com/s9y/Serend
 
 ### **Download older releases**
 
-* [Serendipity 2.1.4 on Github](https://github.com/s9y/Serendipity/releases/tag/2.1.4) - September 20, 2018
+* [Serendipity 2.1.4 on Github](https://github.com/s9y/Serendipity/releases/tag/2.1.4) - September 20th, 2018
 * [Serendipity 2.1.3 on Github](https://github.com/s9y/Serendipity/releases/tag/2.1.3) - August 16th, 2018
 * [Serendipity 2.1.2 on Github](https://github.com/s9y/Serendipity/releases/tag/2.1.2) - March 25th, 2018
 * [Serendipity 2.1.1 on Github](https://github.com/s9y/Serendipity/releases/tag/2.1.1) - April 8th, 2017
 * [Serendipity 2.0.5 on Github](https://github.com/s9y/Serendipity/releases/tag/2.0.5) - November 28th, 2016
 * [Serendipity 2.0.4 on Github](https://github.com/s9y/Serendipity/releases/tag/2.0.4) - September 26th, 2016
-* [Serendipity 2.0.3 on Github](https://github.com/s9y/Serendipity/releases/tag/2.0.3)
+* [Serendipity 2.0.3 on Github](https://github.com/s9y/Serendipity/releases/tag/2.0.3) - January 4th, 2016
 * [Serendipity 2.0.2 tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.2.tar.gz?download) - July 24th, 2015
 * [Serendipity 2.0.1 tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.1.tar.gz?download) - March 12th, 2015
 * [Serendipity 2.0.0 tar.gz](http://prdownloads.sourceforge.net/php-blog/serendipity-2.0.tar.gz?download) - January 23rd, 2015
