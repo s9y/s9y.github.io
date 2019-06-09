@@ -510,12 +510,12 @@ This also means, we only have a few strict rules:
 * Use the proper [versioning](/docs/contributing/versioning.html) on plugins
 * Put opening braces on the same line like the preceding logic, put closing braces on a new line:
 
-    if (condition) {
-        // code
+    if (condition) {  
+        // code  
     }
 
-    function serendipity_function($var1, $var2, $var3) {
-        // code
+    function serendipity_function($var1, $var2, $var3) {  
+        // code  
     }
 
 * Add spaces after commas, add spaces before and after string concatenation ($var = $var1 . $var2)
