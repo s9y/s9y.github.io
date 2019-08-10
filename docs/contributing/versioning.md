@@ -7,9 +7,9 @@ title: Versioning
 
 Serendipity follow a [semantic versioning scheme](http://semver.org).
 
-* **Major versions** (like 1.0, 2.0) introduce new features and can possibly affect backwards compatibility and APIs.
-* **Minor versions** (like 2.1.0) can introduce new main features.
-* **Bugfix versions** (like 2.0.3) only introduce bugfixes and very minor new features.
+* **Major versions** (like 1.0, 2.0, 3.0) introduce new features and can possibly affect backwards compatibility and APIs.
+* **Minor versions** (like 2.4.0) can introduce new main features.
+* **Bugfix versions** (like 2.3.1) only introduce bugfixes and very minor new features.
 
 Plugin versions should usually be incremented in the same way.
 
