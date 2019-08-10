@@ -29,7 +29,7 @@ Just download the .tar.gz to your server, unpack it inside your document root, m
 
 #### What system requirements does serendipity have?
 
-You need a [PHP](http://php.net) installation together with [MySQL](https://www.mysql.com), [PostgreSQL](https://www.postgresql.org) or [SQLite](https://www.sqlite.org/) . We also require the Apache webserver, because we utilize a number of internal functions to make Serendipity run correctly. To fully enjoy serendipity, you should have either [ImageMagick](http://www.imagick.org)'s convert binary installed on your server or a PHP installation with gd2 support (recommended).
+You need a [PHP](http://php.net) installation (PHP 7.0 or newer) together with [MySQL](https://www.mysql.com), [PostgreSQL](https://www.postgresql.org) or [SQLite](https://www.sqlite.org/) . We also require the Apache webserver, because we utilize a number of internal functions to make Serendipity run correctly. To fully enjoy serendipity, you should have either [ImageMagick](http://www.imagick.org)'s convert binary installed on your server or a PHP installation with gd2 support (recommended).
 
 #### Serendipity asks me for entering data to a database, but when I enter a name and install Serendipity it tells me the database does not exist
 
