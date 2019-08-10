@@ -13,7 +13,8 @@ Thanks so much to all of them!
 * [Garvin Hicking](http://garv.in): Lead developer (since 2003), Maintainer
 * [Onli](https://www.onli-blogging.de): Developer
 * [Matthias Gutjahr](https://matthias-gutjahr.de): Developer
-* [Matthias Mees](http://yellowled.de): Theme Developer
+* [Matthias Mees](https://yellowled.de): Developer
+* [Thomas Hochstein](https://netz-rettung-recht.de/): Developer
 * [Don Chambers](http://www.optional-necessity.com) Theme Developer
 * [Jannis Hermanns](http://jann.is): Project founder, Server Hosting
 
