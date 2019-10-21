@@ -34,6 +34,10 @@ title: Serendipity -  A reliable, secure and extensible PHP blog
 * ### S9y InfoCamp
   [![S9y InfoCamp](/img/screenshots/blogs/s9ycamp.jpg)](http://www.s9ycamp.info/)
 {:#blogs-list}
+
+<div class="features-more">
+    <a class="button-link" href="/themes.html">Our featured themes</a>
+</div>
 </section>
 
 <section id="home-news" markdown="1" data-rss="https://blog.s9y.org/feeds/atom10.xml">

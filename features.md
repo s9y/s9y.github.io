@@ -22,7 +22,7 @@ title: Features
 
   Powerful plugins exist for **maintaining static page content**, displaying **galleries**, making **rss aggregators**, **ldap authentication**, **customized template view**, **multilingual content** and much more.
 * ### Themes
-  Several themes are included by default, making it easy to everyone to change the look of the blog. For advanced users, the full flexibility of the Smarty templating engine allows to change every aspect of the Serendipity look.
+  Several [themes](themes.html) are included by default, making it easy to everyone to change the look of the blog. For advanced users, the full flexibility of the Smarty templating engine allows to change every aspect of the Serendipity look.
 
   <div id="featurethemes" markdown="1">
     [![](/img/screenshots/showcase/preview_2k11.jpg)](/img/screenshots/showcase/preview_2k11.jpg) [![](/img/screenshots/showcase/preview_photo.jpg)](/img/screenshots/showcase/preview_photo.jpg)
