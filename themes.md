@@ -22,6 +22,7 @@ our current ones!
   [**Clean blog**](http://www.optional-necessity.com/archives/21-Clean-Blog-A-New-Serendipity-Theme.html) is bundled with Serendipity.
 * ### Next
   [![Next theme](/img/screenshots/themes/next.jpg)](https://blog.s9y.org/index.php?user_template=next)
+  **Next** is bundled with Serendipity.
 * ### Photo
   [![Photo theme](/img/screenshots/themes/photo.jpg)](https://onli.columba.uberspace.de/s9y/)
   [**Photo**](http://www.paskuda.biz/#photo) is available on Spartacus.
