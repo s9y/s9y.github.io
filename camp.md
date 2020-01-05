@@ -3,24 +3,24 @@ layout: camp
 title: s9ycamp
 ---
 
-<h2>Serendipity-Treffen 2019</h2>
+<h2>Serendipity-Treffen 2020</h2>
 
 * TOC
 {:toc}
 
 ### Allgemeines
 
-* **Datum:** 26.-28. April 2019 ([Terminermittlung: Doodle](https://doodle.com/poll/22e56n3idzz2r6ax))
+* **Datum:** ([Terminermittlung: Framadate](https://framadate.org/QO4NDSzHUGziyj3U))
 * **Ort:** [Linuxhotel](http://www.linuxhotel.de), Essen-Horst
-* [Forum-Thread](https://board.s9y.org/viewtopic.php?f=10&t=24136)
+* [Forum-Thread](https://board.s9y.org/viewtopic.php?f=10&t=24666)
 
 Das Serendipity-Treffen ist ein formloses Kennenlernen der s9y-Benutzer und -Entwickler, es ist ausdrücklich *keine* „Klausurtagung“ für Entwickler oder Ähnliches. Wir schaffen es erfahrungsgemäß zwar, uns „nebenbei“ auch ein wenig um unser Lieblings-Blogsystem zu kümmern. Aber erstmal geht es um ein Kennenlernen und Austauschen der Community „in real life“.
 
 ### Termin
 
-Der Termin (**26.-28. April 2019**) wurde per Abstimmung ermittelt.
+Der Termin wird per Abstimmung ermittelt (siehe Link oben).
 
-Wer zu diesem Termin kann und später dazu kommen mag, ist herzlich willkommen, aber spätestens, wenn einzelne Teilnehmer erstmal Züge oder Flüge gebucht haben, steht der Termin *endgültig* fest.
+Die Abstimmun läuft, bis sich eine Anzahl Teilnehmer eingetragen hat, danach wird der Termin festgelegt. Wer zu diesem Termin kann und später dazu kommen mag, ist herzlich willkommen, aber spätestens, wenn einzelne Teilnehmer erstmal Züge oder Flüge gebucht haben, steht der Termin *endgültig* fest.
 
 <figure>
     <img src="/img/camp/linuxhotel.jpg" alt="Villa Vogelsang, Standort des Linuxhotels Essen">
