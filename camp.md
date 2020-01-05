@@ -20,7 +20,7 @@ Das Serendipity-Treffen ist ein formloses Kennenlernen der s9y-Benutzer und -Ent
 
 Der Termin wird per Abstimmung ermittelt (siehe Link oben).
 
-Die Abstimmun läuft, bis sich eine Anzahl Teilnehmer eingetragen hat, danach wird der Termin festgelegt. Wer zu diesem Termin kann und später dazu kommen mag, ist herzlich willkommen, aber spätestens, wenn einzelne Teilnehmer erstmal Züge oder Flüge gebucht haben, steht der Termin *endgültig* fest.
+Die Abstimmung läuft, bis sich eine Anzahl Teilnehmer eingetragen hat, danach wird der Termin festgelegt. Wer zu diesem Termin kann und später dazu kommen mag, ist herzlich willkommen, aber spätestens, wenn einzelne Teilnehmer erstmal Züge oder Flüge gebucht haben, steht der Termin *endgültig* fest.
 
 <figure>
     <img src="/img/camp/linuxhotel.jpg" alt="Villa Vogelsang, Standort des Linuxhotels Essen">
