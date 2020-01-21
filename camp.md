@@ -18,7 +18,7 @@ Das Serendipity-Treffen ist ein formloses Kennenlernen der s9y-Benutzer und -Ent
 
 ### Termin
 
-Der Termin wird per Abstimmung ermittelt (siehe Link oben).
+Der Termin wird per Abstimmung ermittelt (für 2020 ist die Abstimmung abgeschlossen, siehe Link oben).
 
 Die Abstimmung läuft, bis sich eine Anzahl Teilnehmer eingetragen hat, danach wird der Termin festgelegt. Wer zu diesem Termin kann und später dazu kommen mag, ist herzlich willkommen, aber spätestens, wenn einzelne Teilnehmer erstmal Züge oder Flüge gebucht haben, steht der Termin _endgültig_ fest.
 
@@ -31,7 +31,7 @@ Wir nehmen ein Angebot für Open-Source-Projekte des Linuxhotels wahr, daher sin
 
 #### Nachzügler und Kurzentschlossene
 
-Nach Terminfindung blockieren wir normalerweise eine passende Zahl Hotelplätze. Es wäre aber wohl weiterhin möglich, zusätzliche Teilnehmer nachzumelden und für diese Zimmerplätze zu blocken. Dazu bitte [im Forum melden](https://board.s9y.org/viewtopic.php?f=10&t=24136).
+Nach Terminfindung blockieren wir normalerweise eine passende Zahl Hotelplätze. Es wäre aber wohl weiterhin möglich, zusätzliche Teilnehmer nachzumelden und für diese Zimmerplätze zu blocken. Dazu bitte [im Forum melden](https://board.s9y.org/viewtopic.php?f=10&t=24666).
 
 Ab einem gewissen Zeitpunkt (der unklar ist) bleibt weiteren Teilnehmern allerdings leider nur noch die Schlafsack-Option, eine externe Unterkunft oder als Tagesgäste (siehe unten) dazu zu kommen.
 
