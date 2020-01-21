@@ -5,22 +5,22 @@ title: s9ycamp
 
 <h2>Serendipity-Treffen 2020</h2>
 
-* TOC
-{:toc}
+-   TOC
+    {:toc}
 
 ### Allgemeines
 
-* **Datum:** ([Terminermittlung: Framadate](https://framadate.org/QO4NDSzHUGziyj3U))
-* **Ort:** [Linuxhotel](http://www.linuxhotel.de), Essen-Horst
-* [Forum-Thread](https://board.s9y.org/viewtopic.php?f=10&t=24666)
+-   **Datum:** Freitag, 20.03. bis Sonntag, 22.03.2020
+-   **Ort:** [Linuxhotel](http://www.linuxhotel.de), Essen-Horst
+-   [Forum-Thread](https://board.s9y.org/viewtopic.php?f=10&t=24666)
 
-Das Serendipity-Treffen ist ein formloses Kennenlernen der s9y-Benutzer und -Entwickler, es ist ausdrücklich *keine* „Klausurtagung“ für Entwickler oder Ähnliches. Wir schaffen es erfahrungsgemäß zwar, uns „nebenbei“ auch ein wenig um unser Lieblings-Blogsystem zu kümmern. Aber erstmal geht es um ein Kennenlernen und Austauschen der Community „in real life“.
+Das Serendipity-Treffen ist ein formloses Kennenlernen der s9y-Benutzer und -Entwickler, es ist ausdrücklich _keine_ „Klausurtagung“ für Entwickler oder Ähnliches. Wir schaffen es erfahrungsgemäß zwar, uns „nebenbei“ auch ein wenig um unser Lieblings-Blogsystem zu kümmern. Aber erstmal geht es um ein Kennenlernen und Austauschen der Community „in real life“.
 
 ### Termin
 
 Der Termin wird per Abstimmung ermittelt (siehe Link oben).
 
-Die Abstimmung läuft, bis sich eine Anzahl Teilnehmer eingetragen hat, danach wird der Termin festgelegt. Wer zu diesem Termin kann und später dazu kommen mag, ist herzlich willkommen, aber spätestens, wenn einzelne Teilnehmer erstmal Züge oder Flüge gebucht haben, steht der Termin *endgültig* fest.
+Die Abstimmung läuft, bis sich eine Anzahl Teilnehmer eingetragen hat, danach wird der Termin festgelegt. Wer zu diesem Termin kann und später dazu kommen mag, ist herzlich willkommen, aber spätestens, wenn einzelne Teilnehmer erstmal Züge oder Flüge gebucht haben, steht der Termin _endgültig_ fest.
 
 <figure>
     <img src="/img/camp/linuxhotel.jpg" alt="Villa Vogelsang, Standort des Linuxhotels Essen">
@@ -37,19 +37,19 @@ Ab einem gewissen Zeitpunkt (der unklar ist) bleibt weiteren Teilnehmern allerdi
 
 ### Kosten
 
-Grundsätzlich kostet der Aufenthalt bei diesem [Angebot](http://www.linuxhotel.de/community.html) pro Kopf und Kalendertag 5,- €. Das beinhaltet Seminarraum und Getränke, allerdings *keine* Verpflegung. In dieser Variante könnte/müsste man im Schlafsack im Seminarraum übernachten.
+Grundsätzlich kostet der Aufenthalt bei diesem [Angebot](http://www.linuxhotel.de/community.html) pro Kopf und Kalendertag 5,- €. Das beinhaltet Seminarraum und Getränke, allerdings _keine_ Verpflegung. In dieser Variante könnte/müsste man im Schlafsack im Seminarraum übernachten.
 
 Alternativ bzw. optional gibt es die Möglichkeiten:
 
-* Übernachtung in Doppelzimmern (15,- € pro Nacht/Person)
-* Frühstück (5,- € pro Tag/Person)
-* abschließende Endreinigung durch das Linuxhotel (5,- Euro pro Person)
+-   Übernachtung in Doppelzimmern (15,- € pro Nacht/Person)
+-   Frühstück (5,- € pro Tag/Person)
+-   abschließende Endreinigung durch das Linuxhotel (5,- Euro pro Person)
 
 Damit käme der Aufenthalt für die 3 Tage pro Person auf:
 
-* mindestens: 20,- € (3× Tagesgebühren + 1× Endreinigung)
-* optional: + 10,- € für 2× Frühstück
-* optional: + 30,- € für 2 Übernachtungen im Doppelzimmmer
+-   mindestens: 20,- € (3× Tagesgebühren + 1× Endreinigung)
+-   optional: + 10,- € für 2× Frühstück
+-   optional: + 30,- € für 2 Übernachtungen im Doppelzimmmer
 
 Meistens entscheiden sich alle „Voll“-Teilnehmer (im Unterschied zu den Tagesgästen) für die Übernachtung im (Doppel-)Zimmer mit Frühstück samt Endreinigung durch das Linuxhotel, also für einen Beitrag pro Kopf von 60,- €. Angesichts der Ausstattung der Zimmer, des Seminarraums und des Angebotes für Frühstück, Getränke und WiFi ist das übrigens **mehr** als günstig.
 
@@ -65,6 +65,6 @@ Plant bitte außerdem ein, dass es am Sonntag (dem letzten Tag) zwar noch ein Fr
 
 ### Verbindlichkeit
 
-Bitte sagt Eure Teilnahme nur zu, wenn Ihr den Termin *verbindlich* wahrnehmen könnt. (Klar, es kann immer etwas Wichtiges dazwischen kommen.) Das ist insbesondere wichtig, weil bis zu einem (noch nicht festgelegten) Datum im Vorfeld eine Teilnehmerliste verbindlich gemeldet werden muss. Zudem wäre eine Stornierung eventuell mit Kosten verbunden.
+Bitte sagt Eure Teilnahme nur zu, wenn Ihr den Termin _verbindlich_ wahrnehmen könnt. (Klar, es kann immer etwas Wichtiges dazwischen kommen.) Das ist insbesondere wichtig, weil bis zu einem (noch nicht festgelegten) Datum im Vorfeld eine Teilnehmerliste verbindlich gemeldet werden muss. Zudem wäre eine Stornierung eventuell mit Kosten verbunden.
 
 Lest bitte auch die [Hinweise](http://www.linuxhotel.de/community.html) des Linuxhotels.
