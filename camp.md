@@ -10,7 +10,7 @@ title: s9ycamp
 -   [Kosten](#docs-kosten)
 -   [Verpflegung](#docs-verpflegung)
 -   [Verbindlichkeit](#docs-verbindlichkeit)
-    {:toc}
+{:toc}
 
 ### Allgemeines
 
