@@ -3,7 +3,7 @@ layout: camp
 title: s9ycamp
 ---
 
-<h2>Serendipity-Treffen 2020</h2>
+<h2>Absage: Serendipity-Treffen 2020</h2>
 
 -   [Allgemeines](#docs-allgemeines)
 -   [Termin](#docs-termin)
@@ -14,7 +14,11 @@ title: s9ycamp
 
 ### Allgemeines
 
--   **Datum:** Freitag, 20.03. bis Sonntag, 22.03.2020
+**Aufgrund der aktuellen Lage bei der Ausbreitung des Coronavirus SARS-CoV-2 haben wir uns entschlossen, das Serendipity-Treffen in diesem Jahr abzusagen.**
+
+Obwohl wir sicher keine Großveranstaltung sind, wollen wir im Sinn von #FlattenTheCurve unnötige Reisen und Treffen (von Menschen aus unterschiedlichsten Teilen von Deutschland) vermeiden und bitten dafür um Verständnis.
+
+-   **Datum:** Das Teffen fällt aus.
 -   **Ort:** [Linuxhotel](http://www.linuxhotel.de), Essen-Horst
 -   [Forum-Thread](https://board.s9y.org/viewtopic.php?f=10&t=24666)
 
