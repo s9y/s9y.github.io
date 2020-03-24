@@ -446,6 +446,7 @@ Most of these event hooks have self-explanatory names. You can easily look them 
 * backend_plugins_new_instance
 * backend_plugins_sidebar_header
 * backend_plugins_update
+* backend_plugins_upgradecount
 * backend_preview
 * backend_sendcomment
 * backend_sendmail
