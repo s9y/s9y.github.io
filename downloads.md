@@ -4,9 +4,9 @@ title: Downloads
 
 ## Downloads
 
-* **Download latest stable release 2.3.2 (March 22nd, 2020)**
-  * [Serendipity 2.3.3 on
-    Github](https://github.com/s9y/Serendipity/releases/tag/2.3.3)
+* **Download latest stable release 2.3.4 (March 25th, 2020)**
+  * [Serendipity 2.3.4 on
+    Github](https://github.com/s9y/Serendipity/releases/tag/2.3.4)
    (MD5: a25fa2d0484538fb2c07ea2e670787b9)
 
 <!--
@@ -21,10 +21,11 @@ title: Downloads
 We have migrated our Source Repository to [GitHub](https://github.com/s9y/Serendipity/) and are using `git` there. Want a nightly snapshot of the ongoing development? Be sure to read [blog.s9y.org](https://blog.s9y.org) for updates on the stability of the current `git` nightlies. If you previously installed a "full" release, you might need to delete the file `checksums.inc.php` in your serendipity directory to be able to use a snapshot without integrity check warnings.
 
 * **Current Status**: Working on 2.4
-* **Recommendation**: Use 2.3.3
+* **Recommendation**: Use 2.3.4
 
 ### **Download older releases**
 
+* [Serendipity 2.3.3 on Github](https://github.com/s9y/Serendipity/releases/tag/2.3.3) - March 22nd, 2020
 * [Serendipity 2.3.2 on Github](https://github.com/s9y/Serendipity/releases/tag/2.3.2) - October 16th, 2019
 * [Serendipity 2.3.1 on Github](https://github.com/s9y/Serendipity/releases/tag/2.3.1) - August 21st, 2019
 * [Serendipity 2.3.0 on Github](https://github.com/s9y/Serendipity/releases/tag/2.3.0) - August 10th, 2019
