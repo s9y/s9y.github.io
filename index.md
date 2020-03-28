@@ -43,11 +43,7 @@ title: Serendipity -  A reliable, secure and extensible PHP blog
 <section id="home-news" markdown="1" data-rss="https://blog.s9y.org/feeds/atom10.xml">
 ## Latest News
 
- 1. ### [Serendipity 2.0.2 Security Fix Release](https://blog.s9y.org/archives/265-Serendipity-2.0.2-Security-Fix-Release.html)
-    Thanks to the report of Tim Coen (of Curesec GmbH) we were able to adress three security issues in the Serendipity Code…
- 2. ### [Serendipity on Scaleway](https://blog.s9y.org/archives/264-Serendipity-on-Scaleway.html)
-    Our core-developer onli has created a Serendipity-Bundle for the "Baremetal SSD cloud server" service Scaleway, which allows an easy deployment of Serendipity on those servers…
- 3. ### [Serendipity 2.0.1 released](https://blog.s9y.org/archives/263-Serendipity-2.0.1-released.html)
-    Serendipity 2.0.1 has just been released. This is the first maintenance release which fixes a couple of minor issues, and one security-related issue where improper escaping of category names can lead to a possible XSS attack. This atnly be performed by authenticated editors, so we consider it medium-impact. If you run a multi-user blog with untrusted authors, you are urged to upgrade to the new release…
+ 1. ### [The official Serendipity blog](https://blog.s9y.org/)
+    Please see our blog for all the latest news!
 {:#news-list}
 </section>
