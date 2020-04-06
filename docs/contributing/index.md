@@ -14,7 +14,6 @@ You want to spread the word about Serendipity? See how you can give back to the 
 * user support on our [forums](https://board.s9y.org)
 * news, release and security announcements on [our blog](https://blog.s9y.org)
 * additional plugins and themes on [Spartacus](http://spartacus.s9y.org)
-* [SourceForge project page](http://sf.net/projects/php-blog)
 * [GitHub/s9y/Book](https://github.com/s9y/Book)/[PDF](https://github.com/s9y/Book/blob/master/serendipity.pdf?raw=true) – German **only**
 
 ### Discussion/feature requests
@@ -27,7 +26,7 @@ Feature requests are **not** to be entered into our issue tracker on Github; we 
 
 Found a bug? If you can describe what happens, please file a bug report in the [GitHub issue tracker](https://github.com/s9y/Serendipity/issues). If you found multiple bugs, please only address one single bug per issue. GitHub issues are to be reported in english language.
 
-(If the issue tracker looks too complicated, feel free to report bugs on our Forums.)
+(If the issue tracker looks too complicated, feel free to report bugs on our [Forums](https://board.s9y.org/viewforum.php?f=3).)
 
 ### Security Reports, Exploits
 
@@ -40,6 +39,7 @@ If you prefer, you can open a generic github issue about security and provide in
 Want to actually code something with or for Serendipity? Great. Here's what you need:
 
 * clone our repository on GitHub, develop your code and contribute a pull request
+* please have a look at and try to follow our [Github documentation](https://github.com/s9y/Serendipity/wiki/Development-on-branches) for using branches, version numbering, release policy and documenting changes
 * if you submit multiple requests, we'll happily hand out direct repository access
 * [code documentation primer](/docs/developers/code-primer.html) for the Serendipity API
 * contribute themes or plugins either with GitHub pull requests or announce them in the forums
