@@ -14,7 +14,6 @@ You want to spread the word about Serendipity? See how you can give back to the 
 * user support on our [forums](https://board.s9y.org)
 * news, release and security announcements on [our blog](https://blog.s9y.org)
 * additional plugins and themes on [Spartacus](http://spartacus.s9y.org)
-* [SourceForge project page](http://sf.net/projects/php-blog)
 * [GitHub/s9y/Book](https://github.com/s9y/Book)/[PDF](https://github.com/s9y/Book/blob/master/serendipity.pdf?raw=true) – German **only**
 
 ### Discussion/feature requests
