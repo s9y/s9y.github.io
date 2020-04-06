@@ -39,6 +39,7 @@ If you prefer, you can open a generic github issue about security and provide in
 Want to actually code something with or for Serendipity? Great. Here's what you need:
 
 * clone our repository on GitHub, develop your code and contribute a pull request
+* please have a look at and try to follow our [Github documentation](https://github.com/s9y/Serendipity/wiki/Development-on-branches) for using branches, version numbering, release policy and documenting changes
 * if you submit multiple requests, we'll happily hand out direct repository access
 * [code documentation primer](/docs/developers/code-primer.html) for the Serendipity API
 * contribute themes or plugins either with GitHub pull requests or announce them in the forums
