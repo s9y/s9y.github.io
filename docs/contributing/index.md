@@ -26,7 +26,7 @@ Feature requests are **not** to be entered into our issue tracker on Github; we 
 
 Found a bug? If you can describe what happens, please file a bug report in the [GitHub issue tracker](https://github.com/s9y/Serendipity/issues). If you found multiple bugs, please only address one single bug per issue. GitHub issues are to be reported in english language.
 
-(If the issue tracker looks too complicated, feel free to report bugs on our Forums.)
+(If the issue tracker looks too complicated, feel free to report bugs on our [Forums](https://board.s9y.org/viewforum.php?f=3).)
 
 ### Security Reports, Exploits
 
