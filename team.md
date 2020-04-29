@@ -15,6 +15,7 @@ Thanks so much to all of them!
 * [Matthias Gutjahr](https://matthias-gutjahr.de): Developer
 * [Matthias Mees](https://yellowled.de): Developer
 * [Thomas Hochstein](https://netz-rettung-recht.de/): Developer
+* Stephan Brunker: Developer
 * [Don Chambers](http://www.optional-necessity.com) Theme Developer
 * [Jannis Hermanns](http://jann.is): Project founder, Domain Hosting
 
