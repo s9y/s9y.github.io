@@ -60,3 +60,19 @@ The other option, generating the braces, isn't difficult, just annoying. Smarty 
 So you could just replace all occurrences of "{" with {ldelim} and all occurrences of "}" with {rdelim} in your Javascript only.
 
 When you visit your page, if your Javascript doesn't work as expected, first check the page source. If the script looks like you wanted, there's likely a problem with the script. If it's missing all its braces, you need one of the solutions above.
+
+#### user.css
+
+Themes can be extended using a user specific style sheet: /templates/NameOfTheTheme/user.css
+
+You can use *Chrome DevTools* to "investigate" your current style sheet, it is part of the chrome web browser. The following artice describes how to inspect your current CSS, how to add or modify CSS and you will also see an instant preview:  
+[Get Started With Viewing And Changing CSS](https://developers.google.com/web/tools/chrome-devtools/css)
+
+- try some modifications live in your s9y blog
+- Create a file user.css
+- write you modifications or additions into this file
+- upload the file user.css into your s9y installation:  
+  /templates/NameOfTheTheme/user.css  
+  it will not be overwritten if you later update s9y
+- delete the browser cache
+- reload you blog and check the result
