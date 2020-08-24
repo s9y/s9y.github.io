@@ -22,7 +22,7 @@ Serendipity is tailored for the Apache Webserver. However, people are successful
 
 For full operation, Serendipity relies on .htaccess files that your Virtual Host must allow. For Apache, this requires the `Allow Override File Info Indexes Limit` (or `Allow Override All`) option set to the directory of your Serendipity installation.
 
-Serendipity requires PHP \>= 7.0 and fully enabled and working Cookie Session support. It requires the PCRE extension, and optionally makes use of the GD, iconv, zlib and mbstring extensions. Serendipity is fully PHP 7.x compatible and encourages the use of PHP bytecode compilers like APC, Zend Cache or ionCube.
+Serendipity requires PHP \>= 7.0 and fully enabled and working Cookie Session support. It requires the PCRE and xml extension, and optionally makes use of the GD, iconv, zlib and mbstring extensions. Serendipity is fully PHP 7.x compatible and encourages the use of PHP bytecode compilers like APC, Zend Cache or ionCube.
 
 When operating Serendipity in PHP's Safe Mode, you will not be able to use File Upload and SPARTACUS Plugin fetching facilities. Enabling error\_reporting and display\_errors (or directing this to a logfile) is suggested to keep track of possible errors. The file\_uploads directory should be turned ON if you want to have media file upload features. For graphic processing, you either require GDLib or Image Magick.
 
@@ -66,7 +66,7 @@ On this screen, you will see a basic pre-installation report that shows you a di
 
 Fatal problems are shown in red color. The most usual case of a red error is if Serendipity cannot create the directories **templates\_c**, **archives** or **uploads**. In this case, please follow the suggestions in the "Permissions on Files/Directories" step of this documentation.
 
-On the bottom of the diagnosis screen, you can choose if you want to perform a "Simple installation" or the "Expert installation". Both methods actually perform the same steps; however the "Simple installation" only shows you very few initial configuration options so that you can install Serendipity quickkly. The "Expert installation" will ask you to enter every configuration directive.
+On the bottom of the diagnosis screen, you can choose if you want to perform a "Simple installation" or the "Expert installation". Both methods actually perform the same steps; however the "Simple installation" only shows you very few initial configuration options so that you can install Serendipity quickly. The "Expert installation" will ask you to enter every configuration directive.
 
 Since the goal of this Document is to show how fast you can install Serendipity, we will only discuss the "Simple installation" right now, so please click on this link and you will see a screen like this:
 
