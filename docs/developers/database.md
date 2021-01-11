@@ -19,7 +19,7 @@ Holds the users/authors. Columns are:
 * email: E-Mail
 * userlevel: User level (0,1,255) of the user
 * right_publish: Whether author is allowed to publish
-* hashtype: Used password hash (0: old md5, 1: sha1)
+* hashtype: Used password hash (0: old md5, 1: old sha1, 2: bcrypt)
 * mail_comments: Configuration option "receive mail notifications for comments"
 * mail_trackbacks: Configuration option "receive mail notifications for trackbacks"
 

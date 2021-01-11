@@ -203,7 +203,7 @@ Internally serendipity offers those property bag attributes:
 * description: A string that describes the plugin.
 * author: A string that describes the authorship
 * copyright: A string that describes the used license
-* version: A version number (use versions like X.Y.Z); if you contribute a plugin, each following version needs to be "higher" than the one before: After 1.10 follows 1.11 and noot 1.2!
+* version: A version number (use versions like X.Y.Z); if you contribute a plugin, each following version needs to be "higher" than the one before: After 1.10 follows 1.11 and not 1.2!
 * website: A string that can hold a URL to the author's site
 * stackable: If set to TRUE, a plugin can be installed multiple times.
 * requirements: Can hold an array with the keys "php", "smarty" and "serendipity" that indicates the minimum version number required to run the plugin.

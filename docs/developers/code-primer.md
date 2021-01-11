@@ -175,7 +175,7 @@ If that is not possible, certain code-forks are deployed to use specific queries
 
 Core functions available globally across all database layers are:
 
-* serendipity_db_update: Perform a query to updat ethe data of a certain table row
+* serendipity_db_update: Perform a query to update the data of a certain table row
 * serendipity_db_insert: Perform a query to insert an associative array into a specific SQL table
 * serendipity_db_bool: Check whether an input value corresponds to a TRUE/FALSE option in the SQL database.
 * serendipity_db_get_interval: Return a SQL statement for a time interval or timestamp, specific to certain SQL backends
