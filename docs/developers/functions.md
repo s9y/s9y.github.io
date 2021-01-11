@@ -56,7 +56,7 @@ We have created seperate bundles for specific API functions. An overview of most
   * serendipity_setFormToken: Prevent XSRF attacks by setting a form token within HTTP Forms
   * serendipity_loadThemeOptions: Load available/configured options for a specific theme (through config.inc.php of a template directory) into an array.
   * serendipity_loadGlobalThemeOptions: Load global available/configured options for a specific theme into an array.
-  * serendipity_hash: Return the SHA1 (with pre-hash) of a value (for storing passwords)
+  * serendipity_hash: Return the bcrypt (with pre-hash) of a value (for storing passwords)
 * *include/functions_entries.inc.php*: Central functions for entry-related actions
   * serendipity_fetchCategoryInfo: Return the category properties of a specific category
   * serendipity_fetchEntryCategories: Fetch a list of all category properties to a specific entry ID
