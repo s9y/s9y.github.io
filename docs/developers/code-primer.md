@@ -270,7 +270,7 @@ On top of that, some global and user-specific configuration is passed through op
 * $serendipity['uploadPath']: Path to "uploads" directory
 * $serendipity['templatePath']: Path to "templates" directory"
 * $serendipity['uploadHTTPPath']: URL-path to "uploads" directory
-* $serendipity['autodetect_baseURL']: Boolean whether to enable autodetection of HTPP host name
+* $serendipity['autodetect_baseURL']: Boolean whether to enable autodetection of HTTP host name
 * $serendipity['defaultBaseURL']: When HTTP-Hostname autodetection is turned off, contains the default URL to Serendipity
 * $serendipity['indexFile']: Name to index.php (used for [Embedded Installation](/docs/users/getting-started/embedding.html))
 * $serendipity['permalinkStructure']: Permalink for archives/ patterns
