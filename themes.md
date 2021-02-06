@@ -13,7 +13,7 @@ our current ones!
   **2k11** is our default front- and backend theme.
 * ### Bartleby
   [![Bartleby theme](/img/screenshots/themes/bartleby.jpg)](https://onli2.uber.space/s9y_2/ "Bartleby demo blog")
-  [**Bartleby**](http://www.paskuda.biz/#bartleby) is available on Spartacus.
+  **Bartleby** is available on Spartacus.
 * ### Bootstrap 4
   ![Bootstrap 4 theme](/img/screenshots/themes/bootstrap4.jpg)
   **Bootstrap 4** is bundled with Serendipity.
@@ -25,7 +25,7 @@ our current ones!
   **Next** is bundled with Serendipity.
 * ### Photo
   [![Photo theme](/img/screenshots/themes/photo.jpg)](https://onli2.uber.space/s9y/ "Photo demo blog")
-  [**Photo**](http://www.paskuda.biz/#photo) is available on Spartacus.
+  **Photo** is available on Spartacus.
 * ### Skeleton
   [![Skeleton theme](/img/screenshots/themes/skeleton.jpg)](https://blog.s9y.org/index.php?user_template=skeleton "Skeleton preview")
   **Skeleton** is bundled with Serendipity.
