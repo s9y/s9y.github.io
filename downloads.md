@@ -5,8 +5,7 @@ title: Downloads
 ## Downloads
 
 * **Download latest stable release 2.4.0 (November 20th, 2022)**
-  * [Serendipity 2.4.0 on
-    Github]([https://github.com/s9y/Serendipity/releases/tag/2.3.5](https://github.com/s9y/Serendipity/releases/tag/2.4.0))
+  * [Serendipity 2.4.0 on Github](https://github.com/s9y/Serendipity/releases/tag/2.4.0)
    (MD5: 8b80df37f4640486419227882d071730 )
 
 ### **Fetch a snapshot (2.5 development)**
