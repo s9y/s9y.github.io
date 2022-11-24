@@ -22,7 +22,7 @@ Serendipity is tailored for the Apache Webserver. However, people are successful
 
 For full operation, Serendipity relies on .htaccess files that your Virtual Host must allow. For Apache, this requires the `Allow Override File Info Indexes Limit` (or `Allow Override All`) option set to the directory of your Serendipity installation.
 
-Serendipity requires PHP \>= 7.3 and fully enabled and working Cookie Session support. It requires the PCRE and xml extension, and optionally makes use of the GD, iconv, zlib and mbstring extensions. Serendipity is fully PHP 8.x compatible and encourages the use of PHP bytecode compilers OPcache.
+Serendipity requires PHP \>= 7.3 and fully enabled and working Cookie Session support. It requires the PCRE and xml extension, and optionally makes use of the GD, iconv, zlib and mbstring extensions. Serendipity is fully PHP 8.x compatible and encourages the use of PHP bytecode compilers like OPcache.
 
 When operating Serendipity in PHP's Safe Mode, you will not be able to use File Upload and SPARTACUS Plugin fetching facilities. Enabling error\_reporting and display\_errors (or directing this to a logfile) is suggested to keep track of possible errors. The file\_uploads directory should be turned ON if you want to have media file upload features. For graphic processing, you either require GDLib or Image Magick.
 
