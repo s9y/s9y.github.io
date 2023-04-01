@@ -7,7 +7,7 @@ title: Serendipity -  A reliable, secure and extensible PHP blog
 ## Serendipity stands for
 
 * ### ![](/img/icons/cogs.png) Reliability
-  We want to provide a blog engine that users can trust, for which they can get indivdual support, while being able to influence the project (both as users and developers).
+  We want to provide a blog engine that users can trust, for which they can get individual support, while being able to influence the project (both as users and developers).
 * ### ![](/img/icons/stethoscope.png) Security
   The developer team is always mindful of and open to reports on potential security issues. Our track record shows that we have dealt with few issues switfly [over the years](http://www.cvedetails.com/product/3867/S9Y-Serendipity.html?vendor_id=2214).
 * ### ![](/img/icons/code-fork.png) Extensibility
