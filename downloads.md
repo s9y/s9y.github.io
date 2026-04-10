@@ -17,6 +17,7 @@ We have migrated our Source Repository to [GitHub](https://github.com/s9y/Serend
 
 ### **Download older releases**
 
+* [Serendipity 2.5.0 on Github](https://github.com/s9y/Serendipity/releases/tag/2.5.0) - February 13th, 2024
 * [Serendipity 2.4.0 on Github](https://github.com/s9y/Serendipity/releases/tag/2.4.0) - November 20th, 2022
 * [Serendipity 2.3.5 on Github](https://github.com/s9y/Serendipity/releases/tag/2.3.5) - April 25th, 2020
 * [Serendipity 2.3.4 on Github](https://github.com/s9y/Serendipity/releases/tag/2.3.4) - March 25th, 2020
